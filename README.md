@@ -1,5 +1,5 @@
-About rubin-base-env
-====================
+About rubin-env
+===============
 
 Home: https://github.com/conda-forge/rubinenv-feedstock
 
@@ -58,27 +58,27 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-rubin--base--env-green.svg)](https://anaconda.org/conda-forge/rubin-base-env) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rubin-base-env.svg)](https://anaconda.org/conda-forge/rubin-base-env) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rubin-base-env.svg)](https://anaconda.org/conda-forge/rubin-base-env) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rubin-base-env.svg)](https://anaconda.org/conda-forge/rubin-base-env) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-rubin--env-green.svg)](https://anaconda.org/conda-forge/rubin-env) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rubin-env.svg)](https://anaconda.org/conda-forge/rubin-env) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rubin-env.svg)](https://anaconda.org/conda-forge/rubin-env) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rubin-env.svg)](https://anaconda.org/conda-forge/rubin-env) |
 
-Installing rubin-base-env
-=========================
+Installing rubin-env
+====================
 
-Installing `rubin-base-env` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `rubin-env` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `rubin-base-env` can be installed with:
+Once the `conda-forge` channel has been enabled, `rubin-env` can be installed with:
 
 ```
-conda install rubin-base-env
+conda install rubin-env
 ```
 
-It is possible to list all of the versions of `rubin-base-env` available on your platform with:
+It is possible to list all of the versions of `rubin-env` available on your platform with:
 
 ```
-conda search rubin-base-env --channel conda-forge
+conda search rubin-env --channel conda-forge
 ```
 
 
@@ -120,17 +120,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating rubin-base-env-feedstock
-=================================
+Updating rubin-env-feedstock
+============================
 
-If you would like to improve the rubin-base-env recipe or build a new
+If you would like to improve the rubin-env recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/rubin-base-env-feedstock are
+Note that all branches in the conda-forge/rubin-env-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
