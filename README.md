@@ -5,7 +5,7 @@ Home: https://github.com/conda-forge/rubinenv-feedstock
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/rubinenv-feedstock/blob/master/LICENSE.txt)
 
 Summary: Metapackage to install the Rubin Observatory's common software environment.
 
