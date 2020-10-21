@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
-{% set version = "0.1.0" %}
-{% set build_number = 1 %}
+{% set version = "0.1.1" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name }}
@@ -50,6 +50,7 @@ requirements:
     - boost =1.70
     - cfitsio
     - eigen
+    - eups
     - galsim
     - libaprutil
     - log4cxx
@@ -81,7 +82,7 @@ requirements:
     - healpy
     - lmfit
     - lsstdesc.coord
-    - matplotlib
+    - matplotlib-base
     - moto
     - mpi4py
     - ndarray
@@ -92,7 +93,6 @@ requirements:
     - psycopg2
     - pyarrow
     - pybind11 <2.3
-    - pyqt <5.12  # [linux64]
     - pytables
     - python =3.7
     - pyyaml
