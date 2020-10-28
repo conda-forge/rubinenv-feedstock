@@ -1,5 +1,5 @@
 {% set name = "rubin-env" %}
-{% set version = "0.1.2" %}
+{% set version = "0.1.3" %}
 {% set build_number = 0 %}
 
 package:
@@ -56,7 +56,7 @@ requirements:
     - libaprutil
     - log4cxx
     - minuit2
-    - mpich =3.2.1
+    - mpich
     - starlink-ast
     - wcslib
     - xpa
@@ -95,7 +95,7 @@ requirements:
     - pyarrow
     - pybind11 =2.5
     - pytables
-    - python =3.7
+    - python =3.8
     - pyyaml
     - requests
     - scikit-image
