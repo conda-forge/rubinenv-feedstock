@@ -1,5 +1,5 @@
 {% set name = "rubin-env" %}
-{% set version = "0.1.1" %}
+{% set version = "0.1.2" %}
 {% set build_number = 0 %}
 
 package:
@@ -51,6 +51,7 @@ requirements:
     - cfitsio
     - eigen
     - eups
+    - firefly-client
     - galsim
     - libaprutil
     - log4cxx
@@ -92,7 +93,7 @@ requirements:
     - pgcli
     - psycopg2
     - pyarrow
-    - pybind11 <2.3
+    - pybind11 =2.5
     - pytables
     - python =3.7
     - pyyaml
@@ -102,14 +103,14 @@ requirements:
     - scipy
     - seaborn
     - sqlalchemy
-    - treecorr <4
+    - treecorr
     - ws4py
 
 
 test:
   commands:
     # grep pin-it output for python dependency
-    - pin-it rubinenv | grep "python="
+    - pin-it rubin-env | grep "python="
 
 
 about:
