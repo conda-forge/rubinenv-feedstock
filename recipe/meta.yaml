@@ -1,5 +1,5 @@
 {% set name = "rubin-env" %}
-{% set version = "0.1.3" %}
+{% set version = "0.1.4" %}
 {% set build_number = 0 %}
 
 package:
@@ -49,6 +49,7 @@ requirements:
     # host-like
     - boost =1.70
     - cfitsio
+    - documenteer
     - eigen
     - eups
     - firefly-client
