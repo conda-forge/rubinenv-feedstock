@@ -47,7 +47,7 @@ requirements:
     # These are mostly run-like, but for the same reasons as
     # above, we need most of these at build time, so they are mostly
     # host-like
-    - boost =1.70
+    - boost =1.74
     - cfitsio
     - documenteer
     - eigen
