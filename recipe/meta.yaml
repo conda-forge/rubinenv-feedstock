@@ -82,6 +82,7 @@ requirements:
     - gsl
     - h5py
     - healpy
+    - healsparse
     - lmfit
     - lsstdesc.coord
     - matplotlib-base
