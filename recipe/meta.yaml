@@ -1,5 +1,5 @@
 {% set name = "rubin-env" %}
-{% set version = "0.1.4" %}
+{% set version = "0.1.5" %}
 {% set build_number = 0 %}
 
 package:
@@ -82,10 +82,12 @@ requirements:
     - gsl
     - h5py
     - healpy
+    - healsparse
     - lmfit
     - lsstdesc.coord
     - matplotlib-base
-    - moto
+    - mock =4.0.2
+    - moto =1.3.14
     - mpi4py
     - ndarray
     - numexpr
