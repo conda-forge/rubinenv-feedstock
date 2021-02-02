@@ -1,5 +1,5 @@
 {% set name = "rubin-env" %}
-{% set version = "0.2.1" %}
+{% set version = "0.3.0" %}
 {% set build_number = 0 %}
 
 package:
@@ -75,6 +75,7 @@ requirements:
     - click >7
     - cython
     - deprecated
+    - dustmaps
     - esutil
     - fastavro <0.24
     - future
