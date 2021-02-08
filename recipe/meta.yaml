@@ -96,6 +96,7 @@ requirements:
     - numpy =1.20
     - pandas
     - pgcli
+    - piff
     - psycopg2 =2
     - pyarrow
     - pybind11 =2.5
