@@ -1,5 +1,5 @@
 {% set name = "rubin-env" %}
-{% set version = "0.4.0" %}
+{% set version = "0.4.1" %}
 {% set build_number = 0 %}
 
 package:
@@ -104,7 +104,7 @@ requirements:
     - python =3.8
     - pyyaml
     - requests
-    - scikit-image
+    - scikit-image <0.18
     - scikit-learn
     - scipy
     - seaborn
