@@ -47,7 +47,7 @@ requirements:
     # These are mostly run-like, but for the same reasons as
     # above, we need most of these at build time, so they are mostly
     # host-like
-    - boost =1.75
+    - boost =1.74
     - cfitsio =3
     - eigen =3.3
     - eups
@@ -88,7 +88,6 @@ requirements:
     - lmfit
     - lsstdesc.coord
     - matplotlib-base
-    - mock
     - moto
     - mpi4py
     - ndarray =1
