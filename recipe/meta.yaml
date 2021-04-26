@@ -1,6 +1,6 @@
-{% set name = "rubin-env" %}
+{% set name = "rubinenv" %}
 {% set version = "0.5.0" %}
-{% set build_number = 0 %}
+{% set build_number = 1 %}
 
 package:
   name: {{ name }}
@@ -10,115 +10,125 @@ build:
   skip: True         # [python_impl == 'pypy' or win]
   number: {{ build_number }}
 
-# Since all requirements are required "at run time" for the
-# Rubin developers, all requirements are fundamentally
-# run requirements. However, we've attempted to organize
-# requirements as build-like, host-like, or run-like, in
-# order inform any evolution of this recipe.
-requirements:
-  run:
-    # jq is special - it is needed for the pin-it utility in this package
-    - jq
-    # build-like dependencies
-    # As part of our scons build process, we do run tests, so
-    # these really are required to perform a build.
-    # Note that "testing" in conda-forge should be limited to testing
-    # successful packaging, and not testing code.
-    - compilers
-    - cmake
-    - doxygen
-    - flake8 =3.8.4
-    - make
-    - pep8-naming
-    - pip
-    - psutil
-    - pytest
-    - pytest-cov
-    - pytest-doctestplus
-    - pytest-flake8
-    - pytest-openfiles
-    - pytest-runner
-    - pytest-session2file
-    - pytest-subtests
-    - pytest-xdist
-    - scons
-    - sysroot_linux-64 =2.17  # [linux64]
-    # host-like and run-like
-    # These are mostly run-like, but for the same reasons as
-    # above, we need most of these at build time, so they are mostly
-    # host-like
-    - boost =1.74
-    - cfitsio =3
-    - eigen =3.3
-    - eups
-    - firefly-client
-    - galsim =2
-    - libaprutil =1
-    - log4cxx =0
-    - lsst-documenteer-pipelines
-    - lsst-documenteer-technote
-    - minuit2 =6
-    - mpich =3
-    - starlink-ast =9
-    - wcslib =7
-    - xpa =2
-    # run-like
-    - apr =1
-    - autograd
-    - astropy
-    - backoff
-    - boto3
-    - bottleneck
-    # conda is required for runtime inspection of installed software
-    - conda
-    - cffi =1
-    - click
-    - cython =0
-    - deprecated
-    - dustmaps
-    - esutil
-    - fastavro
-    - future
-    - git
-    - git-lfs
-    - gsl =2
-    - h5py
-    - healpy
-    - healsparse
-    - lmfit
-    - lsstdesc.coord
-    - matplotlib-base
-    - moto
-    - mpi4py
-    - ndarray =1
-    - numexpr =2
-    - numpy =1.20
-    - pandas
-    - pgcli
-    - piff
-    - psycopg2 =2
-    - pyarrow
-    - pybind11
-    - pydantic
-    - pytables
-    - python =3.8
-    - pyyaml
-    - requests
-    - scikit-image <0.18
-    - scikit-learn
-    - scipy
-    - seaborn
-    - sqlalchemy =1.3
-    - sqlite <3.35
-    - treecorr =4
-    - ws4py
+outputs:
+  - name: rubin-env
+    requirements:
+      run:
+        - {{ pin_subpackage("rubin-env-nosysroot", exact=True) }}
+        - sysroot_linux-64 =2.17  # [linux64]
+    test:
+      commands:
+        # grep pin-it output for python dependency
+        - pin-it rubin-env | grep "python="
 
+  - name: rubin-env-nosysroot
+    script: build-nosysroot.sh
+    # Since all requirements are required "at run time" for the
+    # Rubin developers, all requirements are fundamentally
+    # run requirements. However, we've attempted to organize
+    # requirements as build-like, host-like, or run-like, in
+    # order inform any evolution of this recipe.
+    requirements:
+      run:
+        # jq is special - it is needed for the pin-it utility in this package
+        - jq
+        # build-like dependencies
+        # As part of our scons build process, we do run tests, so
+        # these really are required to perform a build.
+        # Note that "testing" in conda-forge should be limited to testing
+        # successful packaging, and not testing code.
+        - compilers
+        - cmake
+        - doxygen
+        - flake8 =3.8.4
+        - make
+        - pep8-naming
+        - pip
+        - psutil
+        - pytest
+        - pytest-cov
+        - pytest-doctestplus
+        - pytest-flake8
+        - pytest-openfiles
+        - pytest-runner
+        - pytest-session2file
+        - pytest-subtests
+        - pytest-xdist
+        - scons
+        # host-like and run-like
+        # These are mostly run-like, but for the same reasons as
+        # above, we need most of these at build time, so they are mostly
+        # host-like
+        - boost =1.74
+        - cfitsio =3
+        - eigen =3.3
+        - eups
+        - firefly-client
+        - galsim =2
+        - libaprutil =1
+        - log4cxx =0
+        - lsst-documenteer-pipelines
+        - lsst-documenteer-technote
+        - minuit2 =6
+        - mpich =3
+        - starlink-ast =9
+        - wcslib =7
+        - xpa =2
+        # run-like
+        - apr =1
+        - autograd
+        - astropy
+        - backoff
+        - boto3
+        - bottleneck
+        # conda is required for runtime inspection of installed software
+        - conda
+        - cffi =1
+        - click
+        - cython =0
+        - deprecated
+        - dustmaps
+        - esutil
+        - fastavro
+        - future
+        - git
+        - git-lfs
+        - gsl =2
+        - h5py
+        - healpy
+        - healsparse
+        - lmfit
+        - lsstdesc.coord
+        - matplotlib-base
+        - moto
+        - mpi4py
+        - ndarray =1
+        - numexpr =2
+        - numpy =1.20
+        - pandas
+        - pgcli
+        - piff
+        - psycopg2 =2
+        - pyarrow
+        - pybind11
+        - pydantic
+        - pytables
+        - python =3.8
+        - pyyaml
+        - requests
+        - scikit-image <0.18
+        - scikit-learn
+        - scipy
+        - seaborn
+        - sqlalchemy =1.3
+        - sqlite <3.35
+        - treecorr =4
+        - ws4py
 
-test:
-  commands:
-    # grep pin-it output for python dependency
-    - pin-it rubin-env | grep "python="
-
+    test:
+      commands:
+        # grep pin-it output for python dependency
+        - pin-it rubin-env | grep "python="
 
 about:
   home: https://github.com/conda-forge/rubinenv-feedstock
@@ -137,3 +147,4 @@ extra:
     - brianv0
     - timj
     - ktlim
+    - beckermr
