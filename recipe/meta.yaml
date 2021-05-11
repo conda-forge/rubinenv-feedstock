@@ -85,7 +85,7 @@ outputs:
         # conda is required for runtime inspection of installed software
         - conda
         - cffi =1
-        - click
+        - click <8
         - cython =0
         - deprecated
         - dustmaps
