@@ -75,6 +75,7 @@ outputs:
         - wcslib =7
         - xpa =2
         # run-like
+        - alembic
         - apr =1
         - autograd
         - astropy
