@@ -121,7 +121,7 @@ outputs:
         - scikit-learn
         - scipy
         - seaborn
-        - sqlalchemy
+        - sqlalchemy <2
         - sqlite <3.35
         - treecorr =4
         - ws4py
