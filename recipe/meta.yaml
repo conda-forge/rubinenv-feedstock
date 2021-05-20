@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "0.6.0" %}
-{% set build_number = 0 %}
+{% set build_number = 1 %}
 
 package:
   name: {{ name }}
@@ -66,6 +66,10 @@ outputs:
         - firefly-client
         - galsim =2
         - libaprutil =1
+        # there is some issue with pex_exceptions with clang 11 and libcxx 12
+        # until it is tracked down, it makes sense to keep these at the same 
+        # major version
+        - libcxx =={{ cxx_compiler_version }}.*  # [osx]
         - log4cxx =0
         - lsst-documenteer-pipelines
         - lsst-documenteer-technote
