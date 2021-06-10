@@ -25,6 +25,8 @@ requirements:
     # Note that "testing" in conda-forge should be limited to testing
     # successful packaging, and not testing code.
     - compilers
+    - clang_osx-64 =11.1.0  # [osx and x86_64]
+    - clang_osx-arm64 =11.1.0  # [osx and arm64]
     - cmake
     - doxygen
     - flake8 =3.8.4
@@ -72,7 +74,7 @@ requirements:
     # conda is required for runtime inspection of installed software
     - conda
     - cffi =1
-    - click
+    - click <8
     - cython =0
     - deprecated
     - dustmaps
