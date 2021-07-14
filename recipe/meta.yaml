@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "0.6.0" %}
-{% set build_number = 2 %}
+{% set build_number = 3 %}
 
 package:
   name: {{ name }}
@@ -108,6 +108,7 @@ outputs:
         - moto
         - mpi4py
         - ndarray =1
+        - networkx <2.6
         - numexpr =2
         - numpy =1.20
         - pandas
