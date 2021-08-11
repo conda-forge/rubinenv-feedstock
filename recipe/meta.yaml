@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
-{% set version = "0.6.0" %}
-{% set build_number = 4 %}
+{% set version = "0.7.0" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name }}
@@ -102,6 +102,8 @@ outputs:
         - h5py
         - healpy
         - healsparse
+        - idds-client
+        - idds-doma
         - lmfit
         - lsstdesc.coord
         - matplotlib-base
