@@ -11,16 +11,6 @@ build:
   number: {{ build_number }}
 
 outputs:
-  - name: rubin-env
-    requirements:
-      run:
-        - {{ pin_subpackage("rubin-env-nosysroot", exact=True) }}
-        - sysroot_linux-64 =2.17  # [linux64]
-    test:
-      commands:
-        # grep pin-it output for python dependency
-        - pin-it rubin-env | grep "python="
-
   - name: rubin-env-nosysroot
     script: build-nosysroot.sh
     # Since all requirements are required "at run time" for the
@@ -133,6 +123,16 @@ outputs:
         - treecorr =4
         - ws4py
 
+    test:
+      commands:
+        # grep pin-it output for python dependency
+        - pin-it rubin-env | grep "python="
+
+  - name: rubin-env
+    requirements:
+      run:
+        - {{ pin_subpackage("rubin-env-nosysroot", exact=True) }}
+        - sysroot_linux-64 =2.17  # [linux64]
     test:
       commands:
         # grep pin-it output for python dependency
