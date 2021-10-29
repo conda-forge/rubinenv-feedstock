@@ -104,7 +104,7 @@ outputs:
         - healsparse
         - idds-client
         - idds-doma
-        - lmfit <1.0.3
+        - lmfit !=1.0.3
         - lsstdesc.coord
         - matplotlib-base
         - moto
