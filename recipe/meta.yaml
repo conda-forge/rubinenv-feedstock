@@ -50,11 +50,11 @@ outputs:
         # above, we need most of these at build time, so they are mostly
         # host-like
         - boost =1.74
-        - cfitsio =3
+        - cfitsio =4
         - eigen =3.3
         - eups
         - firefly-client
-        - galsim =2.2
+        - galsim =2.3
         - libaprutil =1
         # there is some issue with pex_exceptions with clang 11 and libcxx 12
         # until it is tracked down, it makes sense to keep these at the same 
@@ -135,6 +135,7 @@ outputs:
       run:
         - {{ pin_subpackage("rubin-env-nosysroot", exact=True) }}
         - sysroot_linux-64 =2.17  # [linux64]
+        - sysroot_linux-aarch64 =2.17  # [aarch64]
     test:
       commands:
         # grep pin-it output for python dependency
