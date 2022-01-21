@@ -112,7 +112,7 @@ outputs:
         - moto <3
         - mpi4py
         - ndarray =1
-        - networkx <2.6
+        - networkx
         - numexpr =2
         - numpy =1.20
         - pandas
