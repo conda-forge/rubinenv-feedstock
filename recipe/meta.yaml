@@ -57,7 +57,7 @@ outputs:
         - galsim =2.2
         - libaprutil =1
         # there is some issue with pex_exceptions with clang 11 and libcxx 12
-        # until it is tracked down, it makes sense to keep these at the same 
+        # until it is tracked down, it makes sense to keep these at the same
         # major version
         - libcxx =={{ cxx_compiler_version }}.*  # [osx]
         - log4cxx =0
