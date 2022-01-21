@@ -57,7 +57,7 @@ outputs:
         - eigen =3.3
         - eups
         - firefly-client
-        - galsim =2.2
+        - galsim
         - libaprutil =1
         # there is some issue with pex_exceptions with clang 11 and libcxx 12
         # until it is tracked down, it makes sense to keep these at the same
@@ -86,7 +86,7 @@ outputs:
         - conda
         - configparser
         - cffi =1
-        - click <8
+        - click
         - coloredlogs
         - cython =0
         - deprecated
@@ -115,7 +115,7 @@ outputs:
         - networkx <2.6
         - numexpr =2
         - numpy =1.20
-        - pandas <1.3
+        - pandas
         - pgcli
         - photutils >=0.7
         - piff
@@ -130,12 +130,12 @@ outputs:
         - pyyaml
         - requests
         - schwimmbad
-        - scikit-image <0.18|>0.18.3
+        - scikit-image !=0.18
         - scikit-learn
         - scipy
         - seaborn
         - sqlalchemy <2
-        - sqlite <3.35
+        - sqlite
         - tqdm
         - treecorr =4
         - ws4py
