@@ -154,7 +154,7 @@ outputs:
         - networkx
         - numexpr =2
         - {{ pin_compatible('numpy') }}
-        - pandas <2
+        - pandas
         - parsl =1.2
         - pgcli
         - photutils >=0.7,<1.7
@@ -172,7 +172,7 @@ outputs:
         - pyyaml
         - requests
         - schwimmbad
-        - scikit-image !=0.18,<0.20
+        - scikit-image !=0.18
         - scikit-learn
         - scipy
         - seaborn
