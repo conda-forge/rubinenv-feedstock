@@ -119,6 +119,7 @@ outputs:
         - pgcli
         - photutils >=0.7
         - piff
+        - prmon  # [linux]
         - psycopg2 =2
         - pyarrow
         - pybind11
