@@ -109,7 +109,7 @@ outputs:
         - lmfit !=1.0.3
         - lsstdesc.coord
         - matplotlib-base
-        - moto <3
+        - moto
         - mpi4py
         - ndarray =1
         - networkx
