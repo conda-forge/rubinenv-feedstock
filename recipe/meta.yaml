@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "1.0.0" %}
-{% set build_number = 0 %}
+{% set build_number = 1 %}
 
 package:
   name: {{ name }}
@@ -53,7 +53,7 @@ outputs:
         # above, we need most of these at build time, so they are mostly
         # host-like
         - boost =1.74
-        - cfitsio =3
+        - cfitsio =4
         - eigen =3.3
         - eups
         - firefly-client
