@@ -27,7 +27,9 @@ outputs:
         # these really are required to perform a build.
         # Note that "testing" in conda-forge should be limited to testing
         # successful packaging, and not testing code.
-        - compilers
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - {{ compiler('fortran') }}
         - cmake
         - coverage >=3.6
         - coveralls
