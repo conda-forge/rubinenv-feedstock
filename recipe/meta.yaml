@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
-{% set version = "0.7.0" %}
-{% set build_number = 6 %}
+{% set version = "0.8.0" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name }}
@@ -113,6 +113,7 @@ outputs:
         - pandas >=1.2,<1.3
         - pgcli >=3.2
         - piff >=1.0
+        - prmon  # [linux]
         - psycopg2 =2
         - pyarrow >=5.0
         - pybind11 >=2.8
