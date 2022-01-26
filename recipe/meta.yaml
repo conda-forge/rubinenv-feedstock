@@ -143,7 +143,8 @@ outputs:
     test:
       commands:
         # grep pin-it output for python dependency
-        - pin-it rubin-env | grep "python="
+        - pin-it rubin-env | grep "python="  # [build_platform == target_platform]
+        - echo "it works!"
 
   - name: rubin-env
     requirements:
@@ -153,7 +154,8 @@ outputs:
     test:
       commands:
         # grep pin-it output for python dependency
-        - pin-it rubin-env | grep "python="
+        - pin-it rubin-env | grep "python="  # [build_platform == target_platform]
+        - echo "it works!"
 
 about:
   home: https://github.com/conda-forge/rubinenv-feedstock
