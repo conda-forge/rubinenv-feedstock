@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "0.7.0" %}
-{% set build_number = 5 %}
+{% set build_number = 6 %}
 
 package:
   name: {{ name }}
@@ -27,6 +27,11 @@ outputs:
         # these really are required to perform a build.
         # Note that "testing" in conda-forge should be limited to testing
         # successful packaging, and not testing code.
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - {{ compiler('fortran') }}
+        # The above are needed to get the official conda-forge versions.
+        # The below is needed to get convenience symlinks for users to invoke.
         - compilers >=1.2
         - cmake >=3.21
         - doxygen >=1.9
