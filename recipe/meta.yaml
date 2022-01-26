@@ -30,6 +30,9 @@ outputs:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - {{ compiler('fortran') }}
+        # The above are needed to get the official conda-forge versions.
+        # The below is needed to get convenience symlinks for users to invoke.
+        - compilers
         - cmake
         - coverage >=3.6
         - coveralls
