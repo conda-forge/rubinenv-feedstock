@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "0.7.0" %}
-{% set build_number = 4 %}
+{% set build_number = 5 %}
 
 package:
   name: {{ name }}
@@ -112,7 +112,8 @@ outputs:
         - pyarrow >=5.0
         - pybind11 >=2.8
         - pydantic >=1.8
-        - pytables >=3.6
+        # pytables 3.7 loses mock dependency that we inadvertently need
+        - pytables =3.6
         - python =3.8
         - pyyaml >=6.0
         - requests >=2.26
