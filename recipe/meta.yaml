@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "1.0.0" %}
-{% set build_number = 2 %}
+{% set build_number = 3 %}
 
 package:
   name: {{ name }}
@@ -34,7 +34,8 @@ outputs:
         # The below is needed to get convenience symlinks for users to invoke.
         - compilers
         - cmake
-        - coverage >=3.6
+        # Coverage 6.3 is breaking with NFS and multi-process testing.
+        - coverage >=3.6,!=6.3
         - coveralls
         - doxygen
         - flake8 =3.8.4
