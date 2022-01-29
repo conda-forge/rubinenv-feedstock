@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "0.7.0" %}
-{% set build_number = 6 %}
+{% set build_number = 7 %}
 
 package:
   name: {{ name }}
@@ -85,6 +85,8 @@ outputs:
         - conda >=4.10
         - cffi =1
         - click >=7.1,<8
+        # breaks multiprocessing tests
+        - coverage !=6.3
         - cython =0
         - deprecated >=1.2
         - dustmaps >=1.0
