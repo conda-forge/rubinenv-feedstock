@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "2.0.0dev" %}
-{% set build_number = 0 %}
+{% set build_number = 1 %}
 
 package:
   name: {{ name }}
@@ -59,7 +59,7 @@ outputs:
         # above, we need most of these at build time, so they are mostly
         # host-like
         - boost =1.74
-        - cfitsio =3
+        - cfitsio =4
         - eigen =3.3
         - eups
         - firefly-client
@@ -120,7 +120,7 @@ outputs:
         - ndarray =1
         - networkx
         - numexpr =2
-        - numpy =1.20
+        - numpy =1.21
         - pandas
         - pgcli
         - photutils >=0.7
@@ -132,7 +132,7 @@ outputs:
         - pydantic
         - pysynphot
         - pytables
-        - python =3.8
+        - python =3.10
         - pyyaml
         - requests
         - schwimmbad
