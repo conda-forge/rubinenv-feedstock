@@ -157,6 +157,7 @@ Feedstock Maintainers
 
 * [@beckermr](https://github.com/beckermr/)
 * [@brianv0](https://github.com/brianv0/)
+* [@erykoff](https://github.com/erykoff/)
 * [@ktlim](https://github.com/ktlim/)
 * [@timj](https://github.com/timj/)
 
