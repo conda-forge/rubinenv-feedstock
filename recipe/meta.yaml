@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
-{% set version = "2.0.0" %}
-{% set build_number = 1 %}
+{% set version = "3.0.0" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name }}
@@ -143,6 +143,7 @@ outputs:
         - spherematch
         - sqlalchemy <2
         - sqlite
+        - threadpoolctl
         - tqdm
         - treecorr =4
         - ws4py
