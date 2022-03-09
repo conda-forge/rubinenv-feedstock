@@ -152,6 +152,8 @@ outputs:
       commands:
         # grep pin-it output for python dependency
         - pin-it rubin-env | grep "python="
+        # ensure binary compatibility; bump major version if not
+        - '[ $(echo __GXX_ABI_VERSION | ${GXX} -E - | tail -1) == 1014 ]'  # [linux]
 
   - name: rubin-env
     requirements:
@@ -162,6 +164,8 @@ outputs:
       commands:
         # grep pin-it output for python dependency
         - pin-it rubin-env | grep "python="
+        # ensure binary compatibility; bump major version if not
+        - '[ $(echo __GXX_ABI_VERSION | ${GXX} -E - | tail -1) == 1014 ]'  # [linux]
 
 about:
   home: https://github.com/conda-forge/rubinenv-feedstock
