@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
-{% set version = "2.0.0" %}
-{% set build_number = 1 %}
+{% set version = "3.0.0" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name }}
@@ -143,6 +143,7 @@ outputs:
         - spherematch
         - sqlalchemy <2
         - sqlite
+        - threadpoolctl
         - tqdm
         - treecorr =4
         - ws4py
@@ -151,6 +152,9 @@ outputs:
       commands:
         # grep pin-it output for python dependency
         - pin-it rubin-env | grep "python="
+        # ensure binary compatibility; bump major version if not
+        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1014 ]'  # [linux]
+        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
 
   - name: rubin-env
     requirements:
@@ -161,6 +165,9 @@ outputs:
       commands:
         # grep pin-it output for python dependency
         - pin-it rubin-env | grep "python="
+        # ensure binary compatibility; bump major version if not
+        - '[ $(echo __GXX_ABI_VERSION | ${GXX} -E - | tail -1) == 1014 ]'  # [linux]
+        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
 
 about:
   home: https://github.com/conda-forge/rubinenv-feedstock
