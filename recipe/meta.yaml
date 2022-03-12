@@ -58,30 +58,30 @@ outputs:
         # These are mostly run-like, but for the same reasons as
         # above, we need most of these at build time, so they are mostly
         # host-like
-        - boost =1.74
-        - cfitsio =4
-        - eigen =3.3
+        - boost {{ boost }}
+        - cfitsio {{ cfitsio }}
+        - eigen {{ eigen }}
         - eups
         - firefly-client
         - galsim
-        - libaprutil =1
+        - libaprutil {{ libaprutil }}
         # there is some issue with pex_exceptions with clang 11 and libcxx 12
         # until it is tracked down, it makes sense to keep these at the same
         # major version
         - libcxx =={{ cxx_compiler_version }}.*  # [osx]
         - llvmlite
-        - log4cxx =0
+        - log4cxx {{ log4cxx }}
         - lsst-documenteer-pipelines
         - lsst-documenteer-technote
-        - minuit2 =6
-        - mpich =3
+        - minuit2 {{ minuit2 }}
+        - mpich {{ mpich }}
         - numba
-        - starlink-ast =9
-        - wcslib =7
-        - xpa =2
+        - starlink-ast {{ starlink_ast }}
+        - wcslib {{ wcslib }}
+        - xpa {{ xpa }}
         # run-like
         - alembic
-        - apr =1
+        - apr {{ apr }}
         - astropy
         - astroquery
         - autograd
@@ -91,10 +91,10 @@ outputs:
         # conda is required for runtime inspection of installed software
         - conda
         - configparser
-        - cffi =1
+        - cffi {{ cffi }}
         - click
         - coloredlogs
-        - cython =0
+        - cython {{ cython }}
         - deprecated
         - dustmaps
         - emcee
@@ -103,7 +103,7 @@ outputs:
         - future
         - git
         - git-lfs
-        - gsl =2
+        - gsl {{ gsl }}
         - h5py
         - healpy
         - healsparse
@@ -117,22 +117,22 @@ outputs:
         - matplotlib-base
         - moto
         - mpi4py
-        - ndarray =1
+        - ndarray {{ ndarray }}
         - networkx
-        - numexpr =2
-        - numpy =1.20
+        - numexpr {{ numexpr }}
+        - numpy {{ numpy }}
         - pandas
         - pgcli
         - photutils >=0.7
         - piff
         - prmon  # [linux]
-        - psycopg2 =2
+        - psycopg2 {{ psycopg2 }}
         - pyarrow
         - pybind11
         - pydantic
         - pysynphot
         - pytables
-        - python =3.8
+        - python {{ python }}
         - pyyaml
         - requests
         - schwimmbad
@@ -145,7 +145,7 @@ outputs:
         - sqlite
         - threadpoolctl
         - tqdm
-        - treecorr =4
+        - treecorr {{ treecorr }}
         - ws4py
 
     test:
