@@ -1,5 +1,5 @@
 {% set name = "rubin-env" %}
-{% set version = "3.0.0dev" %}
+{% set version = "4.0.0dev" %}
 {% set build_number = 0 %}
 
 package:
