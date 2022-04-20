@@ -19,6 +19,11 @@ outputs:
     # requirements as build-like, host-like, or run-like, in
     # order inform any evolution of this recipe.
     requirements:
+      host:
+        # these make sure we pick up pins on the cbc
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - {{ compiler('fortran') }}
       run:
         # jq is special - it is needed for the pin-it utility in this package
         - jq >=1.6
