@@ -148,7 +148,7 @@ outputs:
         - pydantic
         - pysynphot
         - pytables
-        - python =3.8
+        - python
         - pyyaml
         - requests
         - schwimmbad
