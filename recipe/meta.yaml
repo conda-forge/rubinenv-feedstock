@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "3.0.0" %}
-{% set build_number = 3 %}
+{% set build_number = 4 %}
 
 package:
   name: {{ name }}
@@ -19,6 +19,22 @@ outputs:
     # requirements as build-like, host-like, or run-like, in
     # order inform any evolution of this recipe.
     requirements:
+      host:
+        - python
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - {{ compiler('fortran') }}
+        - boost
+        - cfitsio
+        - curl
+        - fftw
+        - gsl
+        - libblas
+        - libcblas
+        - liblapack
+        - liblapacke
+        - log4cxx
+        - mpich
       run:
         # jq is special - it is needed for the pin-it utility in this package
         - jq
@@ -58,8 +74,8 @@ outputs:
         # These are mostly run-like, but for the same reasons as
         # above, we need most of these at build time, so they are mostly
         # host-like
-        - boost =1.74
-        - cfitsio =4
+        - boost {{ boost }}
+        - cfitsio {{ cfitsio }}
         - eigen =3.3
         - eups
         - firefly-client
@@ -70,11 +86,11 @@ outputs:
         # major version
         - libcxx =={{ cxx_compiler_version }}.*  # [osx]
         - llvmlite
-        - log4cxx =0
+        - log4cxx {{ log4cxx }}
         - lsst-documenteer-pipelines
         - lsst-documenteer-technote
         - minuit2 =6
-        - mpich =3
+        - mpich {{ mpich }}
         - numba
         - starlink-ast =9
         - wcslib =7
@@ -103,7 +119,7 @@ outputs:
         - future
         - git
         - git-lfs
-        - gsl =2
+        - gsl {{ gsl }}
         - h5py
         - healpy
         - healsparse
