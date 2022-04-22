@@ -38,6 +38,7 @@ outputs:
         - log4cxx
         - minuit2
         - mpich
+        - numpy
       run:
         # jq is special - it is needed for the pin-it utility in this package
         - jq
@@ -99,7 +100,7 @@ outputs:
         - lsst-documenteer-technote
         - minuit2 {{ minuit2 }}
         - mpich {{ mpich }}
-        - numpy
+        - numpy {{ numpy }}
         - numba
         - starlink-ast {{ starlink_ast }}
         - wcslib {{ wcslib }}
@@ -145,8 +146,7 @@ outputs:
         - ndarray =1
         - networkx
         - numexpr =2
-        - numpy {{ numpy }}
-        - {{ pin_comptabile('numpy') }}
+        - {{ pin_compatible('numpy') }}
         - pandas
         - pgcli
         - photutils >=0.7
