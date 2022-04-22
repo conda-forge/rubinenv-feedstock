@@ -19,7 +19,6 @@ Current build status
 
 
 <table>
-<<<<<<< HEAD
     
   <tr>
     <td>Azure</td>
@@ -59,8 +58,6 @@ Current build status
       </details>
     </td>
   </tr>
-=======
->>>>>>> 305de5415c9ed453a3aa8017a0eed1f851141d1e
 </table>
 
 Current release info
