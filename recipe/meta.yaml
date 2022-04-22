@@ -94,7 +94,7 @@ outputs:
         - minuit2 {{ minuit2 }}
         - mpich {{ mpich }}
         - numba
-        - starlink-ast {{ starlink-ast }}
+        - starlink-ast {{ starlink_ast }}
         - wcslib {{ wcslib }}
         - xpa {{ xpa }}
         # run-like

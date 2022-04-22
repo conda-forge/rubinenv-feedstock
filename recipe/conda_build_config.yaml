@@ -24,7 +24,7 @@ minuit2:
   - '6'
 mpich:
   - '3'
-starlink-ast:
+starlink_ast:
   - '9'
 wcslib:
   - '7'
