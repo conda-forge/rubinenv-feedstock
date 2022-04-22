@@ -10,6 +10,8 @@ boost:
   - 1.74.0
 cfitsio:
   - 4.0.0
+log4cxx:
+  - 0.11.0
 mpich:
   - '3'
 gsl:

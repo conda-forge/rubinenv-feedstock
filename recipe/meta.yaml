@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 build:
-  skip: True         # [python_impl == 'pypy' or win or py != 38]
+  skip: True  # [python_impl == 'pypy' or win or py != 38]
   number: {{ build_number }}
 
 outputs:
@@ -174,9 +174,12 @@ outputs:
 
   - name: rubin-env
     requirements:
+      host:
+        - python
       run:
         - {{ pin_subpackage("rubin-env-nosysroot", exact=True) }}
         - sysroot_linux-64 =2.17  # [linux64]
+        - python
     test:
       commands:
         # grep pin-it output for python dependency
