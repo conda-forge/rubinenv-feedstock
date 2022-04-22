@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 build:
-  skip: True         # [python_impl == 'pypy' or win]
+  skip: True         # [python_impl == 'pypy' or win or py != 38]
   number: {{ build_number }}
 
 outputs:
