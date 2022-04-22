@@ -24,20 +24,24 @@ outputs:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - {{ compiler('fortran') }}
+        - apr
         - boost
         - cfitsio
         - curl
         - fftw
         - gsl
+        - libaprutil
         - libblas
         - libcblas
         - liblapack
         - liblapacke
         - log4cxx
+        - minuit2
         - mpich
       run:
         # jq is special - it is needed for the pin-it utility in this package
         - jq
+        ###################################################
         # build-like dependencies
         # As part of our scons build process, we do run tests, so
         # these really are required to perform a build.
@@ -70,6 +74,8 @@ outputs:
         - pytest-subtests
         - pytest-xdist
         - scons
+
+        ###################################################
         # host-like and run-like
         # These are mostly run-like, but for the same reasons as
         # above, we need most of these at build time, so they are mostly
@@ -97,6 +103,8 @@ outputs:
         - starlink-ast {{ starlink_ast }}
         - wcslib {{ wcslib }}
         - xpa {{ xpa }}
+
+        ###################################################
         # run-like
         - alembic
         - astropy
