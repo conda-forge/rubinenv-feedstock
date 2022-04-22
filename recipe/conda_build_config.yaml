@@ -24,6 +24,8 @@ minuit2:
   - '6'
 mpich:
   - '3'
+numpy:
+  - '1.20'
 starlink_ast:
   - '9'
 wcslib:

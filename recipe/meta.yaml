@@ -99,6 +99,7 @@ outputs:
         - lsst-documenteer-technote
         - minuit2 {{ minuit2 }}
         - mpich {{ mpich }}
+        - numpy
         - numba
         - starlink-ast {{ starlink_ast }}
         - wcslib {{ wcslib }}
@@ -144,7 +145,8 @@ outputs:
         - ndarray =1
         - networkx
         - numexpr =2
-        - numpy =1.20
+        - numpy {{ numpy }}
+        - {{ pin_comptabile('numpy') }}
         - pandas
         - pgcli
         - photutils >=0.7
