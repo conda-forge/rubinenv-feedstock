@@ -1,3 +1,5 @@
+apr:
+- '1'
 boost:
 - 1.74.0
 c_compiler:
@@ -20,6 +22,8 @@ cxx_compiler_version:
 - '10'
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
+eigen:
+- '3.3'
 fftw:
 - '3'
 fortran_compiler:
@@ -28,6 +32,8 @@ fortran_compiler_version:
 - '10'
 gsl:
 - '2.7'
+libaprutil:
+- '1'
 libblas:
 - 3.8 *netlib
 libcblas:
@@ -38,6 +44,8 @@ liblapacke:
 - 3.8 *netlib
 log4cxx:
 - 0.11.0
+minuit2:
+- '6'
 mpich:
 - '3'
 pin_run_as_build:
@@ -54,8 +62,14 @@ python:
 - 3.8.* *_cpython
 python_impl:
 - cpython
+starlink_ast:
+- '9'
 target_platform:
 - linux-64
+wcslib:
+- '7'
+xpa:
+- '2'
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
