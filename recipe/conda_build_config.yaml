@@ -6,6 +6,11 @@ cxx_compiler_version:                     # [unix]
   - 10                                    # [linux]
 llvm_openmp:                              # [osx]
   - 13                                    # [osx]
+python:
+  # part of a zip_keys: python, python_impl, numpy
+  - 3.8.* *_cpython
+python_impl:
+  - cpython
 apr:
   - '1'
 boost:
