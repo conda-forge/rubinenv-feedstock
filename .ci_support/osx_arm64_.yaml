@@ -21,7 +21,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '13'
 eigen:
-- '3.3'
+- '3.4'
 fftw:
 - '3'
 fortran_compiler:
