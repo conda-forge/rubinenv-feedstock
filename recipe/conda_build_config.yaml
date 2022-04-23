@@ -18,7 +18,7 @@ boost:
 cfitsio:
   - 4.0.0
 eigen:
-  - '3.3'
+  - '3.4'
 gsl:
   - '2.7'
 libaprutil:

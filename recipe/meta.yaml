@@ -40,6 +40,8 @@ outputs:
         - mpich
         - numpy
         - xpa
+        - starlink-ast
+        - wcslib
       run:
         # jq is special - it is needed for the pin-it utility in this package
         - jq
