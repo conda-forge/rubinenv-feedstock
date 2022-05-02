@@ -69,7 +69,7 @@ starlink_ast:
 target_platform:
 - osx-arm64
 wcslib:
-- '7.7'
+- '7.3'
 xpa:
 - '2'
 zip_keys:
