@@ -34,6 +34,6 @@ numpy:
 starlink_ast:
   - '9.2.7'
 wcslib:
-  - '7.7'
+  - '7.3'
 xpa:
   - '2'
