@@ -86,7 +86,9 @@ outputs:
         # host-like
         - apr {{ apr }}
         - boost {{ boost }}
+        - cffi {{ cffi }}
         - cfitsio {{ cfitsio }}
+        - cython {{ cython }}
         - eigen {{ eigen }}
         - eups
         - firefly-client
@@ -103,6 +105,7 @@ outputs:
         - lsst-documenteer-technote
         - minuit2 {{ minuit2 }}
         - mpich {{ mpich }}
+        - ndarray {{ ndarray }}
         - numpy {{ numpy }}
         - numba
         - starlink-ast {{ starlink_ast }}
@@ -121,10 +124,8 @@ outputs:
         # conda is required for runtime inspection of installed software
         - conda
         - configparser
-        - cffi =1
         - click !=8.1.0,!=8.1.1
         - coloredlogs
-        - cython =0
         - deprecated
         - dustmaps
         - emcee
@@ -146,7 +147,6 @@ outputs:
         - matplotlib-base
         - moto >=3
         - mpi4py
-        - ndarray =1
         - networkx
         - numexpr =2
         - {{ pin_compatible('numpy') }}
