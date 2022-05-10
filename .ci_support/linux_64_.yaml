@@ -8,6 +8,8 @@ c_compiler_version:
 - '10'
 cdt_name:
 - cos7
+cffi:
+- '1'
 cfitsio:
 - 4.0.0
 channel_sources:
@@ -20,6 +22,8 @@ cxx_compiler:
 - gxx
 cxx_compiler_version:
 - '10'
+cython:
+- '0'
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 eigen:
@@ -48,6 +52,8 @@ minuit2:
 - '6'
 mpich:
 - '3'
+ndarray:
+- '1'
 numpy:
 - '1.20'
 pin_run_as_build:
