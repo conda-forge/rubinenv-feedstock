@@ -1,13 +1,13 @@
 {% set name = "rubin-env" %}
-{% set version = "3.0.0" %}
-{% set build_number = 4 %}
+{% set version = "4.0.0dev" %}
+{% set build_number = 1 %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 build:
-  skip: True  # [python_impl == 'pypy' or win or py != 38]
+  skip: True  # [python_impl == 'pypy' or win or py != 310]
   number: {{ build_number }}
 
 outputs:
@@ -62,7 +62,7 @@ outputs:
         - coverage >=3.6,!=6.3
         - coveralls
         - doxygen
-        - flake8 =3.8.4
+        - flake8 =4.0
         - make
         - nose
         - pep8-naming
@@ -159,6 +159,7 @@ outputs:
         - pyarrow
         - pybind11
         - pydantic
+        - pyld
         - pysynphot
         - pytables
         - python
@@ -169,6 +170,7 @@ outputs:
         - scikit-learn
         - scipy
         - seaborn
+        - skyproj
         - spherematch
         - sqlalchemy <2
         - sqlite
@@ -200,6 +202,98 @@ outputs:
         # ensure binary compatibility; bump major version if not
         - '[ $(echo __GXX_ABI_VERSION | ${GXX} -E - | tail -1) == 1014 ]'  # [linux]
         - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
+
+  - name: rubin-env-extras
+    requirements:
+      host:
+        - python
+      run:
+        - {{ pin_subpackage("rubin-env", exact=True) }}
+        - astroplan # sims
+        - astroquery
+        - astrowidgets
+        - awkward
+        - awkward-numba
+        - black
+        - bokeh
+        - bqplot
+        - ciso8601
+        - cloudpickle
+        - colorcet # sims
+        - cookiecutter
+        - cycler # sims
+        - dash
+        - dask
+        - dask-jobqueue # shared
+        - dask-kubernetes
+        - dask_labextension
+        - datashader
+        - distributed
+        - ephem # sims
+        - fastparquet
+        - ffmpeg # RFC-846
+        - freetype-py
+        - gcsfs
+        - george # sims
+        - geoviews
+        - ginga
+        - graphviz
+        - holoviews
+        - hvplot
+        - imagemagick # RFC-846
+        - intake
+        - intake-parquet
+        - ipdb # shared
+        - ipyevents
+        - ipykernel
+        - ipympl
+        - ipyparallel # sims
+        - ipyvolume
+        - ipywidgets
+        - isort
+        - jedi
+        - jupyter
+        - jupyter-dash
+        - jupyter-packaging
+        - jupyter-server-proxy
+        - jupyter_bokeh
+        - jupyterhub
+        - jupyterlab >=3,<4
+        - jupyterlab_execute_time
+        - jupyterlab_iframe
+        - jupyterlab_widgets
+        - mypy
+        - mysqlclient
+        - nbconvert-webpdf
+        - nbdime
+        - nbval
+        - nodejs >=16
+        - numba
+        - openorb # sims
+        - openorb-data-de405 # sims
+        - palpy # sims
+        - panel # shared
+        - papermill
+        - paramnb
+        - partd
+        - pep8 # shared
+        - plotly
+        - pre-commit
+        - pyct # shared
+        - pyflakes # shared
+        - pypandoc
+        - pyshp
+        - python-snappy
+        - python-socketio
+        - pythreejs
+        - pyviz_comms
+        - pyvo
+        - sidecar
+        - snappy
+        - terminado
+        - toolz
+        - xarray
+        - yarn
 
 about:
   home: https://github.com/conda-forge/rubinenv-feedstock

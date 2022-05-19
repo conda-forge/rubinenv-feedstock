@@ -55,7 +55,7 @@ mpich:
 ndarray:
 - '1'
 numpy:
-- '1.20'
+- '1.21'
 pin_run_as_build:
   boost:
     max_pin: x.x.x
@@ -67,7 +67,7 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.8.* *_cpython
+- 3.10.* *_cpython
 python_impl:
 - cpython
 starlink_ast:
@@ -75,7 +75,7 @@ starlink_ast:
 target_platform:
 - osx-64
 wcslib:
-- '7.3'
+- '7.7'
 xpa:
 - '2'
 zip_keys:
