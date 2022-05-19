@@ -234,7 +234,7 @@ outputs:
         - ffmpeg # RFC-846
         - freetype-py
         - gcsfs
-        - george # sims
+          # - george # sims; incompatible with python=3.10
         - geoviews
         - ginga
         - graphviz
