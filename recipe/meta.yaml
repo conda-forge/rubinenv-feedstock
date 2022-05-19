@@ -84,33 +84,33 @@ outputs:
         # These are mostly run-like, but for the same reasons as
         # above, we need most of these at build time, so they are mostly
         # host-like
-        - apr {{ apr }}
-        - boost {{ boost }}
-        - cffi {{ cffi }}
-        - cfitsio {{ cfitsio }}
-        - cython {{ cython }}
-        - eigen {{ eigen }}
+        - apr {{ apr }}.*
+        - boost {{ boost }}.*
+        - cffi {{ cffi }}.*
+        - cfitsio {{ cfitsio }}.*
+        - cython {{ cython }}.*
+        - eigen {{ eigen }}.*
         - eups
         - firefly-client
         - galsim
-        - gsl {{ gsl }}
-        - libaprutil {{ libaprutil }}
+        - gsl {{ gsl }}.*
+        - libaprutil {{ libaprutil }}.*
         # there is some issue with pex_exceptions with clang 11 and libcxx 12
         # until it is tracked down, it makes sense to keep these at the same
         # major version
         - libcxx =={{ cxx_compiler_version }}.*  # [osx]
         - llvmlite
-        - log4cxx {{ log4cxx }}
+        - log4cxx {{ log4cxx }}.*
         - lsst-documenteer-pipelines
         - lsst-documenteer-technote
-        - minuit2 {{ minuit2 }}
-        - mpich {{ mpich }}
-        - ndarray {{ ndarray }}
-        - numpy {{ numpy }}
+        - minuit2 {{ minuit2 }}.*
+        - mpich {{ mpich }}.*
+        - ndarray {{ ndarray }}.*
+        - numpy {{ numpy }}.*
         - numba
-        - starlink-ast {{ starlink_ast }}
-        - wcslib {{ wcslib }}
-        - xpa {{ xpa }}
+        - starlink-ast {{ starlink_ast }}.*
+        - wcslib {{ wcslib }}.*
+        - xpa {{ xpa }}.*
 
         ###################################################
         # run-like
