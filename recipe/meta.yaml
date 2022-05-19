@@ -209,15 +209,16 @@ outputs:
         - python
       run:
         - {{ pin_subpackage("rubin-env", exact=True) }}
+        # All are from sciplat-lab unless otherwise stated
         - astroplan # sims
         - astroquery
-        - astrowidgets
+        - astrowidgets  # [not aarch64]
         - awkward
         - awkward-numba
         - black
         - bokeh
         - bqplot
-        - ciso8601
+        - ciso8601  # [not aarch64]
         - cloudpickle
         - colorcet # sims
         - cookiecutter
@@ -253,7 +254,7 @@ outputs:
         - isort
         - jedi
         - jupyter
-        - jupyter-dash
+        - jupyter-dash  # [not aarch64]
         - jupyter-packaging
         - jupyter-server-proxy
         - jupyter_bokeh
@@ -269,9 +270,9 @@ outputs:
         - nbval
         - nodejs >=16
         - numba
-        - openorb # sims
-        - openorb-data-de405 # sims
-        - palpy # sims
+        - openorb # sims  # [not aarch64]
+        - openorb-data-de405 # sims  # [not aarch64]
+        - palpy # sims  # [not aarch64]
         - panel # shared
         - papermill
         - paramnb
