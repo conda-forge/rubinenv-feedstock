@@ -7,7 +7,7 @@ c_compiler:
 c_compiler_version:
 - '10'
 cdt_name:
-- cos6
+- cos7
 cffi:
 - '1'
 cfitsio:
