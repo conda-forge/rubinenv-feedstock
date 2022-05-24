@@ -1,13 +1,13 @@
 {% set name = "rubin-env" %}
-{% set version = "3.0.0" %}
-{% set build_number = 4 %}
+{% set version = "4.0.0" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 build:
-  skip: True  # [python_impl == 'pypy' or win or py != 38]
+  skip: True  # [python_impl == 'pypy' or win or py != 310]
   number: {{ build_number }}
 
 outputs:
@@ -62,7 +62,7 @@ outputs:
         - coverage >=3.6,!=6.3
         - coveralls
         - doxygen
-        - flake8 =3.8.4
+        - flake8 =4.0
         - make
         - nose
         - pep8-naming
@@ -84,33 +84,33 @@ outputs:
         # These are mostly run-like, but for the same reasons as
         # above, we need most of these at build time, so they are mostly
         # host-like
-        - apr {{ apr }}
-        - boost {{ boost }}
-        - cffi {{ cffi }}
-        - cfitsio {{ cfitsio }}
-        - cython {{ cython }}
-        - eigen {{ eigen }}
+        - apr {{ apr }}.*
+        - boost {{ boost }}.*
+        - cffi {{ cffi }}.*
+        - cfitsio {{ cfitsio }}.*
+        - cython {{ cython }}.*
+        - eigen {{ eigen }}.*
         - eups
         - firefly-client
         - galsim
-        - gsl {{ gsl }}
-        - libaprutil {{ libaprutil }}
+        - gsl {{ gsl }}.*
+        - libaprutil {{ libaprutil }}.*
         # there is some issue with pex_exceptions with clang 11 and libcxx 12
         # until it is tracked down, it makes sense to keep these at the same
         # major version
         - libcxx =={{ cxx_compiler_version }}.*  # [osx]
         - llvmlite
-        - log4cxx {{ log4cxx }}
+        - log4cxx {{ log4cxx }}.*
         - lsst-documenteer-pipelines
         - lsst-documenteer-technote
-        - minuit2 {{ minuit2 }}
-        - mpich {{ mpich }}
-        - ndarray {{ ndarray }}
-        - numpy {{ numpy }}
+        - minuit2 {{ minuit2 }}.*
+        - mpich {{ mpich }}.*
+        - ndarray {{ ndarray }}.*
+        - numpy {{ numpy }}.*
         - numba
-        - starlink-ast {{ starlink_ast }}
-        - wcslib {{ wcslib }}
-        - xpa {{ xpa }}
+        - starlink-ast {{ starlink_ast }}.*
+        - wcslib {{ wcslib }}.*
+        - xpa {{ xpa }}.*
 
         ###################################################
         # run-like
@@ -159,6 +159,7 @@ outputs:
         - pyarrow
         - pybind11
         - pydantic
+        - pyld
         - pysynphot
         - pytables
         - python
@@ -169,6 +170,7 @@ outputs:
         - scikit-learn
         - scipy
         - seaborn
+        - skyproj
         - spherematch
         - sqlalchemy <2
         - sqlite
@@ -180,7 +182,7 @@ outputs:
     test:
       commands:
         # grep pin-it output for python dependency
-        - pin-it rubin-env | grep "python="
+        - pin-it rubin-env-nosysroot | grep "python="
         # ensure binary compatibility; bump major version if not
         - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1014 ]'  # [linux]
         - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
@@ -198,7 +200,107 @@ outputs:
         # grep pin-it output for python dependency
         - pin-it rubin-env | grep "python="
         # ensure binary compatibility; bump major version if not
-        - '[ $(echo __GXX_ABI_VERSION | ${GXX} -E - | tail -1) == 1014 ]'  # [linux]
+        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1014 ]'  # [linux]
+        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
+
+  - name: rubin-env-extras
+    requirements:
+      host:
+        - python
+      run:
+        - {{ pin_subpackage("rubin-env", exact=True) }}
+        # All are from sciplat-lab unless otherwise stated
+        - astroplan # sims
+        - astroquery
+        - astrowidgets  # [not aarch64]
+        - awkward
+        - awkward-numba
+        - black
+        - bokeh
+        - bqplot
+        - ciso8601  # [not aarch64]
+        - cloudpickle
+        - colorcet # sims
+        - cookiecutter
+        - cycler # sims
+        - dash
+        - dask
+        - dask-jobqueue # shared
+        - dask-kubernetes
+        - dask_labextension
+        - datashader
+        - distributed
+        - ephem # sims
+        - fastparquet
+        - ffmpeg # RFC-846
+        - freetype-py
+        - gcsfs
+        - george # sims
+        - geoviews
+        - ginga
+        - graphviz
+        - holoviews
+        - hvplot
+        - imagemagick # RFC-846
+        - intake
+        - intake-parquet
+        - ipdb # shared
+        - ipyevents
+        - ipykernel
+        - ipympl
+        - ipyparallel # sims
+        - ipyvolume
+        - ipywidgets
+        - isort
+        - jedi
+        - jupyter
+        - jupyter-dash  # [not aarch64]
+        - jupyter-packaging
+        - jupyter-server-proxy
+        - jupyter_bokeh
+        - jupyterhub
+        - jupyterlab >=3,<4
+        - jupyterlab_execute_time
+        - jupyterlab_iframe
+        - jupyterlab_widgets
+        - mypy
+        - mysqlclient
+        - nbconvert-webpdf
+        - nbdime
+        - nbval
+        - nodejs >=16
+        - numba
+        - openorb # sims  # [not aarch64]
+        - openorb-data-de405 # sims  # [not aarch64]
+        - palpy # sims  # [not aarch64]
+        - panel # shared
+        - papermill
+        - paramnb
+        - partd
+        - pep8 # shared
+        - plotly
+        - pre-commit
+        - pyct # shared
+        - pyflakes # shared
+        - pypandoc
+        - pyshp
+        - python-snappy
+        - python-socketio
+        - pythreejs
+        - pyviz_comms
+        - pyvo
+        - sidecar
+        - snappy
+        - terminado
+        - toolz
+        - xarray
+        - yarn
+    test:
+      commands:
+        # grep pin-it output for yarn dependency
+        - pin-it rubin-env-extras | grep "yarn="
+        # ensure binary compatibility; bump major version if not
+        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1014 ]'  # [linux]
         - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
 
 about:

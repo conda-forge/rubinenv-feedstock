@@ -8,7 +8,7 @@ llvm_openmp:                              # [osx]
   - 13                                    # [osx]
 python:
   # part of a zip_keys: python, python_impl, numpy
-  - 3.8.* *_cpython
+  - 3.10.* *_cpython
 python_impl:
   - cpython
 apr:
@@ -18,7 +18,7 @@ boost:
 cffi:
   - '1'
 cfitsio:
-  - 4.0.0
+  - 4.1.0
 cython:
   - '0'
 eigen:
@@ -36,10 +36,10 @@ mpich:
 ndarray:
   - '1'
 numpy:
-  - '1.20'
+  - '1.21'
 starlink_ast:
   - '9.2.7'
 wcslib:
-  - '7.3'
+  - '7.7'
 xpa:
   - '2'

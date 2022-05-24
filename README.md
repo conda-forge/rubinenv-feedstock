@@ -66,6 +66,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-rubin--env-green.svg)](https://anaconda.org/conda-forge/rubin-env) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rubin-env.svg)](https://anaconda.org/conda-forge/rubin-env) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rubin-env.svg)](https://anaconda.org/conda-forge/rubin-env) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rubin-env.svg)](https://anaconda.org/conda-forge/rubin-env) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-rubin--env--extras-green.svg)](https://anaconda.org/conda-forge/rubin-env-extras) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rubin-env-extras.svg)](https://anaconda.org/conda-forge/rubin-env-extras) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rubin-env-extras.svg)](https://anaconda.org/conda-forge/rubin-env-extras) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rubin-env-extras.svg)](https://anaconda.org/conda-forge/rubin-env-extras) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-rubin--env--nosysroot-green.svg)](https://anaconda.org/conda-forge/rubin-env-nosysroot) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rubin-env-nosysroot.svg)](https://anaconda.org/conda-forge/rubin-env-nosysroot) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rubin-env-nosysroot.svg)](https://anaconda.org/conda-forge/rubin-env-nosysroot) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rubin-env-nosysroot.svg)](https://anaconda.org/conda-forge/rubin-env-nosysroot) |
 
 Installing rubin-env
@@ -78,16 +79,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `rubin-env, rubin-env-nosysroot` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `rubin-env, rubin-env-extras, rubin-env-nosysroot` can be installed with `conda`:
 
 ```
-conda install rubin-env rubin-env-nosysroot
+conda install rubin-env rubin-env-extras rubin-env-nosysroot
 ```
 
 or with `mamba`:
 
 ```
-mamba install rubin-env rubin-env-nosysroot
+mamba install rubin-env rubin-env-extras rubin-env-nosysroot
 ```
 
 It is possible to list all of the versions of `rubin-env` available on your platform with `conda`:
