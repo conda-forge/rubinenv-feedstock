@@ -1,5 +1,5 @@
 {% set name = "rubin-env" %}
-{% set version = "4.0.0" %}
+{% set version = "4.0.1" %}
 {% set build_number = 0 %}
 
 package:
@@ -137,8 +137,8 @@ outputs:
         - h5py
         - healpy
         - healsparse
-        - idds-client >=0.9.5
-        - idds-doma >=0.9.5
+        - idds-client >=0.11.0
+        - idds-doma >=0.11.0
         # inflection may go away in the future; see DM-32591
         - inflection
         - iminuit >=2
