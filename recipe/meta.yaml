@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "4.0.1" %}
-{% set build_number = 0 %}
+{% set build_number = 1 %}
 
 package:
   name: {{ name }}
@@ -171,7 +171,7 @@ outputs:
         - scipy
         - seaborn
         - skyproj
-        - spherematch
+        - spherematch <0.10
         - sqlalchemy <2
         - sqlite
         - threadpoolctl
