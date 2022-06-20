@@ -39,13 +39,13 @@ gsl:
 libaprutil:
 - '1'
 libblas:
-- 3.8 *netlib
+- 3.9 *netlib
 libcblas:
-- 3.8 *netlib
+- 3.9 *netlib
 liblapack:
-- 3.8 *netlib
+- 3.9 *netlib
 liblapacke:
-- 3.8 *netlib
+- 3.9 *netlib
 log4cxx:
 - 0.11.0
 minuit2:
@@ -78,10 +78,3 @@ wcslib:
 - '7.7'
 xpa:
 - '2'
-zip_keys:
-- - c_compiler_version
-  - cxx_compiler_version
-  - fortran_compiler_version
-- - python
-  - numpy
-  - python_impl
