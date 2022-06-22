@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
-{% set version = "4.0.0dev" %}
-{% set build_number = 1 %}
+{% set version = "4.1.0dev" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name }}
@@ -178,6 +178,7 @@ outputs:
         - tqdm
         - treecorr =4
         - ws4py
+        - yaml-cpp
 
     test:
       commands:
