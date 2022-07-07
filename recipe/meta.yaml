@@ -204,7 +204,7 @@ outputs:
         - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1014 ]'  # [linux]
         - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
 
-  - name: rubin-env-extras
+  - name: rubin-env-rsp
     requirements:
       host:
         - python
@@ -221,22 +221,17 @@ outputs:
         - bqplot
         - ciso8601  # [not aarch64]
         - cloudpickle
-        - colorcet # sims
         - cookiecutter
-        - cycler # sims
         - dash
         - dask
-        - dask-jobqueue # shared
         - dask-kubernetes
         - dask_labextension
         - datashader
         - distributed
-        - ephem # sims
         - fastparquet
         - ffmpeg # RFC-846
         - freetype-py
         - gcsfs
-        - george # sims  # [not aarch64]
         - geoviews
         - ginga
         - graphviz
@@ -245,11 +240,9 @@ outputs:
         - imagemagick # RFC-846
         - intake
         - intake-parquet
-        - ipdb # shared
         - ipyevents
         - ipykernel
         - ipympl
-        - ipyparallel # sims
         - ipyvolume
         - ipywidgets
         - isort
@@ -271,9 +264,6 @@ outputs:
         - nbval
         - nodejs >=16
         - numba
-        - openorb # sims  # [not aarch64]
-        - openorb-data-de405 # sims  # [not aarch64]
-        - palpy # sims  # [not aarch64]
         - panel # shared
         - papermill
         - paramnb
@@ -281,7 +271,6 @@ outputs:
         - pep8 # shared
         - plotly
         - pre-commit
-        - pyct # shared
         - pyflakes # shared
         - pypandoc
         - pyshp
@@ -296,6 +285,32 @@ outputs:
         - toolz
         - xarray
         - yarn
+    test:
+      commands:
+        # grep pin-it output for yarn dependency
+        - pin-it rubin-env-extras | grep "yarn="
+        # ensure binary compatibility; bump major version if not
+        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1014 ]'  # [linux]
+        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
+
+  - name: rubin-env-extras
+    requirements:
+      host:
+        - python
+      run:
+        - {{ pin_subpackage("rubin-env", exact=True) }}
+        - {{ pin_subpackage("rubin-env-rsp", exact=True) }}        
+        - colorcet # sims
+        - cycler # sims
+        - dask-jobqueue # shared
+        - ephem # sims
+        - george # sims  # [not aarch64]
+        - ipdb # shared
+        - ipyparallel # sims
+        - openorb # sims  # [not aarch64]
+        - openorb-data-de405 # sims  # [not aarch64]
+        - palpy # sims  # [not aarch64]
+        - pyct # shared
     test:
       commands:
         # grep pin-it output for yarn dependency
