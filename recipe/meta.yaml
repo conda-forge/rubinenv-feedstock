@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "4.1.0dev" %}
-{% set build_number = 1 %}
+{% set build_number = 2 %}
 
 package:
   name: {{ name }}
@@ -288,10 +288,7 @@ outputs:
     test:
       commands:
         # grep pin-it output for yarn dependency
-        - pin-it rubin-env-extras | grep "yarn="
-        # ensure binary compatibility; bump major version if not
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1014 ]'  # [linux]
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
+        - pin-it rubin-env-rsp | grep "yarn="
 
   - name: rubin-env-extras
     requirements:
@@ -313,11 +310,8 @@ outputs:
         - pyct # shared
     test:
       commands:
-        # grep pin-it output for yarn dependency
-        - pin-it rubin-env-extras | grep "yarn="
-        # ensure binary compatibility; bump major version if not
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1014 ]'  # [linux]
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
+        # grep pin-it output for george dependency
+        - pin-it rubin-env-extras | grep "george"
 
 about:
   home: https://github.com/conda-forge/rubinenv-feedstock
