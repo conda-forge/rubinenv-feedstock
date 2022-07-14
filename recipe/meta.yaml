@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "4.0.1" %}
-{% set build_number = 1 %}
+{% set build_number = 2 %}
 
 package:
   name: {{ name }}
@@ -152,7 +152,8 @@ outputs:
         - {{ pin_compatible('numpy') }}
         - pandas
         - pgcli
-        - photutils >=0.7
+        # Remove < after Spectractor fix: see DM-35580
+        - photutils >=0.7,<1.5
         - piff
         - prmon  # [linux]
         - psycopg2 =2
