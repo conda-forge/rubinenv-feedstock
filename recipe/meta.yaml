@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
-{% set version = "4.0.1" %}
-{% set build_number = 3 %}
+{% set version = "4.1.0" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name }}
@@ -111,6 +111,7 @@ outputs:
         - starlink-ast {{ starlink_ast }}.*
         - wcslib {{ wcslib }}.*
         - xpa {{ xpa }}.*
+        - yaml-cpp {{ yaml_cpp }}.*
 
         ###################################################
         # run-like
@@ -121,6 +122,7 @@ outputs:
         - backoff
         - boto3
         - bottleneck
+        - cassandra-driver
         # conda is required for runtime inspection of installed software
         - conda
         - configparser
@@ -132,11 +134,13 @@ outputs:
         - esutil
         - fastavro
         - future
+        - getcalspec
         - git
         - git-lfs
         - h5py
         - healpy
         - healsparse
+        - hpgeom >=0.8.2
         - idds-client >=0.11.0
         - idds-doma >=0.11.0
         # inflection may go away in the future; see DM-32591
