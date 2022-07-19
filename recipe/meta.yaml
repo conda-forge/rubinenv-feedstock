@@ -155,13 +155,12 @@ outputs:
         - {{ pin_compatible('numpy') }}
         - pandas
         - pgcli
-        # Remove < after Spectractor fix: see DM-35580
-        - photutils >=0.7,<1.5
+        - photutils >=0.7
         - piff
         - prmon  # [linux]
         - psycopg2 =2
         - pyarrow
-        - pybind11 <2.10
+        - pybind11
         - pydantic
         - pyld
         - pysynphot
@@ -176,7 +175,7 @@ outputs:
         - scipy <1.9
         - seaborn
         - skyproj
-        - spherematch <0.10
+        - spherematch
         - sqlalchemy <2
         - sqlite
         - threadpoolctl
