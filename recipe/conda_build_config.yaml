@@ -45,3 +45,5 @@ wcslib:
   - '7.7'
 xpa:
   - '2'
+yaml_cpp:
+  - '0.7'
