@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
-{% set version = "4.1.0" %}
-{% set build_number = 8 %}
+{% set version = "5.0.0dev" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name }}
@@ -143,8 +143,6 @@ outputs:
         - hpgeom >=0.8.2
         - idds-client >=0.11.0
         - idds-doma >=0.11.0
-        # inflection may go away in the future; see DM-32591
-        - inflection
         - iminuit >=2
         - lmfit !=1.0.3
         - lsstdesc.coord
