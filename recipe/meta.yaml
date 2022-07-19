@@ -122,7 +122,7 @@ outputs:
         - backoff
         - boto3
         - bottleneck
-        - cassandra-driver
+        - cassandra-driver  # [linux64]
         # conda is required for runtime inspection of installed software
         - conda
         - configparser
