@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "5.0.0dev" %}
-{% set build_number = 0 %}
+{% set build_number = 1 %}
 
 package:
   name: {{ name }}
@@ -306,9 +306,9 @@ outputs:
         - george # sims  # [not aarch64]
         - ipdb # shared
         - ipyparallel # sims
-        - openorb # sims  # [not aarch64]
-        - openorb-data-de405 # sims  # [not aarch64]
-        - palpy # sims  # [not aarch64]
+        - openorb # sims  # [not aarch64 and not osx-arm64]
+        - openorb-data-de405 # sims  # [not aarch64 and not osx-arm64]
+        - palpy # sims  # [not aarch64 and not osx-arm64]
         - pyct # shared
     test:
       commands:
