@@ -173,7 +173,8 @@ outputs:
         - schwimmbad
         - scikit-image !=0.18
         - scikit-learn
-        - scipy
+        # scipy 1.9 breaks a meas_base test; see DM-35777
+        - scipy <1.9
         - seaborn
         - skyproj
         - spherematch <0.10
