@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "0.8.1" %}
-{% set build_number = 1 %}
+{% set build_number = 2 %}
 
 package:
   name: {{ name }}
@@ -128,7 +128,7 @@ outputs:
         - responses <=0.18.0
         - scikit-image >=0.17,<0.18
         - scikit-learn >=1.0
-        - scipy >=1.7
+        - scipy >=1.7,<1.9
         - seaborn >=0.11
         - sqlalchemy >=1.4,<2
         - sqlite >=3.34.0,<3.35
