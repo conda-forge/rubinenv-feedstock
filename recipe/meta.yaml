@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "4.0.1" %}
-{% set build_number = 3 %}
+{% set build_number = 4 %}
 
 package:
   name: {{ name }}
@@ -169,7 +169,7 @@ outputs:
         - schwimmbad
         - scikit-image !=0.18
         - scikit-learn
-        - scipy
+        - scipy <1.9
         - seaborn
         - skyproj
         - spherematch <0.10
