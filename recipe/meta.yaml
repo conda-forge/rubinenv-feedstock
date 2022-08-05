@@ -306,7 +306,6 @@ outputs:
         - colorcet # sims
         - cycler # sims
         - dask-jobqueue # shared
-        - ephem # sims
         - george # sims  # [not aarch64]
         - ipdb # shared
         - ipyparallel # sims
