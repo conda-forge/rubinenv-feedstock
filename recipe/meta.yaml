@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "4.1.0" %}
-{% set build_number = 4 %}
+{% set build_number = 5 %}
 
 package:
   name: {{ name }}
@@ -92,7 +92,7 @@ outputs:
         - eigen {{ eigen }}.*
         - eups
         - firefly-client
-        - galsim
+        - galsim <2.4.0
         - gsl {{ gsl }}.*
         - libaprutil {{ libaprutil }}.*
         # there is some issue with pex_exceptions with clang 11 and libcxx 12
