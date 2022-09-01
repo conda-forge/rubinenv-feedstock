@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "5.0.0dev" %}
-{% set build_number = 1 %}
+{% set build_number = 2 %}
 
 package:
   name: {{ name }}
@@ -258,6 +258,7 @@ outputs:
         - jupyterlab_execute_time
         - jupyterlab_iframe
         - jupyterlab_widgets
+        - jupyterlab-variableinspector
         - mamba
         - mypy
         - mysqlclient
@@ -334,3 +335,4 @@ extra:
     - erykoff
     - ktlim
     - beckermr
+    - athornton
