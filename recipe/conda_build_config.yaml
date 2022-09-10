@@ -1,13 +1,13 @@
 channel_targets:
   - conda-forge rubin-env_dev
 c_compiler_version:                       # [unix]
-  - 13                                    # [osx]
+  - 14                                    # [osx]
   - 10                                    # [linux]
 cxx_compiler_version:                     # [unix]
-  - 13                                    # [osx]
+  - 14                                    # [osx]
   - 10                                    # [linux]
 llvm_openmp:                              # [osx]
-  - 13                                    # [osx]
+  - 14                                    # [osx]
 python:
   # part of a zip_keys: python, python_impl, numpy
   - 3.10.* *_cpython
@@ -16,7 +16,7 @@ python_impl:
 apr:
   - '1'
 boost:
-  - 1.74.0
+  - 1.78.0
 cffi:
   - '1'
 cfitsio:
