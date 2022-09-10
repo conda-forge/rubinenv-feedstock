@@ -210,6 +210,7 @@ outputs:
         - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
 
   - name: rubin-env-rsp
+    skip: True  # [osx-arm64]
     requirements:
       host:
         - python
