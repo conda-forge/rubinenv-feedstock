@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "4.1.0" %}
-{% set build_number = 5 %}
+{% set build_number = 6 %}
 
 package:
   name: {{ name }}
@@ -148,7 +148,8 @@ outputs:
         - iminuit >=2
         - lmfit !=1.0.3
         - lsstdesc.coord
-        - matplotlib-base
+        # matplotlib-base 3.6 breaks fgcm; see DM-36267
+        - matplotlib-base <3.6
         - moto >=3
         - mpi4py
         - networkx
