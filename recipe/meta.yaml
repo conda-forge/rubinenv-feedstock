@@ -175,6 +175,7 @@ outputs:
         - spherematch <0.10
         - sqlalchemy <2
         - sqlite
+        - stomp.py >=8.0.1
         - threadpoolctl
         - tqdm
         - treecorr =4
