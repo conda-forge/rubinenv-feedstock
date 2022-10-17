@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
-{% set version = "4.0.1" %}
-{% set build_number = 4 %}
+{% set version = "4.0.2" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name }}
@@ -92,7 +92,7 @@ outputs:
         - eigen {{ eigen }}.*
         - eups
         - firefly-client
-        - galsim
+        - galsim <2.4.0
         - gsl {{ gsl }}.*
         - libaprutil {{ libaprutil }}.*
         # there is some issue with pex_exceptions with clang 11 and libcxx 12
@@ -144,7 +144,7 @@ outputs:
         - iminuit >=2
         - lmfit !=1.0.3
         - lsstdesc.coord
-        - matplotlib-base
+        - matplotlib-base !=3.6.0
         - moto >=3
         - mpi4py
         - networkx
@@ -175,6 +175,7 @@ outputs:
         - spherematch <0.10
         - sqlalchemy <2
         - sqlite
+        - stomp.py >=8.0.1
         - threadpoolctl
         - tqdm
         - treecorr =4
