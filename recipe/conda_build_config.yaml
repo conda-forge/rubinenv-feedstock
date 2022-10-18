@@ -1,11 +1,15 @@
 channel_targets:
   - conda-forge rubin-env_dev
-c_compiler_version:                       # [unix]
-  - 13                                    # [osx]
-  - 10                                    # [linux]
-cxx_compiler_version:                     # [unix]
-  - 13                                    # [osx]
-  - 10                                    # [linux]
+c_compiler_version:            # [unix]
+  - 10                         # [linux]
+  - 13                         # [osx]
+cxx_compiler_version:          # [unix]
+  - 10                         # [linux]
+  - 13                         # [osx]
+fortran_compiler_version:      # [unix]
+  - 10                         # [linux]
+  - 9                          # [osx and x86_64]
+  - 11                         # [osx and arm64]
 llvm_openmp:                              # [osx]
   - 13                                    # [osx]
 python:
