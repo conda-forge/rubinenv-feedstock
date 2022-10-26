@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "4.1.0" %}
-{% set build_number = 7 %}
+{% set build_number = 8 %}
 
 package:
   name: {{ name }}
@@ -290,6 +290,7 @@ outputs:
         - snappy
         - terminado
         - toolz
+        - wget
         - xarray
         - yarn
     test:
