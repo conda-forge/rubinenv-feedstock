@@ -20,7 +20,7 @@ python_impl:
 apr:
   - '1'
 boost:
-  - 1.74.0
+  - 1.78.0
 cffi:
   - '1'
 cfitsio:
