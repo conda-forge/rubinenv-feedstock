@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 apr:
 - '1'
 boost:
-- 1.74.0
+- 1.78.0
 c_compiler:
 - clang
 c_compiler_version:
