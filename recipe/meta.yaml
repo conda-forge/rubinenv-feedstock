@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
-{% set version = "0.8.1" %}
-{% set build_number = 2 %}
+{% set version = "0.8.2" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name }}
@@ -105,7 +105,7 @@ outputs:
         - inflection >=0.5
         - lmfit >=1.0,!=1.0.3
         - lsstdesc.coord >=1.2
-        - matplotlib-base >=3.4
+        - matplotlib-base >=3.4,<3.6
         - moto >=2.2,<3
         - mpi4py >=3.1
         - ndarray =1
