@@ -35,21 +35,28 @@ Current build status
               <td>linux_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10671&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rubinenv-feedstock?branchName=main&jobName=linux&configuration=linux_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rubinenv-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10671&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rubinenv-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
               <td>osx_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10671&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rubinenv-feedstock?branchName=main&jobName=osx&configuration=osx_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rubinenv-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
               <td>osx_arm64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10671&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rubinenv-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rubinenv-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
                 </a>
               </td>
             </tr>
@@ -66,6 +73,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-rubin--env-green.svg)](https://anaconda.org/conda-forge/rubin-env) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rubin-env.svg)](https://anaconda.org/conda-forge/rubin-env) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rubin-env.svg)](https://anaconda.org/conda-forge/rubin-env) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rubin-env.svg)](https://anaconda.org/conda-forge/rubin-env) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-rubin--env--developer-green.svg)](https://anaconda.org/conda-forge/rubin-env-developer) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rubin-env-developer.svg)](https://anaconda.org/conda-forge/rubin-env-developer) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rubin-env-developer.svg)](https://anaconda.org/conda-forge/rubin-env-developer) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rubin-env-developer.svg)](https://anaconda.org/conda-forge/rubin-env-developer) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-rubin--env--extras-green.svg)](https://anaconda.org/conda-forge/rubin-env-extras) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rubin-env-extras.svg)](https://anaconda.org/conda-forge/rubin-env-extras) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rubin-env-extras.svg)](https://anaconda.org/conda-forge/rubin-env-extras) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rubin-env-extras.svg)](https://anaconda.org/conda-forge/rubin-env-extras) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-rubin--env--nosysroot-green.svg)](https://anaconda.org/conda-forge/rubin-env-nosysroot) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rubin-env-nosysroot.svg)](https://anaconda.org/conda-forge/rubin-env-nosysroot) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rubin-env-nosysroot.svg)](https://anaconda.org/conda-forge/rubin-env-nosysroot) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rubin-env-nosysroot.svg)](https://anaconda.org/conda-forge/rubin-env-nosysroot) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-rubin--env--rsp-green.svg)](https://anaconda.org/conda-forge/rubin-env-rsp) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rubin-env-rsp.svg)](https://anaconda.org/conda-forge/rubin-env-rsp) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rubin-env-rsp.svg)](https://anaconda.org/conda-forge/rubin-env-rsp) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rubin-env-rsp.svg)](https://anaconda.org/conda-forge/rubin-env-rsp) |
@@ -80,16 +88,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `rubin-env, rubin-env-extras, rubin-env-nosysroot, rubin-env-rsp` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `rubin-env, rubin-env-developer, rubin-env-extras, rubin-env-nosysroot, rubin-env-rsp` can be installed with `conda`:
 
 ```
-conda install rubin-env rubin-env-extras rubin-env-nosysroot rubin-env-rsp
+conda install rubin-env rubin-env-developer rubin-env-extras rubin-env-nosysroot rubin-env-rsp
 ```
 
 or with `mamba`:
 
 ```
-mamba install rubin-env rubin-env-extras rubin-env-nosysroot rubin-env-rsp
+mamba install rubin-env rubin-env-developer rubin-env-extras rubin-env-nosysroot rubin-env-rsp
 ```
 
 It is possible to list all of the versions of `rubin-env` available on your platform with `conda`:
