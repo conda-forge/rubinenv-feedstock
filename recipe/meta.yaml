@@ -92,7 +92,7 @@ outputs:
         - eigen {{ eigen }}.*
         - eups
         - firefly-client
-        - galsim <2.4.0
+        - galsim
         - gsl {{ gsl }}.*
         - libaprutil {{ libaprutil }}.*
         # there is some issue with pex_exceptions with clang 11 and libcxx 12
