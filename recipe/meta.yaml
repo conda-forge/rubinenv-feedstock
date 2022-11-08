@@ -139,6 +139,7 @@ outputs:
         - healpy
         - healsparse
         - hpgeom >=0.8.2
+        - htcondor
         - idds-client >=0.11.0
         - idds-doma >=0.11.0
         - iminuit >=2
@@ -269,6 +270,7 @@ outputs:
         - panel # shared
         - papermill
         - paramnb
+        - parsl
         - partd
         - pep8 # shared
         - plotly
