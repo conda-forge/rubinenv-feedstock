@@ -322,6 +322,7 @@ outputs:
         - panel
         - pdbpp
         - pep8
+        - postgresql
         - pre-commit
         - psycopg2
         - pyct
