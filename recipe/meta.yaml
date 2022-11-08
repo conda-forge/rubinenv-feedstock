@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "5.0.0dev" %}
-{% set build_number = 4 %}
+{% set build_number = 5 %}
 
 package:
   name: {{ name }}
@@ -101,8 +101,6 @@ outputs:
         - libcxx =={{ cxx_compiler_version }}.*  # [osx]
         - llvmlite
         - log4cxx {{ log4cxx }}.*
-        - lsst-documenteer-pipelines
-        - lsst-documenteer-technote
         - minuit2 {{ minuit2 }}.*
         - mpich {{ mpich }}.*
         - ndarray {{ ndarray }}.*
@@ -141,12 +139,13 @@ outputs:
         - healpy
         - healsparse
         - hpgeom >=0.8.2
+        - htcondor
         - idds-client >=0.11.0
         - idds-doma >=0.11.0
         - iminuit >=2
         - lmfit !=1.0.3
         - lsstdesc.coord
-        - matplotlib-base
+        - matplotlib-base !=3.6.0
         - moto >=3
         - mpi4py
         - networkx
@@ -165,6 +164,7 @@ outputs:
         - pysynphot
         - pytables
         - python
+        - pytorch
         - pyyaml
         - requests
         - schwimmbad
@@ -270,6 +270,7 @@ outputs:
         - panel # shared
         - papermill
         - paramnb
+        - parsl
         - partd
         - pep8 # shared
         - plotly
@@ -293,6 +294,57 @@ outputs:
         # grep pin-it output for yarn dependency
         - pin-it rubin-env-rsp | grep "yarn="
 
+  - name: rubin-env-developer
+    requirements:
+      host:
+        - python
+      run:
+        - {{ pin_subpackage("rubin-env", exact=True) }}
+        - black
+        - bokeh
+        - build
+        - dask-jobqueue
+        - datashader
+        - fastparquet
+        - ffmpeg
+        - holoviews
+        - hvplot
+        - imagemagick
+        - ipdb
+        - ipython
+        - isort
+        - jedi
+        - jupyter
+        - line_profiler
+        - lsst-documenteer-pipelines
+        - lsst-documenteer-technote
+        - mypy
+        - mysqlclient
+        - numba
+        - panel
+        - pdbpp  # [not aarch64]
+        - pep8
+        - postgresql
+        - pre-commit
+        - psycopg2
+        - pyct
+        - pydocstyle
+        - pyflakes
+        - pyvo
+        - snakeviz
+        - types-click
+        - types-deprecated
+        - types-pkg_resources
+        - types-python-dateutil
+        - types-pyyaml
+        - types-requests
+        - types-setuptools
+        - types-urllib3
+    test:
+      commands:
+        # grep pin-it output for black dependency
+        - pin-it rubin-env-developer | grep "black"
+
   - name: rubin-env-extras
     requirements:
       host:
@@ -300,21 +352,13 @@ outputs:
       run:
         - {{ pin_subpackage("rubin-env", exact=True) }}
         - {{ pin_subpackage("rubin-env-rsp", exact=True) }}
-        - colorcet # sims
-        - cycler # sims
-        - dask-jobqueue # shared
-        - ephem # sims
-        - george # sims  # [not aarch64]
-        - ipdb # shared
-        - ipyparallel # sims
-        - openorb # sims  # [not aarch64 and not osx-arm64]
-        - openorb-data-de405 # sims  # [not aarch64 and not osx-arm64]
-        - palpy # sims  # [not aarch64 and not osx-arm64]
-        - pyct # shared
+        - {{ pin_subpackage("rubin-env-developer", exact=True) }}
+        - rubin-sim >=0.12.0  # [not aarch64 and not osx-arm64]
     test:
       commands:
-        # grep pin-it output for george dependency
-        - pin-it rubin-env-extras | grep "pyct"
+        # grep pin-it output for rubin-env-developer dependency
+        # Can't do rubin-sim due to lack of ARM
+        - pin-it rubin-env-extras | grep "rubin-env-developer"
 
 about:
   home: https://github.com/conda-forge/rubinenv-feedstock
