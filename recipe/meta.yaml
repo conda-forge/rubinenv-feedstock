@@ -301,15 +301,9 @@ outputs:
       run:
         - {{ pin_subpackage("rubin-env", exact=True) }}
         - {{ pin_subpackage("rubin-env-rsp", exact=True) }}
-        - colorcet # sims
-        - cycler # sims
+        - rubin-sim >=0.12.0  # [not aarch64 and not osx-arm64]
         - dask-jobqueue # shared
-        - george # sims  # [not aarch64]
         - ipdb # shared
-        - ipyparallel # sims
-        - openorb # sims  # [not aarch64 and not osx-arm64]
-        - openorb-data-de405 # sims  # [not aarch64 and not osx-arm64]
-        - palpy # sims  # [not aarch64 and not osx-arm64]
         - pyct # shared
     test:
       commands:
