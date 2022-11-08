@@ -1,5 +1,5 @@
 channel_targets:
-  - conda-forge rubin-env_dev
+  - conda-forge main
 c_compiler_version:            # [unix]
   - 10                         # [linux]
   - 14                         # [osx]
