@@ -101,8 +101,6 @@ outputs:
         - libcxx =={{ cxx_compiler_version }}.*  # [osx]
         - llvmlite
         - log4cxx {{ log4cxx }}.*
-        - lsst-documenteer-pipelines
-        - lsst-documenteer-technote
         - minuit2 {{ minuit2 }}.*
         - mpich {{ mpich }}.*
         - ndarray {{ ndarray }}.*
@@ -294,6 +292,56 @@ outputs:
         # grep pin-it output for yarn dependency
         - pin-it rubin-env-rsp | grep "yarn="
 
+  - name: rubin-env-developer
+    requirements:
+      host:
+        - python
+      run:
+        - {{ pin_subpackage("rubin-env", exact=True) }}
+        - black
+        - bokeh
+        - build
+        - dask-jobqueue
+        - datashader
+        - fastparquet
+        - ffmpeg
+        - holoviews
+        - hvplot
+        - imagemagick
+        - ipdb
+        - ipython
+        - isort
+        - jedi
+        - jupyter
+        - line_profiler
+        - lsst-documenteer-pipelines
+        - lsst-documenteer-technote
+        - mypy
+        - mysqlclient
+        - numba
+        - panel
+        - pdbpp
+        - pep8
+        - pre-commit
+        - psycopg2
+        - pyct
+        - pydocstyle
+        - pyflakes
+        - pyvo
+        - snakeviz
+        - types-click
+        - types-deprecated
+        - types-pkg_resources
+        - types-python-dateutil
+        - types-pyyaml
+        - types-requests
+        - types-setuptools
+        - types-urllib3
+    test:
+      commands:
+        # grep pin-it output for black dependency
+        - pin-it rubin-env-developer | grep "black"
+
   - name: rubin-env-extras
     requirements:
       host:
@@ -301,14 +349,13 @@ outputs:
       run:
         - {{ pin_subpackage("rubin-env", exact=True) }}
         - {{ pin_subpackage("rubin-env-rsp", exact=True) }}
+        - {{ pin_subpackage("rubin-env-developer", exact=True) }}
         - rubin-sim >=0.12.0  # [not aarch64 and not osx-arm64]
-        - dask-jobqueue # shared
-        - ipdb # shared
-        - pyct # shared
     test:
       commands:
-        # grep pin-it output for george dependency
-        - pin-it rubin-env-extras | grep "pyct"
+        # grep pin-it output for rubin-env-developer dependency
+        # Can't do rubin-sim due to lack of ARM
+        - pin-it rubin-env-extras | grep "rubin-env-developer"
 
 about:
   home: https://github.com/conda-forge/rubinenv-feedstock
