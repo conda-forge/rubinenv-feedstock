@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
-{% set version = "4.1.0" %}
-{% set build_number = 8 %}
+{% set version = "5.0.0" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name }}
@@ -92,7 +92,7 @@ outputs:
         - eigen {{ eigen }}.*
         - eups
         - firefly-client
-        - galsim <2.4.0
+        - galsim
         - gsl {{ gsl }}.*
         - libaprutil {{ libaprutil }}.*
         # there is some issue with pex_exceptions with clang 11 and libcxx 12
@@ -101,8 +101,6 @@ outputs:
         - libcxx =={{ cxx_compiler_version }}.*  # [osx]
         - llvmlite
         - log4cxx {{ log4cxx }}.*
-        - lsst-documenteer-pipelines
-        - lsst-documenteer-technote
         - minuit2 {{ minuit2 }}.*
         - mpich {{ mpich }}.*
         - ndarray {{ ndarray }}.*
@@ -141,15 +139,13 @@ outputs:
         - healpy
         - healsparse
         - hpgeom >=0.8.2
+        - htcondor
         - idds-client >=0.11.0
         - idds-doma >=0.11.0
-        # inflection may go away in the future; see DM-32591
-        - inflection
         - iminuit >=2
         - lmfit !=1.0.3
         - lsstdesc.coord
-        # matplotlib-base 3.6 breaks fgcm; see DM-36267
-        - matplotlib-base <3.6
+        - matplotlib-base !=3.6.0
         - moto >=3
         - mpi4py
         - networkx
@@ -157,28 +153,27 @@ outputs:
         - {{ pin_compatible('numpy') }}
         - pandas
         - pgcli
-        # Remove < after Spectractor fix: see DM-35580
-        - photutils >=0.7,<1.5
+        - photutils >=0.7
         - piff
         - prmon  # [linux]
         - psycopg2 =2
         - pyarrow
-        - pybind11 <2.10
+        - pybind11
         - pydantic
         - pyld
         - pysynphot
         - pytables
         - python
+        - pytorch
         - pyyaml
         - requests
         - schwimmbad
         - scikit-image !=0.18
         - scikit-learn
-        # scipy 1.9 breaks a meas_base test; see DM-35777
-        - scipy <1.9
+        - scipy
         - seaborn
         - skyproj
-        - spherematch <0.10
+        - spherematch
         - sqlalchemy <2
         - sqlite
         - threadpoolctl
@@ -263,6 +258,7 @@ outputs:
         - jupyterlab_execute_time
         - jupyterlab_iframe
         - jupyterlab_widgets
+        - jupyterlab-variableinspector
         - mamba
         - mypy
         - mysqlclient
@@ -274,6 +270,7 @@ outputs:
         - panel # shared
         - papermill
         - paramnb
+        - parsl
         - partd
         - pep8 # shared
         - plotly
@@ -298,6 +295,57 @@ outputs:
         # grep pin-it output for yarn dependency
         - pin-it rubin-env-rsp | grep "yarn="
 
+  - name: rubin-env-developer
+    requirements:
+      host:
+        - python
+      run:
+        - {{ pin_subpackage("rubin-env", exact=True) }}
+        - black
+        - bokeh
+        - build
+        - dask-jobqueue
+        - datashader
+        - fastparquet
+        - ffmpeg
+        - holoviews
+        - hvplot
+        - imagemagick
+        - ipdb
+        - ipython
+        - isort
+        - jedi
+        - jupyter
+        - line_profiler
+        - lsst-documenteer-pipelines
+        - lsst-documenteer-technote
+        - mypy
+        - mysqlclient
+        - numba
+        - panel
+        - pdbpp  # [not aarch64]
+        - pep8
+        - postgresql
+        - pre-commit
+        - psycopg2
+        - pyct
+        - pydocstyle
+        - pyflakes
+        - pyvo
+        - snakeviz
+        - types-click
+        - types-deprecated
+        - types-pkg_resources
+        - types-python-dateutil
+        - types-pyyaml
+        - types-requests
+        - types-setuptools
+        - types-urllib3
+    test:
+      commands:
+        # grep pin-it output for black dependency
+        - pin-it rubin-env-developer | grep "black"
+
   - name: rubin-env-extras
     requirements:
       host:
@@ -305,20 +353,13 @@ outputs:
       run:
         - {{ pin_subpackage("rubin-env", exact=True) }}
         - {{ pin_subpackage("rubin-env-rsp", exact=True) }}
-        - colorcet # sims
-        - cycler # sims
-        - dask-jobqueue # shared
-        - george # sims  # [not aarch64]
-        - ipdb # shared
-        - ipyparallel # sims
-        - openorb # sims  # [not aarch64 and not osx-arm64]
-        - openorb-data-de405 # sims  # [not aarch64 and not osx-arm64]
-        - palpy # sims  # [not aarch64 and not osx-arm64]
-        - pyct # shared
+        - {{ pin_subpackage("rubin-env-developer", exact=True) }}
+        - rubin-sim >=0.12.0  # [not aarch64 and not osx-arm64]
     test:
       commands:
-        # grep pin-it output for george dependency
-        - pin-it rubin-env-extras | grep "pyct"
+        # grep pin-it output for rubin-env-developer dependency
+        # Can't do rubin-sim due to lack of ARM
+        - pin-it rubin-env-extras | grep "rubin-env-developer"
 
 about:
   home: https://github.com/conda-forge/rubinenv-feedstock
