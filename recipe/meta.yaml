@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "5.0.0" %}
-{% set build_number = 0 %}
+{% set build_number = 1 %}
 
 package:
   name: {{ name }}
@@ -267,7 +267,7 @@ outputs:
         - nbval
         - nodejs >=16
         - numba
-        - panel # shared
+        - panel >=0.12.1  # shared
         - papermill
         - paramnb
         - parsl
@@ -322,7 +322,7 @@ outputs:
         - mypy
         - mysqlclient
         - numba
-        - panel
+        - panel >=0.12.1
         - pdbpp  # [not aarch64]
         - pep8
         - postgresql
