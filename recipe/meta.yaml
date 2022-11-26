@@ -1,5 +1,5 @@
 {% set name = "rubin-env" %}
-{% set version = "0.8.2" %}
+{% set version = "0.8.3" %}
 {% set build_number = 0 %}
 
 package:
@@ -155,6 +155,94 @@ outputs:
         # ensure binary compatibility; bump major version if not
         - '[ $(echo __GXX_ABI_VERSION | ${GXX} -E - | tail -1) == 1013 ]'  # [linux]
         - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
+
+  - name: rubin-env-rsp
+    requirements:
+      host:
+        - python =3.8
+      run:
+        - {{ pin_subpackage("rubin-env", exact=True) }}
+        # All are from sciplat-lab unless otherwise stated
+        - astroplan # sims
+        - astroquery
+        - astrowidgets  # [not aarch64]
+        - awkward
+        - awkward-numba
+        - black
+        - bokeh
+        - bqplot
+        - ciso8601  # [not aarch64]
+        - cloudpickle
+        - cookiecutter
+        - dash
+        - dask
+        - dask-kubernetes
+        - dask_labextension
+        - datashader
+        - distributed
+        - fastparquet
+        - ffmpeg # RFC-846
+        - freetype-py
+        - gcsfs
+        - geoviews
+        - ginga
+        - graphviz
+        - holoviews
+        - hvplot
+        - imagemagick # RFC-846
+        - intake
+        - intake-parquet
+        - ipyevents
+        - ipykernel
+        - ipympl
+        - ipyvolume
+        - ipywidgets
+        - isort
+        - jedi
+        - jupyter
+        - jupyter-dash  # [not aarch64]
+        - jupyter-packaging
+        - jupyter-server-proxy
+        - jupyter_bokeh
+        - jupyterhub
+        - jupyterlab >=3,<4
+        - jupyterlab_execute_time
+        - jupyterlab_iframe
+        - jupyterlab_widgets
+        - mamba
+        - mypy
+        - mysqlclient
+        - nbconvert-webpdf
+        - nbdime
+        - nbval
+        - nodejs >=16
+        - numba
+        - panel # shared
+        - papermill
+        - paramnb
+        - partd
+        - pep8 # shared
+        - plotly
+        - pre-commit
+        - pyflakes # shared
+        - pypandoc
+        - pyshp
+        - python-snappy
+        - python-socketio
+        - pythreejs
+        - pyviz_comms
+        - pyvo
+        - sidecar
+        - snappy
+        - terminado
+        - toolz
+        - wget
+        - xarray
+        - yarn
+    test:
+      commands:
+        # grep pin-it output for yarn dependency
+        - pin-it rubin-env-rsp | grep "yarn="
 
 about:
   home: https://github.com/conda-forge/rubinenv-feedstock
