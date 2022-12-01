@@ -375,6 +375,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - mwittgen
     - brianv0
     - timj
     - ktlim
