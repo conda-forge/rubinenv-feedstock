@@ -1,5 +1,5 @@
 {% set name = "rubin-env" %}
-{% set version = "4.0.4" %}
+{% set version = "4.0.5" %}
 {% set build_number = 0 %}
 
 package:
@@ -142,7 +142,7 @@ outputs:
         # inflection may go away in the future; see DM-32591
         - inflection
         - iminuit >=2
-        - lmfit !=1.0.3
+        - lmfit <1.0.3
         - lsstdesc.coord
         - matplotlib-base !=3.6.0
         - moto >=3
