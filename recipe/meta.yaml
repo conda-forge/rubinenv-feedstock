@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "5.0.0" %}
-{% set build_number = 2 %}
+{% set build_number = 3 %}
 
 package:
   name: {{ name }}
@@ -303,7 +303,7 @@ outputs:
         - {{ pin_subpackage("rubin-env", exact=True) }}
         - black
         - bokeh
-        - build
+        - python-build
         - dask-jobqueue
         - datashader
         - fastparquet
