@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
-{% set version = "5.0.0" %}
-{% set build_number = 2 %}
+{% set version = "5.1.0" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name }}
@@ -140,6 +140,7 @@ outputs:
         - healsparse
         - hpgeom >=0.8.2
         - htcondor
+        - humanize
         - idds-client >=0.11.0
         - idds-doma >=0.11.0
         - iminuit >=2
@@ -152,6 +153,7 @@ outputs:
         - numexpr =2
         - {{ pin_compatible('numpy') }}
         - pandas
+        - parsl
         - pgcli
         - photutils >=0.7
         - piff
@@ -246,7 +248,7 @@ outputs:
         - ipympl
         - ipyvolume
         - ipywidgets
-        - isort
+        - isort !=5.11.0
         - jedi
         - jupyter
         - jupyter-dash  # [not aarch64]
@@ -313,7 +315,7 @@ outputs:
         - imagemagick
         - ipdb
         - ipython
-        - isort
+        - isort !=5.11.0
         - jedi
         - jupyter
         - line_profiler
