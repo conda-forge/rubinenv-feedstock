@@ -303,6 +303,7 @@ outputs:
         - python
       run:
         - {{ pin_subpackage("rubin-env", exact=True) }}
+        - astrowidgets  # [not aarch64]
         - black
         - bokeh
         - build
@@ -314,10 +315,13 @@ outputs:
         - hvplot
         - imagemagick
         - ipdb
+        - ipympl
         - ipython
         - isort !=5.11.0
         - jedi
         - jupyter
+        - jupyterlab >=3,<4
+        - jupyterlab_server
         - line_profiler
         - lsst-documenteer-pipelines
         - lsst-documenteer-technote
