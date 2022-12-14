@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "5.1.0" %}
-{% set build_number = 0 %}
+{% set build_number = 1 %}
 
 package:
   name: {{ name }}
@@ -306,7 +306,7 @@ outputs:
         - astrowidgets  # [not aarch64]
         - black
         - bokeh
-        - build
+        - python-build
         - dask-jobqueue
         - datashader
         - fastparquet
