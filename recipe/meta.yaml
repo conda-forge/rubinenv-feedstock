@@ -237,7 +237,7 @@ outputs:
         - freetype-py
         - gcsfs
         - geoviews
-        - ginga <4
+        - ginga >=3,<4
         - graphviz
         - holoviews
         - hvplot
