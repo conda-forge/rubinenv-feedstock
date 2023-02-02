@@ -154,7 +154,7 @@ outputs:
         - numexpr =2
         - {{ pin_compatible('numpy') }}
         - pandas
-        - parsl
+        - parsl =1.2
         - pgcli
         - photutils >=0.7
         - piff
