@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "5.1.0" %}
-{% set build_number = 4 %}
+{% set build_number = 5 %}
 
 package:
   name: {{ name }}
@@ -154,7 +154,7 @@ outputs:
         - numexpr =2
         - {{ pin_compatible('numpy') }}
         - pandas
-        - parsl
+        - parsl =1.2
         - pgcli
         - photutils >=0.7
         - piff
