@@ -101,6 +101,8 @@ outputs:
         - healsparse >=1.4
         - idds-client >=0.9.5
         - idds-doma >=0.9.5
+        # iminuit 1.20 required by treegp breaks the environment
+        - iminuit <1.20
         # inflection may go away in the future; see DM-32591
         - inflection >=0.5
         - lmfit >=1.0,<1.0.3
