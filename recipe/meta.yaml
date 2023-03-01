@@ -145,7 +145,7 @@ outputs:
         - iminuit >=2
         - lmfit
         - lsstdesc.coord
-        - matplotlib-base !=3.6.0
+        - matplotlib-base !=3.6.0,<3.7.0
         - moto >=3
         - mpi4py
         - networkx
