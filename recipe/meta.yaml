@@ -303,7 +303,7 @@ outputs:
         - {{ pin_subpackage("rubin-env", exact=True) }}
         - black
         - bokeh
-        - build
+        - python-build
         - dask-jobqueue
         - datashader
         - fastparquet
