@@ -58,8 +58,8 @@ outputs:
         # The below is needed to get convenience symlinks for users to invoke.
         - compilers
         - cmake
-        # Coverage 6.3 is breaking with NFS and multi-process testing.
-        - coverage >=3.6,!=6.3
+        # Coverage 7.0 is breaking with + in pathnames.
+        - coverage >=3.6,!=6.3,<7
         - coveralls
         - doxygen
         - flake8 =4.0
