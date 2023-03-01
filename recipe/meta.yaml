@@ -270,7 +270,7 @@ outputs:
         - panel # shared
         - papermill
         - paramnb
-        - parsl
+        - parsl =1.2
         - partd
         - pep8 # shared
         - plotly
