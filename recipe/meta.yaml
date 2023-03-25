@@ -61,7 +61,7 @@ outputs:
         # Coverage 6.3 is breaking with NFS and multi-process testing.
         - coverage >=3.6,!=6.3
         - coveralls
-        - doxygen
+        - doxygen <1.9.6
         - flake8 =4.0
         - make
         - nose
