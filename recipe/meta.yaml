@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "5.1.0" %}
-{% set build_number = 7 %}
+{% set build_number = 8 %}
 
 package:
   name: {{ name }}
@@ -62,7 +62,7 @@ outputs:
         # Coverage 7.0 is breaking with + in pathnames.
         - coverage >=3.6,!=6.3,<7
         - coveralls
-        - doxygen
+        - doxygen <1.9.6
         - flake8 =4.0
         - make
         - nose
