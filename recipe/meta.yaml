@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
-{% set version = "5.0.0dev" %}
-{% set build_number = 6 %}
+{% set version = "6.0.0dev" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name }}
@@ -58,8 +58,8 @@ outputs:
         # The below is needed to get convenience symlinks for users to invoke.
         - compilers
         - cmake
-        # Coverage 6.3 is breaking with NFS and multi-process testing.
-        - coverage >=3.6,!=6.3
+        # Coverage 7.0 is breaking with + in pathnames.
+        - coverage >=3.6,!=6.3,<7
         - coveralls
         - doxygen
         - flake8 =4.0
@@ -132,7 +132,7 @@ outputs:
         - esutil
         - fastavro
         - future
-        - getcalspec
+        - getcalspec >=0.1.6
         - git
         - git-lfs
         - h5py
@@ -140,18 +140,20 @@ outputs:
         - healsparse
         - hpgeom >=0.8.2
         - htcondor
+        - humanize
         - idds-client >=0.11.0
         - idds-doma >=0.11.0
         - iminuit >=2
-        - lmfit !=1.0.3
+        - lmfit
         - lsstdesc.coord
-        - matplotlib-base !=3.6.0
+        - matplotlib-base !=3.6.0,<3.7.0
         - moto >=3
         - mpi4py
         - networkx
         - numexpr =2
         - {{ pin_compatible('numpy') }}
         - pandas
+        - parsl =1.2
         - pgcli
         - photutils >=0.7
         - piff
@@ -234,7 +236,7 @@ outputs:
         - freetype-py
         - gcsfs
         - geoviews
-        - ginga
+        - ginga <4
         - graphviz
         - holoviews
         - hvplot
@@ -246,7 +248,7 @@ outputs:
         - ipympl
         - ipyvolume
         - ipywidgets
-        - isort
+        - isort !=5.11.0
         - jedi
         - jupyter
         - jupyter-dash  # [not aarch64]
@@ -270,7 +272,6 @@ outputs:
         - panel # shared
         - papermill
         - paramnb
-        - parsl
         - partd
         - pep8 # shared
         - plotly
@@ -301,9 +302,10 @@ outputs:
         - python
       run:
         - {{ pin_subpackage("rubin-env", exact=True) }}
+        - astrowidgets  # [not aarch64]
         - black
         - bokeh
-        - build
+        - python-build
         - dask-jobqueue
         - datashader
         - fastparquet
@@ -312,10 +314,13 @@ outputs:
         - hvplot
         - imagemagick
         - ipdb
+        - ipympl
         - ipython
-        - isort
+        - isort !=5.11.0
         - jedi
         - jupyter
+        - jupyterlab >=3,<4
+        - jupyterlab_server
         - line_profiler
         - lsst-documenteer-pipelines
         - lsst-documenteer-technote
