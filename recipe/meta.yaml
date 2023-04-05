@@ -168,7 +168,7 @@ outputs:
         - pyyaml
         - requests
         - schwimmbad
-        - scikit-image !=0.18
+        - scikit-image !=0.18,<0.20
         - scikit-learn
         - scipy <1.9
         - seaborn
