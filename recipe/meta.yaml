@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "5.1.0" %}
-{% set build_number = 10 %}
+{% set build_number = 11 %}
 
 package:
   name: {{ name }}
@@ -156,7 +156,7 @@ outputs:
         - pandas <2
         - parsl =1.2
         - pgcli
-        - photutils >=0.7
+        - photutils >=0.7,<1.7
         - piff
         - prmon  # [linux]
         - psycopg2 =2
