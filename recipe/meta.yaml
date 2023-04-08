@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "0.8.4" %}
-{% set build_number = 2 %}
+{% set build_number = 3 %}
 
 package:
   name: {{ name }}
@@ -34,7 +34,7 @@ outputs:
         # The below is needed to get convenience symlinks for users to invoke.
         - compilers >=1.2
         - cmake >=3.21
-        - doxygen >=1.9
+        - doxygen >=1.9,<1.9.6
         - flake8 =3.8.4
         - make >=4.3
         - pep8-naming >=0.11
