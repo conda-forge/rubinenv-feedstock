@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "4.0.5" %}
-{% set build_number = 1 %}
+{% set build_number = 2 %}
 
 package:
   name: {{ name }}
@@ -61,7 +61,7 @@ outputs:
         # Coverage 6.3 is breaking with NFS and multi-process testing.
         - coverage >=3.6,!=6.3
         - coveralls
-        - doxygen
+        - doxygen <1.9.6
         - flake8 =4.0
         - make
         - nose
@@ -151,6 +151,7 @@ outputs:
         - numexpr =2
         - {{ pin_compatible('numpy') }}
         - pandas
+        - pandas <2
         - pgcli
         # Remove < after Spectractor fix: see DM-35580
         - photutils >=0.7,<1.5
@@ -167,7 +168,7 @@ outputs:
         - pyyaml
         - requests
         - schwimmbad
-        - scikit-image !=0.18
+        - scikit-image !=0.18,<0.20
         - scikit-learn
         - scipy <1.9
         - seaborn
