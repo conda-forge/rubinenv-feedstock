@@ -179,6 +179,7 @@ outputs:
         - sqlalchemy <2
         - sqlite
         - threadpoolctl
+        - torchvision
         - tqdm
         - treecorr =4
         - ws4py
