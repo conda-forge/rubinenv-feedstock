@@ -103,6 +103,7 @@ outputs:
         - log4cxx {{ log4cxx }}.*
         - minuit2 {{ minuit2 }}.*
         - ndarray {{ ndarray }}.*
+        - ndarray >=1.6.3
         - numpy {{ numpy }}.*
         - numba
         - starlink-ast {{ starlink_ast }}.*
@@ -113,7 +114,7 @@ outputs:
         ###################################################
         # run-like
         - alembic
-        - astropy
+        - astropy >=5.2
         - astroquery
         - autograd
         - backoff
@@ -155,7 +156,7 @@ outputs:
         - pandas
         - parsl =1.2
         - pgcli
-        - photutils >=0.7,<1.7
+        - photutils >=1.7
         - piff
         - prmon  # [linux]
         - psycopg2 =2
@@ -172,7 +173,7 @@ outputs:
         - schwimmbad
         - scikit-image !=0.18
         - scikit-learn
-        - scipy
+        - scipy >=1.10
         - seaborn
         - skyproj
         - spherematch
