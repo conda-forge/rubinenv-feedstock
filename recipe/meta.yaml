@@ -57,9 +57,7 @@ outputs:
         # The below is needed to get convenience symlinks for users to invoke.
         - compilers
         - cmake
-        # Coverage 6.3 is breaking with NFS and multi-process testing.
-        # Coverage 7.0 is breaking with + in pathnames.
-        - coverage >=3.6,!=6.3,<7
+        - coverage >=3.6,!=6.3,!=7.0.0
         - coveralls
         - doxygen <1.9.6
         - flake8 =4.0
@@ -177,7 +175,7 @@ outputs:
         - seaborn
         - skyproj
         - spherematch
-        - sqlalchemy <2
+        - sqlalchemy
         - sqlite
         - threadpoolctl
         - torchvision
