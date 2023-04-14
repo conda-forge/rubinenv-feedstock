@@ -38,9 +38,9 @@ outputs:
         - log4cxx
         - minuit2
         - numpy
-        - xpa
         - starlink-ast
         - wcslib
+        - xpa
       run:
         # jq is special - it is needed for the pin-it utility in this package
         - jq
@@ -102,8 +102,8 @@ outputs:
         - minuit2 {{ minuit2 }}.*
         - ndarray {{ ndarray }}.*
         - ndarray >=1.6.3
-        - numpy {{ numpy }}.*
         - numba
+        - numpy {{ numpy }}.*
         - starlink-ast {{ starlink_ast }}.*
         - wcslib {{ wcslib }}.*
         - xpa {{ xpa }}.*
@@ -119,11 +119,11 @@ outputs:
         - boto3
         - bottleneck
         - cassandra-driver  # [linux64]
+        - click !=8.1.0,!=8.1.1
+        - coloredlogs
         # conda is required for runtime inspection of installed software
         - conda
         - configparser
-        - click !=8.1.0,!=8.1.1
-        - coloredlogs
         - deprecated
         - dustmaps
         - emcee
@@ -304,7 +304,6 @@ outputs:
         - astrowidgets  # [not aarch64]
         - black
         - bokeh
-        - python-build
         - dask-jobqueue
         - datashader
         - fastparquet
@@ -335,6 +334,7 @@ outputs:
         - pyct
         - pydocstyle
         - pyflakes
+        - python-build
         - pyvo
         - snakeviz
         - types-click
