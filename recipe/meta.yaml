@@ -337,7 +337,6 @@ outputs:
         - python-build
         - pyvo
         - snakeviz
-        - types-click
         - types-deprecated
         - types-pkg_resources
         - types-python-dateutil
