@@ -214,7 +214,6 @@ outputs:
         - {{ pin_subpackage("rubin-env", exact=True) }}
         # All are from sciplat-lab unless otherwise stated
         - astroplan # sims
-        - astroquery
         - astrowidgets  # [not aarch64]
         - awkward
         - awkward-numba
@@ -267,7 +266,6 @@ outputs:
         - nbdime
         - nbval
         - nodejs >=16
-        - numba
         - panel # shared
         - papermill
         - paramnb
@@ -324,13 +322,11 @@ outputs:
         - lsst-documenteer-technote
         - mypy
         - mysqlclient
-        - numba
         - panel
         - pdbpp  # [not aarch64]
         - pep8
         - postgresql
         - pre-commit
-        - psycopg2
         - pyct
         - pydocstyle
         - pyflakes
