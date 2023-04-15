@@ -37,7 +37,6 @@ outputs:
         - liblapacke
         - log4cxx
         - minuit2
-        - mpich
         - numpy
         - xpa
         - starlink-ast
@@ -103,7 +102,6 @@ outputs:
         - llvmlite
         - log4cxx {{ log4cxx }}.*
         - minuit2 {{ minuit2 }}.*
-        - mpich {{ mpich }}.*
         - ndarray {{ ndarray }}.*
         - numpy {{ numpy }}.*
         - numba
