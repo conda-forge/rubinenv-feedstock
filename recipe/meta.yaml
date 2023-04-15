@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "5.1.0" %}
-{% set build_number = 11 %}
+{% set build_number = 12 %}
 
 package:
   name: {{ name }}
@@ -132,6 +132,7 @@ outputs:
         - emcee
         - esutil
         - fastavro
+        - frozendict >=2.2.0
         - future
         - getcalspec >=2.0.0
         - git
