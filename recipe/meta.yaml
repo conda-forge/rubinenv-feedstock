@@ -130,7 +130,7 @@ outputs:
         - esutil
         - fastavro
         - future
-        - getcalspec >=0.1.6
+        - getcalspec >=2.0.0
         - git
         - git-lfs
         - h5py
