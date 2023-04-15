@@ -36,8 +36,6 @@ log4cxx:
   - 0.11.0
 minuit2:
   - '6'
-mpich:
-  - '3'
 ndarray:
   - '1'
 numpy:
