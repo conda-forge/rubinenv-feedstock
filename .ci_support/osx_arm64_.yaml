@@ -17,7 +17,7 @@ channel_sources:
 channel_targets:
 - conda-forge rubin-env_dev
 curl:
-- '7'
+- '8'
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
@@ -51,7 +51,7 @@ macos_machine:
 minuit2:
 - '6'
 mpich:
-- '3'
+- '4'
 ndarray:
 - '1'
 numpy:

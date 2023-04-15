@@ -5,7 +5,7 @@ boost:
 c_compiler:
 - gcc
 c_compiler_version:
-- '10'
+- '11'
 cdt_name:
 - cos7
 cffi:
@@ -17,11 +17,11 @@ channel_sources:
 channel_targets:
 - conda-forge rubin-env_dev
 curl:
-- '7'
+- '8'
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '10'
+- '11'
 cython:
 - '0'
 docker_image:
@@ -33,7 +33,7 @@ fftw:
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
-- '10'
+- '11'
 gsl:
 - '2.7'
 libaprutil:
@@ -51,7 +51,7 @@ log4cxx:
 minuit2:
 - '6'
 mpich:
-- '3'
+- '4'
 ndarray:
 - '1'
 numpy:
