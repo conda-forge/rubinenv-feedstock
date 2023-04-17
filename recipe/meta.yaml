@@ -283,6 +283,7 @@ outputs:
         - pyvo
         - sidecar
         - snappy
+        - socketio-client-nexus
         - terminado
         - toolz
         - wget
