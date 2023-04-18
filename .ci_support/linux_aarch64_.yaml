@@ -7,7 +7,7 @@ boost:
 c_compiler:
 - gcc
 c_compiler_version:
-- '10'
+- '11'
 cdt_arch:
 - aarch64
 cdt_name:
@@ -25,7 +25,7 @@ curl:
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '10'
+- '11'
 cython:
 - '0'
 docker_image:
@@ -37,7 +37,7 @@ fftw:
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
-- '10'
+- '11'
 gsl:
 - '2.7'
 libaprutil:
@@ -54,12 +54,10 @@ log4cxx:
 - 0.11.0
 minuit2:
 - '6'
-mpich:
-- '3'
 ndarray:
 - '1'
 numpy:
-- '1.21'
+- '1.23'
 pin_run_as_build:
   boost:
     max_pin: x.x.x

@@ -50,12 +50,10 @@ macos_machine:
 - arm64-apple-darwin20.0.0
 minuit2:
 - '6'
-mpich:
-- '3'
 ndarray:
 - '1'
 numpy:
-- '1.21'
+- '1.23'
 pin_run_as_build:
   boost:
     max_pin: x.x.x
