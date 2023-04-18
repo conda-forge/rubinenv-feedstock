@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
-{% set version = "5.1.0" %}
-{% set build_number = 12 %}
+{% set version = "6.0.0" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name }}
@@ -37,11 +37,10 @@ outputs:
         - liblapacke
         - log4cxx
         - minuit2
-        - mpich
         - numpy
-        - xpa
         - starlink-ast
         - wcslib
+        - xpa
       run:
         # jq is special - it is needed for the pin-it utility in this package
         - jq
@@ -58,9 +57,7 @@ outputs:
         # The below is needed to get convenience symlinks for users to invoke.
         - compilers
         - cmake
-        # Coverage 6.3 is breaking with NFS and multi-process testing.
-        # Coverage 7.0 is breaking with + in pathnames.
-        - coverage >=3.6,!=6.3,<7
+        - coverage >=3.6,!=6.3,!=7.0.0
         - coveralls
         - doxygen <1.9.6
         - flake8 =4.0
@@ -103,10 +100,10 @@ outputs:
         - llvmlite
         - log4cxx {{ log4cxx }}.*
         - minuit2 {{ minuit2 }}.*
-        - mpich {{ mpich }}.*
         - ndarray {{ ndarray }}.*
-        - numpy {{ numpy }}.*
+        - ndarray >=1.6.3
         - numba
+        - numpy {{ numpy }}.*
         - starlink-ast {{ starlink_ast }}.*
         - wcslib {{ wcslib }}.*
         - xpa {{ xpa }}.*
@@ -115,18 +112,18 @@ outputs:
         ###################################################
         # run-like
         - alembic
-        - astropy
+        - astropy >=5.2
         - astroquery
         - autograd
         - backoff
         - boto3
         - bottleneck
         - cassandra-driver  # [linux64]
+        - click !=8.1.0,!=8.1.1
+        - coloredlogs
         # conda is required for runtime inspection of installed software
         - conda
         - configparser
-        - click !=8.1.0,!=8.1.1
-        - coloredlogs
         - deprecated
         - dustmaps
         - emcee
@@ -146,7 +143,7 @@ outputs:
         - idds-client >=0.11.0
         - idds-doma >=0.11.0
         - iminuit >=2
-        - lmfit <1.0.3
+        - lmfit
         - lsstdesc.coord
         - matplotlib-base !=3.6.0,<3.7.0
         - moto >=3
@@ -154,10 +151,10 @@ outputs:
         - networkx
         - numexpr =2
         - {{ pin_compatible('numpy') }}
-        - pandas <2
+        - pandas
         - parsl =1.2
         - pgcli
-        - photutils >=0.7,<1.7
+        - photutils >=1.7
         - piff
         - prmon  # [linux]
         - psycopg2 =2
@@ -172,15 +169,16 @@ outputs:
         - pyyaml
         - requests
         - schwimmbad
-        - scikit-image !=0.18,<0.20
+        - scikit-image !=0.18
         - scikit-learn
-        - scipy
+        - scipy >=1.10
         - seaborn
         - skyproj
         - spherematch
-        - sqlalchemy <2
+        - sqlalchemy
         - sqlite
         - threadpoolctl
+        - torchvision
         - tqdm
         - treecorr =4
         - ws4py
@@ -190,7 +188,7 @@ outputs:
         # grep pin-it output for python dependency
         - pin-it rubin-env-nosysroot | grep "python="
         # ensure binary compatibility; bump major version if not
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1014 ]'  # [linux]
+        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1016 ]'  # [linux]
         - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
 
   - name: rubin-env
@@ -206,7 +204,7 @@ outputs:
         # grep pin-it output for python dependency
         - pin-it rubin-env | grep "python="
         # ensure binary compatibility; bump major version if not
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1014 ]'  # [linux]
+        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1016 ]'  # [linux]
         - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
 
   - name: rubin-env-rsp
@@ -217,7 +215,6 @@ outputs:
         - {{ pin_subpackage("rubin-env", exact=True) }}
         # All are from sciplat-lab unless otherwise stated
         - astroplan # sims
-        - astroquery
         - astrowidgets  # [not aarch64]
         - awkward
         - awkward-numba
@@ -270,11 +267,9 @@ outputs:
         - nbdime
         - nbval
         - nodejs >=16
-        - numba
         - panel >=0.12.1  # shared
         - papermill
         - paramnb
-        - parsl
         - partd
         - pep8 # shared
         - plotly
@@ -308,7 +303,6 @@ outputs:
         - astrowidgets  # [not aarch64]
         - black
         - bokeh
-        - python-build
         - dask-jobqueue
         - datashader
         - fastparquet
@@ -329,19 +323,17 @@ outputs:
         - lsst-documenteer-technote
         - mypy
         - mysqlclient
-        - numba
         - panel >=0.12.1
         - pdbpp  # [not aarch64]
         - pep8
         - postgresql
         - pre-commit
-        - psycopg2
         - pyct
         - pydocstyle
         - pyflakes
+        - python-build
         - pyvo
         - snakeviz
-        - types-click
         - types-deprecated
         - types-pkg_resources
         - types-python-dateutil
@@ -384,7 +376,6 @@ about:
 extra:
   recipe-maintainers:
     - mwittgen
-    - brianv0
     - timj
     - ktlim
     - beckermr
