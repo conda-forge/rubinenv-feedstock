@@ -60,7 +60,7 @@ outputs:
         - cmake
         # Coverage 6.3 is breaking with NFS and multi-process testing.
         # Coverage 7.0 is breaking with + in pathnames.
-        - coverage >=3.6,!=6.3,<7
+        - coverage >=3.6,!=6.3,!=7.0.0
         - coveralls
         - doxygen <1.9.6
         - flake8 =4.0
@@ -153,7 +153,6 @@ outputs:
         - numexpr =2
         - {{ pin_compatible('numpy') }}
         - pandas <2
-        - parsl =1.2
         - pgcli
         - photutils >=0.7,<1.7
         - piff
