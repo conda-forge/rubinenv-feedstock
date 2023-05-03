@@ -334,6 +334,7 @@ outputs:
         - pyct
         - pydocstyle
         - pyflakes
+        - pytest-profiling
         - python-build
         - pyvo
         - ripgrep
