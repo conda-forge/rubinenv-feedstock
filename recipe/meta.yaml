@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "6.0.0" %}
-{% set build_number = 0 %}
+{% set build_number = 1 %}
 
 package:
   name: {{ name }}
@@ -129,6 +129,7 @@ outputs:
         - emcee
         - esutil
         - fastavro
+        - fitsio
         - frozendict >=2.2.0
         - future
         - getcalspec >=2.0.0
@@ -143,6 +144,7 @@ outputs:
         - idds-client >=0.11.0
         - idds-doma >=0.11.0
         - iminuit >=2
+        - importlib_resources
         - lmfit
         - lsstdesc.coord
         - matplotlib-base !=3.6.0,<3.7.0
@@ -282,6 +284,7 @@ outputs:
         - pythreejs
         - pyviz_comms
         - pyvo
+        - ripgrep
         - sidecar
         - snappy
         - terminado
@@ -331,8 +334,10 @@ outputs:
         - pyct
         - pydocstyle
         - pyflakes
+        - pytest-profiling
         - python-build
         - pyvo
+        - ripgrep
         - snakeviz
         - types-deprecated
         - types-pkg_resources
