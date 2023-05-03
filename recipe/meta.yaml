@@ -284,6 +284,7 @@ outputs:
         - pythreejs
         - pyviz_comms
         - pyvo
+        - ripgrep
         - sidecar
         - snappy
         - terminado
@@ -335,6 +336,7 @@ outputs:
         - pyflakes
         - python-build
         - pyvo
+        - ripgrep
         - snakeviz
         - types-deprecated
         - types-pkg_resources
