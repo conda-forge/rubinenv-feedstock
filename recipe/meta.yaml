@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "6.0.0" %}
-{% set build_number = 2 %}
+{% set build_number = 3 %}
 
 package:
   name: {{ name }}
@@ -262,6 +262,7 @@ outputs:
         - jupyterlab_iframe
         - jupyterlab_widgets
         - jupyterlab-variableinspector
+        - lsst-efd-client
         - mamba
         - mypy
         - mysqlclient
@@ -324,6 +325,7 @@ outputs:
         - line_profiler
         - lsst-documenteer-pipelines
         - lsst-documenteer-technote
+        - lsst-efd-client
         - mypy
         - mysqlclient
         - panel >=0.12.1
