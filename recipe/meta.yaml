@@ -1,13 +1,13 @@
 {% set name = "rubin-env" %}
-{% set version = "6.0.0dev" %}
-{% set build_number = 1 %}
+{% set version = "7.0.0dev" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 build:
-  skip: True  # [python_impl == 'pypy' or win or py != 310]
+  skip: True  # [python_impl == 'pypy' or win or py != 311]
   number: {{ build_number }}
 
 outputs:
@@ -129,8 +129,10 @@ outputs:
         - emcee
         - esutil
         - fastavro
+        - fitsio
+        - frozendict >=2.2.0
         - future
-        - getcalspec >=0.1.6
+        - getcalspec >=2.0.0
         - git
         - git-lfs
         - h5py
@@ -142,6 +144,7 @@ outputs:
         - idds-client >=0.11.0
         - idds-doma >=0.11.0
         - iminuit >=2
+        - importlib_resources
         - lmfit
         - lsstdesc.coord
         - matplotlib-base !=3.6.0,<3.7.0
@@ -234,7 +237,7 @@ outputs:
         - freetype-py
         - gcsfs
         - geoviews
-        - ginga <4
+        - ginga >=3,<4
         - graphviz
         - holoviews
         - hvplot
@@ -259,6 +262,7 @@ outputs:
         - jupyterlab_iframe
         - jupyterlab_widgets
         - jupyterlab-variableinspector
+        - lsst-efd-client
         - mamba
         - mypy
         - mysqlclient
@@ -266,7 +270,7 @@ outputs:
         - nbdime
         - nbval
         - nodejs >=16
-        - panel # shared
+        - panel >=0.12.1 # shared
         - papermill
         - paramnb
         - partd
@@ -281,6 +285,7 @@ outputs:
         - pythreejs
         - pyviz_comms
         - pyvo
+        - ripgrep
         - sidecar
         - snappy
         - terminado
@@ -320,9 +325,10 @@ outputs:
         - line_profiler
         - lsst-documenteer-pipelines
         - lsst-documenteer-technote
+        - lsst-efd-client
         - mypy
         - mysqlclient
-        - panel
+        - panel >=0.12.1
         - pdbpp  # [not aarch64]
         - pep8
         - postgresql
@@ -330,8 +336,10 @@ outputs:
         - pyct
         - pydocstyle
         - pyflakes
+        - pytest-profiling
         - python-build
         - pyvo
+        - ripgrep
         - snakeviz
         - types-deprecated
         - types-pkg_resources
@@ -374,8 +382,8 @@ about:
 
 extra:
   recipe-maintainers:
-    - brianv0
     - timj
-    - erykoff
+    - mwittgen
     - ktlim
+    - erykoff
     - beckermr
