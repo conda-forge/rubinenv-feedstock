@@ -144,7 +144,6 @@ outputs:
         - idds-client >=0.11.0
         - idds-doma >=0.11.0
         - iminuit >=2
-        - importlib_resources
         - lmfit
         - lsstdesc.coord
         - matplotlib-base !=3.6.0,<3.7.0
