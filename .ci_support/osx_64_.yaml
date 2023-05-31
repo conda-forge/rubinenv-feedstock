@@ -50,8 +50,6 @@ macos_machine:
 - x86_64-apple-darwin13.4.0
 minuit2:
 - '6'
-mpich:
-- '4'
 ndarray:
 - '1'
 numpy:
@@ -63,7 +61,7 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.10.* *_cpython
+- 3.11.* *_cpython
 python_impl:
 - cpython
 starlink_ast:
