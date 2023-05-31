@@ -216,13 +216,13 @@ outputs:
         - {{ pin_subpackage("rubin-env", exact=True) }}
         # All are from sciplat-lab unless otherwise stated
         - astroplan # sims
-        - astrowidgets  # [not aarch64]
+        - astrowidgets
         - awkward
         - awkward-numba
         - black
         - bokeh
         - bqplot
-        - ciso8601  # [not aarch64]
+        - ciso8601
         - cloudpickle
         - cookiecutter
         - dash
@@ -251,7 +251,7 @@ outputs:
         - isort !=5.11.0
         - jedi
         - jupyter
-        - jupyter-dash  # [not aarch64]
+        - jupyter-dash
         - jupyter-packaging
         - jupyter-server-proxy
         - jupyter_bokeh
@@ -303,7 +303,7 @@ outputs:
         - python
       run:
         - {{ pin_subpackage("rubin-env", exact=True) }}
-        - astrowidgets  # [not aarch64]
+        - astrowidgets
         - black
         - bokeh
         - dask-jobqueue
@@ -328,7 +328,7 @@ outputs:
         - mypy
         - mysqlclient
         - panel >=0.12.1
-        - pdbpp  # [not aarch64]
+        - pdbpp
         - pep8
         - postgresql
         - pre-commit
@@ -360,7 +360,7 @@ outputs:
         - {{ pin_subpackage("rubin-env", exact=True) }}
         - {{ pin_subpackage("rubin-env-rsp", exact=True) }}
         - {{ pin_subpackage("rubin-env-developer", exact=True) }}
-        - rubin-sim >=0.12.0  # [not aarch64 and not osx-arm64]
+        - rubin-sim >=0.12.0
     test:
       commands:
         # grep pin-it output for rubin-env-developer dependency
