@@ -328,7 +328,7 @@ outputs:
         - mypy
         - mysqlclient
         - panel >=0.12.1
-        - pdbpp
+        - pdbpp  # [not aarch64]
         - pep8
         - postgresql
         - pre-commit
