@@ -33,7 +33,7 @@ gsl:
 libaprutil:
   - '1'
 libcxx:
-  - '15'
+  - '16'
 log4cxx:
   - 0.11.0
 minuit2:
