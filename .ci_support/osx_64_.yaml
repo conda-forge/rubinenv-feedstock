@@ -41,7 +41,7 @@ libblas:
 libcblas:
 - 3.9 *netlib
 libcxx:
-- '16'
+- '15'
 liblapack:
 - 3.9 *netlib
 liblapacke:
