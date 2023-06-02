@@ -93,7 +93,7 @@ outputs:
         - galsim
         - gsl {{ gsl }}.*
         - libaprutil {{ libaprutil }}.*
-        - libcxx {{ libcxx }}.*
+        - libcxx {{ libcxx }}.*  # [not aarch64]
         - llvmlite
         - log4cxx {{ log4cxx }}.*
         - minuit2 {{ minuit2 }}.*
