@@ -1,13 +1,13 @@
 {% set name = "rubin-env" %}
-{% set version = "6.0.0dev" %}
-{% set build_number = 1 %}
+{% set version = "7.0.0dev" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 build:
-  skip: True  # [python_impl == 'pypy' or win or py != 310]
+  skip: True  # [python_impl == 'pypy' or win or py != 311]
   number: {{ build_number }}
 
 outputs:
@@ -93,10 +93,7 @@ outputs:
         - galsim
         - gsl {{ gsl }}.*
         - libaprutil {{ libaprutil }}.*
-        # there is some issue with pex_exceptions with clang 11 and libcxx 12
-        # until it is tracked down, it makes sense to keep these at the same
-        # major version
-        - libcxx =={{ cxx_compiler_version }}.*  # [osx]
+        - libcxx {{ libcxx }}.*  # [not aarch64]
         - llvmlite
         - log4cxx {{ log4cxx }}.*
         - minuit2 {{ minuit2 }}.*
@@ -129,8 +126,10 @@ outputs:
         - emcee
         - esutil
         - fastavro
+        - fitsio
+        - frozendict >=2.2.0
         - future
-        - getcalspec >=0.1.6
+        - getcalspec >=2.0.0
         - git
         - git-lfs
         - h5py
@@ -167,6 +166,7 @@ outputs:
         - pytorch
         - pyyaml
         - requests
+        - rucio-clients <=1.29.12
         - schwimmbad
         - scikit-image !=0.18
         - scikit-learn
@@ -214,13 +214,13 @@ outputs:
         - {{ pin_subpackage("rubin-env", exact=True) }}
         # All are from sciplat-lab unless otherwise stated
         - astroplan # sims
-        - astrowidgets  # [not aarch64]
+        - astrowidgets >=0.3
         - awkward
         - awkward-numba
         - black
         - bokeh
         - bqplot
-        - ciso8601  # [not aarch64]
+        - ciso8601
         - cloudpickle
         - cookiecutter
         - dash
@@ -234,7 +234,7 @@ outputs:
         - freetype-py
         - gcsfs
         - geoviews
-        - ginga <4
+        - ginga >=3
         - graphviz
         - holoviews
         - hvplot
@@ -249,7 +249,7 @@ outputs:
         - isort !=5.11.0
         - jedi
         - jupyter
-        - jupyter-dash  # [not aarch64]
+        - jupyter-dash
         - jupyter-packaging
         - jupyter-server-proxy
         - jupyter_bokeh
@@ -259,6 +259,7 @@ outputs:
         - jupyterlab_iframe
         - jupyterlab_widgets
         - jupyterlab-variableinspector
+        - lsst-efd-client
         - mamba
         - mypy
         - mysqlclient
@@ -266,7 +267,7 @@ outputs:
         - nbdime
         - nbval
         - nodejs >=16
-        - panel # shared
+        - panel >=0.12.1 # shared
         - papermill
         - paramnb
         - partd
@@ -281,6 +282,7 @@ outputs:
         - pythreejs
         - pyviz_comms
         - pyvo
+        - ripgrep
         - sidecar
         - snappy
         - terminado
@@ -299,7 +301,7 @@ outputs:
         - python
       run:
         - {{ pin_subpackage("rubin-env", exact=True) }}
-        - astrowidgets  # [not aarch64]
+        - astrowidgets >=0.3
         - black
         - bokeh
         - dask-jobqueue
@@ -320,9 +322,10 @@ outputs:
         - line_profiler
         - lsst-documenteer-pipelines
         - lsst-documenteer-technote
+        - lsst-efd-client
         - mypy
         - mysqlclient
-        - panel
+        - panel >=0.12.1
         - pdbpp  # [not aarch64]
         - pep8
         - postgresql
@@ -330,8 +333,10 @@ outputs:
         - pyct
         - pydocstyle
         - pyflakes
+        - pytest-profiling
         - python-build
         - pyvo
+        - ripgrep
         - snakeviz
         - types-deprecated
         - types-pkg_resources
@@ -353,7 +358,7 @@ outputs:
         - {{ pin_subpackage("rubin-env", exact=True) }}
         - {{ pin_subpackage("rubin-env-rsp", exact=True) }}
         - {{ pin_subpackage("rubin-env-developer", exact=True) }}
-        - rubin-sim >=0.12.0  # [not aarch64 and not osx-arm64]
+        - rubin-sim >=0.12.0
     test:
       commands:
         # grep pin-it output for rubin-env-developer dependency
@@ -374,8 +379,8 @@ about:
 
 extra:
   recipe-maintainers:
-    - brianv0
     - timj
-    - erykoff
+    - mwittgen
     - ktlim
+    - erykoff
     - beckermr
