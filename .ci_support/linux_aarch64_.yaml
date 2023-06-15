@@ -46,8 +46,6 @@ libblas:
 - 3.9 *netlib
 libcblas:
 - 3.9 *netlib
-libcxx:
-- '15'
 liblapack:
 - 3.9 *netlib
 liblapacke:
@@ -59,7 +57,7 @@ minuit2:
 ndarray:
 - '1'
 numpy:
-- '1.23'
+- '1.24'
 pin_run_as_build:
   boost:
     max_pin: x.x.x
