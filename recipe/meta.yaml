@@ -360,7 +360,7 @@ outputs:
         - {{ pin_subpackage("rubin-env", exact=True) }}
         - {{ pin_subpackage("rubin-env-rsp", exact=True) }}
         - {{ pin_subpackage("rubin-env-developer", exact=True) }}
-        - rubin-sim >=0.12.0  # [not aarch64]
+        - rubin-sim >=0.12.0
     test:
       commands:
         # grep pin-it output for rubin-env-developer dependency
