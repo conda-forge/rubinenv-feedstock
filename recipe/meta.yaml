@@ -166,7 +166,7 @@ outputs:
         - pytorch
         - pyyaml
         - requests
-        - rucio-clients
+        - rucio-clients <=1.29.12
         - schwimmbad
         - scikit-image !=0.18
         - scikit-learn
