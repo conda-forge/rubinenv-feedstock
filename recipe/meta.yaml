@@ -98,7 +98,7 @@ outputs:
         - log4cxx {{ log4cxx }}.*
         - minuit2 {{ minuit2 }}.*
         - ndarray {{ ndarray }}.*
-        - ndarray >=1.6.3
+        - ndarray >=1.6.4
         - numba
         - numpy {{ numpy }}.*
         - starlink-ast {{ starlink_ast }}.*
