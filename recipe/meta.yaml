@@ -173,7 +173,7 @@ outputs:
         - schwimmbad
         - scikit-image !=0.18
         - scikit-learn
-        - scipy >=1.10
+        - scipy >=1.10,<1.11
         - seaborn
         - skyproj
         - spherematch
