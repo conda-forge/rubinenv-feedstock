@@ -60,7 +60,7 @@ outputs:
         - coverage >=3.6,!=6.3,!=7.0.0
         - coveralls
         - doxygen
-        - flake8
+        - flake8 >=6.0,<6.1
         - make
         - nose
         - pep8-naming
