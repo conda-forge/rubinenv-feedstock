@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "7.0.0dev" %}
-{% set build_number = 3 %}
+{% set build_number = 4 %}
 
 package:
   name: {{ name }}
@@ -60,7 +60,7 @@ outputs:
         - coverage >=3.6,!=6.3,!=7.0.0
         - coveralls
         - doxygen
-        - flake8 =4.0
+        - flake8
         - make
         - nose
         - pep8-naming
@@ -69,7 +69,6 @@ outputs:
         - pytest
         - pytest-cov
         - pytest-doctestplus
-        - pytest-flake8
         - pytest-openfiles
         - pytest-runner
         - pytest-session2file
@@ -167,6 +166,7 @@ outputs:
         - pyyaml
         - requests
         - rucio-clients <=1.29.12
+        - ruff
         - schwimmbad
         - scikit-image !=0.18
         - scikit-learn
@@ -263,6 +263,7 @@ outputs:
         - mamba
         - mypy
         - mysqlclient
+        - nb_black
         - nbconvert-webpdf
         - nbdime
         - nbval
