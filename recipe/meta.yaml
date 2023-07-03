@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "6.0.0" %}
-{% set build_number = 5 %}
+{% set build_number = 6 %}
 
 package:
   name: {{ name }}
@@ -226,7 +226,7 @@ outputs:
         - ciso8601  # [not aarch64]
         - cloudpickle
         - cookiecutter
-        - dash
+        - dash >=2.11
         - dask
         - dask-kubernetes
         - dask_labextension
@@ -253,13 +253,13 @@ outputs:
         - isort !=5.11.0
         - jedi
         - jupyter
-        - jupyter-dash  # [not aarch64]
         - jupyter-packaging
+        - jupyter-resource-usage
         - jupyter-server-proxy
         - jupyter_bokeh
         - jupyterhub
         - jupyterlab >=3,<4
-        - jupyterlab_execute_time
+        - jupyterlab_execute_time <=3
         - jupyterlab_iframe
         - jupyterlab_widgets
         - jupyterlab-variableinspector
