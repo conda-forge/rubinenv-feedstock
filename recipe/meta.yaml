@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "6.0.0" %}
-{% set build_number = 6 %}
+{% set build_number = 7 %}
 
 package:
   name: {{ name }}
@@ -259,7 +259,7 @@ outputs:
         - jupyter_bokeh
         - jupyterhub
         - jupyterlab >=3,<4
-        - jupyterlab_execute_time <=3
+        - jupyterlab_execute_time >=2,<3
         - jupyterlab_iframe
         - jupyterlab_widgets
         - jupyterlab-variableinspector
