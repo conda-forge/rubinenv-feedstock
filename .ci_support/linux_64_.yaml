@@ -17,7 +17,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 curl:
-- '7'
+- '8'
 cxx_compiler:
 - gxx
 cxx_compiler_version:
@@ -33,7 +33,7 @@ fftw:
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
-- '10'
+- '12'
 gsl:
 - '2.7'
 libaprutil:
