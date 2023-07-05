@@ -160,7 +160,7 @@ outputs:
         - psycopg2 =2
         - pyarrow
         - pybind11
-        - pydantic
+        - pydantic <2
         - pyld
         - pysynphot
         - pytables
