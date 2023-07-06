@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "7.0.0dev" %}
-{% set build_number = 4 %}
+{% set build_number = 5 %}
 
 package:
   name: {{ name }}
@@ -157,7 +157,7 @@ outputs:
         - psycopg2 =2
         - pyarrow
         - pybind11
-        - pydantic
+        - pydantic <2
         - pyld
         - pysynphot
         - pytables
