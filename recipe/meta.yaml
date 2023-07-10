@@ -127,6 +127,7 @@ outputs:
         - esutil
         - fastavro
         - fitsio
+        - fitsverify
         - frozendict >=2.2.0
         - future
         - getcalspec >=2.0.0
