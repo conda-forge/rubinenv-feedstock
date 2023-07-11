@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "7.0.0dev" %}
-{% set build_number = 4 %}
+{% set build_number = 5 %}
 
 package:
   name: {{ name }}
@@ -73,6 +73,7 @@ outputs:
         - pytest-runner
         - pytest-session2file
         - pytest-subtests
+        - pytest-vcr
         - pytest-xdist
         - scons
 
@@ -126,6 +127,7 @@ outputs:
         - esutil
         - fastavro
         - fitsio
+        - fitsverify
         - frozendict >=2.2.0
         - future
         - getcalspec >=2.0.0
@@ -157,7 +159,7 @@ outputs:
         - psycopg2 =2
         - pyarrow
         - pybind11
-        - pydantic
+        - pydantic <2
         - pyld
         - pysynphot
         - pytables

@@ -11,7 +11,7 @@ c_compiler_version:
 cffi:
 - '1'
 cfitsio:
-- 4.1.0
+- 4.2.0
 channel_sources:
 - conda-forge
 channel_targets:
@@ -71,7 +71,7 @@ starlink_ast:
 target_platform:
 - osx-64
 wcslib:
-- '7.7'
+- '7'
 xpa:
 - '2'
 yaml_cpp:
