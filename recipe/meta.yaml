@@ -153,7 +153,7 @@ outputs:
         - pandas
         - parsl ==2023.06.12
         - pgcli
-        - photutils =1.7
+        - photutils >=1.7
         - piff
         - prmon  # [linux]
         - psycopg2 =2
@@ -272,7 +272,7 @@ outputs:
         - nbdime
         - nbval
         - nodejs >=16
-        - panel >=0.12.1  # shared
+        - panel >=0.12.1 # shared
         - papermill
         - paramnb
         - partd
@@ -389,4 +389,3 @@ extra:
     - ktlim
     - erykoff
     - beckermr
-    - erykoff
