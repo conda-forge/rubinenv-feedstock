@@ -168,7 +168,7 @@ outputs:
         - pyyaml
         - requests
         - rucio-clients <=1.29.12
-        - ruff ==0.0.275
+        - ruff ==0.0.278
         - schwimmbad
         - scikit-image !=0.18
         - scikit-learn
