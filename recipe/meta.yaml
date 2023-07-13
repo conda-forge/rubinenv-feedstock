@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "7.0.0dev" %}
-{% set build_number = 5 %}
+{% set build_number = 6 %}
 
 package:
   name: {{ name }}
@@ -167,7 +167,6 @@ outputs:
         - pytorch
         - pyyaml
         - requests
-        - rucio-clients <=1.29.12
         - ruff ==0.0.275
         - schwimmbad
         - scikit-image !=0.18
