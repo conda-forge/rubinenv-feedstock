@@ -11,7 +11,7 @@ cdt_name:
 cffi:
 - '1'
 cfitsio:
-- 4.1.0
+- 4.2.0
 channel_sources:
 - conda-forge
 channel_targets:
@@ -42,6 +42,8 @@ libblas:
 - 3.9 *netlib
 libcblas:
 - 3.9 *netlib
+libcxx:
+- '16'
 liblapack:
 - 3.9 *netlib
 liblapacke:
@@ -53,7 +55,7 @@ minuit2:
 ndarray:
 - '1'
 numpy:
-- '1.23'
+- '1.24'
 pin_run_as_build:
   boost:
     max_pin: x.x.x
@@ -61,15 +63,15 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.10.* *_cpython
+- 3.11.* *_cpython
 python_impl:
 - cpython
 starlink_ast:
-- 9.2.7
+- 9.2.10
 target_platform:
 - linux-64
 wcslib:
-- '7.7'
+- '7'
 xpa:
 - '2'
 yaml_cpp:
