@@ -255,7 +255,7 @@ outputs:
         - jupyter-server-proxy
         - jupyter_bokeh
         - jupyterhub
-        - jupyterlab >=3,<4
+        - jupyterlab >=3.6,<4
         - jupyterlab_execute_time
         - jupyterlab_iframe
         - jupyterlab_widgets
@@ -319,7 +319,7 @@ outputs:
         - isort !=5.11.0
         - jedi
         - jupyter
-        - jupyterlab >=3,<4
+        - jupyterlab >=3.6,<4
         - jupyterlab_server
         - line_profiler
         - lsst-documenteer-pipelines
