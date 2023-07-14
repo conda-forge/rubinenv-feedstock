@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "7.0.1" %}
-{% set build_number = 0 %}
+{% set build_number = 1 %}
 
 package:
   name: {{ name }}
@@ -158,7 +158,7 @@ outputs:
         - prmon  # [linux]
         - psycopg2 =2
         - pyarrow
-        - pybind11
+        - pybind11 <2.11
         - pydantic <2
         - pyld
         - pysynphot
