@@ -1,5 +1,5 @@
 {% set name = "rubin-env" %}
-{% set version = "7.0.0" %}
+{% set version = "7.0.1" %}
 {% set build_number = 0 %}
 
 package:
@@ -167,7 +167,6 @@ outputs:
         - pytorch
         - pyyaml
         - requests
-        - rucio-clients <=1.29.12
         - ruff ==0.0.278
         - schwimmbad
         - scikit-image !=0.18
@@ -258,7 +257,7 @@ outputs:
         - jupyter-server-proxy
         - jupyter_bokeh
         - jupyterhub
-        - jupyterlab >=3,<4
+        - jupyterlab >=3.6,<4
         - jupyterlab_execute_time >=2,<3
         - jupyterlab_iframe
         - jupyterlab_widgets
@@ -322,7 +321,7 @@ outputs:
         - isort !=5.11.0
         - jedi
         - jupyter
-        - jupyterlab >=3,<4
+        - jupyterlab >=3.6,<4
         - jupyterlab_server
         - line_profiler
         - lsst-documenteer-pipelines
