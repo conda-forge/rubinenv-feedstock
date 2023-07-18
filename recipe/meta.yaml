@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
-{% set version = "7.0.0dev" %}
-{% set build_number = 7 %}
+{% set version = "8.0.0dev" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name }}
@@ -142,6 +142,7 @@ outputs:
         - idds-client >=0.11.0
         - idds-doma >=0.11.0
         - iminuit >=2
+        - libblas =*=*openblas
         - lmfit
         - lsstdesc.coord
         - matplotlib-base !=3.6.0
