@@ -149,7 +149,6 @@ outputs:
         - moto >=3
         - mpi4py
         - networkx
-        - nomkl
         - numexpr =2
         - {{ pin_compatible('numpy') }}
         - pandas
@@ -166,7 +165,7 @@ outputs:
         - pysynphot
         - pytables
         - python
-        - pytorch
+        - pytorch =1
         - pyyaml
         - requests
         - ruff ==0.0.275
