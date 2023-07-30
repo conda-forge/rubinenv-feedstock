@@ -71,7 +71,7 @@ starlink_ast:
 target_platform:
 - osx-64
 wcslib:
-- '7'
+- '8'
 xpa:
 - '2'
 yaml_cpp:
