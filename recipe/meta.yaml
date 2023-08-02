@@ -145,7 +145,7 @@ outputs:
         - lmfit
         - lsstdesc.coord
         - matplotlib-base !=3.6.0
-        - mkl
+        - mkl  # [linux64]
         - moto >=3
         - mpi4py
         - networkx
