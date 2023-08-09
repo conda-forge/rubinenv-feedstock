@@ -73,7 +73,7 @@ starlink_ast:
 target_platform:
 - linux-aarch64
 wcslib:
-- '7'
+- '8'
 xpa:
 - '2'
 yaml_cpp:
