@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "7.0.1" %}
-{% set build_number = 4 %}
+{% set build_number = 5 %}
 
 package:
   name: {{ name }}
@@ -226,11 +226,7 @@ outputs:
         - cloudpickle
         - cookiecutter
         - dash >=2.11
-        - dask
-        - dask-kubernetes
-        - dask_labextension
         - datashader
-        - distributed
         - fastparquet
         - ffmpeg # RFC-846
         - freetype-py
