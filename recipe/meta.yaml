@@ -304,7 +304,6 @@ outputs:
         - {{ pin_subpackage("rubin-env", exact=True) }}
         - black
         - bokeh
-        - build
         - dask-jobqueue
         - datashader
         - fastparquet
@@ -332,6 +331,7 @@ outputs:
         - pyct
         - pydocstyle
         - pyflakes
+        - python-build
         - pyvo
         - snakeviz
         - types-click
