@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "4.0.5" %}
-{% set build_number = 3 %}
+{% set build_number = 4 %}
 
 package:
   name: {{ name }}
@@ -158,7 +158,7 @@ outputs:
         - piff
         - prmon  # [linux]
         - psycopg2 =2
-        - pyarrow
+        - pyarrow <13
         - pybind11 <2.10
         - pydantic <2
         - pyld
