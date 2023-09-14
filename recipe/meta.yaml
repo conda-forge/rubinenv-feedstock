@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "7.0.1" %}
-{% set build_number = 7 %}
+{% set build_number = 8 %}
 
 package:
   name: {{ name }}
@@ -218,7 +218,7 @@ outputs:
         - astroplan # sims
         - astrowidgets >=0.3
         - awkward
-        - awkward-numba
+        - awkward-pandas
         - black
         - bokeh
         - bqplot
