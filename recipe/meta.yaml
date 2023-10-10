@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "7.0.1" %}
-{% set build_number = 8 %}
+{% set build_number = 9 %}
 
 package:
   name: {{ name }}
@@ -151,6 +151,7 @@ outputs:
         - networkx
         - numexpr =2
         - {{ pin_compatible('numpy') }}
+        - panda-client !=1.5.65
         - pandas <2.1
         - parsl ==2023.06.12
         - pgcli
