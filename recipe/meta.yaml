@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "7.0.1" %}
-{% set build_number = 9 %}
+{% set build_number = 10 %}
 
 package:
   name: {{ name }}
@@ -237,6 +237,7 @@ outputs:
         - ginga >=3
         - graphviz
         - holoviews
+        - httpx # RFC-969
         - hvplot
         - imagemagick # RFC-846
         - intake
