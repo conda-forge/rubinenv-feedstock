@@ -229,6 +229,7 @@ outputs:
         - dash >=2.11
         - datashader
         - fastparquet
+        - firefly-client
         - ffmpeg # RFC-846
         - freetype-py
         - gcsfs
@@ -236,6 +237,10 @@ outputs:
         - gh
         - ginga >=3
         - graphviz
+        - hatch-jupyter-builder
+        - hatch-nodejs-version
+        - hatchling
+        - hdf5plugin
         - holoviews
         - httpx # RFC-969
         - hvplot
@@ -255,8 +260,8 @@ outputs:
         - jupyter-server-proxy
         - jupyter_bokeh
         - jupyterhub
-        - jupyterlab >=3.6,<4
-        - jupyterlab_execute_time >=2,<3
+        - jupyterlab >=4,<5
+        - jupyterlab_execute_time
         - jupyterlab_iframe
         - jupyterlab_widgets
         - jupyterlab-variableinspector
