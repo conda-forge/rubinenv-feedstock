@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "7.0.1" %}
-{% set build_number = 10 %}
+{% set build_number = 11 %}
 
 package:
   name: {{ name }}
@@ -236,6 +236,10 @@ outputs:
         - gh
         - ginga >=3
         - graphviz
+        - hatch-jupyter-builder
+        - hatch-nodejs-version
+        - hatchling
+        - hdf5plugin
         - holoviews
         - httpx # RFC-969
         - hvplot
@@ -255,8 +259,8 @@ outputs:
         - jupyter-server-proxy
         - jupyter_bokeh
         - jupyterhub
-        - jupyterlab >=3.6,<4
-        - jupyterlab_execute_time >=2,<3
+        - jupyterlab >=4,<5
+        - jupyterlab_execute_time
         - jupyterlab_iframe
         - jupyterlab_widgets
         - jupyterlab-variableinspector
@@ -319,7 +323,7 @@ outputs:
         - isort !=5.11.0
         - jedi
         - jupyter
-        - jupyterlab >=3.6,<4
+        - jupyterlab >=4,<5
         - jupyterlab_server
         - line_profiler
         - lsst-documenteer-pipelines
