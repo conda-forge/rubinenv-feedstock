@@ -324,7 +324,7 @@ outputs:
         - isort !=5.11.0
         - jedi
         - jupyter
-        - jupyterlab >=3.6,<4
+        - jupyterlab >=4,<5
         - jupyterlab_server
         - line_profiler
         - lsst-documenteer-pipelines
