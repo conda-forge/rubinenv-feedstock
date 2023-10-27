@@ -229,7 +229,6 @@ outputs:
         - dash >=2.11
         - datashader
         - fastparquet
-        - firefly-client
         - ffmpeg # RFC-846
         - freetype-py
         - gcsfs
