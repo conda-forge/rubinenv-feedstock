@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "7.0.1" %}
-{% set build_number = 11 %}
+{% set build_number = 12 %}
 
 package:
   name: {{ name }}
@@ -332,7 +332,6 @@ outputs:
         - mypy
         - mysqlclient
         - panel >=0.12.1
-        - pdbpp  # [not aarch64]
         - pep8
         - postgresql
         - pre-commit
