@@ -289,7 +289,7 @@ outputs:
         - pyviz_comms
         - pyvo
         - ripgrep
-        - sbpy
+        - sbpy  # [not aarch64]
         - sidecar
         - snappy
         - terminado
