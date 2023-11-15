@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "7.0.1" %}
-{% set build_number = 12 %}
+{% set build_number = 13 %}
 
 package:
   name: {{ name }}
@@ -289,6 +289,7 @@ outputs:
         - pyviz_comms
         - pyvo
         - ripgrep
+        - sbpy  # [not aarch64]
         - sidecar
         - snappy
         - terminado
