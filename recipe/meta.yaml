@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "4.0.5" %}
-{% set build_number = 4 %}
+{% set build_number = 5 %}
 
 package:
   name: {{ name }}
@@ -147,10 +147,9 @@ outputs:
         - matplotlib-base !=3.6.0,<3.7.0
         - moto >=3
         - mpi4py
-        - networkx
+        - networkx <3
         - numexpr =2
         - {{ pin_compatible('numpy') }}
-        - pandas
         - pandas <2
         - pgcli
         # Remove < after Spectractor fix: see DM-35580
