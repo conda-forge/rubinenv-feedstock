@@ -83,7 +83,7 @@ outputs:
         # above, we need most of these at build time, so they are mostly
         # host-like
         - apr {{ apr }}.*
-        - libboost-python-devel {{ boost }}.*
+        - libboost-python-devel
         - cffi {{ cffi }}.*
         - cfitsio {{ cfitsio }}.*
         - cython {{ cython }}.*
