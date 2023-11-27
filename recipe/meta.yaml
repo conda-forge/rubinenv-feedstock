@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "7.0.1" %}
-{% set build_number = 12 %}
+{% set build_number = 13 %}
 
 package:
   name: {{ name }}
@@ -287,7 +287,7 @@ outputs:
         - python-socketio
         - pythreejs
         - pyviz_comms
-        - pyvo
+        - pyvo >=1.4.2,<2
         - ripgrep
         - sidecar
         - snappy
