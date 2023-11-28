@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "7.0.1" %}
-{% set build_number = 13 %}
+{% set build_number = 14 %}
 
 package:
   name: {{ name }}
@@ -113,7 +113,7 @@ outputs:
         - astroquery
         - autograd
         - backoff
-        - boto3
+        - boto3 !=1.33.0
         - bottleneck
         - cassandra-driver  # [linux64]
         - click !=8.1.0,!=8.1.1
