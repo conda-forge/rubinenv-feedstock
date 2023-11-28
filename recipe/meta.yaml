@@ -340,7 +340,7 @@ outputs:
         - pyflakes
         - pytest-profiling
         - python-build
-        - pyvo
+        - pyvo >=1.4.2,<2
         - ripgrep
         - snakeviz
         - types-deprecated
