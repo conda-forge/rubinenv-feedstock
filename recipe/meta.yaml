@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "7.0.1" %}
-{% set build_number = 14 %}
+{% set build_number = 15 %}
 
 package:
   name: {{ name }}
@@ -227,6 +227,7 @@ outputs:
         - cloudpickle
         - cookiecutter
         - dash >=2.11
+        - dask-core <2023.11 # from datashader, 2023.11 hates pyarrow<14
         - datashader
         - fastparquet
         - ffmpeg # RFC-846
