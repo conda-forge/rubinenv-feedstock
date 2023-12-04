@@ -274,7 +274,6 @@ outputs:
         - nbdime
         - nbval
         - nodejs >=16
-        - openssl !=3.2.0
         - panel >=0.12.1 # shared
         - papermill
         - paramnb
