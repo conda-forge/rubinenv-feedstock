@@ -2,8 +2,6 @@ BUILD:
 - aarch64-conda_cos7-linux-gnu
 apr:
 - '1'
-boost:
-- 1.78.0
 c_compiler:
 - gcc
 c_compiler_version:
@@ -44,6 +42,8 @@ libaprutil:
 - '1'
 libblas:
 - 3.9 *netlib
+libboost_python_devel:
+- '1.82'
 libcblas:
 - 3.9 *netlib
 liblapack:
@@ -59,8 +59,6 @@ ndarray:
 numpy:
 - '1.24'
 pin_run_as_build:
-  boost:
-    max_pin: x.x.x
   python:
     min_pin: x.x
     max_pin: x.x

@@ -2,8 +2,6 @@ MACOSX_DEPLOYMENT_TARGET:
 - '11.0'
 apr:
 - '1'
-boost:
-- 1.78.0
 c_compiler:
 - clang
 c_compiler_version:
@@ -38,6 +36,8 @@ libaprutil:
 - '1'
 libblas:
 - 3.9 *netlib
+libboost_python_devel:
+- '1.82'
 libcblas:
 - 3.9 *netlib
 libcxx:
@@ -57,8 +57,6 @@ ndarray:
 numpy:
 - '1.24'
 pin_run_as_build:
-  boost:
-    max_pin: x.x.x
   python:
     min_pin: x.x
     max_pin: x.x
