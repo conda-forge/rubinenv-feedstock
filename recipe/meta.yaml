@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
-{% set version = "7.0.0dev" %}
-{% set build_number = 7 %}
+{% set version = "8.0.0dev" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name }}
@@ -62,6 +62,7 @@ outputs:
         - doxygen
         - flake8 =6.0
         - make
+        - meson
         - nose
         - pep8-naming
         - pip
@@ -113,7 +114,7 @@ outputs:
         - astroquery
         - autograd
         - backoff
-        - boto3
+        - boto3 !=1.33.0
         - bottleneck
         - cassandra-driver  # [linux64]
         - click !=8.1.0,!=8.1.1
@@ -121,6 +122,7 @@ outputs:
         # conda is required for runtime inspection of installed software
         - conda
         - configparser
+        - defusedxml
         - deprecated
         - dustmaps
         - emcee
@@ -144,12 +146,17 @@ outputs:
         - iminuit >=2
         - lmfit
         - lsstdesc.coord
+        - lsst-ts-xml
         - matplotlib-base !=3.6.0
+        - mkl  # [linux64]
         - moto >=3
         - mpi4py
+        - nest-asyncio
         - networkx
+        - ngmix-core
         - numexpr =2
         - {{ pin_compatible('numpy') }}
+        - panda-client !=1.5.65
         - pandas
         - parsl ==2023.06.12
         - pgcli
@@ -159,7 +166,7 @@ outputs:
         - psycopg2 =2
         - pyarrow
         - pybind11
-        - pydantic <2
+        - pydantic >=2,<3
         - pyld
         - pysynphot
         - pytables
@@ -167,13 +174,13 @@ outputs:
         - pytorch
         - pyyaml
         - requests
-        - ruff ==0.0.275
+        - ruff ==0.1.7
         - schwimmbad
         - scikit-image !=0.18
         - scikit-learn
         - scipy >=1.10
         - seaborn
-        - skyproj
+        - skyproj >=1.1.0
         - spherematch
         - sqlalchemy
         - sqlite
@@ -217,27 +224,30 @@ outputs:
         - astroplan # sims
         - astrowidgets >=0.3
         - awkward
-        - awkward-numba
+        - awkward-pandas
         - black
         - bokeh
         - bqplot
         - ciso8601
         - cloudpickle
         - cookiecutter
-        - dash
-        - dask
-        - dask-kubernetes
-        - dask_labextension
+        - dash >=2.11
+        - dask-core
         - datashader
-        - distributed
         - fastparquet
         - ffmpeg # RFC-846
         - freetype-py
         - gcsfs
         - geoviews
+        - gh
         - ginga >=3
         - graphviz
+        - hatch-jupyter-builder
+        - hatch-nodejs-version
+        - hatchling
+        - hdf5plugin
         - holoviews
+        - httpx # RFC-969
         - hvplot
         - imagemagick # RFC-846
         - intake
@@ -250,12 +260,12 @@ outputs:
         - isort !=5.11.0
         - jedi
         - jupyter
-        - jupyter-dash
         - jupyter-packaging
+        - jupyter-resource-usage
         - jupyter-server-proxy
         - jupyter_bokeh
         - jupyterhub
-        - jupyterlab >=3.6,<4
+        - jupyterlab >=4,<5
         - jupyterlab_execute_time
         - jupyterlab_iframe
         - jupyterlab_widgets
@@ -285,6 +295,7 @@ outputs:
         - pyviz_comms
         - pyvo
         - ripgrep
+        - sbpy  # [not aarch64]
         - sidecar
         - snappy
         - terminado
@@ -319,7 +330,7 @@ outputs:
         - isort !=5.11.0
         - jedi
         - jupyter
-        - jupyterlab >=3.6,<4
+        - jupyterlab >=4,<5
         - jupyterlab_server
         - line_profiler
         - lsst-documenteer-pipelines
@@ -328,7 +339,6 @@ outputs:
         - mypy
         - mysqlclient
         - panel >=0.12.1
-        - pdbpp  # [not aarch64]
         - pep8
         - postgresql
         - pre-commit
