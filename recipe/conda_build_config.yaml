@@ -45,7 +45,7 @@ numpy:
 starlink_ast:
   - '9.2.10'
 wcslib:
-  - '7'
+  - '8'
 xpa:
   - '2'
 yaml_cpp:
