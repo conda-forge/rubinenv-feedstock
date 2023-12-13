@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "8.0.0dev" %}
-{% set build_number = 0 %}
+{% set build_number = 1 %}
 
 package:
   name: {{ name }}
@@ -148,7 +148,6 @@ outputs:
         - lsstdesc.coord
         - lsst-ts-xml
         - matplotlib-base !=3.6.0
-        - mkl  # [linux64]
         - moto >=3
         - mpi4py
         - nest-asyncio
@@ -165,7 +164,7 @@ outputs:
         - prmon  # [linux]
         - psycopg2 =2
         - pyarrow
-        - pybind11
+        - pybind11 <2.11
         - pydantic >=2,<3
         - pyld
         - pysynphot
@@ -195,7 +194,7 @@ outputs:
         # grep pin-it output for python dependency
         - pin-it rubin-env-nosysroot | grep "python="
         # ensure binary compatibility; bump major version if not
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1016 ]'  # [linux]
+        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1017 ]'  # [linux]
         - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
 
   - name: rubin-env
@@ -211,7 +210,7 @@ outputs:
         # grep pin-it output for python dependency
         - pin-it rubin-env | grep "python="
         # ensure binary compatibility; bump major version if not
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1016 ]'  # [linux]
+        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1017 ]'  # [linux]
         - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
 
   - name: rubin-env-rsp

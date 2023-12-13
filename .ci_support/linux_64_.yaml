@@ -1,17 +1,15 @@
 apr:
 - '1'
-boost:
-- 1.78.0
 c_compiler:
 - gcc
 c_compiler_version:
-- '11'
+- '12'
 cdt_name:
 - cos7
 cffi:
 - '1'
 cfitsio:
-- 4.2.0
+- 4.3.1
 channel_sources:
 - conda-forge
 channel_targets:
@@ -21,7 +19,7 @@ curl:
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '11'
+- '12'
 cython:
 - '0'
 docker_image:
@@ -33,13 +31,15 @@ fftw:
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
-- '11'
+- '12'
 gsl:
 - '2.7'
 libaprutil:
 - '1'
 libblas:
 - 3.9 *netlib
+libboost_python_devel:
+- '1.82'
 libcblas:
 - 3.9 *netlib
 libcxx:
@@ -49,7 +49,7 @@ liblapack:
 liblapacke:
 - 3.9 *netlib
 log4cxx:
-- 0.11.0
+- 1.1.0
 minuit2:
 - '6'
 ndarray:
@@ -57,8 +57,6 @@ ndarray:
 numpy:
 - '1.24'
 pin_run_as_build:
-  boost:
-    max_pin: x.x.x
   python:
     min_pin: x.x
     max_pin: x.x
@@ -71,7 +69,7 @@ starlink_ast:
 target_platform:
 - linux-64
 wcslib:
-- '7'
+- '8'
 xpa:
 - '2'
 yaml_cpp:
