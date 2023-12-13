@@ -25,7 +25,6 @@ outputs:
         - {{ compiler('cxx') }}
         - {{ compiler('fortran') }}
         - apr
-        - boost
         - cfitsio
         - curl
         - fftw
@@ -61,6 +60,7 @@ outputs:
         - coveralls
         - doxygen
         - flake8 =6.0
+        - libboost-python-devel
         - make
         - meson
         - nose
@@ -84,7 +84,6 @@ outputs:
         # above, we need most of these at build time, so they are mostly
         # host-like
         - apr {{ apr }}.*
-        - boost {{ boost }}.*
         - cffi {{ cffi }}.*
         - cfitsio {{ cfitsio }}.*
         - cython {{ cython }}.*
@@ -94,6 +93,7 @@ outputs:
         - galsim
         - gsl {{ gsl }}.*
         - libaprutil {{ libaprutil }}.*
+        - libboost-python-devel
         - libcxx {{ libcxx }}.*  # [not aarch64]
         - llvmlite
         - log4cxx {{ log4cxx }}.*
