@@ -23,7 +23,7 @@ boost:
 cffi:
   - '1'
 cfitsio:
-  - 4.3.0
+  - 4.3.1
 cython:
   - '0'
 eigen:
