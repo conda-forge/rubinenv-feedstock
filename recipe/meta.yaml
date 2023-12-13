@@ -148,7 +148,6 @@ outputs:
         - lsstdesc.coord
         - lsst-ts-xml
         - matplotlib-base !=3.6.0
-        - mkl  # [linux64]
         - moto >=3
         - mpi4py
         - nest-asyncio
