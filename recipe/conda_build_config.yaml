@@ -35,7 +35,7 @@ libaprutil:
 libcxx:
   - '16'
 log4cxx:
-  - 0.11.0
+  - 1.1.0
 minuit2:
   - '6'
 ndarray:
