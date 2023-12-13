@@ -164,7 +164,7 @@ outputs:
         - prmon  # [linux]
         - psycopg2 =2
         - pyarrow
-        - pybind11
+        - pybind11 <2.11
         - pydantic >=2,<3
         - pyld
         - pysynphot
