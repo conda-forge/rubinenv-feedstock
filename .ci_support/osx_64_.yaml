@@ -20,8 +20,6 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '16'
-cython:
-- '0'
 eigen:
 - '3.4'
 fftw:
