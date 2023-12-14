@@ -92,7 +92,7 @@ outputs:
         - galsim
         - gsl {{ gsl }}.*
         - libaprutil {{ libaprutil }}.*
-        - libboost-python-devel
+        - libboost-python-devel {{ libboost_python_devel }}.*
         - libcxx {{ libcxx }}.*  # [not aarch64]
         - llvmlite
         - log4cxx {{ log4cxx }}.*
