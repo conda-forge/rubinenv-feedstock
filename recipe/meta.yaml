@@ -86,7 +86,6 @@ outputs:
         - apr {{ apr }}.*
         - cffi {{ cffi }}.*
         - cfitsio {{ cfitsio }}.*
-        - cython {{ cython }}.*
         - eigen {{ eigen }}.*
         - eups
         - firefly-client
