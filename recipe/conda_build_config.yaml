@@ -49,4 +49,4 @@ wcslib:
 xpa:
   - '2'
 yaml_cpp:
-  - '0.7'
+  - '0.8'
