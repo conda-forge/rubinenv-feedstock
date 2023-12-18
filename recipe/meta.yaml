@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "8.0.0dev" %}
-{% set build_number = 2 %}
+{% set build_number = 3 %}
 
 package:
   name: {{ name }}
@@ -269,7 +269,6 @@ outputs:
         - jupyterlab_widgets
         - jupyterlab-variableinspector
         - lsst-efd-client
-        - mamba
         - mypy
         - mysqlclient
         - nb_black

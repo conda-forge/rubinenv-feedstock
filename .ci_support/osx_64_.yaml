@@ -71,7 +71,7 @@ wcslib:
 xpa:
 - '2'
 yaml_cpp:
-- '0.7'
+- '0.8'
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
