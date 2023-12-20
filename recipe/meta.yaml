@@ -89,7 +89,6 @@ outputs:
         - eigen {{ eigen }}.*
         - eups
         - firefly-client
-        - galsim
         - gsl {{ gsl }}.*
         - libaprutil {{ libaprutil }}.*
         - libboost-python-devel {{ libboost_python_devel }}.*
@@ -131,6 +130,7 @@ outputs:
         - fitsverify
         - frozendict >=2.2.0
         - future
+        - galsim
         - getcalspec >=2.0.0
         - git
         - git-lfs
