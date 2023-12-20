@@ -178,7 +178,7 @@ outputs:
         - schwimmbad
         - scikit-image !=0.18
         - scikit-learn
-        - scipy >=1.10,<1.11
+        - scipy >=1.10
         - seaborn
         - skyproj >=1.1.0
         - spherematch
@@ -279,7 +279,6 @@ outputs:
         - nbdime
         - nbval
         - nodejs >=16
-        - openssl <3.2 # until libpq is fixed
         - panel >=0.12.1 # shared
         - papermill
         - paramnb
@@ -294,7 +293,7 @@ outputs:
         - python-socketio
         - pythreejs
         - pyviz_comms
-        - pyvo >=1.4.2,<2
+        - pyvo
         - ripgrep
         - sbpy  # [not aarch64]
         - sidecar
@@ -348,7 +347,7 @@ outputs:
         - pyflakes
         - pytest-profiling
         - python-build
-        - pyvo >=1.4.2,<2
+        - pyvo
         - ripgrep
         - snakeviz
         - types-deprecated
