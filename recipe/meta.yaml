@@ -146,7 +146,7 @@ outputs:
         - lmfit
         - lsstdesc.coord
         - lsst-ts-xml
-        - matplotlib-base !=3.6.0,>=3.8.0
+        - matplotlib-base >=3.8.0
         - moto >=3
         - mpi4py
         - nest-asyncio
@@ -155,7 +155,7 @@ outputs:
         - numexpr =2
         - {{ pin_compatible('numpy') }}
         - panda-client !=1.5.65
-        - pandas
+        - pandas =2
         - parsl ==2023.06.12
         - pgcli
         - photutils >=1.7
