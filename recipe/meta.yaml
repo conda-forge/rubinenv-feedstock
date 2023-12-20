@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "8.0.0dev" %}
-{% set build_number = 3 %}
+{% set build_number = 4 %}
 
 package:
   name: {{ name }}
@@ -89,7 +89,6 @@ outputs:
         - eigen {{ eigen }}.*
         - eups
         - firefly-client
-        - galsim
         - gsl {{ gsl }}.*
         - libaprutil {{ libaprutil }}.*
         - libboost-python-devel {{ libboost_python_devel }}.*
@@ -109,7 +108,7 @@ outputs:
         ###################################################
         # run-like
         - alembic
-        - astropy >=5.2
+        - astropy >=5.3
         - astroquery
         - autograd
         - backoff
@@ -131,6 +130,7 @@ outputs:
         - fitsverify
         - frozendict >=2.2.0
         - future
+        - galsim
         - getcalspec >=2.0.0
         - git
         - git-lfs
@@ -138,7 +138,7 @@ outputs:
         - healpy
         - healsparse
         - hpgeom >=0.8.2
-        - htcondor
+        - htcondor >=23.0,<23.1
         - humanize
         - idds-client >=0.11.0
         - idds-doma >=0.11.0
@@ -146,7 +146,7 @@ outputs:
         - lmfit
         - lsstdesc.coord
         - lsst-ts-xml
-        - matplotlib-base !=3.6.0
+        - matplotlib-base !=3.6.0,>=3.8.0
         - moto >=3
         - mpi4py
         - nest-asyncio
