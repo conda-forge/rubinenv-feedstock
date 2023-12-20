@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
-{% set version = "7.0.1" %}
-{% set build_number = 16 %}
+{% set version = "8.0.0" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name }}
@@ -25,7 +25,6 @@ outputs:
         - {{ compiler('cxx') }}
         - {{ compiler('fortran') }}
         - apr
-        - boost
         - cfitsio
         - curl
         - fftw
@@ -61,7 +60,9 @@ outputs:
         - coveralls
         - doxygen
         - flake8 =6.0
+        - libboost-python-devel
         - make
+        - meson
         - nose
         - pep8-naming
         - pip
@@ -83,16 +84,14 @@ outputs:
         # above, we need most of these at build time, so they are mostly
         # host-like
         - apr {{ apr }}.*
-        - boost {{ boost }}.*
         - cffi {{ cffi }}.*
         - cfitsio {{ cfitsio }}.*
-        - cython {{ cython }}.*
         - eigen {{ eigen }}.*
         - eups
         - firefly-client
-        - galsim
         - gsl {{ gsl }}.*
         - libaprutil {{ libaprutil }}.*
+        - libboost-python-devel {{ libboost_python_devel }}.*
         - libcxx {{ libcxx }}.*  # [not aarch64]
         - llvmlite
         - log4cxx {{ log4cxx }}.*
@@ -109,7 +108,7 @@ outputs:
         ###################################################
         # run-like
         - alembic
-        - astropy >=5.2
+        - astropy >=5.3
         - astroquery
         - autograd
         - backoff
@@ -121,6 +120,7 @@ outputs:
         # conda is required for runtime inspection of installed software
         - conda
         - configparser
+        - defusedxml
         - deprecated
         - dustmaps
         - emcee
@@ -130,6 +130,7 @@ outputs:
         - fitsverify
         - frozendict >=2.2.0
         - future
+        - galsim
         - getcalspec >=2.0.0
         - git
         - git-lfs
@@ -137,31 +138,33 @@ outputs:
         - healpy
         - healsparse
         - hpgeom >=0.8.2
-        - htcondor
+        - htcondor >=23.0,<23.1
         - humanize
         - idds-client >=0.11.0
         - idds-doma >=0.11.0
         - iminuit >=2
         - lmfit
         - lsstdesc.coord
-        - matplotlib-base !=3.6.0
-        - mkl  # [linux64]
+        - lsst-ts-xml
+        - matplotlib-base >=3.8.0
         - moto >=3
         - mpi4py
+        - nest-asyncio
         - networkx
+        - ngmix-core
         - numexpr =2
         - {{ pin_compatible('numpy') }}
         - panda-client !=1.5.65
-        - pandas <2.1
+        - pandas =2
         - parsl ==2023.06.12
         - pgcli
         - photutils >=1.7
         - piff
         - prmon  # [linux]
         - psycopg2 =2
-        - pyarrow <13
+        - pyarrow
         - pybind11 <2.11
-        - pydantic <2
+        - pydantic >=2,<3
         - pyld
         - pysynphot
         - pytables
@@ -169,13 +172,13 @@ outputs:
         - pytorch
         - pyyaml
         - requests
-        - ruff ==0.0.278
+        - ruff ==0.1.7
         - schwimmbad
         - scikit-image !=0.18
         - scikit-learn
-        - scipy >=1.10,<1.11
+        - scipy >=1.10
         - seaborn
-        - skyproj
+        - skyproj >=1.1.0
         - spherematch
         - sqlalchemy
         - sqlite
@@ -190,7 +193,7 @@ outputs:
         # grep pin-it output for python dependency
         - pin-it rubin-env-nosysroot | grep "python="
         # ensure binary compatibility; bump major version if not
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1016 ]'  # [linux]
+        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1017 ]'  # [linux]
         - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
 
   - name: rubin-env
@@ -206,7 +209,7 @@ outputs:
         # grep pin-it output for python dependency
         - pin-it rubin-env | grep "python="
         # ensure binary compatibility; bump major version if not
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1016 ]'  # [linux]
+        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1017 ]'  # [linux]
         - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
 
   - name: rubin-env-rsp
@@ -227,7 +230,7 @@ outputs:
         - cloudpickle
         - cookiecutter
         - dash >=2.11
-        - dask-core <2023.11 # from datashader, 2023.11 hates pyarrow<14
+        - dask-core
         - datashader
         - fastparquet
         - ffmpeg # RFC-846
@@ -266,7 +269,6 @@ outputs:
         - jupyterlab_widgets
         - jupyterlab-variableinspector
         - lsst-efd-client
-        - mamba
         - mypy
         - mysqlclient
         - nb_black
@@ -274,7 +276,6 @@ outputs:
         - nbdime
         - nbval
         - nodejs >=16
-        - openssl <3.2 # until libpq is fixed
         - panel >=0.12.1 # shared
         - papermill
         - paramnb
@@ -289,7 +290,7 @@ outputs:
         - python-socketio
         - pythreejs
         - pyviz_comms
-        - pyvo >=1.4.2,<2
+        - pyvo
         - ripgrep
         - sbpy  # [not aarch64]
         - sidecar
@@ -343,7 +344,7 @@ outputs:
         - pyflakes
         - pytest-profiling
         - python-build
-        - pyvo >=1.4.2,<2
+        - pyvo
         - ripgrep
         - snakeviz
         - types-deprecated
