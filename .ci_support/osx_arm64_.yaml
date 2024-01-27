@@ -7,7 +7,7 @@ boost:
 c_compiler:
 - clang
 c_compiler_version:
-- '13'
+- 13 default_*
 cffi:
 - '1'
 cfitsio:
@@ -21,7 +21,7 @@ curl:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '13'
+- 13 default_*
 cython:
 - '0'
 eigen:
@@ -57,8 +57,6 @@ ndarray:
 numpy:
 - '1.21'
 pin_run_as_build:
-  boost:
-    max_pin: x.x.x
   python:
     min_pin: x.x
     max_pin: x.x
