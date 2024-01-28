@@ -24,8 +24,8 @@ outputs:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - {{ compiler('fortran') }}
-        - clang {{c_compiler_version}} default_*    # [osx]
-        - clang {{cxx_compiler_version}} default_*  # [osx]
+        - clang {{ c_compiler_version }} default_*    # [osx]
+        - clang {{ cxx_compiler_version }} default_*  # [osx]
         - apr
         - boost
         - cfitsio
