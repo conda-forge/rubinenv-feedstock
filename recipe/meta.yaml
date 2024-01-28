@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "4.0.5" %}
-{% set build_number = 5 %}
+{% set build_number = 6 %}
 
 package:
   name: {{ name }}
@@ -24,6 +24,8 @@ outputs:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - {{ compiler('fortran') }}
+        - clang {{c_compiler_version}} default_*    # [osx]
+        - clang {{cxx_compiler_version}} default_*  # [osx]
         - apr
         - boost
         - cfitsio
