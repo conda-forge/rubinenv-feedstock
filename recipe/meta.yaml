@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "8.0.0" %}
-{% set build_number = 1 %}
+{% set build_number = 2 %}
 
 package:
   name: {{ name }}
@@ -147,7 +147,7 @@ outputs:
         - lsstdesc.coord
         - lsst-ts-xml
         - matplotlib-base >=3.8.0
-        - moto >=3
+        - moto >=3,<5
         - mpi4py
         - nest-asyncio
         - networkx
