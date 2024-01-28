@@ -56,6 +56,8 @@ outputs:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - {{ compiler('fortran') }}
+        - clang {{ c_compiler_version }} default_*    # [osx]
+        - clang {{ cxx_compiler_version }} default_*  # [osx]
         # The above are needed to get the official conda-forge versions.
         # The below is needed to get convenience symlinks for users to invoke.
         - compilers
