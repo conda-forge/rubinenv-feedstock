@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "5.0.1" %}
-{% set build_number = 6 %}
+{% set build_number = 7 %}
 
 package:
   name: {{ name }}
@@ -147,7 +147,7 @@ outputs:
         - lmfit <1.0.3
         - lsstdesc.coord
         - matplotlib-base !=3.6.0,<3.7.0
-        - moto >=3
+        - moto >=3,<5
         - mpi4py
         - networkx <3
         - numexpr =2
