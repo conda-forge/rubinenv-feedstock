@@ -24,10 +24,10 @@ outputs:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - {{ compiler('fortran') }}
-        - clang {{c_compiler_version}} default_*  # [osx and arm64]
+        - clang {{c_compiler_version}} default_*      # [osx and arm64]
         - clangxx {{cxx_compiler_version}} default_*  # [osx and arm64]
-        - clang {{c_compiler_version}} default_* #  [osx and x86_64]
-        - clangxx {{cxx_compiler_version}} default_* #  [osx and x86_64]
+        - clang {{c_compiler_version}} default_*      # [osx and x86_64]
+        - clangxx {{cxx_compiler_version}} default_*  # [osx and x86_64]
         - apr
         - boost
         - cfitsio
