@@ -148,7 +148,7 @@ outputs:
         - lsst-ts-xml
         - matplotlib-base >=3.8.0
         - moto >=3,<5
-        - mpi4py
+        - mpi4py [build!=py311he9ffdee_1]
         - nest-asyncio
         - networkx
         - ngmix-core
