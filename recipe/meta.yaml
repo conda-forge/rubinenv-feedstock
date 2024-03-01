@@ -40,6 +40,8 @@ outputs:
         - starlink-ast
         - wcslib
         - xpa
+      run_constrained:
+        - impi_rt == 9999999999999
       run:
         # jq is special - it is needed for the pin-it utility in this package
         - jq
@@ -148,7 +150,7 @@ outputs:
         - lsst-ts-xml
         - matplotlib-base >=3.8.0
         - moto >=3,<5
-        - mpi4py [build!=py311he9ffdee_1]
+        - mpi4py
         - nest-asyncio
         - networkx
         - ngmix-core
