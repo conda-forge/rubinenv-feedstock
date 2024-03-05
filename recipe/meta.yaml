@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "8.0.0" %}
-{% set build_number = 4 %}
+{% set build_number = 5 %}
 
 package:
   name: {{ name }}
@@ -294,7 +294,10 @@ outputs:
         - pyviz_comms
         - pyvo
         - ripgrep
+        - rubin-scheduler
+        - rubin-sim
         - sbpy  # [not aarch64]
+        - schedview
         - sidecar
         - snappy
         - terminado
