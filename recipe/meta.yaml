@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "5.0.1" %}
-{% set build_number = 7 %}
+{% set build_number = 8 %}
 
 package:
   name: {{ name }}
@@ -180,6 +180,7 @@ outputs:
         - threadpoolctl
         - tqdm
         - treecorr =4
+        - urllib3 <2
         - ws4py
 
     test:
