@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "4.0.5" %}
-{% set build_number = 7 %}
+{% set build_number = 8 %}
 
 package:
   name: {{ name }}
@@ -145,6 +145,7 @@ outputs:
         - inflection
         - iminuit >=2
         - lmfit <1.0.3
+        - urllib3 <2
         - lsstdesc.coord
         - matplotlib-base !=3.6.0,<3.7.0
         - moto >=3,<5
