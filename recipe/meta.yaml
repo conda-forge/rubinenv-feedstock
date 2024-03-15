@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "7.0.1" %}
-{% set build_number = 17 %}
+{% set build_number = 18 %}
 
 package:
   name: {{ name }}
@@ -41,6 +41,8 @@ outputs:
         - starlink-ast
         - wcslib
         - xpa
+      run_constrained:
+        - impi_rt == 9999999999999
       run:
         # jq is special - it is needed for the pin-it utility in this package
         - jq
