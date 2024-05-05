@@ -13,7 +13,7 @@ llvm_openmp:                              # [osx]
   - 16                                    # [osx]
 python:
   # part of a zip_keys: python, python_impl, numpy
-  - 3.11.* *_cpython
+  - 3.12.* *_cpython
 python_impl:
   - cpython
 apr:
@@ -21,9 +21,9 @@ apr:
 cffi:
   - '1'
 cfitsio:
-  - 4.3.1
+  - 4.4.0
 cython:
-  - '0'
+  - '3'
 eigen:
   - '3.4'
 gsl:
@@ -35,13 +35,13 @@ libboost_python_devel:
 libcxx:
   - '16'
 log4cxx:
-  - 1.1.0
+  - 1.2.0
 minuit2:
   - '6'
 ndarray:
   - '1'
 numpy:
-  - '1.24'
+  - '1.26.4'
 starlink_ast:
   - '9.2.10'
 wcslib:
