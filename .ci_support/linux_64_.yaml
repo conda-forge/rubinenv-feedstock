@@ -9,7 +9,7 @@ cdt_name:
 cffi:
 - '1'
 cfitsio:
-- 4.3.1
+- 4.4.0
 channel_sources:
 - conda-forge
 channel_targets:
@@ -47,19 +47,19 @@ liblapack:
 liblapacke:
 - 3.9 *netlib
 log4cxx:
-- 1.1.0
+- 1.2.0
 minuit2:
 - '6'
 ndarray:
 - '1'
 numpy:
-- '1.24'
+- 1.26.4
 pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.11.* *_cpython
+- 3.12.* *_cpython
 python_impl:
 - cpython
 starlink_ast:
