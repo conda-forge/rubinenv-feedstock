@@ -1,13 +1,13 @@
 {% set name = "rubin-env" %}
-{% set version = "8.0.0dev" %}
-{% set build_number = 4 %}
+{% set version = "9.0.0dev" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 build:
-  skip: True  # [python_impl == 'pypy' or win or py != 311]
+  skip: True  # [python_impl == 'pypy' or win or py != 312]
   number: {{ build_number }}
 
 outputs:
@@ -40,6 +40,8 @@ outputs:
         - starlink-ast
         - wcslib
         - xpa
+      run_constrained:
+        - impi_rt == 9999999999999
       run:
         # jq is special - it is needed for the pin-it utility in this package
         - jq
@@ -54,29 +56,28 @@ outputs:
         - {{ compiler('fortran') }}
         # The above are needed to get the official conda-forge versions.
         # The below is needed to get convenience symlinks for users to invoke.
-        - compilers
-        - cmake
-        - coverage >=3.6,!=6.3,!=7.0.0
-        - coveralls
-        - doxygen
-        - flake8 =6.0
-        - libboost-python-devel
-        - make
-        - meson
-        - nose
-        - pep8-naming
-        - pip
-        - psutil
-        - pytest
-        - pytest-cov
-        - pytest-doctestplus
-        - pytest-openfiles
-        - pytest-runner
-        - pytest-session2file
-        - pytest-subtests
-        - pytest-vcr
-        - pytest-xdist
-        - scons
+        - compilers >=1.7.0
+        - cmake >=3.28.1
+        - coverage >=7.3.3
+        - coveralls >=1.8.0
+        - doxygen >=1.9.8
+        - flake8 ==7.0.0
+        - make >=4.3
+        - meson >=1.3.0
+        - nose >=1.3.7
+        - pep8-naming >=0.13.3
+        - pip >=23.3.2
+        - psutil >=5.9.7
+        - pytest >=8.2.0
+        - pytest-cov >=4.1.0
+        - pytest-doctestplus >=1.1.0
+        - pytest-openfiles >=0.5.0
+        - pytest-runner >=6.0.0
+        - pytest-session2file >=0.1.11
+        - pytest-subtests >=0.11.0
+        - pytest-vcr >=1.0.2
+        - pytest-xdist >=3.5.0
+        - scons >=4.6.0
 
         ###################################################
         # host-like and run-like
@@ -107,86 +108,90 @@ outputs:
 
         ###################################################
         # run-like
-        - alembic
-        - astropy >=5.3
-        - astroquery
-        - autograd
-        - backoff
-        - boto3 !=1.33.0
-        - bottleneck
-        - cassandra-driver  # [linux64]
-        - click !=8.1.0,!=8.1.1
-        - coloredlogs
+        - alembic >=1.13.0
+        - astropy >=6.0.0
+        - astroquery >=0.4.6
+        - autograd >=1.6.2
+        - backoff >=2.2.1
+        - boto3 >=1.34.4
+        - bottleneck >=1.3.7
+        - cassandra-driver >=3.28.0  # [linux64]
+        - click >=8.1.7
+        - coloredlogs >=15.0.1
+        - colour-science >=0.4.4
         # conda is required for runtime inspection of installed software
-        - conda
-        - configparser
-        - defusedxml
-        - deprecated
-        - dustmaps
-        - emcee
-        - esutil
-        - fastavro
-        - fitsio
-        - fitsverify
-        - frozendict >=2.2.0
-        - future
-        - galsim
-        - getcalspec >=2.0.0
-        - git
-        - git-lfs
-        - h5py
-        - healpy
-        - healsparse
-        - hpgeom >=0.8.2
+        - conda >=23.11.0
+        - configparser >=5.3.0
+        - defusedxml >=0.7.1
+        - deprecated >=1.2.14
+        - dustmaps >=1.0.12
+        - emcee >=3.1.4
+        - esutil >=0.6.11
+        - fastavro >=1.9.1
+        - fitsio >=1.2.1
+        - fitsverify >=4.22
+        - frozendict >=2.3.10
+        - future >=0.18.3
+        - galsim >=2.5.2
+        - getcalspec >=2.1.0
+        - git >=2.42.0
+        - git-lfs >=3.4.1
+        - h5py >=3.10.0
+        - healpy >=1.16.6
+        - healsparse >=1.8.1
+        - hpgeom >=1.2.0
         - htcondor >=23.0,<23.1
-        - humanize
-        - idds-client >=0.11.0
-        - idds-doma >=0.11.0
-        - iminuit >=2
-        - lmfit
-        - lsstdesc.coord
-        - lsst-ts-xml
-        - matplotlib-base !=3.6.0,>=3.8.0
-        - moto >=3
-        - mpi4py
-        - nest-asyncio
-        - networkx
-        - ngmix-core
-        - numexpr =2
+        - humanize >=4.9.0
+        - idds-client >=2.0.9
+        - idds-doma >=2.0.9
+        - iminuit >=2.24.0
+        - lmfit >=1.2.2
+        - lsstdesc.coord >=1.3.0
+        - lsst-ts-xml >=20.1.0
+        - matplotlib-base >=3.8.2
+        - moto >=5.0.6
+        - mpi4py >=3.1.5
+        - nest-asyncio >=1.5.8
+        - networkx >=3.2.1
+        - ngmix-core >=2.3.0
+        - numexpr >=2.8.7
+        - opencv >=4.9.0
         - {{ pin_compatible('numpy') }}
-        - panda-client !=1.5.65
-        - pandas
-        - parsl ==2023.06.12
-        - pgcli
-        - photutils >=1.7
-        - piff
-        - prmon  # [linux]
-        - psycopg2 =2
-        - pyarrow
-        - pybind11 <2.11
-        - pydantic >=2,<3
-        - pyld
-        - pysynphot
-        - pytables
-        - python
-        - pytorch
-        - pyyaml
-        - requests
-        - ruff ==0.1.7
-        - schwimmbad
-        - scikit-image !=0.18
-        - scikit-learn
-        - scipy >=1.10
-        - seaborn
-        - skyproj >=1.1.0
-        - spherematch
-        - sqlalchemy
-        - sqlite
-        - threadpoolctl
-        - torchvision
-        - tqdm
-        - treecorr =4
-        - ws4py
+        - packaging >=23.2
+        - panda-client >=1.5.70
+        - pandas >=2.1.4
+        - parsl ==2024.4.29
+        - pgcli >=3.5.0
+        - photutils >=1.8.0
+        - piff >=1.3.3
+        - prmon >=3.0.2  # [linux]
+        - psycopg2 >=2.9.9
+        - pyarrow >=14.0.2
+        - pybind11 >=2.12.0
+        - pydantic >=2.7.1,<3
+        - pyld >=2.0.3
+        - pysynphot >=2.0.0
+        - pytables >=3.9.2
+        - python >=3.12.3
+        - python-confluent-kafka >=2.3.0
+        - pytorch >=2.1.0
+        - pyyaml >=6.0.1
+        - requests >=2.31.0
+        - ruff ==0.4.3
+        - schwimmbad >=0.3.2
+        - scikit-image >=0.22.0
+        - scikit-learn >=1.3.2
+        - scipy >=1.13.0
+        - seaborn >=0.13.0
+        - skyproj >=1.2.3
+        - spherematch >=0.10.1
+        - sqlalchemy >=2.0.23
+        - sqlite >=3.44.2
+        - threadpoolctl >=3.2.0
+        - torchvision >=0.16.1
+        - tqdm >=4.66.1
+        - treecorr >=4.3.3,<5
+        - ws4py >=0.5.1
 
     test:
       commands:
@@ -202,7 +207,7 @@ outputs:
         - python
       run:
         - {{ pin_subpackage("rubin-env-nosysroot", exact=True) }}
-        - sysroot_linux-64 =2.17  # [linux64]
+        - sysroot_linux-64 =2.28  # [linux64]
         - python
     test:
       commands:
@@ -219,87 +224,87 @@ outputs:
       run:
         - {{ pin_subpackage("rubin-env", exact=True) }}
         # All are from sciplat-lab unless otherwise stated
-        - astroplan # sims
-        - astrowidgets >=0.3
-        - awkward
-        - awkward-pandas
-        - black
-        - bokeh
-        - bqplot
-        - ciso8601
-        - cloudpickle
-        - cookiecutter
-        - dash >=2.11
-        - dask-core
-        - datashader
-        - fastparquet
-        - ffmpeg # RFC-846
-        - freetype-py
-        - gcsfs
-        - geoviews
-        - gh
-        - ginga >=3
-        - graphviz
-        - hatch-jupyter-builder
-        - hatch-nodejs-version
-        - hatchling
-        - hdf5plugin
-        - holoviews
-        - httpx # RFC-969
-        - hvplot
-        - imagemagick # RFC-846
-        - intake
-        - intake-parquet
-        - ipyevents
-        - ipykernel
-        - ipympl
-        - ipyvolume
-        - ipywidgets
-        - isort !=5.11.0
-        - jedi
-        - jupyter
-        - jupyter-packaging
-        - jupyter-resource-usage
-        - jupyter-server-proxy
-        - jupyter_bokeh
-        - jupyterhub
-        - jupyterlab >=4,<5
-        - jupyterlab_execute_time
-        - jupyterlab_iframe
-        - jupyterlab_widgets
-        - jupyterlab-variableinspector
-        - lsst-efd-client
-        - mypy
-        - mysqlclient
-        - nb_black
-        - nbconvert-webpdf
-        - nbdime
-        - nbval
-        - nodejs >=16
-        - panel >=0.12.1 # shared
-        - papermill
-        - paramnb
-        - partd
-        - pep8 # shared
-        - plotly
-        - pre-commit
-        - pyflakes # shared
-        - pypandoc
-        - pyshp
-        - python-snappy
-        - python-socketio
-        - pythreejs
-        - pyviz_comms
-        - pyvo
-        - ripgrep
-        - sbpy  # [not aarch64]
-        - sidecar
-        - snappy
-        - terminado
-        - toolz
-        - wget
-        - xarray
-        - yarn
+        - astroplan >=0.10 # sims
+        - astrowidgets >=0.3.0
+        - awkward >=2.6.4
+        - awkward-pandas >=2023.8.0
+        - black ==24.4
+        - bokeh >=3.3.2
+        - bqplot >=0.12.43
+        - ciso8601 >=2.3.1
+        - cloudpickle >=3.0.0
+        - cookiecutter >=2.6.0
+        - dash >=2.17.0
+        - dask-core >=2024.5.0
+        - datashader >=0.16.0
+        - fastparquet >=2024.2.0
+        - ffmpeg >=4.4.0
+        - freetype-py >=2.4.0
+        - gcsfs >=2024.3.1
+        - geoviews >=1.12.0
+        - gh >=2.49.0
+        - ginga >=4.1.1
+        - graphviz >=9.0.0
+        - hatch-jupyter-builder >=0.9.1
+        - hatch-nodejs-version >=0.3.2
+        - hatchling >=1.24.2
+        - hdf5plugin >=4.4.0
+        - holoviews >=1.18.3
+        - httpx >=0.27.0
+        - hvplot >=0.9.0
+        - imagemagick >=7.1.1_21
+        - intake >=2.0.5
+        - intake-parquet >=0.3.0
+        - ipyevents >=2.0.2
+        - ipykernel >=6.26.0
+        - ipympl >=0.9.4
+        - ipyvolume >=0.6.3
+        - ipywidgets >=8.1.1
+        - isort >=5.13.2
+        - jedi >=0.19.1
+        - jupyter >=1.0.0
+        - jupyter-packaging >=0.12.3
+        - jupyter-resource-usage >=1.0.2
+        - jupyter-server-proxy >=4.1.2
+        - jupyter_bokeh >=4.0.4
+        - jupyterhub >=4.1.5
+        - jupyterlab >=4.1.8,<5
+        - jupyterlab-variableinspector >=3.2.1
+        - jupyterlab_execute_time >=3.1.2
+        - jupyterlab_iframe >=0.5.0
+        - jupyterlab_widgets >=3.0.10
+        - lsst-efd-client >=0.12.0
+        - mypy >=1.7.1
+        - mysqlclient >=2.2.1
+        - nb_black ==1.0.7
+        - nbconvert-webpdf >=7.7.1
+        - nbdime >=4.0.1
+        - nbval >=0.11.0
+        - nodejs >=20.12.2
+        - panel >=1.4.2
+        - papermill >=2.6.0
+        - paramnb >=2.0.4
+        - partd >=1.4.1
+        - pep8 >=1.7.1
+        - plotly >=5.22.0
+        - pre-commit >=3.6.0
+        - pyflakes >=3.0.1
+        - pypandoc >=1.13
+        - pyshp >=2.3.1
+        - python-snappy >=0.7.1
+        - python-socketio >=5.11.2
+        - pythreejs >=2.4.2
+        - pyviz_comms >=3.0.0
+        - pyvo >=1.5
+        - ripgrep >=14.0.3
+        - sbpy >=0.3.0
+        - sidecar >=0.7.0
+        - snappy >=1.1.10
+        - terminado >=0.18.0
+        - toolz >=0.12.0
+        - wget >=1.21.4
+        - xarray >=2023.12.0
+        - yarn >=4.2.1
     test:
       commands:
         # grep pin-it output for yarn dependency
@@ -312,48 +317,48 @@ outputs:
       run:
         - {{ pin_subpackage("rubin-env", exact=True) }}
         - astrowidgets >=0.3
-        - black
-        - bokeh
-        - dask-jobqueue
-        - datashader
-        - fastparquet
-        - ffmpeg
-        - holoviews
-        - hvplot
-        - imagemagick
-        - ipdb
-        - ipympl
-        - ipython
-        - isort !=5.11.0
-        - jedi
-        - jupyter
-        - jupyterlab >=4,<5
-        - jupyterlab_server
-        - line_profiler
-        - lsst-documenteer-pipelines
-        - lsst-documenteer-technote
-        - lsst-efd-client
-        - mypy
-        - mysqlclient
-        - panel >=0.12.1
-        - pep8
-        - postgresql
-        - pre-commit
-        - pyct
-        - pydocstyle
-        - pyflakes
-        - pytest-profiling
-        - python-build
-        - pyvo
-        - ripgrep
-        - snakeviz
-        - types-deprecated
-        - types-pkg_resources
-        - types-python-dateutil
-        - types-pyyaml
-        - types-requests
-        - types-setuptools
-        - types-urllib3
+        - black ==24.4
+        - bokeh >=3.3.2
+        - dask-jobqueue >=0.8.5
+        - datashader >=0.16.0
+        - fastparquet >=2024.2.0
+        - ffmpeg >=4.4.0
+        - holoviews >=1.18.3
+        - hvplot >=0.9.0
+        - imagemagick >=7.1.1_21
+        - ipdb >=0.13.13
+        - ipympl >=0.9.4
+        - ipython >=8.22.2
+        - isort >=5.13.2
+        - jedi >=0.19.1
+        - jupyter >=1.0.0
+        - jupyterlab >=4.1.8,<5
+        - jupyterlab_server >=2.27.1
+        - line_profiler >=4.1.1
+        - lsst-documenteer-pipelines >=0.8.4
+        - lsst-documenteer-technote >=0.8.4
+        - lsst-efd-client >=0.12.0
+        - mypy >=1.7.1
+        - mysqlclient >=2.2.1
+        - panel >=1.4.2
+        - pep8 >=1.7.1
+        - postgresql >=16.2
+        - pre-commit >=3.6.0
+        - pyct >=0.5.0
+        - pydocstyle >=6.3.0
+        - pyflakes >=3.0.1
+        - pytest-profiling >=1.7.0
+        - python-build >=1.2.1
+        - pyvo >=1.5
+        - ripgrep >=14.0.3
+        - snakeviz >=2.2.0
+        - types-deprecated >=1.2.9.20240311
+        - types-pkg_resources >=0.1.3
+        - types-python-dateutil >=2.9.0.20240316
+        - types-pyyaml >=6.0.12.20240311
+        - types-requests >=2.31.0.20240406
+        - types-setuptools >=69.5.0.20240423
+        - types-urllib3 >=1.26.25.14
     test:
       commands:
         # grep pin-it output for black dependency
@@ -367,7 +372,7 @@ outputs:
         - {{ pin_subpackage("rubin-env", exact=True) }}
         - {{ pin_subpackage("rubin-env-rsp", exact=True) }}
         - {{ pin_subpackage("rubin-env-developer", exact=True) }}
-        - rubin-sim >=0.12.0
+        - rubin-sim >=2.0.0
     test:
       commands:
         # grep pin-it output for rubin-env-developer dependency
