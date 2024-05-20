@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "8.0.0" %}
-{% set build_number = 5 %}
+{% set build_number = 6 %}
 
 package:
   name: {{ name }}
@@ -293,6 +293,7 @@ outputs:
         - pythreejs
         - pyviz_comms
         - pyvo
+        - regions
         - ripgrep
         - rubin-scheduler
         - rubin-sim
