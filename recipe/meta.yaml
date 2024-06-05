@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "8.0.0" %}
-{% set build_number = 6 %}
+{% set build_number = 7 %}
 
 package:
   name: {{ name }}
@@ -134,7 +134,7 @@ outputs:
         - future
         - galsim
         - getcalspec >=2.0.0
-        - git
+        - git !=2.45.1
         - git-lfs
         - h5py
         - healpy
