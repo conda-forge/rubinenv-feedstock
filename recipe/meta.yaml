@@ -44,7 +44,7 @@ outputs:
         - impi_rt == 9999999999999
       run:
         # jq is special - it is needed for the pin-it utility in this package
-        - jq
+        - jq >=1.7.1
         ###################################################
         # build-like dependencies
         # As part of our scons build process, we do run tests, so
@@ -158,12 +158,12 @@ outputs:
         - nest-asyncio >=1.5.8
         - networkx >=3.2.1
         - ngmix-core >=2.3.0
-        - numexpr >=2.8.7
+        - numexpr >=2.8.7,<3
         - opencv >=4.9.0
         - {{ pin_compatible('numpy') }}
         - packaging >=23.2
         - panda-client >=1.5.70
-        - pandas >=2.1.4
+        - pandas >=2.1.4,<3
         - parsl ==2024.4.29
         - patch >=2.7.6
         - pgcli >=3.5.0
@@ -178,10 +178,11 @@ outputs:
         - pysynphot >=2.0.0
         - pytables >=3.9.2
         - python >=3.12.3
-        - python-confluent-kafka >=2.3.0
+        - python-confluent-kafka >=1.9.2,<2
         - pytorch >=2.1.0
         - pyyaml >=6.0.1
         - requests >=2.31.0
+        - rucio-clients >=34.3.0
         - ruff ==0.4.3
         - s3fs >=2024.6.1
         - schwimmbad >=0.3.2
@@ -251,7 +252,7 @@ outputs:
         - gcsfs >=2024.3.1
         - geoviews >=1.12.0
         - gh >=2.49.0
-        - ginga >=4.1.1
+        - ginga >=5.0.1
         - graphviz >=9.0.0
         - hatch-jupyter-builder >=0.9.1
         - hatch-nodejs-version >=0.3.2
@@ -264,10 +265,10 @@ outputs:
         - intake >=2.0.5
         - intake-parquet >=0.3.0
         - ipyevents >=2.0.2
-        - ipykernel >=6.26.0
+        - ipykernel >=6.29.3
         - ipympl >=0.9.4
         - ipyvolume >=0.6.3
-        - ipywidgets >=8.1.1
+        - ipywidgets >=8.1.2
         - isort >=5.13.2
         - jedi >=0.19.1
         - jupyter >=1.0.0
@@ -302,16 +303,19 @@ outputs:
         - python-snappy >=0.7.1
         - python-socketio >=5.11.2
         - pythreejs >=2.4.2
-        - pyviz_comms >=3.0.0
+        - pyviz_comms >=3.0.1
         - pyvo >=1.5
         - ripgrep >=14.0.3
+        - rubin-scheduler >=1.1.1
+        - rubin-sim >=2.0.0
         - sbpy >=0.3.0
+        - schedview >=0.11.1
         - sidecar >=0.7.0
         - snappy >=1.1.10
-        - terminado >=0.18.0
-        - toolz >=0.12.0
+        - terminado >=0.18.1
+        - toolz >=0.12.1
         - wget >=1.21.4
-        - xarray >=2023.12.0
+        - xarray >=2024.3.0
         - yarn >=4.2.1
     test:
       commands:
@@ -343,8 +347,8 @@ outputs:
         - jupyterlab >=4.1.8,<5
         - jupyterlab_server >=2.27.1
         - line_profiler >=4.1.1
-        - lsst-documenteer-pipelines >=0.8.4
-        - lsst-documenteer-technote >=0.8.4
+        - lsst-documenteer-pipelines ==0.8.2
+        - lsst-documenteer-technote ==0.8.2
         - lsst-efd-client >=0.12.0
         - mypy >=1.7.1
         - mysqlclient >=2.2.1
@@ -360,11 +364,12 @@ outputs:
         - pyvo >=1.5
         - ripgrep >=14.0.3
         - snakeviz >=2.2.0
+        - sphinx-automodapi >=0.16.0,!=0.17.0
         - types-deprecated >=1.2.9.20240311
         - types-pkg_resources >=0.1.3
         - types-python-dateutil >=2.9.0.20240316
         - types-pyyaml >=6.0.12.20240311
-        - types-requests >=2.31.0.20240406
+        - types-requests >=2.31.0.6
         - types-setuptools >=69.5.0.20240423
         - types-urllib3 >=1.26.25.14
     test:
