@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 build:
-  skip: True  # [python_impl == 'pypy' or win or py != 312]
+  skip: True  # [python_impl == 'pypy' or win or py != 311]
   number: {{ build_number }}
 
 outputs:
@@ -177,7 +177,7 @@ outputs:
         - pyld >=2.0.3
         - pysynphot >=2.0.0
         - pytables >=3.9.2
-        - python >=3.12.3
+        - python >=3.11,<3.12
         - python-confluent-kafka >=1.9.2,<2
         - pytorch >=2.1.0
         - pyyaml >=6.0.1
