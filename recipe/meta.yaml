@@ -305,6 +305,7 @@ outputs:
         - pythreejs >=2.4.2
         - pyviz_comms >=3.0.1
         - pyvo >=1.5
+        - regions >=0.9
         - ripgrep >=14.0.3
         - rubin-scheduler >=1.1.1
         - rubin-sim >=2.0.0
