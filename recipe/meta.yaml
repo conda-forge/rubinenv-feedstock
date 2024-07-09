@@ -138,7 +138,7 @@ outputs:
         - future >=0.18.3
         - galsim >=2.5.2
         - getcalspec >=2.1.0
-        - git >=2.42.0
+        - git >=2.42.0,!=2.45.1
         - git-lfs >=3.4.1
         - h5py >=3.10.0
         - healpy >=1.16.6
