@@ -168,7 +168,7 @@ outputs:
         - patch >=2.7.6
         - pgcli >=3.5.0
         - photutils >=1.8.0
-        - piff >=1.3.3
+        - piff ==1.3.3
         - prmon >=3.0.2  # [linux]
         - psycopg2 >=2.9.9
         - pyarrow >=14.0.2
