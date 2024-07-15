@@ -295,6 +295,7 @@ outputs:
         - paramnb >=2.0.4
         - partd >=1.4.1
         - pep8 >=1.7.1
+        - pkg-config >=0.29.2
         - plotly >=5.22.0
         - pre-commit >=3.6.0
         - pyflakes >=3.0.1
