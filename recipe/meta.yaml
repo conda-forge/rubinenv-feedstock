@@ -183,7 +183,7 @@ outputs:
         - pyyaml >=6.0.1
         - requests >=2.31.0
         - rucio-clients >=34.3.0
-        - ruff ==0.5.1
+        - ruff ==0.5.2
         - s3fs >=2024.6.1
         - schwimmbad >=0.3.2
         - scikit-image >=0.22.0
