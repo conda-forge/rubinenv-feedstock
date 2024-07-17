@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "9.0.0dev" %}
-{% set build_number = 2 %}
+{% set build_number = 3 %}
 
 package:
   name: {{ name }}
@@ -191,7 +191,7 @@ outputs:
         - scipy >=1.13.0,<1.14
         - seaborn >=0.13.0
         - skyproj >=1.2.3
-        - sorcha >=0.9.1  # [not aarch64]
+        - sorcha >=0.9.1
         - spherematch >=0.10.1
         - sqlalchemy >=2.0.23
         - sqlite >=3.44.2
