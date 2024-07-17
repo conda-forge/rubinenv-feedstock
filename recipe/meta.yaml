@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "9.0.0dev" %}
-{% set build_number = 1 %}
+{% set build_number = 2 %}
 
 package:
   name: {{ name }}
@@ -168,7 +168,7 @@ outputs:
         - patch >=2.7.6
         - pgcli >=3.5.0
         - photutils >=1.8.0
-        - piff ==1.3.3
+        - piff >=1.3.3
         - prmon >=3.0.2  # [linux]
         - psycopg2 >=2.9.9,<3
         - pyarrow >=14.0.2
@@ -183,7 +183,7 @@ outputs:
         - pyyaml >=6.0.1
         - requests >=2.31.0
         - rucio-clients >=34.3.0
-        - ruff ==0.5.1
+        - ruff ==0.5.2
         - s3fs >=2024.6.1
         - schwimmbad >=0.3.2
         - scikit-image >=0.22.0
@@ -295,6 +295,7 @@ outputs:
         - paramnb >=2.0.4
         - partd >=1.4.1
         - pep8 >=1.7.1
+        - pkg-config >=0.29.2
         - plotly >=5.22.0
         - pre-commit >=3.6.0
         - pyflakes >=3.0.1
