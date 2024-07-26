@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "8.0.0" %}
-{% set build_number = 11 %}
+{% set build_number = 12 %}
 
 package:
   name: {{ name }}
@@ -67,6 +67,7 @@ outputs:
         - meson
         - nose
         - pep8-naming
+        - pkg-config >=0.29.2
         - pip
         - psutil
         - pytest <8.1.0
@@ -283,7 +284,6 @@ outputs:
         - paramnb
         - partd
         - pep8 # shared
-        - pkg-config >=0.29.2
         - plotly
         - pre-commit
         - pyflakes # shared
