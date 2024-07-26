@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "9.0.0dev" %}
-{% set build_number = 3 %}
+{% set build_number = 4 %}
 
 package:
   name: {{ name }}
@@ -216,7 +216,7 @@ outputs:
         - python
       run:
         - {{ pin_subpackage("rubin-env-nosysroot", exact=True) }}
-        - sysroot_linux-64 =2.28  # [linux64]
+        - {{ stdlib("c") }}
         - python
     test:
       commands:
