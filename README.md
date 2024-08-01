@@ -196,5 +196,6 @@ Feedstock Maintainers
 * [@erykoff](https://github.com/erykoff/)
 * [@ktlim](https://github.com/ktlim/)
 * [@mwittgen](https://github.com/mwittgen/)
+* [@roceb](https://github.com/roceb/)
 * [@timj](https://github.com/timj/)
 
