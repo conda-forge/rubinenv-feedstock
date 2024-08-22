@@ -67,7 +67,7 @@ python:
 python_impl:
 - cpython
 starlink_ast:
-- 9.2.11
+- 9.2.10
 target_platform:
 - linux-64
 wcslib:
