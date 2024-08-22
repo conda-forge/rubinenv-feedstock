@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "9.0.0" %}
-{% set build_number = 1 %}
+{% set build_number = 2 %}
 
 package:
   name: {{ name }}
@@ -78,6 +78,7 @@ outputs:
         - pytest-subtests >=0.11.0
         - pytest-vcr >=1.0.2
         - pytest-xdist >=3.5.0
+        - setuptools <=72.1.0
         - scons >=4.6.0
 
         ###################################################
