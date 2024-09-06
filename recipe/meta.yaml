@@ -35,6 +35,7 @@ outputs:
         - liblapack
         - liblapacke
         - log4cxx
+        - openblas
         - minuit2
         - numpy
         - starlink-ast
@@ -63,6 +64,8 @@ outputs:
         - doxygen >=1.9.8
         - eups >=2.2.8
         - flake8 ==7.1.0
+        - libblas * *openblas
+        - openblas
         - make >=4.3
         - meson >=1.3.0
         - nose >=1.3.7
