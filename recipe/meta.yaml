@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "9.0.0" %}
-{% set build_number = 4 %}
+{% set build_number = 5 %}
 
 package:
   name: {{ name }}
@@ -185,7 +185,8 @@ outputs:
         - pytables >=3.9.2
         - python >=3.11,<3.12
         - python-confluent-kafka >=1.9.2,<2
-        - pytorch >=2.1.0
+        - pytorch >=2.1.0   # [not aarch64]
+        - pytorch >=2.1.0,!=2.3.1  # [aarch64]
         - pyyaml >=6.0.1
         - requests >=2.31.0
         - rucio-clients >=34.3.0
