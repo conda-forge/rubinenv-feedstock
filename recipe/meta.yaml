@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "8.0.0" %}
-{% set build_number = 14 %}
+{% set build_number = 15 %}
 
 package:
   name: {{ name }}
@@ -131,7 +131,7 @@ outputs:
         - deprecated
         - dustmaps
         - emcee
-        - esutil
+        - esutil !=0.6.15
         - fastavro
         - fitsio
         - fitsverify
