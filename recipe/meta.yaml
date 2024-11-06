@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "9.0.0" %}
-{% set build_number = 6 %}
+{% set build_number = 7 %}
 
 package:
   name: {{ name }}
@@ -133,7 +133,7 @@ outputs:
         - deprecated >=1.2.14
         - dustmaps >=1.0.12
         - emcee >=3.1.4
-        - esutil >=0.6.11
+        - esutil >=0.6.11,!=0.6.15
         - fastavro >=1.9.1
         - firefly-client >=3.0.2
         - fitsio >=1.2.1
