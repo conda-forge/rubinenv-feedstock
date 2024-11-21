@@ -244,7 +244,7 @@ outputs:
         - astrowidgets >=0.3.0
         - awkward >=2.6.4
         - awkward-pandas >=2023.8.0
-        - black >=24.4
+        - black >=24.0.0,<25.0.0
         - black-jupyter
         - bokeh >=3.3.2
         - bqplot >=0.12.43
@@ -337,7 +337,7 @@ outputs:
       run:
         - {{ pin_subpackage("rubin-env", exact=True) }}
         - astrowidgets >=0.3
-        - black ==24.4
+        - black >=24.0.0,<25.0.0
         - bokeh >=3.3.2
         - clang-format >=18.0.0
         - dask-jobqueue >=0.8.5
