@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "9.0.0" %}
-{% set build_number = 8 %}
+{% set build_number = 9 %}
 
 package:
   name: {{ name }}
@@ -244,7 +244,8 @@ outputs:
         - astrowidgets >=0.3.0
         - awkward >=2.6.4
         - awkward-pandas >=2023.8.0
-        - black ==24.4
+        - black >=24.0.0,<25.0.0
+        - black-jupyter
         - bokeh >=3.3.2
         - bqplot >=0.12.43
         - ciso8601 >=2.3.1
@@ -292,7 +293,6 @@ outputs:
         - lsst-efd-client >=0.12.0
         - mypy >=1.7.1
         - mysqlclient >=2.2.1
-        - nb_black ==1.0.7
         - nbconvert-webpdf >=7.7.1
         - nbdime >=4.0.1
         - nbval >=0.11.0
@@ -337,7 +337,7 @@ outputs:
       run:
         - {{ pin_subpackage("rubin-env", exact=True) }}
         - astrowidgets >=0.3
-        - black ==24.4
+        - black >=24.0.0,<25.0.0
         - bokeh >=3.3.2
         - clang-format >=18.0.0
         - dask-jobqueue >=0.8.5
