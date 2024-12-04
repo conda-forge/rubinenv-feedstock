@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "9.0.0" %}
-{% set build_number = 9 %}
+{% set build_number = 10 %}
 
 package:
   name: {{ name }}
@@ -129,6 +129,7 @@ outputs:
         - conda >=23.11.0
         - configparser >=5.3.0
         - danish >=0.5.0
+        - deepdiff >=8.0.1
         - defusedxml >=0.7.1
         - deprecated >=1.2.14
         - dustmaps >=1.0.12
