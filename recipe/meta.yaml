@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
-{% set version = "9.0.0dev" %}
-{% set build_number = 4 %}
+{% set version = "10.0.0dev" %}
+{% set build_number = 0 %}
 
 package:
   name: {{ name }}
@@ -100,7 +100,7 @@ outputs:
         - ndarray {{ ndarray }}.*
         - ndarray >=1.6.4
         - numba
-        - numpy {{ numpy }}.*
+        - numpy
         - starlink-ast {{ starlink_ast }}.*
         - wcslib {{ wcslib }}.*
         - xpa {{ xpa }}.*
@@ -109,7 +109,7 @@ outputs:
         ###################################################
         # run-like
         - alembic >=1.13.0
-        - astropy >=6.0.0
+        - astropy-base
         - astroquery >=0.4.6
         - autograd >=1.6.2
         - backoff >=2.2.1
@@ -129,7 +129,7 @@ outputs:
         - deprecated >=1.2.14
         - dustmaps >=1.0.12
         - emcee >=3.1.4
-        - esutil >=0.6.11
+        - esutil >=0.6.11, !=0.6.15
         - fastavro >=1.9.1
         - fitsio >=1.2.1
         - fitsverify >=4.22
@@ -144,7 +144,7 @@ outputs:
         - healpy >=1.16.6
         - healsparse >=1.8.1
         - hpgeom >=1.2.0
-        - htcondor >=23.0,<23.1
+        - htcondor >=23.0
         - humanize >=4.9.0
         - idds-client >=2.0.9
         - idds-doma >=2.0.9
@@ -160,10 +160,10 @@ outputs:
         - ngmix-core >=2.3.0
         - numexpr >=2.8.7,<3
         - opencv >=4.9.0
-        - {{ pin_compatible('numpy') }}
+        - numpy >2
         - packaging >=23.2
         - panda-client >=1.5.70
-        - pandas >=2.1.4,<3
+        - pandas >=2.1.4
         - parsl ==2024.4.29
         - patch >=2.7.6
         - pgcli >=3.5.0
@@ -175,22 +175,21 @@ outputs:
         - pybind11 >=2.12.0
         - pydantic >=2.7.1,<3
         - pyld >=2.0.3
-        - pysynphot >=2.0.0
         - pytables >=3.9.2
-        - python >=3.11,<3.12
-        - python-confluent-kafka >=1.9.2,<2
-        - pytorch >=2.1.0
+        - python >=3.12,<3.13
+        - python-confluent-kafka >=1.9.2
+        - pytorch >=2.1.0   # [not aarch64]
         - pyyaml >=6.0.1
         - requests >=2.31.0
         - rucio-clients >=34.3.0
-        - ruff ==0.5.2
+        - ruff >=0.5.2
         - s3fs >=2024.6.1
         - schwimmbad >=0.3.2
         - scikit-image >=0.22.0
         - scikit-learn >=1.3.2
         - scipy >=1.13.0,<1.14
         - seaborn >=0.13.0
-        - skyproj >=1.2.3
+        - skyproj >=1.2.4
         - sorcha >=0.9.1
         - spherematch >=0.10.1
         - sqlalchemy >=2.0.23
@@ -198,7 +197,7 @@ outputs:
         - threadpoolctl >=3.2.0
         - torchvision >=0.16.1
         - tqdm >=4.66.1
-        - treecorr >=4.3.3,<5
+        - treecorr >=4.3.3
         - webdav4 >=0.9.8
         - ws4py >=0.5.1
 
@@ -414,3 +413,4 @@ extra:
     - ktlim
     - erykoff
     - beckermr
+    - roceb

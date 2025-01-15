@@ -13,7 +13,7 @@ llvm_openmp:                              # [osx]
   - 16                                    # [osx]
 python:
   # part of a zip_keys: python, python_impl, numpy
-  - 3.11.* *_cpython
+  - 3.12.* *_cpython
 python_impl:
   - cpython
 apr:
@@ -41,7 +41,7 @@ minuit2:
 ndarray:
   - '1'
 numpy:
-  - '1.26.4'
+  - '2'
 starlink_ast:
   - '9.2.10'
 wcslib:
