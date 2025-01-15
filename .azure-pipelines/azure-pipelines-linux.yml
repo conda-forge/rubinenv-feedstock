@@ -8,11 +8,16 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_:
-        CONFIG: linux_64_
+      linux_64_python3.12.____cpython:
+        CONFIG: linux_64_python3.12.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-        SHORT_CONFIG: linux_64_
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:cos7
+        SHORT_CONFIG: linux_64_python3.12.____cpython
+      linux_aarch64_python3.12.____cpython:
+        CONFIG: linux_aarch64_python3.12.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:cos7
+        SHORT_CONFIG: linux_aarch64_python3.12.____cpython
   timeoutInMinutes: 360
   variables: {}
 
