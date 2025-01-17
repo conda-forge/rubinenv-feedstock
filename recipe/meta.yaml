@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "9.0.0" %}
-{% set build_number = 12 %}
+{% set build_number = 13 %}
 
 package:
   name: {{ name }}
@@ -114,7 +114,7 @@ outputs:
         # run-like
         - alembic >=1.13.0
         - astropy >=6.0.0,<6.1.5
-        - astroquery >=0.4.6
+        - astroquery >=0.4.6, <0.4.8
         - autograd >=1.6.2
         - backoff >=2.2.1
         - batoid >=0.7.3
