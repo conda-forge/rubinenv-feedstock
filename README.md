@@ -18,15 +18,8 @@ Current build status
 ====================
 
 
-<table><tr>
-    <td>Travis</td>
-    <td>
-      <a href="https://app.travis-ci.com/conda-forge/rubinenv-feedstock">
-        <img alt="linux" src="https://img.shields.io/travis/com/conda-forge/rubinenv-feedstock/main.svg?label=Linux">
-      </a>
-    </td>
-  </tr>
-    
+<table>
+
   <tr>
     <td>Azure</td>
     <td>
@@ -203,5 +196,6 @@ Feedstock Maintainers
 * [@erykoff](https://github.com/erykoff/)
 * [@ktlim](https://github.com/ktlim/)
 * [@mwittgen](https://github.com/mwittgen/)
+* [@roceb](https://github.com/roceb/)
 * [@timj](https://github.com/timj/)
 
