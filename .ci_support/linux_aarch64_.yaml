@@ -35,15 +35,15 @@ gsl:
 libaprutil:
 - '1'
 libblas:
-- 3.9 *netlib
+- 3.9.* *netlib
 libboost_python_devel:
 - '1.82'
 libcblas:
-- 3.9 *netlib
+- 3.9.* *netlib
 liblapack:
-- 3.9 *netlib
+- 3.9.* *netlib
 liblapacke:
-- 3.9 *netlib
+- 3.9.* *netlib
 log4cxx:
 - 1.1.0
 minuit2:
