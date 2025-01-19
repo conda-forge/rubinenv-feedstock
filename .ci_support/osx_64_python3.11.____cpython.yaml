@@ -1,7 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
-- '11.0'
+- '10.13'
 MACOSX_SDK_VERSION:
-- '11.0'
+- '10.13'
 apr:
 - '1'
 c_compiler:
@@ -11,7 +11,7 @@ c_compiler_version:
 c_stdlib:
 - macosx_deployment_target
 c_stdlib_version:
-- '11.0'
+- '10.13'
 cffi:
 - '1'
 cfitsio:
@@ -53,13 +53,13 @@ liblapacke:
 log4cxx:
 - 1.2.0
 macos_machine:
-- arm64-apple-darwin20.0.0
+- x86_64-apple-darwin13.4.0
 minuit2:
 - '6'
 ndarray:
 - '1'
 numpy:
-- 1.26.4
+- '2.0'
 openblas:
 - 0.3.*
 pin_run_as_build:
@@ -73,7 +73,7 @@ python_impl:
 starlink_ast:
 - 9.2.10
 target_platform:
-- osx-arm64
+- osx-64
 wcslib:
 - '8'
 xpa:
