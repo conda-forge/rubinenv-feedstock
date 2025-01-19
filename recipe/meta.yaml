@@ -100,7 +100,7 @@ outputs:
         - ndarray {{ ndarray }}.*
         - ndarray >=1.6.4
         - numba
-        - numpy
+        - numpy {{ numpy }}.*
         - starlink-ast {{ starlink_ast }}.*
         - wcslib {{ wcslib }}.*
         - xpa {{ xpa }}.*
@@ -163,7 +163,7 @@ outputs:
         - ngmix-core >=2.3.0
         - numexpr >=2.8.7,<3
         - opencv >=4.9.0
-        - numpy
+        - {{ pin_compatible('numpy') }}
         - packaging >=23.2
         - panda-client >=1.5.70
         - pandas >=2.1.4
