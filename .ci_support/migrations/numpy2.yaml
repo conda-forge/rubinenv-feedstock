@@ -46,7 +46,4 @@ __migrator:
 # as it is in global CBC in order to override it
 numpy:
   - 2.0
-  - 2.0
-  - 2.0
-  - 2.0
 migrator_ts: 1713572489.295986
