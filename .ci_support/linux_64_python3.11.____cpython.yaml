@@ -44,6 +44,8 @@ libboost_python_devel:
 - '1.82'
 libcblas:
 - 3.9.* *netlib
+libcxx:
+- '16'
 liblapack:
 - 3.9.* *netlib
 liblapacke:
@@ -55,7 +57,7 @@ minuit2:
 ndarray:
 - '1'
 numpy:
-- 1.26.4
+- '2.0'
 openblas:
 - 0.3.*
 pin_run_as_build:
@@ -69,7 +71,7 @@ python_impl:
 starlink_ast:
 - 9.2.10
 target_platform:
-- linux-aarch64
+- linux-64
 wcslib:
 - '8'
 xpa:
