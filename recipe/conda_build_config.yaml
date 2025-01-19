@@ -42,8 +42,6 @@ minuit2:
   - '6'
 ndarray:
   - '1'
-numpy:
-  - '1.26.4'
 starlink_ast:
   - '9.2.10'
 wcslib:
