@@ -33,7 +33,7 @@ gsl:
 libaprutil:
   - '1'
 libboost_python_devel:
-  - '1.82'
+  - '1.84'
 libcxx:
   - '16'
 log4cxx:
@@ -43,7 +43,7 @@ minuit2:
 ndarray:
   - '1'
 starlink_ast:
-  - '9.2.10'
+  - '9.2.11'
 wcslib:
   - '8'
 xpa:
