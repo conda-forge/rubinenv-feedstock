@@ -8,14 +8,22 @@ jobs:
     vmImage: macOS-13
   strategy:
     matrix:
-      osx_64_python3.11.____cpython:
-        CONFIG: osx_64_python3.11.____cpython
+      osx_64_python3.11.____cpythonyaml_cpp0.8:
+        CONFIG: osx_64_python3.11.____cpythonyaml_cpp0.8
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: osx_64_python3.11.____cpython
-      osx_arm64_python3.11.____cpython:
-        CONFIG: osx_arm64_python3.11.____cpython
+        SHORT_CONFIG: osx_64_python3.11.____cpythonyaml_cpp0.8
+      osx_64_python3.11.____cpythonyaml_cpp10.13:
+        CONFIG: osx_64_python3.11.____cpythonyaml_cpp10.13
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: osx_arm64_python3.11.____cpython
+        SHORT_CONFIG: osx_64_python3.11.____cpythonyaml_cpp10.13
+      osx_arm64_python3.11.____cpythonyaml_cpp0.8:
+        CONFIG: osx_arm64_python3.11.____cpythonyaml_cpp0.8
+        UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_arm64_python3.11.____cpythonyaml_cpp0.8
+      osx_arm64_python3.11.____cpythonyaml_cpp11.0:
+        CONFIG: osx_arm64_python3.11.____cpythonyaml_cpp11.0
+        UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_arm64_python3.11.____cpythonyaml_cpp11.0
   timeoutInMinutes: 360
   variables: {}
 
