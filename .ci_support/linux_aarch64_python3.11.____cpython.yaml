@@ -41,7 +41,7 @@ libaprutil:
 libblas:
 - 3.9.* *netlib
 libboost_python_devel:
-- '1.82'
+- '1.84'
 libcblas:
 - 3.9.* *netlib
 liblapack:
@@ -65,7 +65,7 @@ python:
 python_impl:
 - cpython
 starlink_ast:
-- 9.2.10
+- 9.2.11
 target_platform:
 - linux-aarch64
 wcslib:
