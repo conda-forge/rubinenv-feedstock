@@ -15,7 +15,7 @@ python:
   # part of a zip_keys: python, python_impl, numpy, is_python_min
   - 3.12.* *_cpython
 is_python_min:
-  - false
+  - true
 python_impl:
   - cpython
 apr:
@@ -35,7 +35,7 @@ libaprutil:
 libboost_python_devel:
   - '1.84'
 libcxx:
-  - '16'
+  - '18'
 log4cxx:
   - 1.2.0
 minuit2:
