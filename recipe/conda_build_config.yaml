@@ -15,7 +15,7 @@ python:
   # part of a zip_keys: python, python_impl, numpy, is_python_min
   - 3.12.* *_cpython
 is_python_min:
-  - true
+  - false
 python_impl:
   - cpython
 apr:
