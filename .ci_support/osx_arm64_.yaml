@@ -15,7 +15,7 @@ c_stdlib_version:
 cffi:
 - '1'
 cfitsio:
-- 4.4.0
+- 4.5.0
 channel_sources:
 - conda-forge
 channel_targets:
