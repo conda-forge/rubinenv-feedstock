@@ -5,17 +5,17 @@
 jobs:
 - job: osx
   pool:
-    vmImage: macOS-12
+    vmImage: macOS-13
   strategy:
     matrix:
-      osx_64_:
-        CONFIG: osx_64_
+      osx_64_python3.12.____cpython:
+        CONFIG: osx_64_python3.12.____cpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: osx_64_
-      osx_arm64_:
-        CONFIG: osx_arm64_
+        SHORT_CONFIG: osx_64_python3.12.____cpython
+      osx_arm64_python3.12.____cpython:
+        CONFIG: osx_arm64_python3.12.____cpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: osx_arm64_
+        SHORT_CONFIG: osx_arm64_python3.12.____cpython
   timeoutInMinutes: 360
   variables: {}
 
