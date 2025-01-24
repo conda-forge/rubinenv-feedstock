@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "10.0.0dev" %}
-{% set build_number = 0 %}
+{% set build_number = 1 %}
 
 package:
   name: {{ name }}
@@ -145,7 +145,7 @@ outputs:
         - healpy >=1.16.6
         - healsparse >=1.8.1
         - hpgeom >=1.2.0
-        - htcondor >=23.0
+        - htcondor >=24.0,<24.1
         - humanize >=4.9.0
         - idds-client >=2.0.9
         - idds-doma >=2.0.9
