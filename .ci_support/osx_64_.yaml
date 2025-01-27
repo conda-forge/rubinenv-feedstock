@@ -55,7 +55,7 @@ log4cxx:
 macos_machine:
 - x86_64-apple-darwin13.4.0
 minuit2:
-- '6'
+- 6.22.06
 ndarray:
 - '1'
 numpy:
@@ -63,6 +63,8 @@ numpy:
 openblas:
 - 0.3.*
 pin_run_as_build:
+  minuit2:
+    max_pin: x.x.x
   python:
     min_pin: x.x
     max_pin: x.x
