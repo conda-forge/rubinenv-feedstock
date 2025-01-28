@@ -55,7 +55,7 @@ log4cxx:
 macos_machine:
 - arm64-apple-darwin20.0.0
 minuit2:
-- '6'
+- '6.34'
 ndarray:
 - '1'
 numpy:
