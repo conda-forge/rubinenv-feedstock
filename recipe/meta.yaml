@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "10.0.0dev" %}
-{% set build_number = 1 %}
+{% set build_number = 2 %}
 
 package:
   name: {{ name }}
@@ -162,7 +162,7 @@ outputs:
         - ngmix-core >=2.3.0
         - numexpr >=2.8.7,<3
         - opencv >=4.9.0
-        - {{ pin_compatible('numpy') }}
+        - numpy
         - packaging >=23.2
         - panda-client >=1.5.70
         - pandas >=2.1.4,<3
