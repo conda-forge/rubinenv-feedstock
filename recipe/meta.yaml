@@ -166,7 +166,7 @@ outputs:
         - packaging >=23.2
         - panda-client >=1.5.70
         - pandas >=2.1.4,<3
-        - parsl ==2024.4.29
+        - parsl ==2024.12.23
         - patch >=2.7.6
         - pgcli >=3.5.0
         - photutils >=1.8.0
