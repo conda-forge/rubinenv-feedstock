@@ -13,8 +13,10 @@ fortran_compiler_version:      # [unix]
 llvm_openmp:                              # [osx]
   - 13                                    # [osx]
 python:
-  # part of a zip_keys: python, python_impl, numpy
+  # part of a zip_keys: python, python_impl, numpy, is_python_min
   - 3.10.* *_cpython
+is_python_min:
+  - false
 python_impl:
   - cpython
 apr:
