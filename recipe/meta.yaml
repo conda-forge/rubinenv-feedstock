@@ -112,7 +112,7 @@ outputs:
         # run-like
         - alembic
         - astropy >=5.2
-        - astroquery
+        - astroquery <0.4.8
         - autograd
         - backoff
         - boto3 !=1.33.0
