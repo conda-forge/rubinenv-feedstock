@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "10.0.0dev" %}
-{% set build_number = 2 %}
+{% set build_number = 3 %}
 
 package:
   name: {{ name }}
@@ -181,6 +181,8 @@ outputs:
         - python-confluent-kafka >=2
         - pytorch >=2.1.0
         - pyyaml >=6.0.1
+        - pz-rail-base
+        - pz-rail-sklearn
         - qp
         - requests >=2.31.0
         - rucio-clients >=34.3.0
