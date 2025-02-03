@@ -7,7 +7,7 @@ c_compiler:
 c_compiler_version:
 - '11'
 cdt_name:
-- cos7
+- conda
 cffi:
 - '1'
 cfitsio:
@@ -25,7 +25,7 @@ cxx_compiler_version:
 cython:
 - '0'
 docker_image:
-- quay.io/condaforge/linux-anvil-cos7-x86_64
+- quay.io/condaforge/linux-anvil-x86_64:cos7
 eigen:
 - '3.4'
 fftw:
@@ -39,15 +39,15 @@ gsl:
 libaprutil:
 - '1'
 libblas:
-- 3.9 *netlib
+- 3.9.* *netlib
 libcblas:
-- 3.9 *netlib
+- 3.9.* *netlib
 libcxx:
 - '16'
 liblapack:
-- 3.9 *netlib
+- 3.9.* *netlib
 liblapacke:
-- 3.9 *netlib
+- 3.9.* *netlib
 log4cxx:
 - 0.11.0
 minuit2:
