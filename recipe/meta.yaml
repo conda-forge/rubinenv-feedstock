@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "9.0.0" %}
-{% set build_number = 16 %}
+{% set build_number = 17 %}
 
 package:
   name: {{ name }}
@@ -291,6 +291,7 @@ outputs:
         - jupyterlab_iframe >=0.5.0
         - jupyterlab_widgets >=3.0.10
         - lsst-efd-client >=0.12.0
+        - mermaid-py >=0.7.0
         - mypy >=1.7.1
         - mysqlclient >=2.2.1
         - nbconvert-webpdf >=7.7.1
@@ -359,6 +360,7 @@ outputs:
         - lsst-documenteer-pipelines ==0.8.2
         - lsst-documenteer-technote ==0.8.2
         - lsst-efd-client >=0.12.0
+        - mermaid-py >=0.7.0
         - mypy >=1.7.1
         - mysqlclient >=2.2.1
         - panel >=1.4.2
