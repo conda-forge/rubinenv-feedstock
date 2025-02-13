@@ -32,31 +32,31 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64</td>
+              <td>linux_64_python3.12.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10671&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rubinenv-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rubinenv-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.12.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64</td>
+              <td>linux_aarch64_python3.12.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10671&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rubinenv-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rubinenv-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_python3.12.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64</td>
+              <td>osx_64_python3.12.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10671&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rubinenv-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rubinenv-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.12.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64</td>
+              <td>osx_arm64_python3.12.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10671&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rubinenv-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rubinenv-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.12.____cpython" alt="variant">
                 </a>
               </td>
             </tr>
@@ -81,14 +81,14 @@ Current release info
 Installing rubin-env
 ====================
 
-Installing `rubin-env` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `rubin-env` from the `conda-forge/label/rubin-env_dev` channel can be achieved by adding `conda-forge/label/rubin-env_dev` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels conda-forge/label/rubin-env_dev
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `rubin-env, rubin-env-developer, rubin-env-extras, rubin-env-nosysroot, rubin-env-rsp` can be installed with `conda`:
+Once the `conda-forge/label/rubin-env_dev` channel has been enabled, `rubin-env, rubin-env-developer, rubin-env-extras, rubin-env-nosysroot, rubin-env-rsp` can be installed with `conda`:
 
 ```
 conda install rubin-env rubin-env-developer rubin-env-extras rubin-env-nosysroot rubin-env-rsp
@@ -103,26 +103,26 @@ mamba install rubin-env rubin-env-developer rubin-env-extras rubin-env-nosysroot
 It is possible to list all of the versions of `rubin-env` available on your platform with `conda`:
 
 ```
-conda search rubin-env --channel conda-forge
+conda search rubin-env --channel conda-forge/label/rubin-env_dev
 ```
 
 or with `mamba`:
 
 ```
-mamba search rubin-env --channel conda-forge
+mamba search rubin-env --channel conda-forge/label/rubin-env_dev
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search rubin-env --channel conda-forge
+mamba repoquery search rubin-env --channel conda-forge/label/rubin-env_dev
 
 # List packages depending on `rubin-env`:
-mamba repoquery whoneeds rubin-env --channel conda-forge
+mamba repoquery whoneeds rubin-env --channel conda-forge/label/rubin-env_dev
 
 # List dependencies of `rubin-env`:
-mamba repoquery depends rubin-env --channel conda-forge
+mamba repoquery depends rubin-env --channel conda-forge/label/rubin-env_dev
 ```
 
 

@@ -1,5 +1,5 @@
 {% set name = "rubin-env" %}
-{% set version = "9.1.0" %}
+{% set version = "10.0.0" %}
 {% set build_number = 0 %}
 
 package:
@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 build:
-  skip: True  # [python_impl == 'pypy' or win or py != 311]
+  skip: True  # [python_impl == 'pypy' or win or py != 312]
   number: {{ build_number }}
 
 outputs:
@@ -35,7 +35,6 @@ outputs:
         - liblapack
         - liblapacke
         - log4cxx
-        - openblas
         - minuit2
         - numpy
         - starlink-ast
@@ -63,12 +62,9 @@ outputs:
         - coveralls >=1.8.0
         - doxygen >=1.9.8
         - eups >=2.2.8
-        - flake8 ==7.1.0
-        - libblas * *openblas
-        - openblas
+        - flake8 ==7.1.1
         - make >=4.3
         - meson >=1.3.0
-        - nose >=1.3.7
         - pep8-naming >=0.13.3
         - pip >=23.3.2
         - pkg-config >=0.29.2
@@ -76,13 +72,11 @@ outputs:
         - pytest >=8.2.0
         - pytest-cov >=4.1.0
         - pytest-doctestplus >=1.1.0
-        - pytest-openfiles >=0.5.0
         - pytest-runner >=6.0.0
         - pytest-session2file >=0.1.11
         - pytest-subtests >=0.11.0
         - pytest-vcr >=1.0.2
         - pytest-xdist >=3.5.0
-        - setuptools <=72.1.0
         - scons >=4.6.0
 
         ###################################################
@@ -113,20 +107,18 @@ outputs:
         ###################################################
         # run-like
         - alembic >=1.13.0
-        - astropy >=6.0.0,<6.1.5
-        - astroquery >=0.4.6,<0.4.8
+        - astropy-base >=7.0.1, <8
+        - astroplan >=0.10.1
+        - astroquery >=0.4.6
         - autograd >=1.6.2
         - backoff >=2.2.1
         - batoid >=0.7.3
-        - batoid-rubin >=0.5.0
         - boto3 >=1.34.4
         - bottleneck >=1.3.7
         - cassandra-driver >=3.28.0  # [linux64]
         - click >=8.1.7
         - coloredlogs >=15.0.1
         - colour-science >=0.4.4
-        # conda is required for runtime inspection of installed software
-        - conda >=23.11.0
         - configparser >=5.3.0
         - danish >=0.5.0
         - deepdiff >=8.0.1
@@ -142,6 +134,7 @@ outputs:
         - frozendict >=2.3.10
         - fsspec >=2024.6.1
         - future >=0.18.3
+        - gaiaxpy >=2.1.2
         - galsim >=2.5.2
         - getcalspec >=2.1.0
         - git >=2.42.0,!=2.45.1
@@ -150,16 +143,17 @@ outputs:
         - healpy >=1.16.6
         - healsparse >=1.8.1
         - hpgeom >=1.2.0
-        - htcondor >=23.0,<23.1
+        - htcondor >=24.0,<24.1
         - humanize >=4.9.0
         - idds-client >=2.0.9
         - idds-doma >=2.0.9
         - iminuit >=2.24.0
         - jax >=0.4.31
-        - lmfit >=1.2.2,<1.3
+        - lmfit >=1.3,<1.4
         - lsstdesc.coord >=1.3.0
         - lsst-ts-xml >=20.1.0
-        - matplotlib-base >=3.9,<3.10
+        - matplotlib-base >=3.9
+        - maturin >=1.8.2
         - moto >=5.0.6
         - mpi4py >=3.1.5
         - nest-asyncio >=1.5.8
@@ -167,38 +161,39 @@ outputs:
         - ngmix-core >=2.3.0
         - numexpr >=2.8.7,<3
         - opencv >=4.9.0
-        - {{ pin_compatible('numpy') }}
+        - numpy
         - packaging >=23.2
         - panda-client >=1.5.70
         - pandas >=2.1.4,<3
-        - parsl ==2024.4.29
+        - parsl ==2024.12.23
         - patch >=2.7.6
         - pgcli >=3.5.0
         - photutils >=1.8.0
-        - piff >=1.3.3
+        - piff >=1.5
         - prmon >=3.0.2  # [linux]
         - psycopg2 >=2.9.9,<3
         - pyarrow >=14.0.2
         - pybind11 >=2.12.0
         - pydantic >=2.7.1,<3
         - pyld >=2.0.3
-        - pysynphot >=2.0.0
         - pytables >=3.9.2
-        - python >=3.11,<3.12
+        - python >=3.12,<3.13
         - python-confluent-kafka >=2
-        - pytorch >=2.1.0   # [not aarch64]
-        - pytorch >=2.1.0,<=2.3.1  # [aarch64]
+        - pytorch >=2.1.0
         - pyyaml >=6.0.1
+        - pz-rail-base >=1.0.8
+        - pz-rail-sklearn >=1.0.2
+        - qp >=0.9.2
         - requests >=2.31.0
         - rucio-clients >=34.3.0
-        - ruff ==0.5.2
+        - ruff ==0.9.6
         - s3fs >=2024.6.1
         - schwimmbad >=0.3.2
         - scikit-image >=0.22.0
         - scikit-learn >=1.3.2
         - scipy >=1.13.0,<1.14
         - seaborn >=0.13.0
-        - skyproj >=1.2.3,<2
+        - skyproj >=2.0.0
         - sorcha >=0.9.1
         - spherematch >=0.10.1
         - sqlalchemy >=2.0.23
@@ -206,7 +201,7 @@ outputs:
         - threadpoolctl >=3.2.0
         - torchvision >=0.16.1
         - tqdm >=4.66.1
-        - treecorr >=4.3.3,<5
+        - treecorr >=4.3.3,<6
         - webdav4 >=0.9.8
         - ws4py >=0.5.1
 
@@ -215,7 +210,7 @@ outputs:
         # grep pin-it output for python dependency
         - pin-it rubin-env-nosysroot | grep "python="
         # ensure binary compatibility; bump major version if not
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1017 ]'  # [linux]
+        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1018 ]'  # [linux]
         - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
 
   - name: rubin-env
@@ -241,18 +236,17 @@ outputs:
       run:
         - {{ pin_subpackage("rubin-env", exact=True) }}
         # All are from sciplat-lab unless otherwise stated
-        - astroplan >=0.10 # sims
         - astrowidgets >=0.3.0
         - awkward >=2.6.4
         - awkward-pandas >=2023.8.0
-        - black >=24.0.0,<25.0.0
-        - black-jupyter
+        - black ==25.1
         - bokeh >=3.3.2
         - bqplot >=0.12.43
         - ciso8601 >=2.3.1
         - cloudpickle >=3.0.0
         - cookiecutter >=2.6.0
-        - dask-core >=2024.5.0,<2025.1.0  # Unpin once datashader 0.17.0
+        - dash >=2.17.0
+        - dask-core >=2024.5.0
         - datashader >=0.16.0
         - fastparquet >=2024.2.0
         - ffmpeg >=4.4.0
@@ -277,7 +271,7 @@ outputs:
         - ipympl >=0.9.4
         - ipyvolume >=0.6.3
         - ipywidgets >=8.1.2
-        - isort >=5.13.2
+        - isort >=6
         - jedi >=0.19.1
         - jupyter >=1.0.0
         - jupyter-packaging >=0.12.3
@@ -294,6 +288,7 @@ outputs:
         - mermaid-py >=0.7.0
         - mypy >=1.7.1
         - mysqlclient >=2.2.1
+        - nb_black ==1.0.7
         - nbconvert-webpdf >=7.7.1
         - nbdime >=4.0.1
         - nbval >=0.11.0
@@ -303,6 +298,7 @@ outputs:
         - paramnb >=2.0.4
         - partd >=1.4.1
         - pep8 >=1.7.1
+        - pkg-config >=0.29.2
         - plotly >=5.22.0
         - pre-commit >=3.6.0
         - pyflakes >=3.0.1
@@ -338,7 +334,7 @@ outputs:
       run:
         - {{ pin_subpackage("rubin-env", exact=True) }}
         - astrowidgets >=0.3
-        - black >=24.0.0,<25.0.0
+        - black ==25.1
         - bokeh >=3.3.2
         - clang-format >=18.0.0
         - dask-jobqueue >=0.8.5
@@ -351,7 +347,7 @@ outputs:
         - ipdb >=0.13.13
         - ipympl >=0.9.4
         - ipython >=8.22.2
-        - isort >=5.13.2
+        - isort >=6
         - jedi >=0.19.1
         - jupyter >=1.0.0
         - jupyterlab >=4.1.8,<5
@@ -417,8 +413,8 @@ about:
 
 extra:
   recipe-maintainers:
-    - mwittgen
     - timj
+    - mwittgen
     - ktlim
     - erykoff
     - beckermr
