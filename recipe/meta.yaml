@@ -67,7 +67,6 @@ outputs:
         - meson >=1.3.0
         - pep8-naming >=0.13.3
         - pip >=23.3.2
-        - pkg-config >=0.29.2
         - psutil >=5.9.7
         - pytest >=8.2.0
         - pytest-cov >=4.1.0
@@ -109,11 +108,11 @@ outputs:
         - alembic >=1.13.0
         - astropy-base >=7.0.1, <8
         - astroplan >=0.10.1
-        - astroquery >=0.4.6
+        - astroquery ==0.4.9
         - autograd >=1.6.2
         - backoff >=2.2.1
-        - batoid >=0.7.0  # [not aarch64]
-        - batoid-rubin >=0.5.0  # [not aarch64]
+        - batoid >=0.7.3
+        - batoid-rubin >=0.5.0
         - boto3 >=1.34.4
         - bottleneck >=1.3.7
         - cassandra-driver >=3.28.0  # [linux64]
@@ -180,7 +179,7 @@ outputs:
         - pytables >=3.9.2
         - python >=3.12,<3.13
         - python-confluent-kafka >=2
-        - pytorch >=2.1.0
+        - pytorch >=2.5.1
         - pyyaml >=6.0.1
         - pz-rail-base >=1.0.8
         - pz-rail-sklearn >=1.0.2
@@ -202,7 +201,7 @@ outputs:
         - threadpoolctl >=3.2.0
         - torchvision >=0.16.1
         - tqdm >=4.66.1
-        - treecorr >=4.3.3,<6
+        - treecorr >=5,<6
         - webdav4 >=0.9.8
         - ws4py >=0.5.1
 
@@ -241,6 +240,7 @@ outputs:
         - awkward >=2.6.4
         - awkward-pandas >=2023.8.0
         - black ==25.1
+        - black-jupyter
         - bokeh >=3.3.2
         - bqplot >=0.12.43
         - ciso8601 >=2.3.1
@@ -289,7 +289,6 @@ outputs:
         - mermaid-py >=0.7.0
         - mypy >=1.7.1
         - mysqlclient >=2.2.1
-        - nb_black ==1.0.7
         - nbconvert-webpdf >=7.7.1
         - nbdime >=4.0.1
         - nbval >=0.11.0
@@ -339,7 +338,7 @@ outputs:
         - bokeh >=3.3.2
         - clang-format >=18.0.0
         - dask-jobqueue >=0.8.5
-        - datashader >=0.16.0
+        - datashader >=0.17.0
         - fastparquet >=2024.2.0
         - ffmpeg >=4.4.0
         - holoviews >=1.18.3
@@ -414,8 +413,8 @@ about:
 
 extra:
   recipe-maintainers:
-    - timj
     - mwittgen
+    - timj
     - ktlim
     - erykoff
     - beckermr
