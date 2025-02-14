@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "10.0.0" %}
-{% set build_number = 0 %}
+{% set build_number = 1 %}
 
 package:
   name: {{ name }}
@@ -36,6 +36,7 @@ outputs:
         - liblapacke
         - log4cxx
         - minuit2
+        - openblas
         - numpy
         - starlink-ast
         - wcslib
@@ -63,6 +64,8 @@ outputs:
         - doxygen >=1.9.8
         - eups >=2.2.8
         - flake8 ==7.1.1
+        - libblas * *openblas
+        - openblas
         - make >=4.3
         - meson >=1.3.0
         - pep8-naming >=0.13.3
