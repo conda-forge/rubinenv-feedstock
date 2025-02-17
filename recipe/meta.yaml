@@ -36,8 +36,8 @@ outputs:
         - liblapacke
         - log4cxx
         - minuit2
-        - openblas
         - numpy
+        - openblas
         - starlink-ast
         - wcslib
         - xpa
@@ -71,7 +71,7 @@ outputs:
         - pep8-naming >=0.14.1
         - pip >=25.0.1
         - pkg-config >=0.29.2
-        - psutil >=5.6.0
+        - psutil >=5.9.8
         - pytest >=8.3.4
         - pytest-cov >=6.0.0
         - pytest-doctestplus >=1.4.0
@@ -165,8 +165,8 @@ outputs:
         - networkx >=3.4.2
         - ngmix-core >=2.3.2
         - numexpr >=2.10.2,<3
-        - opencv >=4.10.0
         - numpy
+        - opencv >=4.10.0
         - packaging >=24.2
         - panda-client >=1.5.82
         - pandas >=2.2.3,<3
