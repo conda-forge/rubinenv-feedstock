@@ -3,7 +3,7 @@ apr:
 c_compiler:
 - gcc
 c_compiler_version:
-- '12'
+- '13'
 c_stdlib:
 - sysroot
 c_stdlib_version:
@@ -13,7 +13,7 @@ cdt_name:
 cffi:
 - '1'
 cfitsio:
-- 4.4.0
+- 4.5.0
 channel_sources:
 - conda-forge
 channel_targets:
@@ -23,7 +23,7 @@ curl:
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '12'
+- '13'
 docker_image:
 - quay.io/condaforge/linux-anvil-x86_64:cos7
 eigen:
@@ -33,7 +33,7 @@ fftw:
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
-- '12'
+- '13'
 gsl:
 - '2.7'
 libaprutil:
@@ -41,9 +41,11 @@ libaprutil:
 libblas:
 - 3.9.* *netlib
 libboost_python_devel:
-- '1.82'
+- '1.86'
 libcblas:
 - 3.9.* *netlib
+libcxx:
+- '18'
 liblapack:
 - 3.9.* *netlib
 liblapacke:
@@ -51,27 +53,25 @@ liblapacke:
 log4cxx:
 - 1.2.0
 minuit2:
-- 6.22.06
+- '6.34'
 ndarray:
 - '1'
 numpy:
-- 1.26.4
+- '2.0'
 openblas:
 - 0.3.*
 pin_run_as_build:
-  minuit2:
-    max_pin: x.x.x
   python:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.11.* *_cpython
+- 3.12.* *_cpython
 python_impl:
 - cpython
 starlink_ast:
-- 9.2.10
+- 9.2.12
 target_platform:
-- linux-aarch64
+- linux-64
 wcslib:
 - '8'
 xpa:
