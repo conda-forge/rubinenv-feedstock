@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "10.0.0" %}
-{% set build_number = 0 %}
+{% set build_number = 1 %}
 
 package:
   name: {{ name }}
@@ -251,7 +251,6 @@ outputs:
         - ciso8601 >=2.3.1
         - cloudpickle >=3.0.0
         - cookiecutter >=2.6.0
-        - dash >=2.17.0
         - dask-core >=2025.1.0
         - datashader >=0.17.0
         - fastparquet >=2024.2.0
