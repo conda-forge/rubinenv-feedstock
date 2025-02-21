@@ -192,6 +192,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@athornton](https://github.com/athornton/)
 * [@beckermr](https://github.com/beckermr/)
 * [@erykoff](https://github.com/erykoff/)
 * [@ktlim](https://github.com/ktlim/)
