@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "10.0.0" %}
-{% set build_number = 1 %}
+{% set build_number = 2 %}
 
 package:
   name: {{ name }}
@@ -369,7 +369,7 @@ outputs:
         - pyct >=0.5.0
         - pydocstyle >=6.3.0
         - pyflakes >=3.0.1
-        - pytest-profiling >=1.7.0
+        - pytest-profiling >=1.8.1
         - python-build >=1.2.1
         - pyvo >=1.5
         - ripgrep >=14.0.3
