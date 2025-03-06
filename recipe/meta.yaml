@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "10.0.0" %}
-{% set build_number = 3 %}
+{% set build_number = 4 %}
 
 package:
   name: {{ name }}
@@ -111,7 +111,7 @@ outputs:
         ###################################################
         # run-like
         - alembic >=1.14.1
-        - astropy-base >=7.0.1, <8
+        - astropy-base >=7.0.1,<8
         - astroplan >=0.10.1
         - astroquery ==0.4.9
         - autograd >=1.7.0
@@ -350,7 +350,7 @@ outputs:
         - imagemagick >=7.1.1_21
         - ipdb >=0.13.13
         - ipympl >=0.9.4
-        - ipython >=8.22.2
+        - ipython >=8.22.2,<9
         - isort >=6
         - jedi >=0.19.1
         - jupyter >=1.0.0
