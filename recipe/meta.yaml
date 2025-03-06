@@ -350,7 +350,7 @@ outputs:
         - imagemagick >=7.1.1_21
         - ipdb >=0.13.13
         - ipympl >=0.9.4
-        - ipython <9
+        - ipython >=8.22.2,<9
         - isort >=6
         - jedi >=0.19.1
         - jupyter >=1.0.0
