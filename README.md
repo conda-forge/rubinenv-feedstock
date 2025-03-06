@@ -19,7 +19,7 @@ Current build status
 
 
 <table>
-    
+
   <tr>
     <td>Azure</td>
     <td>
@@ -125,6 +125,25 @@ mamba repoquery whoneeds rubin-env --channel conda-forge/label/rubin-env_dev
 mamba repoquery depends rubin-env --channel conda-forge/label/rubin-env_dev
 ```
 
+or with `mamba`:
+
+```
+mamba search rubin-env --channel conda-forge
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search rubin-env --channel conda-forge
+
+# List packages depending on `rubin-env`:
+mamba repoquery whoneeds rubin-env --channel conda-forge
+
+# List dependencies of `rubin-env`:
+mamba repoquery depends rubin-env --channel conda-forge
+```
+
 
 About conda-forge
 =================
@@ -192,6 +211,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@athornton](https://github.com/athornton/)
 * [@beckermr](https://github.com/beckermr/)
 * [@erykoff](https://github.com/erykoff/)
 * [@ktlim](https://github.com/ktlim/)
