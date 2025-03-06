@@ -111,7 +111,7 @@ outputs:
         ###################################################
         # run-like
         - alembic >=1.14.1
-        - astropy-base >=7.0.1, <8
+        - astropy-base >=7.0.1,<8
         - astroplan >=0.10.1
         - astroquery ==0.4.9
         - autograd >=1.7.0
