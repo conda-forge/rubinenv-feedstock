@@ -19,7 +19,7 @@ Current build status
 
 
 <table>
-
+    
   <tr>
     <td>Azure</td>
     <td>
@@ -88,19 +88,13 @@ conda config --add channels conda-forge/label/rubin-env_dev
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `rubin-env, rubin-env-developer, rubin-env-extras, rubin-env-nosysroot, rubin-env-rsp` can be installed with `conda`:
+Once the `conda-forge/label/rubin-env_dev` channel has been enabled, `rubin-env, rubin-env-developer, rubin-env-extras, rubin-env-nosysroot, rubin-env-rsp` can be installed with `conda`:
 
 ```
 conda install rubin-env rubin-env-developer rubin-env-extras rubin-env-nosysroot rubin-env-rsp
 ```
 
 or with `mamba`:
-
-```
-mamba install rubin-env rubin-env-developer rubin-env-extras rubin-env-nosysroot rubin-env-rsp
-```
-
-It is possible to list all of the versions of `rubin-env` available on your platform with `conda`:
 
 ```
 mamba install rubin-env rubin-env-developer rubin-env-extras rubin-env-nosysroot rubin-env-rsp
@@ -129,25 +123,6 @@ mamba repoquery whoneeds rubin-env --channel conda-forge/label/rubin-env_dev
 
 # List dependencies of `rubin-env`:
 mamba repoquery depends rubin-env --channel conda-forge/label/rubin-env_dev
-```
-
-or with `mamba`:
-
-```
-mamba search rubin-env --channel conda-forge
-```
-
-Alternatively, `mamba repoquery` may provide more information:
-
-```
-# Search all versions available on your platform:
-mamba repoquery search rubin-env --channel conda-forge
-
-# List packages depending on `rubin-env`:
-mamba repoquery whoneeds rubin-env --channel conda-forge
-
-# List dependencies of `rubin-env`:
-mamba repoquery depends rubin-env --channel conda-forge
 ```
 
 
