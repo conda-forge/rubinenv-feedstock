@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
-{% set version = "10.0.0dev3" %}
-{% set build_number = 0 %}
+{% set version = "10.0.0" %}
+{% set build_number = 3 %}
 
 package:
   name: {{ name }}
@@ -170,6 +170,7 @@ outputs:
         - packaging >=24.2
         - panda-client >=1.5.82
         - pandas >=2.2.3,<3
+        - paramiko >=3.4.0
         - parsl ==2024.12.23
         - patch >=2.7.6
         - pgcli >=4.1.0
@@ -251,7 +252,6 @@ outputs:
         - ciso8601 >=2.3.1
         - cloudpickle >=3.0.0
         - cookiecutter >=2.6.0
-        - dash >=2.17.0
         - dask-core >=2025.1.0
         - datashader >=0.17.0
         - fastparquet >=2024.2.0
@@ -317,7 +317,7 @@ outputs:
         - ripgrep >=14.0.3
         - rubin-scheduler >=1.1.1
         - rubin-sim >=2.0.0
-        - sbpy >=0.3.0  # [not aarch64]
+        - sbpy >=0.3.0
         - schedview >=0.11.1
         - sidecar >=0.7.0
         - snappy >=1.1.10
@@ -370,7 +370,7 @@ outputs:
         - pyct >=0.5.0
         - pydocstyle >=6.3.0
         - pyflakes >=3.0.1
-        - pytest-profiling >=1.7.0
+        - pytest-profiling >=1.8.1
         - python-build >=1.2.1
         - pyvo >=1.5
         - ripgrep >=14.0.3
@@ -423,3 +423,4 @@ extra:
     - erykoff
     - beckermr
     - roceb
+    - athornton
