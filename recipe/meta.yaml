@@ -163,7 +163,7 @@ outputs:
         - mpi4py >=4.0.2
         - nest-asyncio >=1.6.0
         - networkx >=3.4.2
-        - ngmix-core >=2.3.2
+        - ngmix-core >=2.4.0
         - numexpr >=2.10.2,<3
         - numpy
         - opencv >=4.10.0
