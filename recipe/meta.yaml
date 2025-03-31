@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "10.0.0" %}
-{% set build_number = 6 %}
+{% set build_number = 7 %}
 
 package:
   name: {{ name }}
@@ -180,7 +180,7 @@ outputs:
         - psycopg2 >=2.9.9,<3
         - pyarrow >=17.0.0,<18
         - pybind11 >=2.13.6
-        - pydantic >=2.10.1,<3
+        - pydantic >=2.10.1,<2.11
         - pyld >=2.0.4
         - pytables >=3.10.2
         - python >=3.12,<3.13
