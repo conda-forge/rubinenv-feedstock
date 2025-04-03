@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "10.0.0" %}
-{% set build_number = 6 %}
+{% set build_number = 7 %}
 
 package:
   name: {{ name }}
@@ -340,7 +340,9 @@ outputs:
         - astrowidgets >=0.3
         - black ==25.1
         - bokeh >=3.3.2
+        - clangxx >=18.0.0  # [linux]
         - clang-format >=18.0.0
+        - clang-tools >=18.0.0
         - dask-jobqueue >=0.8.5
         - datashader >=0.17.0
         - fastparquet >=2024.2.0
