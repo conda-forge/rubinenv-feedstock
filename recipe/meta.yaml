@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "10.0.0" %}
-{% set build_number = 7 %}
+{% set build_number = 8 %}
 
 package:
   name: {{ name }}
@@ -352,7 +352,7 @@ outputs:
         - imagemagick >=7.1.1_21
         - ipdb >=0.13.13
         - ipympl >=0.9.4
-        - ipython >=8.22.2,<9
+        - ipython >=8.22.2,!=9.0.0
         - isort >=6
         - jedi >=0.19.1
         - jupyter >=1.0.0
