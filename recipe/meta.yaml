@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
-{% set version = "11.0.0dev" %}
-{% set build_number = 0 %}
+{% set version = "10.0.0" %}
+{% set build_number = 9 %}
 
 package:
   name: {{ name }}
@@ -163,7 +163,7 @@ outputs:
         - mpi4py >=4.0.2
         - nest-asyncio >=1.6.0
         - networkx >=3.4.2
-        - ngmix-core >=2.3.2
+        - ngmix-core >=2.4.0
         - numexpr >=2.10.2,<3
         - numpy
         - opencv >=4.10.0
@@ -178,7 +178,7 @@ outputs:
         - piff >=1.5
         - prmon >=3.1.1  # [linux]
         - psycopg2 >=2.9.9,<3
-        - pyarrow >=19.0.0
+        - pyarrow >=17.0.0,<18
         - pybind11 >=2.13.6
         - pydantic >=2.10.1,<3
         - pyld >=2.0.4
@@ -340,7 +340,9 @@ outputs:
         - astrowidgets >=0.3
         - black ==25.1
         - bokeh >=3.3.2
+        - clangxx >=18.0.0  # [linux]
         - clang-format >=18.0.0
+        - clang-tools >=18.0.0
         - dask-jobqueue >=0.8.5
         - datashader >=0.17.0
         - fastparquet >=2024.2.0
@@ -350,7 +352,7 @@ outputs:
         - imagemagick >=7.1.1_21
         - ipdb >=0.13.13
         - ipympl >=0.9.4
-        - ipython >=8.22.2
+        - ipython >=8.22.2,!=9.0.0
         - isort >=6
         - jedi >=0.19.1
         - jupyter >=1.0.0
