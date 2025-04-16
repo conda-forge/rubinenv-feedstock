@@ -15,7 +15,7 @@ c_stdlib_version:
 cffi:
 - '1'
 cfitsio:
-- 4.6.2
+- 4.5.0
 channel_sources:
 - conda-forge
 channel_targets:
@@ -71,7 +71,7 @@ python:
 python_impl:
 - cpython
 starlink_ast:
-- 9.2.12
+- 9.2.13
 target_platform:
 - osx-arm64
 wcslib:
