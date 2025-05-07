@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "10.0.0" %}
-{% set build_number = 9 %}
+{% set build_number = 10 %}
 
 package:
   name: {{ name }}
@@ -119,6 +119,7 @@ outputs:
         - batoid >=0.7.3
         - batoid-rubin >=0.5.0
         - boto3 >=1.36.3
+        - botocore >=1.36.3
         - bottleneck >=1.4.2
         - cassandra-driver >=3.28.0  # [linux64]
         - click >=8.1.7
@@ -208,6 +209,7 @@ outputs:
         - torchvision >=0.20.1
         - tqdm >=4.67.1
         - treecorr >=5,<6
+        - urllib3 >=2.2.2
         - webdav4 >=0.10.0
         - ws4py >=0.5.1
 
