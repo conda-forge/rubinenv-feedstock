@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "10.0.0" %}
-{% set build_number = 12 %}
+{% set build_number = 13 %}
 
 package:
   name: {{ name }}
@@ -377,6 +377,7 @@ outputs:
         - pyflakes >=3.0.1
         - pytest-profiling >=1.8.1
         - python-build >=1.2.1
+        - python-gfal2 >=1.13.0
         - pyvo >=1.5
         - ripgrep >=14.0.3
         - snakeviz >=2.2.0
