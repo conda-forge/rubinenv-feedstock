@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "10.0.0" %}
-{% set build_number = 13 %}
+{% set build_number = 14 %}
 
 package:
   name: {{ name }}
@@ -350,6 +350,7 @@ outputs:
         - datashader >=0.17.0
         - fastparquet >=2024.2.0
         - ffmpeg >=4.4.0
+        - gfal2-util >=1.9.0
         - holoviews >=1.18.3
         - hvplot >=0.9.0
         - imagemagick >=7.1.1_21
