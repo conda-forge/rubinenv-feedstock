@@ -179,7 +179,7 @@ outputs:
         - piff >=1.5
         - prmon >=3.1.1  # [linux]
         - psycopg2 >=2.9.9,<3
-        - pyarrow >=0.20.0
+        - pyarrow >=20.0.0
         - pybind11 >=2.13.6,<3
         - pydantic >=2.10.1,<3
         - pyld >=2.0.4
