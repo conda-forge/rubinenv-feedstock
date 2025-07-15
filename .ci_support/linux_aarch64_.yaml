@@ -80,5 +80,3 @@ zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
   - fortran_compiler_version
-- - python
-  - python_impl
