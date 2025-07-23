@@ -127,7 +127,7 @@ outputs:
         - colour-science >=0.4.6
         - configparser >=7.1.0
         - danish >=0.5.0
-        - deepdiff >=8.2.0
+        - deepdiff >=8.5.0
         - defusedxml >=0.7.1
         - deprecated >=1.2.18
         - dustmaps >=1.0.13
