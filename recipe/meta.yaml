@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "10.1.0" %}
-{% set build_number = 0 %}
+{% set build_number = 1 %}
 
 package:
   name: {{ name }}
@@ -145,6 +145,7 @@ outputs:
         - getcalspec >=2.1.0
         - git >=2.47.1
         - git-lfs >=3.6.1
+        - graphviz >=9.0.0
         - h5py >=3.12.1
         - healpy >=1.18.0
         - healsparse >=1.10.0
