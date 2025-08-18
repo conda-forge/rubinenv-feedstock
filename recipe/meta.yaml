@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "10.1.0" %}
-{% set build_number = 1 %}
+{% set build_number = 2 %}
 
 package:
   name: {{ name }}
@@ -206,6 +206,7 @@ outputs:
         - spherematch >=0.10.1
         - sqlalchemy >=2.0.23
         - sqlite >=3.48.0
+        - tdastro >=0.0.5
         - threadpoolctl >=3.5.0
         - torchvision >=0.20.1
         - tqdm >=4.67.1
