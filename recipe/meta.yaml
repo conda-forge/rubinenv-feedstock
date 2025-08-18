@@ -206,7 +206,6 @@ outputs:
         - spherematch >=0.10.1
         - sqlalchemy >=2.0.23
         - sqlite >=3.48.0
-        - tdastro >=0.0.5
         - threadpoolctl >=3.5.0
         - torchvision >=0.20.1
         - tqdm >=4.67.1
@@ -326,6 +325,7 @@ outputs:
         - schedview >=0.11.1
         - sidecar >=0.7.0
         - snappy >=1.1.10
+        - tdastro >=0.0.5
         - terminado >=0.18.1
         - toolz >=0.12.1
         - wget >=1.21.4
