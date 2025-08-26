@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "10.1.0" %}
-{% set build_number = 1 %}
+{% set build_number = 2 %}
 
 package:
   name: {{ name }}
@@ -279,6 +279,7 @@ outputs:
         - ipyevents >=2.0.2
         - ipykernel >=6.29.3
         - ipympl >=0.9.4
+        - ipython_genutils >=0.2.0
         - ipyvolume >=0.6.3
         - ipywidgets >=8.1.2
         - isort >=6
@@ -294,7 +295,7 @@ outputs:
         - jupyterlab_execute_time >=3.1.2
         - jupyterlab_iframe >=0.5.0
         - jupyterlab_widgets >=3.0.10
-        - lsdb >=0.6.0
+        - lsdb >=0.6.3
         - lsst-efd-client >=0.12.0
         - mermaid-py >=0.7.0
         - mypy >=1.7.1
