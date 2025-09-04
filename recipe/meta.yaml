@@ -131,6 +131,7 @@ outputs:
         - deepdiff >=8.5.0
         - defusedxml >=0.7.1
         - deprecated >=1.2.18
+        - documenteer
         - dustmaps >=1.0.13
         - emcee >=3.1.6
         - esutil >=0.6.11,!=0.6.15
@@ -191,6 +192,7 @@ outputs:
         - pytorch >=2.5.1
         - pyyaml >=6.0.2
         - pz-rail-base >=1.0.8
+        - pz-rail-bpz
         - pz-rail-sklearn >=1.0.2
         - qp >=0.9.3
         - requests >=2.32.3
@@ -211,6 +213,7 @@ outputs:
         - torchvision >=0.20.1
         - tqdm >=4.67.1
         - treecorr >=5,<6
+        - treegp >=1.4.0
         - urllib3 >=2.2.2
         - webdav4 >=0.10.0
         - ws4py >=0.5.1
