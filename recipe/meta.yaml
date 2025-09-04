@@ -103,6 +103,7 @@ outputs:
         - ndarray >=1.6.4
         - numba
         - numpy {{ numpy }}.*
+        - rust
         - starlink-ast {{ starlink_ast }}.*
         - wcslib {{ wcslib }}.*
         - xpa {{ xpa }}.*
