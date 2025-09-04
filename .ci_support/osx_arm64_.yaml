@@ -1,15 +1,17 @@
+MACOSX_DEPLOYMENT_TARGET:
+- '11.0'
+MACOSX_SDK_VERSION:
+- '11.0'
 apr:
 - '1'
 c_compiler:
-- gcc
+- clang
 c_compiler_version:
-- '13'
+- '18'
 c_stdlib:
-- sysroot
+- macosx_deployment_target
 c_stdlib_version:
-- '2.17'
-cdt_name:
-- conda
+- '11.0'
 cffi:
 - '1'
 cfitsio:
@@ -21,11 +23,9 @@ channel_targets:
 curl:
 - '8'
 cxx_compiler:
-- gxx
+- clangxx
 cxx_compiler_version:
-- '13'
-docker_image:
-- quay.io/condaforge/linux-anvil-x86_64:alma9
+- '18'
 eigen:
 - '3.4'
 fftw:
@@ -44,18 +44,22 @@ libboost_python_devel:
 - '1.86'
 libcblas:
 - 3.9.* *netlib
+libcxx:
+- '18'
 liblapack:
 - 3.9.* *netlib
 liblapacke:
 - 3.9.* *netlib
 log4cxx:
 - 1.2.0
+macos_machine:
+- arm64-apple-darwin20.0.0
 minuit2:
 - '6.34'
 ndarray:
 - '1'
 numpy:
-- '2.0'
+- '2'
 openblas:
 - 0.3.*
 pin_run_as_build:
@@ -69,7 +73,7 @@ python_impl:
 starlink_ast:
 - 9.2.13
 target_platform:
-- linux-aarch64
+- osx-arm64
 wcslib:
 - '8'
 xpa:
@@ -80,6 +84,3 @@ zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
   - fortran_compiler_version
-- - python
-  - numpy
-  - python_impl
