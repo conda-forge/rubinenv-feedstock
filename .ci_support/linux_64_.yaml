@@ -68,6 +68,8 @@ python:
 - 3.12.* *_cpython
 python_impl:
 - cpython
+rust_compiler:
+- rust
 starlink_ast:
 - 9.2.14
 target_platform:
