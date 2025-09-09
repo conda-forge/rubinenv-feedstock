@@ -55,6 +55,7 @@ outputs:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - {{ compiler('fortran') }}
+        - {{ compiler('rust') }}
         # The above are needed to get the official conda-forge versions.
         # The below is needed to get convenience symlinks for users to invoke.
         - compilers >=1.9.0
@@ -103,7 +104,6 @@ outputs:
         - ndarray >=1.6.4
         - numba
         - numpy {{ numpy }}.*
-        - rust >=1.89.0
         - starlink-ast {{ starlink_ast }}.*
         - wcslib {{ wcslib }}.*
         - xpa {{ xpa }}.*
