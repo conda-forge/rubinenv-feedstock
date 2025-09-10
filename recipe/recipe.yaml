@@ -6,6 +6,8 @@ context:
 recipe:
   name: ${{ name }}
   version: ${{ version }}
+  linux_gxx_abi_version: 1019
+  osx_gxx_abi_version: 1002
 
 build:
   skip:
@@ -234,13 +236,14 @@ outputs:
       - script:
         # grep pin-it output for python dependency
         - pin-it rubin-env-nosysroot | grep "python="
+        - echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1
         # ensure binary compatibility; bump major version if not
         - if: linux
           then:
-            - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1019 ]'
+            - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
         - if: osx
           then:
-            - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'
+            - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
 
   - package:
       name: rubin-env
@@ -256,13 +259,14 @@ outputs:
       - script:
         # grep pin-it output for python dependency
         - pin-it rubin-env | grep "python="
+        - echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1
         # ensure binary compatibility; bump major version if not
         - if: linux
           then:
-            - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1017 ]'
+            - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
         - if: osx
           then:
-            - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'
+            - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
 
   - package:
       name: rubin-env-rsp
