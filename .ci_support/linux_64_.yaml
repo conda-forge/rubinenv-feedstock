@@ -45,15 +45,7 @@ libboost_python_devel:
 libcblas:
 - 3.9.* *netlib
 libcxx:
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-- '18'
-=======
 - '21'
->>>>>>> Stashed changes
-=======
-- '19'
->>>>>>> 22f3bdb (MNT: Re-rendered with conda-smithy 3.52.2 and conda-forge-pinning 2025.09.09.16.04.35)
 liblapack:
 - 3.9.* *netlib
 liblapacke:

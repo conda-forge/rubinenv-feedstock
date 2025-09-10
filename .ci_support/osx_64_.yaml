@@ -7,15 +7,7 @@ apr:
 c_compiler:
 - clang
 c_compiler_version:
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-- '18'
-=======
 - '21'
->>>>>>> Stashed changes
-=======
-- '19'
->>>>>>> 22f3bdb (MNT: Re-rendered with conda-smithy 3.52.2 and conda-forge-pinning 2025.09.09.16.04.35)
 c_stdlib:
 - macosx_deployment_target
 c_stdlib_version:
@@ -33,15 +25,7 @@ curl:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-- '18'
-=======
 - '21'
->>>>>>> Stashed changes
-=======
-- '19'
->>>>>>> 22f3bdb (MNT: Re-rendered with conda-smithy 3.52.2 and conda-forge-pinning 2025.09.09.16.04.35)
 eigen:
 - '3.4'
 fftw:
@@ -61,15 +45,7 @@ libboost_python_devel:
 libcblas:
 - 3.9.* *netlib
 libcxx:
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-- '18'
-=======
 - '21'
->>>>>>> Stashed changes
-=======
-- '19'
->>>>>>> 22f3bdb (MNT: Re-rendered with conda-smithy 3.52.2 and conda-forge-pinning 2025.09.09.16.04.35)
 liblapack:
 - 3.9.* *netlib
 liblapacke:
