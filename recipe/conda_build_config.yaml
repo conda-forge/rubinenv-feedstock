@@ -1,5 +1,9 @@
-# the clang_llvm_version needs to match the osx
-# compiler versions for c and cxx
+# the following keys need to have the same value
+#  - clang_llvm_version 
+#  - llvm_openmp
+#  - libcxx
+#  - c_compiler_version for osx
+#  - cxx_compiler_version for osx
 clang_llvm_version:
   - 19
 channel_targets:
