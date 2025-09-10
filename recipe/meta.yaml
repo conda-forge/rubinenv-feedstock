@@ -350,9 +350,9 @@ outputs:
         - astrowidgets >=0.3
         - black ==25.1
         - bokeh >=3.7.3
-        - clangxx >=21.1.0  # [linux]
-        - clang-format >=21.1.0
-        - clang-tools >=21.1.0
+        - clangxx >=19.0.0  # [linux]
+        - clang-format >=19.0.0
+        - clang-tools >=19.0.0
         - dask-jobqueue >=0.9.0
         - datashader >=0.18.2
         - fastparquet >=2024.11.0
