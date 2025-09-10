@@ -16,7 +16,7 @@ fortran_compiler_version:      # [unix]
 rust_complier_version:
   - 1.89.0
 llvm_openmp:                              # [osx]
-  - 21                                    # [osx]
+  - 19                                    # [osx]
 python:
   # part of a zip_keys: python, python_impl, numpy, is_python_min
   - 3.12.* *_cpython
@@ -41,7 +41,7 @@ libaprutil:
 libboost_python_devel:
   - '1.86'
 libcxx:
-  - '21'
+  - '19'
 log4cxx:
   - 1.2.0
 minuit2:
