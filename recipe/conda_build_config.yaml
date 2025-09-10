@@ -1,3 +1,7 @@
+# the clang_llvm_version needs to match the osx
+# compiler versions for c and cxx
+clang_llvm_version:
+  - 19
 channel_targets:
   - conda-forge main
 c_compiler_version:            # [unix]
