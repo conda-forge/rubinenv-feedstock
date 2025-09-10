@@ -7,7 +7,7 @@ apr:
 c_compiler:
 - clang
 c_compiler_version:
-- '21'
+- '19'
 c_stdlib:
 - macosx_deployment_target
 c_stdlib_version:
@@ -25,7 +25,7 @@ curl:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '21'
+- '19'
 eigen:
 - '3.4'
 fftw:
