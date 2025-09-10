@@ -1,16 +1,26 @@
 channel_targets:
   - conda-forge rubin-env_dev
+# the following keys need to have the same value
+#  - clang_llvm_version
+#  - llvm_openmp
+#  - libcxx
+#  - c_compiler_version for osx
+#  - cxx_compiler_version for osx
+clang_llvm_version:
+  - 19
 c_compiler_version:            # [unix]
-  - 13                         # [linux]
-  - 18                         # [osx]
+  - 14                         # [linux]
+  - 19                         # [osx]
 cxx_compiler_version:          # [unix]
-  - 13                         # [linux]
-  - 18                         # [osx]
+  - 14                         # [linux]
+  - 19                         # [osx]
 fortran_compiler_version:      # [unix]
-  - 13                         # [linux]
-  - 13                         # [osx]
+  - 14                         # [linux]
+  - 14                         # [osx]
+rust_complier_version:
+  - 1.89.0
 llvm_openmp:                              # [osx]
-  - 18                                    # [osx]
+  - 19                                    # [osx]
 python:
   # part of a zip_keys: python, python_impl, numpy, is_python_min
   - 3.12.* *_cpython
@@ -35,7 +45,7 @@ libaprutil:
 libboost_python_devel:
   - '1.86'
 libcxx:
-  - '18'
+  - '19'
 log4cxx:
   - 1.2.0
 minuit2:

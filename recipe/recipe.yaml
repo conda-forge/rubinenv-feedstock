@@ -1,0 +1,468 @@
+context:
+  name: "rubin-env"
+  version: "11.0.0"
+  build_number: 0
+  linux_gxx_abi_version: 1019
+  osx_gxx_abi_version: 1002
+
+recipe:
+  name: ${{ name }}
+  version: ${{ version }}
+
+build:
+  skip:
+    - if: win or not match(python, "3.12.*")
+      then: true
+      else: false
+  number: ${{ build_number }}
+
+outputs:
+  - package:
+      name: rubin-env-nosysroot
+      version: ${{ version }}
+    build:
+      script: build-nosysroot.sh
+    # Since all requirements are required "at run time" for the
+    # Rubin developers, all requirements are fundamentally
+    # run requirements. However, we've attempted to organize
+    # requirements as build-like, host-like, or run-like, in
+    # order inform any evolution of this recipe.
+    requirements:
+      host:
+        - python
+        - ${{ compiler('c') }}
+        - ${{ compiler('cxx') }}
+        - ${{ compiler('fortran') }}
+        - apr
+        - cfitsio
+        - curl
+        - fftw
+        - gsl
+        - libaprutil
+        - libblas
+        - libcblas
+        - liblapack
+        - liblapacke
+        - log4cxx
+        - minuit2
+        - numpy
+        - openblas
+        - starlink-ast
+        - wcslib
+        - xpa
+      run_constraints:
+        - impi_rt == 9999999999999
+      run:
+        # jq is special - it is needed for the pin-it utility in this package
+        - jq >=1.8.1
+        ###################################################
+        # build-like dependencies
+        # As part of our scons build process, we do run tests, so
+        # these really are required to perform a build.
+        # Note that "testing" in conda-forge should be limited to testing
+        # successful packaging, and not testing code.
+        - ${{ compiler('c') }}
+        - ${{ compiler('cxx') }}
+        - ${{ compiler('fortran') }}
+        - ${{ compiler('rust') }}
+        # The above are needed to get the official conda-forge versions.
+        # The below is needed to get convenience symlinks for users to invoke.
+        - compilers >=1.9.0
+        - cmake >=4.1.1
+        - coverage >=7.10.0
+        - coveralls >=4.0.1
+        - doxygen >=1.13.2
+        - eups >=2.2.10
+        - flake8 ==7.3.0
+        - libblas * *openblas
+        - openblas
+        - make >=4.4.1
+        - meson >=1.9.0
+        - pep8-naming >=0.15.1
+        - pip >=25.0.1
+        - pkg-config >=0.29.2
+        - psutil >=7.0.0
+        - pytest >=8.4.2
+        - pytest-cov >=6.3.0
+        - pytest-doctestplus >=1.4.0
+        - pytest-runner >=6.0.0
+        - pytest-session2file >=0.1.11
+        - pytest-subtests ==0.14.1
+        - pytest-vcr >=1.0.2
+        - pytest-xdist >=3.8.0
+        - setuptools >=80.8.0
+        - scons >=4.9.1
+
+        ###################################################
+        # host-like and run-like
+        # These are mostly run-like, but for the same reasons as
+        # above, we need most of these at build time, so they are mostly
+        # host-like
+        - apr ${{ apr }}.*
+        - cffi ${{ cffi }}.*
+        - cfitsio ${{ cfitsio }}.*
+        - eigen ${{ eigen }}.*
+        - gsl ${{ gsl }}.*
+        - libaprutil ${{ libaprutil }}.*
+        - libboost-python-devel ${{ libboost_python_devel }}.*
+        - if: not aarch64
+          then: libcxx ${{ libcxx }}.*
+        - llvmlite
+        - log4cxx ${{ log4cxx }}.*
+        - minuit2 ${{ minuit2 }}.*
+        - ndarray ${{ ndarray }}.*
+        - ndarray >=1.6.4
+        - numba
+        - numpy ${{ numpy }}.*
+        - starlink-ast ${{ starlink_ast }}.*
+        - wcslib ${{ wcslib }}.*
+        - xpa ${{ xpa }}.*
+        - yaml-cpp ${{ yaml_cpp }}.*
+
+        ###################################################
+        # run-like
+        - alembic >=1.16.1
+        - astropy-base >=7.1.0,<8
+        - astroplan >=0.10.1
+        - astroquery ==0.4.9
+        - autograd >=1.8.0
+        - backoff >=2.2.1
+        - batoid >=0.8.0
+        - batoid-rubin >=0.5.0
+        - boto3 >=1.39.11
+        - botocore >=1.39.11
+        - bottleneck >=1.6.0
+        - if: linux and x86_64
+          then: cassandra-driver >=3.29.2
+        - click >=8.1.8,<8.2
+        - coloredlogs >=15.0.1
+        - colour-science >=0.4.6
+        - configparser >=7.2.0
+        - danish >=0.6.0
+        - deepdiff >=8.6.1
+        - defusedxml >=0.7.1
+        - deprecated >=1.2.18
+        - documenteer >=2.2.0
+        - dustmaps >=1.0.14
+        - emcee >=3.1.6
+        - esutil >=0.6.16
+        - fastavro >=1.12.0
+        - firefly-client >=3.3.0
+        - fitsio >=1.2.7
+        - fitsverify >=4.22
+        - frozendict >=2.4.6
+        - fsspec >=2025.9.0
+        - future >=1.0.0
+        - gaiaxpy >=2.1.2
+        - galsim >=2.7.2
+        - getcalspec >=2.1.0
+        - git >=2.51.0
+        - git-lfs >=3.7.0
+        - graphviz >=9.0.0
+        - h5py >=3.14.0
+        - healpy >=1.18.1
+        - healsparse >=1.11.1
+        - hpgeom >=1.4.0
+        - htcondor >=24.0,<24.1
+        - humanize >=4.13.0
+        - idds-client >=2.2.39
+        - idds-doma >=2.2.39
+        - iminuit >=2.31.1
+        - jax >=0.7.0
+        - lmfit >=1.3.4,<1.4
+        - lsstdesc.coord >=1.3.0
+        - lsst-ts-xml >=23.3.2
+        - matplotlib-base >=3.10
+        - maturin >=1.9.4
+        - moto >=5.1.12
+        - mpi4py >=4.1.0
+        - nest-asyncio >=1.6.0
+        - networkx >=3.5
+        - ngmix-core >=2.4.0
+        - numexpr >=2.10.2,<3
+        - numpy
+        - opencv >=4.12.0
+        - packaging >=25.0
+        - panda-client >=1.5.92
+        - pandas >=2.3.2,<3
+        - paramiko >=4.0.0
+        - parsl ==2024.12.23
+        - patch >=2.7.6
+        - pgcli >=4.3.0
+        - photutils >=2.2.0
+        - piff >=1.5.1
+        - if: linux
+          then: prmon >=3.1.1
+        - psycopg2 >=2.9.10,<3
+        - pyarrow >=20.0.0
+        - pybind11 >=3.0.1,<4
+        - pydantic >=2.11.7,<3
+        - pyfftw >=0.15.0
+        - pyld >=2.0.4
+        - pytables >=3.10.2
+        - python >=3.12,<3.13
+        - python-confluent-kafka >=2.11.1
+        - pytorch >=2.7.1
+        - pyyaml >=6.0.2
+        - pz-rail-base >=1.2.7
+        - pz-rail-bpz >=1.2.4
+        - pz-rail-sklearn >=1.1.3
+        - qp >=1.0.1
+        - requests >=2.32.5
+        - rucio-clients >=38.1.0
+        - ruff ==0.12.12
+        - s3fs >=2025.9.0
+        - schwimmbad >=0.4.2
+        - scikit-image >=0.25.2
+        - scikit-learn >=1.7.2
+        - scipy >=1.13.1,<1.14
+        - seaborn >=0.13.2
+        - skyproj >=2.1.1
+        - sorcha >=1.0
+        - spherematch >=0.10.2
+        - sqlalchemy >=2.0.43
+        - sqlite >=3.50.4
+        - threadpoolctl >=3.6.0
+        - torchvision >=0.22.0
+        - tqdm >=4.67.1
+        - treecorr >=5.1.2,<6
+        - treegp >=1.4.0
+        - urllib3 >=2.5.0
+        - webdav4 >=0.10.0
+        - ws4py >=0.5.1
+        - zstandard >=0.24
+
+    tests:
+      - script:
+        # grep pin-it output for python dependency
+        - pin-it rubin-env-nosysroot | grep "python="
+        - echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1
+        # ensure binary compatibility; bump major version if not
+        - if: linux
+          then:
+            - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
+        - if: osx
+          then:
+            - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
+
+  - package:
+      name: rubin-env
+      version: ${{ version }}
+    requirements:
+      host:
+        - python
+      run:
+        - ${{ pin_subpackage("rubin-env-nosysroot", exact=True) }}
+        - ${{ stdlib("c") }}
+        - python
+    tests:
+      - script:
+        # grep pin-it output for python dependency
+        - pin-it rubin-env | grep "python="
+        - echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1
+        # ensure binary compatibility; bump major version if not
+        - if: linux
+          then:
+            - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
+        - if: osx
+          then:
+            - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
+
+  - package:
+      name: rubin-env-rsp
+      version: ${{ version }}
+    requirements:
+      host:
+        - python
+      run:
+        - ${{ pin_subpackage("rubin-env", exact=True) }}
+        # All are from sciplat-lab unless otherwise stated
+        - astrowidgets >=0.3.0
+        - awkward >=2.8.8
+        - awkward-pandas >=2023.8.0
+        - black ==25.1.0
+        - black-jupyter ==25.1.0
+        - bokeh >=3.7.3
+        - bqplot >=0.12.45
+        - ciso8601 >=2.3.3
+        - cloudpickle >=3.1.1
+        - cookiecutter >=2.6.0
+        - dask-core >=2025.7.0
+        - datashader >=0.18.2
+        - fastparquet >=2024.11.0
+        - ffmpeg >=7.1.1
+        - freetype-py >=2.5.1
+        - gcsfs >=2025.9.0
+        - geoviews >=1.14.1
+        - gh >=2.78.0  # 2.49.0 is not available on aarch64
+        - ginga >=5.4.0
+        - graphviz >=9.0.0
+        - hatch-jupyter-builder >=0.9.1
+        - hatch-nodejs-version >=0.4.0
+        - hatchling >=1.27.0
+        - hdf5plugin >=5.1.0
+        - holoviews >=1.21.0
+        - httpx >=0.28.1
+        - hvplot >=0.12.1
+        - imagemagick >=7.1.2_3
+        - intake >=2.0.8
+        - intake-parquet >=0.3.0
+        - ipyevents >=2.0.2
+        - ipykernel >=6.30.1
+        - ipympl >=0.9.7
+        - ipyvolume >=0.6.3
+        - ipywidgets >=8.1.7
+        - isort >=6.0.1
+        - jedi >=0.19.2
+        - jupyter >=1.1.1
+        - jupyter-packaging >=0.12.3
+        - jupyter-resource-usage >=1.2.0
+        - jupyter-server-proxy >=4.4.0
+        - jupyter_bokeh >=4.0.5
+        - jupyterhub >=5.3.0
+        - jupyterlab >=4.4.7,<5
+        - jupyterlab-variableinspector >=3.2.4
+        - jupyterlab_execute_time >=3.2.0
+        - jupyterlab_iframe >=0.5.0
+        - jupyterlab_widgets >=3.0.15
+        - lsdb >=0.6.4
+        - lsst-efd-client >=0.12.0
+        - mermaid-py >=0.8.0
+        - mypy >=1.17.1
+        - mysqlclient >=2.2.7
+        - nbconvert-webpdf >=7.16.6
+        - nbdime >=4.0.2
+        - nbval >=0.11.0
+        - nodejs >=24.4.1
+        - panel >=1.7.5
+        - papermill >=2.6.0
+        - paramnb >=2.0.4
+        - partd >=1.4.2
+        - pep8 >=1.7.1
+        - plotly >=6.3.0
+        - pre-commit >=4.3.0
+        - pyflakes >=3.2.0
+        - pypandoc >=1.15
+        - pyshp >=3.0.1
+        - python-snappy >=0.7.3
+        - python-socketio >=5.13.0
+        - pythreejs >=2.4.2
+        - pyviz_comms >=3.0.6
+        - pyvo >=1.7
+        - regions >=0.10
+        - ripgrep >=14.1.1
+        - rubin-scheduler >=3.15.0
+        - rubin-sim >=2.3.0
+        - sbpy >=0.5.0
+        - schedview >=0.15.0
+        - sidecar >=0.7.0
+        - snappy >=1.2.2
+        - terminado >=0.18.1
+        - toolz >=1.0.0
+        - wget >=1.21.4
+        - xarray >=2025.9.0
+        - yarn >=4.9.4
+    tests:
+      - script:
+        # grep pin-it output for yarn dependency
+        - pin-it rubin-env-rsp | grep "yarn="
+
+  - package:
+      name: rubin-env-developer
+      version: ${{ version }}
+    requirements:
+      host:
+        - python
+      run:
+        - ${{ pin_subpackage("rubin-env", exact=True) }}
+        - astrowidgets >=0.3
+        - black ==25.1
+        - bokeh >=3.7.3
+        - if: linux
+          then: clangxx >=${{ clang_llvm_version }}
+        - clang-format >=${{ clang_llvm_version }}
+        - clang-tools >=${{ clang_llvm_version }}
+        - dask-jobqueue >=0.9.0
+        - datashader >=0.18.2
+        - fastparquet >=2024.11.0
+        - ffmpeg >=7.1.1
+        - gfal2-util >=1.9.0
+        - holoviews >=1.21.0
+        - hvplot >=0.12.1
+        - imagemagick >=7.1.2_3
+        - ipdb >=0.13.13
+        - ipympl >=0.9.7
+        - ipython >=9.5.0
+        - isort >=6.0.1
+        - jedi >=0.19.2
+        - jupyter >=1.1.1
+        - jupyterlab >=4.4.7,<5
+        - jupyterlab_server >=2.27.3
+        - line_profiler >=5
+        - lsst-efd-client >=0.12.0
+        - mermaid-py >=0.8.0
+        - mypy >=1.17.1
+        - mysqlclient >=2.2.7
+        - panel >=1.7.5
+        - pep8 >=1.7.1
+        - postgresql >=17.6
+        - pre-commit >=4.3.0
+        - pyct >=0.5.0
+        - pydocstyle >=6.3.0
+        - pyflakes >=3.2.0
+        - pytest-profiling >=1.8.1
+        - python-build >=1.3.0
+        - python-gfal2 >=1.13.0
+        - pyvo >=1.7
+        - ripgrep >=14.1.1
+        - snakeviz >=2.2.2
+        - sphinx-automodapi >=0.20.0
+        - types-deprecated >=1.2.15.20250304
+        - types-pkg_resources >=0.1.3
+        - types-python-dateutil >=2.9.0.20250822
+        - types-pyyaml >=6.0.12.20250822
+        - types-requests >=2.32.4.20250809
+        - types-setuptools >=80.9.0.20250822
+        - types-urllib3 >=1.26.25.14
+    tests:
+      - script:
+        # grep pin-it output for black dependency
+        - pin-it rubin-env-developer | grep "black"
+
+  - package:
+      name: rubin-env-extras
+      version: ${{ version }}
+    requirements:
+      host:
+        - python
+      run:
+        - ${{ pin_subpackage("rubin-env", exact=True) }}
+        - ${{ pin_subpackage("rubin-env-rsp", exact=True) }}
+        - ${{ pin_subpackage("rubin-env-developer", exact=True) }}
+        - rubin-sim >=2.0.0
+    tests:
+      - script:
+        # grep pin-it output for rubin-env-developer dependency
+        # Can't do rubin-sim due to lack of ARM
+        - pin-it rubin-env-extras | grep "rubin-env-developer"
+
+about:
+  homepage: https://github.com/conda-forge/rubinenv-feedstock
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE.txt
+  summary: Metapackage to install the Rubin Observatory's common software environment.
+  description: |
+    This metapackage exists to define the Rubin Observatory common software
+    environment, including version specifications where needed, while allowing
+    users flexibility when installing additional packages into the same environment.
+
+extra:
+  recipe-maintainers:
+    - mwittgen
+    - timj
+    - ktlim
+    - erykoff
+    - beckermr
+    - roceb
+    - athornton
