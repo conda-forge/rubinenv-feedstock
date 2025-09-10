@@ -1,18 +1,25 @@
-{% set name = "rubin-env" %}
-{% set version = "11.0.0" %}
-{% set build_number = 0 %}
+context:
+  name: "rubin-env"
+  version: "11.0.0"
+  build_number: 0
 
-package:
-  name: {{ name }}
-  version: {{ version }}
+recipe:
+  name: ${{ name }}
+  version: ${{ version }}
 
 build:
-  skip: True  # [python_impl == 'pypy' or win or py != 312]
-  number: {{ build_number }}
+  skip:
+    - if: win or not match(python, "3.12.*")
+      then: true
+      else: false
+  number: ${{ build_number }}
 
 outputs:
-  - name: rubin-env-nosysroot
-    script: build-nosysroot.sh
+  - package:
+      name: rubin-env-nosysroot
+      version: ${{ version }}
+    build:
+      script: build-nosysroot.sh
     # Since all requirements are required "at run time" for the
     # Rubin developers, all requirements are fundamentally
     # run requirements. However, we've attempted to organize
@@ -21,9 +28,9 @@ outputs:
     requirements:
       host:
         - python
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
-        - {{ compiler('fortran') }}
+        - ${{ compiler('c') }}
+        - ${{ compiler('cxx') }}
+        - ${{ compiler('fortran') }}
         - apr
         - cfitsio
         - curl
@@ -41,7 +48,7 @@ outputs:
         - starlink-ast
         - wcslib
         - xpa
-      run_constrained:
+      run_constraints:
         - impi_rt == 9999999999999
       run:
         # jq is special - it is needed for the pin-it utility in this package
@@ -52,10 +59,10 @@ outputs:
         # these really are required to perform a build.
         # Note that "testing" in conda-forge should be limited to testing
         # successful packaging, and not testing code.
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
-        - {{ compiler('fortran') }}
-        - {{ compiler('rust') }}
+        - ${{ compiler('c') }}
+        - ${{ compiler('cxx') }}
+        - ${{ compiler('fortran') }}
+        - ${{ compiler('rust') }}
         # The above are needed to get the official conda-forge versions.
         # The below is needed to get convenience symlinks for users to invoke.
         - compilers >=1.9.0
@@ -89,25 +96,26 @@ outputs:
         # These are mostly run-like, but for the same reasons as
         # above, we need most of these at build time, so they are mostly
         # host-like
-        - apr {{ apr }}.*
-        - cffi {{ cffi }}.*
-        - cfitsio {{ cfitsio }}.*
-        - eigen {{ eigen }}.*
-        - gsl {{ gsl }}.*
-        - libaprutil {{ libaprutil }}.*
-        - libboost-python-devel {{ libboost_python_devel }}.*
-        - libcxx {{ libcxx }}.*  # [not aarch64]
+        - apr ${{ apr }}.*
+        - cffi ${{ cffi }}.*
+        - cfitsio ${{ cfitsio }}.*
+        - eigen ${{ eigen }}.*
+        - gsl ${{ gsl }}.*
+        - libaprutil ${{ libaprutil }}.*
+        - libboost-python-devel ${{ libboost_python_devel }}.*
+        - if: not aarch64
+          then: libcxx ${{ libcxx }}.*
         - llvmlite
-        - log4cxx {{ log4cxx }}.*
-        - minuit2 {{ minuit2 }}.*
-        - ndarray {{ ndarray }}.*
+        - log4cxx ${{ log4cxx }}.*
+        - minuit2 ${{ minuit2 }}.*
+        - ndarray ${{ ndarray }}.*
         - ndarray >=1.6.4
         - numba
-        - numpy {{ numpy }}.*
-        - starlink-ast {{ starlink_ast }}.*
-        - wcslib {{ wcslib }}.*
-        - xpa {{ xpa }}.*
-        - yaml-cpp {{ yaml_cpp }}.*
+        - numpy ${{ numpy }}.*
+        - starlink-ast ${{ starlink_ast }}.*
+        - wcslib ${{ wcslib }}.*
+        - xpa ${{ xpa }}.*
+        - yaml-cpp ${{ yaml_cpp }}.*
 
         ###################################################
         # run-like
@@ -122,7 +130,8 @@ outputs:
         - boto3 >=1.39.11
         - botocore >=1.39.11
         - bottleneck >=1.6.0
-        - cassandra-driver >=3.29.2  # [linux64]
+        - if: linux and x86_64
+          then: cassandra-driver >=3.29.2
         - click >=8.1.8,<8.2
         - coloredlogs >=15.0.1
         - colour-science >=0.4.6
@@ -180,7 +189,8 @@ outputs:
         - pgcli >=4.3.0
         - photutils >=2.2.0
         - piff >=1.5.1
-        - prmon >=3.1.1  # [linux]
+        - if: linux
+          then: prmon >=3.1.1
         - psycopg2 >=2.9.10,<3
         - pyarrow >=20.0.0
         - pybind11 >=3.0.1,<4
@@ -220,36 +230,48 @@ outputs:
         - ws4py >=0.5.1
         - zstandard >=0.24
 
-    test:
-      commands:
+    tests:
+      - script:
         # grep pin-it output for python dependency
         - pin-it rubin-env-nosysroot | grep "python="
         # ensure binary compatibility; bump major version if not
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1019 ]'  # [linux]
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
+        - if: linux
+          then:
+            - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1019 ]'
+        - if: osx
+          then:
+            - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'
 
-  - name: rubin-env
+  - package:
+      name: rubin-env
+      version: ${{ version }}
     requirements:
       host:
         - python
       run:
-        - {{ pin_subpackage("rubin-env-nosysroot", exact=True) }}
-        - {{ stdlib("c") }}
+        - ${{ pin_subpackage("rubin-env-nosysroot", exact=True) }}
+        - ${{ stdlib("c") }}
         - python
-    test:
-      commands:
+    tests:
+      - script:
         # grep pin-it output for python dependency
         - pin-it rubin-env | grep "python="
         # ensure binary compatibility; bump major version if not
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1017 ]'  # [linux]
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
+        - if: linux
+          then:
+            - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1017 ]'
+        - if: osx
+          then:
+            - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'
 
-  - name: rubin-env-rsp
+  - package:
+      name: rubin-env-rsp
+      version: ${{ version }}
     requirements:
       host:
         - python
       run:
-        - {{ pin_subpackage("rubin-env", exact=True) }}
+        - ${{ pin_subpackage("rubin-env", exact=True) }}
         # All are from sciplat-lab unless otherwise stated
         - astrowidgets >=0.3.0
         - awkward >=2.8.8
@@ -336,23 +358,26 @@ outputs:
         - wget >=1.21.4
         - xarray >=2025.9.0
         - yarn >=4.9.4
-    test:
-      commands:
+    tests:
+      - script:
         # grep pin-it output for yarn dependency
         - pin-it rubin-env-rsp | grep "yarn="
 
-  - name: rubin-env-developer
+  - package:
+      name: rubin-env-developer
+      version: ${{ version }}
     requirements:
       host:
         - python
       run:
-        - {{ pin_subpackage("rubin-env", exact=True) }}
+        - ${{ pin_subpackage("rubin-env", exact=True) }}
         - astrowidgets >=0.3
         - black ==25.1
         - bokeh >=3.7.3
-        - clangxx >={{ clang_llvm_version }}  # [linux]
-        - clang-format >={{ clang_llvm_version }}
-        - clang-tools >={{ clang_llvm_version }}
+        - if: linux
+          then: clangxx >=${{ clang_llvm_version }}
+        - clang-format >=${{ clang_llvm_version }}
+        - clang-tools >=${{ clang_llvm_version }}
         - dask-jobqueue >=0.9.0
         - datashader >=0.18.2
         - fastparquet >=2024.11.0
@@ -395,33 +420,34 @@ outputs:
         - types-requests >=2.32.4.20250809
         - types-setuptools >=80.9.0.20250822
         - types-urllib3 >=1.26.25.14
-    test:
-      commands:
+    tests:
+      - script:
         # grep pin-it output for black dependency
         - pin-it rubin-env-developer | grep "black"
 
-  - name: rubin-env-extras
+  - package:
+      name: rubin-env-extras
+      version: ${{ version }}
     requirements:
       host:
         - python
       run:
-        - {{ pin_subpackage("rubin-env", exact=True) }}
-        - {{ pin_subpackage("rubin-env-rsp", exact=True) }}
-        - {{ pin_subpackage("rubin-env-developer", exact=True) }}
+        - ${{ pin_subpackage("rubin-env", exact=True) }}
+        - ${{ pin_subpackage("rubin-env-rsp", exact=True) }}
+        - ${{ pin_subpackage("rubin-env-developer", exact=True) }}
         - rubin-sim >=2.0.0
-    test:
-      commands:
+    tests:
+      - script:
         # grep pin-it output for rubin-env-developer dependency
         # Can't do rubin-sim due to lack of ARM
         - pin-it rubin-env-extras | grep "rubin-env-developer"
 
 about:
-  home: https://github.com/conda-forge/rubinenv-feedstock
+  homepage: https://github.com/conda-forge/rubinenv-feedstock
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
   summary: Metapackage to install the Rubin Observatory's common software environment.
-
   description: |
     This metapackage exists to define the Rubin Observatory common software
     environment, including version specifications where needed, while allowing

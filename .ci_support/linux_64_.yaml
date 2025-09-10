@@ -68,8 +68,6 @@ pin_run_as_build:
     max_pin: x.x
 python:
 - 3.12.* *_cpython
-python_impl:
-- cpython
 rust_compiler:
 - rust
 starlink_ast:
