@@ -7,7 +7,7 @@
 clang_llvm_version:
   - 19
 channel_targets:
-  - conda-forge main
+  - conda-forge rubin-env_dev
 c_compiler_version:            # [unix]
   - 14                         # [linux]
   - 19                         # [osx]
