@@ -1,13 +1,13 @@
+channel_targets:
+  - conda-forge rubin-env_dev
 # the following keys need to have the same value
-#  - clang_llvm_version 
+#  - clang_llvm_version
 #  - llvm_openmp
 #  - libcxx
 #  - c_compiler_version for osx
 #  - cxx_compiler_version for osx
 clang_llvm_version:
   - 19
-channel_targets:
-  - conda-forge rubin-env_dev
 c_compiler_version:            # [unix]
   - 14                         # [linux]
   - 19                         # [osx]
