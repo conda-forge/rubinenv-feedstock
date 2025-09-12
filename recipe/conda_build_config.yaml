@@ -11,6 +11,8 @@ cxx_compiler_version:          # [unix]
 fortran_compiler_version:      # [unix]
   - 14                         # [linux]
   - 14                         # [osx]
+rust_complier_version:
+  - 1.89.0
 llvm_openmp:                              # [osx]
   - 19                                    # [osx]
 python:
