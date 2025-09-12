@@ -7,7 +7,7 @@ apr:
 c_compiler:
 - clang
 c_compiler_version:
-- '18'
+- '19'
 c_stdlib:
 - macosx_deployment_target
 c_stdlib_version:
@@ -20,12 +20,14 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
+clang_llvm_version:
+- '19'
 curl:
 - '8'
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '18'
+- '19'
 eigen:
 - '3.4'
 fftw:
@@ -33,7 +35,7 @@ fftw:
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
-- '13'
+- '14'
 gsl:
 - '2.7'
 libaprutil:
@@ -45,7 +47,7 @@ libboost_python_devel:
 libcblas:
 - 3.9.* *netlib
 libcxx:
-- '18'
+- '19'
 liblapack:
 - 3.9.* *netlib
 liblapacke:
@@ -68,8 +70,8 @@ pin_run_as_build:
     max_pin: x.x
 python:
 - 3.12.* *_cpython
-python_impl:
-- cpython
+rust_compiler:
+- rust
 starlink_ast:
 - 9.2.12
 target_platform:
