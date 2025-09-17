@@ -97,26 +97,26 @@ outputs:
         # These are mostly run-like, but for the same reasons as
         # above, we need most of these at build time, so they are mostly
         # host-like
-        - apr ${{ apr }}
-        - cffi ${{ cffi }}
-        - cfitsio ${{ cfitsio }}
-        - eigen ${{ eigen }}
-        - gsl ${{ gsl }}
-        - libaprutil ${{ libaprutil }}
-        - libboost-python-devel ${{ libboost_python_devel }}
+        - apr ${{ apr }}.*
+        - cffi ${{ cffi }}.*
+        - cfitsio ${{ cfitsio }}.*
+        - eigen ${{ eigen }}.*
+        - gsl ${{ gsl }}.*
+        - libaprutil ${{ libaprutil }}.*
+        - libboost-python-devel ${{ libboost_python_devel }}.*
         - if: not aarch64
-          then: libcxx ${{ libcxx }}
+          then: libcxx ${{ libcxx }}.*
         - llvmlite
-        - log4cxx ${{ log4cxx }}
-        - minuit2 ${{ minuit2 }}
-        - ndarray ${{ ndarray }}
+        - log4cxx ${{ log4cxx }}.*
+        - minuit2 ${{ minuit2 }}.*
+        - ndarray ${{ ndarray }}.*
         - ndarray >=1.6.4
         - numba
-        - numpy ${{ numpy }}
-        - starlink-ast ${{ starlink_ast }}
-        - wcslib ${{ wcslib }}
-        - xpa ${{ xpa }}
-        - yaml-cpp ${{ yaml_cpp }}
+        - numpy ${{ numpy }}.*
+        - starlink-ast ${{ starlink_ast }}.*
+        - wcslib ${{ wcslib }}.*
+        - xpa ${{ xpa }}.*
+        - yaml-cpp ${{ yaml_cpp }}.*
 
         ###################################################
         # run-like
