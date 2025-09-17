@@ -11,7 +11,7 @@ recipe:
 
 build:
   skip:
-    - if: win or not match(python, "3.12.*")
+    - if: win or not match(python, "3.13.*")
       then: true
       else: false
   number: ${{ build_number }}
