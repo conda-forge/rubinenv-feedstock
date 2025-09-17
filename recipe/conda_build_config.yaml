@@ -23,7 +23,7 @@ llvm_openmp:                              # [osx]
   - 19                                    # [osx]
 python:
   # part of a zip_keys: python, python_impl, numpy, is_python_min
-  - 3.12.* *_cpython
+  - 3.13.*
 is_python_min:
   - false
 python_impl:

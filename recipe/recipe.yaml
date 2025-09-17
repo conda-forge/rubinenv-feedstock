@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "11.0.0dev"
-  build_number: 8
+  build_number: 9
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -70,7 +70,6 @@ outputs:
         - compilers >=1.9.0
         - cmake >=4.1.1
         - coverage >=7.10.0
-        - coveralls >=4.0.1
         - doxygen >=1.13.2
         - eups >=2.2.10
         - flake8 ==7.3.0
@@ -215,7 +214,7 @@ outputs:
         - schwimmbad >=0.4.2
         - scikit-image >=0.25.2
         - scikit-learn >=1.7.2
-        - scipy >=1.13.1,<1.14
+        - scipy >=1.13.1
         - seaborn >=0.13.2
         - skyproj >=2.1.1
         - sorcha >=1.0
