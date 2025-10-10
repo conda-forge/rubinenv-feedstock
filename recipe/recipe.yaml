@@ -71,7 +71,7 @@ outputs:
         - cmake >=4.1.1
         - coverage >=7.10.0
         - doxygen >=1.13.2
-        - eups >=2.2.10
+        - eups >=2.2.14
         - flake8 ==7.3.0
         - libblas * *openblas
         - openblas
