@@ -157,6 +157,7 @@ outputs:
         - git >=2.51.0
         - git-lfs >=3.7.0
         - graphviz >=9.0.0
+        - h2 >=4.3.0
         - h5py >=3.14.0
         - healpy >=1.18.1
         - healsparse >=1.11.1
