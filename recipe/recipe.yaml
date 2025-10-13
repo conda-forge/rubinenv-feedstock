@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "12.0.0dev"
-  build_number: 1
+  build_number: 2
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -133,7 +133,7 @@ outputs:
         - bottleneck >=1.6.0
         - if: linux and x86_64
           then: cassandra-driver >=3.29.2
-        - click >=8.1.8,<8.2
+        - click >=8.3.0
         - coloredlogs >=15.0.1
         - colour-science >=0.4.6
         - configparser >=7.2.0
