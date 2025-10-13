@@ -133,7 +133,7 @@ outputs:
         - bottleneck >=1.6.0
         - if: linux and x86_64
           then: cassandra-driver >=3.29.2
-        - click >=8.1.8,<8.2
+        - click >=8.3.0
         - coloredlogs >=15.0.1
         - colour-science >=0.4.6
         - configparser >=7.2.0
