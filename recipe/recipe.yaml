@@ -215,7 +215,7 @@ outputs:
         - schwimmbad >=0.4.2
         - scikit-image >=0.25.2
         - scikit-learn >=1.7.2
-        - scipy >=1.13.1
+        - scipy >=1.16
         - seaborn >=0.13.2
         - skyproj >=2.1.1
         - sorcha >=1.0
