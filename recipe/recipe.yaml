@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
-  version: "11.0.0"
-  build_number: 3
+  version: "12.0.0"
+  build_number: 0
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -11,7 +11,7 @@ recipe:
 
 build:
   skip:
-    - if: win or not match(python, "3.12.*")
+    - if: win or not match(python, "3.13.*")
       then: true
       else: false
   number: ${{ build_number }}
@@ -70,7 +70,6 @@ outputs:
         - compilers >=1.9.0
         - cmake >=4.1.1
         - coverage >=7.10.0
-        - coveralls >=4.0.1
         - doxygen >=1.13.2
         - eups >=2.2.14
         - flake8 ==7.3.0
@@ -200,7 +199,7 @@ outputs:
         - pyfftw >=0.15.0
         - pyld >=2.0.4
         - pytables >=3.10.2
-        - python >=3.12,<3.13
+        - python >=3.13,<3.14
         - python-confluent-kafka >=2.11.1
         - pytorch >=2.7.1
         - pyyaml >=6.0.2
