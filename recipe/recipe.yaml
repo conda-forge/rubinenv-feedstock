@@ -417,6 +417,7 @@ outputs:
         - python-gfal2 >=1.13.0
         - pyvo >=1.7
         - ripgrep >=14.1.1
+        - rust-src >=1.90.0
         - snakeviz >=2.2.2
         - sphinx-automodapi >=0.20.0
         - types-deprecated >=1.2.15.20250304
