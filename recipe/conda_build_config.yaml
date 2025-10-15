@@ -53,7 +53,7 @@ minuit2:
 ndarray:
   - '1'
 starlink_ast:
-  - '9.2.14'
+  - '9.3.0'
 wcslib:
   - '8'
 xpa:
