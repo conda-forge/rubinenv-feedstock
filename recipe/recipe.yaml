@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "12.1.0dev"
-  build_number: 0
+  build_number: 1
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -82,7 +82,7 @@ outputs:
         - pip >=25.0.1
         - pkg-config >=0.29.2
         - psutil >=7.0.0
-        - pytest >=8.4.2, <9
+        - pytest >=9.0.0
         - pytest-cov >=6.3.0
         - pytest-doctestplus >=1.4.0
         - pytest-runner >=6.0.0
@@ -187,7 +187,7 @@ outputs:
         - panda-client >=1.5.92
         - pandas >=2.3.2,<3
         - paramiko >=4.0.0
-        - parsl ==2024.12.23
+        - parsl ==2025.06.02
         - patch >=2.7.6
         - pgcli >=4.3.0
         - photutils >=2.2.0
