@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "12.1.0dev"
-  build_number: 1
+  build_number: 2
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -87,7 +87,6 @@ outputs:
         - pytest-doctestplus >=1.4.0
         - pytest-runner >=6.0.0
         - pytest-session2file >=0.1.11
-        - pytest-subtests ==0.14.1
         - pytest-vcr >=1.0.2
         - pytest-xdist >=3.8.0
         - setuptools >=80.8.0
