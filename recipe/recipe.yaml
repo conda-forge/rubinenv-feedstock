@@ -82,7 +82,7 @@ outputs:
         - pip >=25.0.1
         - pkg-config >=0.29.2
         - psutil >=7.0.0
-        - pytest >=8.4.2, <9
+        - pytest >=9.0.0,<10
         - pytest-cov >=6.3.0
         - pytest-doctestplus >=1.4.0
         - pytest-runner >=6.0.0
