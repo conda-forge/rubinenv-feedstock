@@ -52,6 +52,8 @@ liblapack:
 - 3.9.* *netlib
 liblapacke:
 - 3.9.* *netlib
+libxml2:
+- '2.13'
 log4cxx:
 - 1.2.0
 macos_machine:

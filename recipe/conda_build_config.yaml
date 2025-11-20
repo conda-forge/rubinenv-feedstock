@@ -40,6 +40,8 @@ libboost_python_devel:
   - '1.86'
 libcxx:
   - '19'
+libxml2:
+  - 2.13
 log4cxx:
   - 1.2.0
 minuit2:
