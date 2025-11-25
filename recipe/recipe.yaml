@@ -191,7 +191,7 @@ outputs:
         - patch >=2.7.6
         - pgcli >=4.3.0
         - photutils >=2.2.0
-        - piff >=1.5.1
+        - piff >=1.5.1,<1.6
         - if: linux
           then: prmon >=3.1.1
         - psycopg2 >=2.9.10,<3
