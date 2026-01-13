@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "12.1.0"
-  build_number: 2
+  build_number: 3
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -422,7 +422,7 @@ outputs:
         - ripgrep >=15.1.0
         - rubin-nights >=0.8.1
         - rubin-scheduler >=3.20.1
-        - rubin-sim >=2.6.0        
+        - rubin-sim >=2.6.0
         - rust-src >=1.91.0
         - schedview >=0.20.0
         - snakeviz >=2.2.2
