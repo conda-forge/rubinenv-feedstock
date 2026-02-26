@@ -175,7 +175,7 @@ outputs:
         - lsst-ts-xml >=24.2.1
         - matplotlib-base >=3.10.8
         - maturin >=1.10.1
-        - moto >=5.1.17
+        - moto >=5.1.19
         - mpi4py >=4.1.1
         - nest-asyncio >=1.6.0
         - networkx ==3.6
@@ -223,7 +223,7 @@ outputs:
         - sorcha >=1.1.1
         - spherematch >=0.10.2
         - sphinxcontrib-doxylink >=1.13
-        - sphinx-click
+        - sphinx-click >=6.2.0
         - sqlalchemy >=2.0.44
         - sqlite >=3.51
         - threadpoolctl >=3.6.0
