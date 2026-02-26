@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "12.2.0dev"
-  build_number: 0
+  build_number: 1
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -223,6 +223,7 @@ outputs:
         - sorcha >=1.1.1
         - spherematch >=0.10.2
         - sphinxcontrib-doxylink >=1.13
+        - sphinx-click
         - sqlalchemy >=2.0.44
         - sqlite >=3.51
         - threadpoolctl >=3.6.0
