@@ -43,7 +43,7 @@ outputs:
         - libcblas
         - liblapack
         - liblapacke
-        - libxml2
+        # - libxml2
         - log4cxx
         - minuit2
         - numpy
