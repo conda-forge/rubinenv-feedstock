@@ -75,7 +75,7 @@ outputs:
         - eups >=2.2.14
         - flake8 ==7.3.0
         - libblas * *openblas
-        - libpq==17.6
+        - libpq>=17.6
         - openblas
         - make >=4.4.1
         - meson >=1.9.0
