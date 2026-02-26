@@ -43,7 +43,7 @@ outputs:
         - libcblas
         - liblapack
         - liblapacke
-        # - libxml2
+        - libxml2
         - log4cxx
         - minuit2
         - numpy
@@ -411,7 +411,7 @@ outputs:
         - mysqlclient >=2.2.7
         - panel >=1.8.3
         - pep8 >=1.7.1
-        - postgresql >=17.6,<18
+        - postgresql >=17.6
         - pre-commit >=4.3.0
         - pyct >=0.6.0
         - pydocstyle >=6.3.0
