@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "12.1.0"
-  build_number: 5
+  build_number: 6
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -295,7 +295,6 @@ outputs:
         - fastparquet >=2024.11.0
         - ffmpeg >=7.1.1
         - freetype-py >=2.5.1
-        - gcsfs >=2025.10.0
         - geoviews >=1.15.0
         - gh >=2.83.1
         - ginga >=5.4.0
