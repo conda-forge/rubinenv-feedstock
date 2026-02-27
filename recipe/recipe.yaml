@@ -75,7 +75,7 @@ outputs:
         - eups >=2.2.14
         - flake8 ==7.3.0
         - libblas * *openblas
-        - libpq>=17.6
+        - libpq >=17.6
         - openblas
         - make >=4.4.1
         - meson >=1.9.0
@@ -231,7 +231,8 @@ outputs:
         - tqdm >=4.67.1
         - treecorr >=5.1.2,<6
         - treegp >=1.4.0
-        - urllib3 >=2.6.3
+#         - urllib3 >=2.6.3
+        - urllib3 >=2.5.0
         - webdav4 >=0.10.0
         - ws4py >=0.5.1
         - zstandard >=0.25
