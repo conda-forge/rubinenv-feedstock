@@ -43,7 +43,7 @@ gsl:
 libaprutil:
   - '1'
 libboost_python_devel:
-  - '1.86'
+  - '1.88'
 libcxx:
   - '19'
 libxml2:
