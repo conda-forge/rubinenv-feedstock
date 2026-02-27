@@ -231,8 +231,7 @@ outputs:
         - tqdm >=4.67.1
         - treecorr >=5.1.2,<6
         - treegp >=1.4.0
-#         - urllib3 >=2.6.3
-        - urllib3 >=2.5.0
+        - urllib3 >=2.6.3
         - webdav4 >=0.10.0
         - ws4py >=0.5.1
         - zstandard >=0.25
