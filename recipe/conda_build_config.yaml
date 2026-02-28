@@ -10,7 +10,7 @@ channel_targets:
 #  - ~libcxx~ # MRB: ignore this one
 #  - c_compiler_version for osx
 #  - cxx_compiler_version for osx
-# MRB: We can probably let libcxx float hgiher since it is
+# MRB: We can probably let libcxx float higher since it is
 #      not in the global conda-forge pinnings.
 clang_llvm_version:
   - 19
