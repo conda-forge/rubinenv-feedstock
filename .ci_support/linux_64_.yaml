@@ -44,8 +44,6 @@ libboost_python_devel:
 - '1.88'
 libcblas:
 - 3.9.* *netlib
-libcxx:
-- '20'
 liblapack:
 - 3.9.* *netlib
 liblapacke:
