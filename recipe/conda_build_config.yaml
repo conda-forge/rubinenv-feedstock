@@ -23,6 +23,8 @@ rust_complier_version:
   - 1.89.0
 llvm_openmp:                              # [osx]
   - 19                                    # [osx]
+libcxx:
+  - '20'
 python:
   # part of a zip_keys: python, python_impl, numpy, is_python_min
   - 3.13.* *_cp313
@@ -46,8 +48,8 @@ libaprutil:
   - '1'
 libboost_python_devel:
   - '1.88'
-libcxx:
-  - '20'
+libpq:
+  - '18'
 libxml2:
   - '2.14'
 libxml2_devel:
