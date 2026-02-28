@@ -28,6 +28,8 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '19'
+cython:
+- '3'
 eigen:
 - '3.4'
 fftw:
@@ -52,6 +54,8 @@ liblapack:
 - 3.9.* *netlib
 liblapacke:
 - 3.9.* *netlib
+libpq:
+- '18'
 libxml2:
 - '2.14'
 libxml2_devel:
