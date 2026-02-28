@@ -67,7 +67,8 @@ libboost_python_devel:
   - '1.88'
 # MRB: The global conda-forge pin is 18, but it
 # appears we need a pin down to the minor version
-# to get the recipe to solve. IDK why.
+# to get the recipe to solve. I think this is due
+# to krb5 1.22 and zeromq, but that is a total guess.
 libpq:
   - '18.2'
 libxml2:
