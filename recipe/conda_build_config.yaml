@@ -7,20 +7,20 @@ channel_targets:
 #  - c_compiler_version for osx
 #  - cxx_compiler_version for osx
 clang_llvm_version:
-  - 19
+  - 20
 c_compiler_version:            # [unix]
   - 14                         # [linux]
-  - 19                         # [osx]
+  - 20                         # [osx]
 cxx_compiler_version:          # [unix]
   - 14                         # [linux]
-  - 19                         # [osx]
+  - 20                         # [osx]
 fortran_compiler_version:      # [unix]
   - 14                         # [linux]
   - 14                         # [osx]
 rust_complier_version:
   - 1.89.0
 llvm_openmp:                              # [osx]
-  - 19                                    # [osx]
+  - 20                                    # [osx]
 python:
   # part of a zip_keys: python, python_impl, numpy, is_python_min
   - 3.13.* *_cp313
@@ -45,9 +45,11 @@ libaprutil:
 libboost_python_devel:
   - '1.88'
 libcxx:
-  - '19'
+  - '20'
 libxml2:
-  - 2.13
+  - '2.14'
+libxml2_devel:
+  - '2.14'
 log4cxx:
   - 1.2.0
 minuit2:

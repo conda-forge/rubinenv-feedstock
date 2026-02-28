@@ -44,6 +44,7 @@ outputs:
         - liblapack
         - liblapacke
         - libxml2
+        - libxml2-devel
         - log4cxx
         - minuit2
         - numpy
