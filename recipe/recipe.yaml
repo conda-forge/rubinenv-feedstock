@@ -34,24 +34,30 @@ outputs:
         - ${{ compiler('cxx') }}
         - ${{ compiler('fortran') }}
         - apr
+        - cffi
         - cfitsio
+        - cython
         - curl
         - fftw
         - gsl
         - libaprutil
+        - libboost-python-devel
         - libblas
         - libcblas
         - liblapack
         - liblapacke
+        - libpq
         - libxml2
         - libxml2-devel
         - log4cxx
         - minuit2
+        - ndarray
         - numpy
         - openblas
         - starlink-ast
         - wcslib
         - xpa
+        - yaml-cpp
       run_constraints:
         - impi_rt == 9999999999999
       run:
@@ -102,12 +108,16 @@ outputs:
         - apr ${{ apr }}.*
         - cffi ${{ cffi }}.*
         - cfitsio ${{ cfitsio }}.*
+        - cython ${{ cython }}.*
         - eigen ${{ eigen }}.*
         - gsl ${{ gsl }}.*
         - libaprutil ${{ libaprutil }}.*
         - libboost-python-devel ${{ libboost_python_devel }}.*
         - if: not linux
           then: libcxx ${{ libcxx }}.*
+        - libpq ${{ libpq }}.*
+        - libxml2 ${{ libxml2 }}.*
+        - libxml2-devel ${{ libxml2_devel }}.*
         - llvmlite
         - log4cxx ${{ log4cxx }}.*
         - minuit2 ${{ minuit2 }}.*
