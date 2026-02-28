@@ -112,7 +112,7 @@ outputs:
         - libboost-python-devel ${{ libboost_python_devel }}.*
         - if: not linux
           then: libcxx ${{ libcxx }}.*
-        - libpq >=17.6
+        - libpq >=18,<18
         - libpq ${{ libpq }}.*
         - libxml2 ${{ libxml2 }}.*
         - libxml2-devel ${{ libxml2_devel }}.*
@@ -421,7 +421,7 @@ outputs:
         - mysqlclient >=2.2.7
         - panel >=1.8.3
         - pep8 >=1.7.1
-        - postgresql >=17.6
+        - postgresql >=18,<19
         - pre-commit >=4.3.0
         - pyct >=0.6.0
         - pydocstyle >=6.3.0
