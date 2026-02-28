@@ -7,7 +7,7 @@ apr:
 c_compiler:
 - clang
 c_compiler_version:
-- '19'
+- '20'
 c_stdlib:
 - macosx_deployment_target
 c_stdlib_version:
@@ -21,13 +21,13 @@ channel_sources:
 channel_targets:
 - conda-forge rubin-env_dev
 clang_llvm_version:
-- '19'
+- '20'
 curl:
 - '8'
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '19'
+- '20'
 eigen:
 - '3.4'
 fftw:
@@ -47,12 +47,14 @@ libboost_python_devel:
 libcblas:
 - 3.9.* *netlib
 libcxx:
-- '19'
+- '20'
 liblapack:
 - 3.9.* *netlib
 liblapacke:
 - 3.9.* *netlib
 libxml2:
+- '2.14'
+libxml2_devel:
 - '2.14'
 log4cxx:
 - 1.2.0
