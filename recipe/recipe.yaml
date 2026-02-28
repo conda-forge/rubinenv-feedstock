@@ -112,7 +112,7 @@ outputs:
         - libboost-python-devel ${{ libboost_python_devel }}.*
         - if: not linux
           then: libcxx ${{ libcxx }}.*
-        - libpq >=18,<18
+        - libpq >=18,<19
         - libpq ${{ libpq }}.*
         - libxml2 ${{ libxml2 }}.*
         - libxml2-devel ${{ libxml2_devel }}.*
