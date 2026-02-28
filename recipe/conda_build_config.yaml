@@ -1,11 +1,17 @@
 channel_targets:
   - conda-forge rubin-env_dev
+
+#####################################
+# compiler and stdlib pins
+
 # the following keys need to have the same value
 #  - clang_llvm_version
 #  - llvm_openmp
-#  - libcxx
+#  - ~libcxx~ # MRB: ignore this one
 #  - c_compiler_version for osx
 #  - cxx_compiler_version for osx
+# MRB: We can probably let libcxx float higher since it is
+#      not in the global conda-forge pinnings.
 clang_llvm_version:
   - 19
 c_compiler_version:            # [unix]
@@ -21,6 +27,13 @@ rust_complier_version:
   - 1.89.0
 llvm_openmp:                              # [osx]
   - 19                                    # [osx]
+libcxx:
+  - '20'
+c_stdlib_version:   # [linux]
+  - "2.17"          # [linux]
+
+#####################################
+# pins for python
 python:
   # part of a zip_keys: python, python_impl, numpy, is_python_min
   - 3.13.* *_cp313
@@ -28,14 +41,22 @@ is_python_min:
   - false
 python_impl:
   - cpython
+
+#####################################
+# host-like pins
+#
+# MRB: The packages here are linked against.
+#      These packages need to appear in the `host`
+#      section of the recipe. Further, for this specific
+#      recipe, the pins also need to appear in the form,
+#      `apr ${{ apr }}.*` in the run section (for e.g.
+#      the `apr` package).
 apr:
   - '1'
 cffi:
   - '1'
 cfitsio:
   - 4.6.2
-cython:
-  - '3'
 eigen:
   - '3.4'
 gsl:
@@ -43,11 +64,17 @@ gsl:
 libaprutil:
   - '1'
 libboost_python_devel:
-  - '1.86'
-libcxx:
-  - '19'
+  - '1.88'
+# MRB: The global conda-forge pin is 18, but it
+# appears we need a pin down to the minor version
+# to get the recipe to solve. I think this is due
+# to krb5 1.22 and zeromq, but that is a total guess.
+libpq:
+  - '18.2'
 libxml2:
-  - 2.13
+  - '2.14'
+libxml2_devel:
+  - '2.14'
 log4cxx:
   - 1.2.0
 minuit2:
@@ -62,6 +89,3 @@ xpa:
   - '2'
 yaml_cpp:
   - '0.8'
-
-c_stdlib_version:   # [linux]
-  - "2.17"          # [linux]
