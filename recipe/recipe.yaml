@@ -36,7 +36,6 @@ outputs:
         - apr
         - cffi
         - cfitsio
-        - cython
         - curl
         - fftw
         - gsl
@@ -78,12 +77,10 @@ outputs:
         - compilers >=1.9.0
         - cmake >=4.1.1
         - coverage >=7.10.0
+        - cython 3.*
         - doxygen >=1.13.2
         - eups >=2.2.14
         - flake8 ==7.3.0
-        - libblas * *openblas
-        - libpq >=17.6
-        - openblas
         - make >=4.4.1
         - meson >=1.9.0
         - pep8-naming >=0.15.1
@@ -108,13 +105,14 @@ outputs:
         - apr ${{ apr }}.*
         - cffi ${{ cffi }}.*
         - cfitsio ${{ cfitsio }}.*
-        - cython ${{ cython }}.*
         - eigen ${{ eigen }}.*
         - gsl ${{ gsl }}.*
         - libaprutil ${{ libaprutil }}.*
+        - libblas * *openblas
         - libboost-python-devel ${{ libboost_python_devel }}.*
         - if: not linux
           then: libcxx ${{ libcxx }}.*
+        - libpq >=17.6
         - libpq ${{ libpq }}.*
         - libxml2 ${{ libxml2 }}.*
         - libxml2-devel ${{ libxml2_devel }}.*
@@ -125,6 +123,7 @@ outputs:
         - ndarray >=1.6.4
         - numba
         - numpy ${{ numpy }}.*
+        - openblas
         - starlink-ast ${{ starlink_ast }}.*
         - wcslib ${{ wcslib }}.*
         - xpa ${{ xpa }}.*

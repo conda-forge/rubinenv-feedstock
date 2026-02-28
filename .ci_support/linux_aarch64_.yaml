@@ -24,8 +24,6 @@ cxx_compiler:
 - gxx
 cxx_compiler_version:
 - '14'
-cython:
-- '3'
 docker_image:
 - quay.io/condaforge/linux-anvil-x86_64:alma9
 eigen:
@@ -46,12 +44,14 @@ libboost_python_devel:
 - '1.88'
 libcblas:
 - 3.9.* *netlib
+libcxx:
+- '20'
 liblapack:
 - 3.9.* *netlib
 liblapacke:
 - 3.9.* *netlib
 libpq:
-- '18'
+- '18.2'
 libxml2:
 - '2.14'
 libxml2_devel:
