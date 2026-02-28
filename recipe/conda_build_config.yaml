@@ -2,7 +2,7 @@ channel_targets:
   - conda-forge rubin-env_dev
 
 #####################################
-# compiler and stadlib pins
+# compiler and stdlib pins
 
 # the following keys need to have the same value
 #  - clang_llvm_version
