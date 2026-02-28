@@ -106,7 +106,7 @@ outputs:
         - gsl ${{ gsl }}.*
         - libaprutil ${{ libaprutil }}.*
         - libboost-python-devel ${{ libboost_python_devel }}.*
-        - if: not aarch64
+        - if: not linux
           then: libcxx ${{ libcxx }}.*
         - llvmlite
         - log4cxx ${{ log4cxx }}.*
