@@ -3,24 +3,26 @@ channel_targets:
 # the following keys need to have the same value
 #  - clang_llvm_version
 #  - llvm_openmp
-#  - libcxx
+#  - ~libcxx~ # MRB: ignore this one
 #  - c_compiler_version for osx
 #  - cxx_compiler_version for osx
+# MRB: we can let libcxx float hgiher since it is not
+#      in the global conda-forge pinnings?
 clang_llvm_version:
-  - 20
+  - 19
 c_compiler_version:            # [unix]
   - 14                         # [linux]
-  - 20                         # [osx]
+  - 19                         # [osx]
 cxx_compiler_version:          # [unix]
   - 14                         # [linux]
-  - 20                         # [osx]
+  - 19                         # [osx]
 fortran_compiler_version:      # [unix]
   - 14                         # [linux]
   - 14                         # [osx]
 rust_complier_version:
   - 1.89.0
 llvm_openmp:                              # [osx]
-  - 20                                    # [osx]
+  - 19                                    # [osx]
 python:
   # part of a zip_keys: python, python_impl, numpy, is_python_min
   - 3.13.* *_cp313

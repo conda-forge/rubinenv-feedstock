@@ -17,7 +17,7 @@ channel_sources:
 channel_targets:
 - conda-forge rubin-env_dev
 clang_llvm_version:
-- '20'
+- '19'
 curl:
 - '8'
 cxx_compiler:
