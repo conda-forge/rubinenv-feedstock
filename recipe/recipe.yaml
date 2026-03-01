@@ -120,7 +120,7 @@ outputs:
         - log4cxx ${{ log4cxx }}.*
         - minuit2 ${{ minuit2 }}.*
         - ndarray ${{ ndarray }}.*
-        - ndarray >=1.6.4
+        - ndarray >=1.6.5
         - numba
         - numpy ${{ numpy }}.*
         - openblas
