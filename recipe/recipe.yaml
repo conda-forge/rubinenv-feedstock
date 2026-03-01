@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "12.2.0dev"
-  build_number: 1
+  build_number: 2
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -120,7 +120,7 @@ outputs:
         - log4cxx ${{ log4cxx }}.*
         - minuit2 ${{ minuit2 }}.*
         - ndarray ${{ ndarray }}.*
-        - ndarray >=1.6.4
+        - ndarray >=1.6.5
         - numba
         - numpy ${{ numpy }}.*
         - openblas
