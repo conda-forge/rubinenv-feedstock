@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
-  version: "12.1.0"
-  build_number: 6
+  version: "12.2.0"
+  build_number: 0
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -34,23 +34,29 @@ outputs:
         - ${{ compiler('cxx') }}
         - ${{ compiler('fortran') }}
         - apr
+        - cffi
         - cfitsio
         - curl
         - fftw
         - gsl
         - libaprutil
+        - libboost-python-devel
         - libblas
         - libcblas
         - liblapack
         - liblapacke
+        - libpq
         - libxml2
+        - libxml2-devel
         - log4cxx
         - minuit2
+        - ndarray
         - numpy
         - openblas
         - starlink-ast
         - wcslib
         - xpa
+        - yaml-cpp
       run_constraints:
         - impi_rt == 9999999999999
       run:
@@ -71,12 +77,10 @@ outputs:
         - compilers >=1.9.0
         - cmake >=4.1.1
         - coverage >=7.10.0
+        - cython 3.*
         - doxygen >=1.13.2
         - eups >=2.2.14
         - flake8 ==7.3.0
-        - libblas * *openblas
-        - libpq==17.6
-        - openblas
         - make >=4.4.1
         - meson >=1.9.0
         - pep8-naming >=0.15.1
@@ -104,16 +108,22 @@ outputs:
         - eigen ${{ eigen }}.*
         - gsl ${{ gsl }}.*
         - libaprutil ${{ libaprutil }}.*
+        - libblas * *openblas
         - libboost-python-devel ${{ libboost_python_devel }}.*
-        - if: not aarch64
+        - if: not linux
           then: libcxx ${{ libcxx }}.*
+        - libpq >=18,<19
+        - libpq ${{ libpq }}.*
+        - libxml2 ${{ libxml2 }}.*
+        - libxml2-devel ${{ libxml2_devel }}.*
         - llvmlite
         - log4cxx ${{ log4cxx }}.*
         - minuit2 ${{ minuit2 }}.*
         - ndarray ${{ ndarray }}.*
-        - ndarray >=1.6.4
+        - ndarray >=1.6.5
         - numba
         - numpy ${{ numpy }}.*
+        - openblas
         - starlink-ast ${{ starlink_ast }}.*
         - wcslib ${{ wcslib }}.*
         - xpa ${{ xpa }}.*
@@ -175,10 +185,10 @@ outputs:
         - lsst-ts-xml >=24.2.1
         - matplotlib-base >=3.10.8
         - maturin >=1.10.1
-        - moto >=5.1.17
+        - moto >=5.1.19
         - mpi4py >=4.1.1
         - nest-asyncio >=1.6.0
-        - networkx ==3.5
+        - networkx ==3.6
         - ngmix-core >=2.4.0
         - numexpr >=2.14.1,<3
         - numpy
@@ -187,16 +197,17 @@ outputs:
         - panda-client >=1.5.92
         - pandas >=2.3.3,<3
         - paramiko >=4.0.0
-        - parsl ==2025.11.10
+        - parsl ==2026.02.09
         - patch >=2.8
         - pgcli >=4.3.0
         - photutils >=2.3.0
         - piff >=1.6.0
+        - pillow >=12.1.1
         - if: linux
           then: prmon >=3.1.1
         - psycopg2 >=2.9.10,<3
         - pyarrow >=20.0.0
-        - pybind11 >=3.0.1,<3.0.2
+        - pybind11 >=3.0.2
         - pydantic >=2.12.4,<3
         - pyfftw >=0.15.1
         - pyld >=2.0.4
@@ -223,6 +234,8 @@ outputs:
         - sorcha >=1.1.1
         - spherematch >=0.10.2
         - sphinxcontrib-doxylink >=1.13
+        - sphinx-automodapi >=0.20.0
+        - sphinx-click >=6.2.0
         - sqlalchemy >=2.0.44
         - sqlite >=3.51
         - threadpoolctl >=3.6.0
@@ -230,7 +243,7 @@ outputs:
         - tqdm >=4.67.1
         - treecorr >=5.1.2,<6
         - treegp >=1.4.0
-        - urllib3 >=2.5.0
+        - urllib3 >=2.6.3
         - webdav4 >=0.10.0
         - ws4py >=0.5.1
         - zstandard >=0.25
@@ -409,7 +422,7 @@ outputs:
         - mysqlclient >=2.2.7
         - panel >=1.8.3
         - pep8 >=1.7.1
-        - postgresql >=17.6,<18
+        - postgresql >=18,<19
         - pre-commit >=4.3.0
         - pyct >=0.6.0
         - pydocstyle >=6.3.0
@@ -425,7 +438,6 @@ outputs:
         - rust-src >=1.91.0
         - schedview >=0.20.0
         - snakeviz >=2.2.2
-        - sphinx-automodapi >=0.20.0
         - types-deprecated >=1.3.1.20251101
         - types-pkg_resources >=0.1.3
         - types-python-dateutil >=2.9.0.20250822
