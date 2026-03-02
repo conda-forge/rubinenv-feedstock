@@ -15,7 +15,7 @@ cfitsio:
 channel_sources:
 - conda-forge
 channel_targets:
-- conda-forge main
+- conda-forge rubin-env_dev
 clang_llvm_version:
 - '19'
 curl:
@@ -41,15 +41,21 @@ libaprutil:
 libblas:
 - 3.9.* *netlib
 libboost_python_devel:
-- '1.86'
+- '1.88'
 libcblas:
 - 3.9.* *netlib
+libcxx:
+- '20'
 liblapack:
 - 3.9.* *netlib
 liblapacke:
 - 3.9.* *netlib
+libpq:
+- '18.2'
 libxml2:
-- '2.13'
+- '2.14'
+libxml2_devel:
+- '2.14'
 log4cxx:
 - 1.2.0
 minuit2:
