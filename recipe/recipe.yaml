@@ -113,7 +113,7 @@ outputs:
         - ndarray ${{ ndarray }}.*
         - ndarray >=1.6.4
         - numba
-        - numpy >=2.3,<2.4
+        - numpy ${{ numpy }}.*
         - starlink-ast ${{ starlink_ast }}.*
         - wcslib ${{ wcslib }}.*
         - xpa ${{ xpa }}.*
