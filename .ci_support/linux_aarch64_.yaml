@@ -57,7 +57,7 @@ minuit2:
 ndarray:
 - '1'
 numpy:
-- '2'
+- '2.3'
 openblas:
 - 0.3.*
 pin_run_as_build:
