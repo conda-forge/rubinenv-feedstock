@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "12.1.0"
-  build_number: 6
+  build_number: 7
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -113,7 +113,7 @@ outputs:
         - ndarray ${{ ndarray }}.*
         - ndarray >=1.6.4
         - numba
-        - numpy ${{ numpy }}.*
+        - numpy >=2.3,<2.4
         - starlink-ast ${{ starlink_ast }}.*
         - wcslib ${{ wcslib }}.*
         - xpa ${{ xpa }}.*
