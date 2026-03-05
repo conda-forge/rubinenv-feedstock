@@ -242,7 +242,7 @@ outputs:
         - torchvision >=0.24.0
         - tqdm >=4.67.1
         - treecorr >=5.1.2,<6
-        - treegp >=1.4.0
+        - treegp >=1.4.1
         - urllib3 >=2.6.3
         - webdav4 >=0.10.0
         - ws4py >=0.5.1
