@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "12.1.0"
-  build_number: 7
+  build_number: 8
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -353,6 +353,7 @@ outputs:
         - pyviz_comms >=3.0.6
         - pyvo >=1.8
         - regions >=0.11
+        - reproject >= 0.19.0
         - ripgrep >=15.1.0
         - rubin-nights >=0.8.1
         - rubin-scheduler >=3.20.1
