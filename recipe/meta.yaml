@@ -129,7 +129,7 @@ outputs:
         # conda is required for runtime inspection of installed software
         - conda
         - configparser
-        - click !=8.1.0,!=8.1.1,<8,2
+        - click !=8.1.0,!=8.1.1,<8.2
         - coloredlogs
         - deprecated
         - dustmaps
