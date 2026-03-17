@@ -9,7 +9,7 @@ recipe:
 
 build:
   skip: True  # [python_impl == 'pypy' or win or py != 310]
-  number: {{ build_number }}
+  number: ${{ build_number }}
 
 outputs:
   - name: rubin-env-nosysroot
@@ -22,11 +22,11 @@ outputs:
     requirements:
       host:
         - python
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
-        - {{ compiler('fortran') }}
-        - clang {{c_compiler_version}} default_*    # [osx]
-        - clang {{cxx_compiler_version}} default_*  # [osx]
+        - ${{ compiler('c') }}
+        - ${{ compiler('cxx') }}
+        - ${{ compiler('fortran') }}
+        - clang ${{c_compiler_version}} default_*    # [osx]
+        - clang ${{cxx_compiler_version}} default_*  # [osx]
         - apr
         - boost
         - cfitsio
@@ -54,9 +54,9 @@ outputs:
         # these really are required to perform a build.
         # Note that "testing" in conda-forge should be limited to testing
         # successful packaging, and not testing code.
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
-        - {{ compiler('fortran') }}
+        - ${{ compiler('c') }}
+        - ${{ compiler('cxx') }}
+        - ${{ compiler('fortran') }}
         # The above are needed to get the official conda-forge versions.
         # The below is needed to get convenience symlinks for users to invoke.
         - compilers
@@ -90,33 +90,33 @@ outputs:
         # These are mostly run-like, but for the same reasons as
         # above, we need most of these at build time, so they are mostly
         # host-like
-        - apr {{ apr }}.*
-        - boost {{ boost }}.*
-        - cffi {{ cffi }}.*
-        - cfitsio {{ cfitsio }}.*
-        - cython {{ cython }}.*
-        - eigen {{ eigen }}.*
+        - apr ${{ apr }}.*
+        - boost ${{ boost }}.*
+        - cffi ${{ cffi }}.*
+        - cfitsio ${{ cfitsio }}.*
+        - cython ${{ cython }}.*
+        - eigen ${{ eigen }}.*
         - eups
         - firefly-client
         - galsim
-        - gsl {{ gsl }}.*
-        - libaprutil {{ libaprutil }}.*
+        - gsl ${{ gsl }}.*
+        - libaprutil ${{ libaprutil }}.*
         # there is some issue with pex_exceptions with clang 11 and libcxx 12
         # until it is tracked down, it makes sense to keep these at the same
         # major version
-        - libcxx =={{ cxx_compiler_version }}.*  # [osx]
+        - libcxx ==${{ cxx_compiler_version }}.*  # [osx]
         - llvmlite
-        - log4cxx {{ log4cxx }}.*
+        - log4cxx ${{ log4cxx }}.*
         - lsst-documenteer-pipelines
         - lsst-documenteer-technote
-        - minuit2 {{ minuit2 }}.*
-        - mpich {{ mpich }}.*
-        - ndarray {{ ndarray }}.*
-        - numpy {{ numpy }}.*
+        - minuit2 ${{ minuit2 }}.*
+        - mpich ${{ mpich }}.*
+        - ndarray ${{ ndarray }}.*
+        - numpy ${{ numpy }}.*
         - numba
-        - starlink-ast {{ starlink_ast }}.*
-        - wcslib {{ wcslib }}.*
-        - xpa {{ xpa }}.*
+        - starlink-ast ${{ starlink_ast }}.*
+        - wcslib ${{ wcslib }}.*
+        - xpa ${{ xpa }}.*
 
         ###################################################
         # run-like
@@ -159,7 +159,7 @@ outputs:
         - mpi4py
         - networkx <3
         - numexpr =2
-        - {{ pin_compatible('numpy') }}
+        - ${{ pin_compatible('numpy') }}
         - pandas <2
         - pgcli
         # Remove < after Spectractor fix: see DM-35580
@@ -204,7 +204,7 @@ outputs:
       host:
         - python
       run:
-        - {{ pin_subpackage("rubin-env-nosysroot", exact=True) }}
+        - ${{ pin_subpackage("rubin-env-nosysroot", exact=True) }}
         - sysroot_linux-64 =2.17  # [linux64]
         - python
     test:
@@ -220,7 +220,7 @@ outputs:
       host:
         - python
       run:
-        - {{ pin_subpackage("rubin-env", exact=True) }}
+        - ${{ pin_subpackage("rubin-env", exact=True) }}
         # All are from sciplat-lab unless otherwise stated
         - astroplan # sims
         - astroquery
@@ -308,7 +308,7 @@ outputs:
       host:
         - python
       run:
-        - {{ pin_subpackage("rubin-env", exact=True) }}
+        - ${{ pin_subpackage("rubin-env", exact=True) }}
         # All are from sciplat-lab unless otherwise stated
         - astroplan # sims
         - astroquery
