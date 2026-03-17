@@ -7,11 +7,6 @@ recipe:
   name: ${{ name }}
   version: ${{ version }}
 
-
-package:
-  name: {{ name }}
-  version: {{ version }}
-
 build:
   skip: True  # [python_impl == 'pypy' or win or py != 310]
   number: {{ build_number }}
