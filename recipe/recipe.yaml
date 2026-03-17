@@ -140,7 +140,7 @@ outputs:
         - deprecated
         - dustmaps
         - emcee
-        - esutil ==0.6.10
+        - esutil <=0.6.10
         - fitsio <1.3
         - fastavro
         - future
