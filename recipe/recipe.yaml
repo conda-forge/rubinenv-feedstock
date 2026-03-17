@@ -82,7 +82,7 @@ outputs:
         - pytest-openfiles
         - pytest-runner
         - pytest-session2file
-        - pytest-subtests ==0.12
+        - pytest-subtests ==0.12.1
         - pytest-xdist ==3.5
         - scons
         - setuptools ==69.5.1
