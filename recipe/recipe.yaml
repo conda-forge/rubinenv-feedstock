@@ -16,8 +16,10 @@ build:
   number: ${{ build_number }}
 
 outputs:
-  - name: rubin-env-nosysroot
-    script: build-nosysroot.sh
+  - package:
+      name: rubin-env-nosysroot
+    build:
+      script: build-nosysroot.sh
     # Since all requirements are required "at run time" for the
     # Rubin developers, all requirements are fundamentally
     # run requirements. However, we've attempted to organize
@@ -195,7 +197,7 @@ outputs:
         - treecorr =4
         - ws4py
 
-    test:
+    tests:
       - script:
           # grep pin-it output for python dependency
           - pin-it rubin-env-nosysroot | grep "python="
@@ -205,7 +207,8 @@ outputs:
           - if: osx
           - then: '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
 
-  - name: rubin-env
+  - package:
+      name: rubin-env
     requirements:
       host:
         - python
@@ -214,7 +217,7 @@ outputs:
         - if: linux
           then: sysroot_linux-64 =2.17
         - python
-    test:
+    tests:
       - script:
           # grep pin-it output for python dependency
           - pin-it rubin-env | grep "python="
@@ -224,7 +227,8 @@ outputs:
           - if: osx
           - then: '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
 
-  - name: rubin-env-rsp
+  - package:
+      name: rubin-env-rsp
     requirements:
       host:
         - python
@@ -310,12 +314,13 @@ outputs:
         - wget
         - xarray
         - yarn
-    test:
+    tests:
       - script:
           # grep pin-it output for yarn dependency
           - pin-it rubin-env-rsp | grep "yarn="
 
-  - name: rubin-env-extras
+  - package:
+      name: rubin-env-extras
     requirements:
       host:
         - python
@@ -412,7 +417,7 @@ outputs:
         - toolz
         - xarray
         - yarn
-    test:
+    tests:
       - script:
           # grep pin-it output for yarn dependency
           - pin-it rubin-env-extras | grep "yarn="
