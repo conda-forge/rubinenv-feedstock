@@ -13,7 +13,6 @@ This metapackage exists to define the Rubin Observatory common software
 environment, including version specifications where needed, while allowing
 users flexibility when installing additional packages into the same environment.
 
-
 Current build status
 ====================
 
