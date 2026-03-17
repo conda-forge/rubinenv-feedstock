@@ -196,16 +196,14 @@ outputs:
         - ws4py
 
     test:
-      commands:
-        # grep pin-it output for python dependency
-        - pin-it rubin-env-nosysroot | grep "python="
-        # ensure binary compatibility; bump major version if not
-        - if: linux
-        - then:
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
-        - if: osx
-        - then:
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
+      - script:
+          # grep pin-it output for python dependency
+          - pin-it rubin-env-nosysroot | grep "python="
+          # ensure binary compatibility; bump major version if not
+          - if: linux
+          - then: '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
+          - if: osx
+          - then: '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
 
   - name: rubin-env
     requirements:
@@ -217,16 +215,14 @@ outputs:
           then: sysroot_linux-64 =2.17
         - python
     test:
-      commands:
-        # grep pin-it output for python dependency
-        - pin-it rubin-env | grep "python="
-        # ensure binary compatibility; bump major version if not
-        - if: linux
-        - then:
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
-        - if: osx
-        - then:
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
+      - script:
+          # grep pin-it output for python dependency
+          - pin-it rubin-env | grep "python="
+          # ensure binary compatibility; bump major version if not
+          - if: linux
+          - then: '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
+          - if: osx
+          - then: '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
 
   - name: rubin-env-rsp
     requirements:
@@ -315,9 +311,9 @@ outputs:
         - xarray
         - yarn
     test:
-      commands:
-        # grep pin-it output for yarn dependency
-        - pin-it rubin-env-rsp | grep "yarn="
+      - script:
+          # grep pin-it output for yarn dependency
+          - pin-it rubin-env-rsp | grep "yarn="
 
   - name: rubin-env-extras
     requirements:
@@ -417,16 +413,14 @@ outputs:
         - xarray
         - yarn
     test:
-      commands:
-        # grep pin-it output for yarn dependency
-        - pin-it rubin-env-extras | grep "yarn="
-        # ensure binary compatibility; bump major version if not
-        - if: linux
-        - then:
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
-        - if: osx
-        - then:
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
+      - script:
+          # grep pin-it output for yarn dependency
+          - pin-it rubin-env-extras | grep "yarn="
+          # ensure binary compatibility; bump major version if not
+          - if: linux
+          - then: '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
+          - if: osx
+          - then: '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
 
 about:
   homepage: https://github.com/conda-forge/rubinenv-feedstock
