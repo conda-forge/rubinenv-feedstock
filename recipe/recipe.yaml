@@ -2,6 +2,8 @@ context:
   name: "rubin-env"
   version: "4.0.5dev"
   build_number: 0
+  linux_gxx_abi_version: 1014
+  osx_gxx_abi_version: 1002
 
 recipe:
   name: ${{ name }}
@@ -25,8 +27,6 @@ outputs:
         - ${{ compiler('c') }}
         - ${{ compiler('cxx') }}
         - ${{ compiler('fortran') }}
-        - clang ${{c_compiler_version}} default_*    # [osx]
-        - clang ${{cxx_compiler_version}} default_*  # [osx]
         - apr
         - boost
         - cfitsio
@@ -104,7 +104,8 @@ outputs:
         # there is some issue with pex_exceptions with clang 11 and libcxx 12
         # until it is tracked down, it makes sense to keep these at the same
         # major version
-        - libcxx ==${{ cxx_compiler_version }}.*  # [osx]
+        - if: osx
+          then: libcxx ==${{ cxx_compiler_version }}.*
         - llvmlite
         - log4cxx ${{ log4cxx }}.*
         - lsst-documenteer-pipelines
@@ -165,7 +166,8 @@ outputs:
         # Remove < after Spectractor fix: see DM-35580
         - photutils >=0.7,<1.5
         - piff ==1.3.3
-        - prmon  # [linux]
+        - if: linux
+          then: prmon
         - psycopg2 =2
         - pyarrow <13
         - pybind11 <2.10
@@ -196,8 +198,12 @@ outputs:
         # grep pin-it output for python dependency
         - pin-it rubin-env-nosysroot | grep "python="
         # ensure binary compatibility; bump major version if not
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1014 ]'  # [linux]
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
+        - if: linux
+        - then:
+        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
+        - if: osx
+        - then:
+        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
 
   - name: rubin-env
     requirements:
@@ -205,15 +211,20 @@ outputs:
         - python
       run:
         - ${{ pin_subpackage("rubin-env-nosysroot", exact=True) }}
-        - sysroot_linux-64 =2.17  # [linux64]
+        - if: linux
+          then: sysroot_linux-64 =2.17
         - python
     test:
       commands:
         # grep pin-it output for python dependency
         - pin-it rubin-env | grep "python="
         # ensure binary compatibility; bump major version if not
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1014 ]'  # [linux]
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
+        - if: linux
+        - then:
+        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
+        - if: osx
+        - then:
+        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
 
   - name: rubin-env-rsp
     requirements:
@@ -259,7 +270,8 @@ outputs:
         - isort
         - jedi
         - jupyter
-        - jupyter-dash  # [not aarch64]
+        - if: not aarch64
+          then: jupyter-dash
         - jupyter-packaging
         - jupyter-server-proxy
         - jupyter_bokeh
@@ -400,8 +412,12 @@ outputs:
         # grep pin-it output for yarn dependency
         - pin-it rubin-env-extras | grep "yarn="
         # ensure binary compatibility; bump major version if not
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1014 ]'  # [linux]
-        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == 1002 ]'  # [osx]
+        - if: linux
+        - then:
+        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
+        - if: osx
+        - then:
+        - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
 
 about:
   home: https://github.com/conda-forge/rubinenv-feedstock
