@@ -237,13 +237,15 @@ outputs:
         # All are from sciplat-lab unless otherwise stated
         - astroplan # sims
         - astroquery
-        - astrowidgets  # [not aarch64]
+        - if: not aarch64
+          then: astrowidgets
         - awkward
         - awkward-numba
         - black
         - bokeh
         - bqplot
-        - ciso8601  # [not aarch64]
+        - if: not aarch64
+          then: ciso8601
         - cloudpickle
         - cookiecutter
         - dash
@@ -326,13 +328,15 @@ outputs:
         # All are from sciplat-lab unless otherwise stated
         - astroplan # sims
         - astroquery
-        - astrowidgets  # [not aarch64]
+        - if: not aarch64
+          then: astrowidgets
         - awkward
         - awkward-numba
         - black
         - bokeh
         - bqplot
-        - ciso8601  # [not aarch64]
+        - if: not aarch64
+          then: ciso8601
         - cloudpickle
         - colorcet # sims
         - cookiecutter
@@ -368,7 +372,8 @@ outputs:
         - isort
         - jedi
         - jupyter
-        - jupyter-dash  # [not aarch64]
+        - if: not aarch64
+          then: jupyter-dash
         - jupyter-packaging
         - jupyter-server-proxy
         - jupyter_bokeh
@@ -384,9 +389,11 @@ outputs:
         - nbval
         - nodejs >=16
         - numba
-        - openorb # sims  # [not aarch64]
-        - openorb-data-de405 # sims  # [not aarch64]
-        - palpy # sims  # [not aarch64]
+        - if: not aarch64
+          then:
+            - openorb # sims
+            - openorb-data-de405 # sims
+            - palpy # sims
         - panel # shared
         - papermill
         - paramnb
@@ -422,7 +429,7 @@ outputs:
         - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
 
 about:
-  home: https://github.com/conda-forge/rubinenv-feedstock
+  homepage: https://github.com/conda-forge/rubinenv-feedstock
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
