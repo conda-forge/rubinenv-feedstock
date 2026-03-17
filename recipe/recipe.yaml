@@ -1,6 +1,12 @@
-{% set name = "rubin-env" %}
-{% set version = "4.0.5dev" %}
-{% set build_number = 0 %}
+context:
+  name: "rubin-env"
+  version: "4.0.5dev"
+  build_number: 0
+
+recipe:
+  name: ${{ name }}
+  version: ${{ version }}
+
 
 package:
   name: {{ name }}
