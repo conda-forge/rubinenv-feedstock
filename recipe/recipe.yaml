@@ -109,7 +109,7 @@ outputs:
         # until it is tracked down, it makes sense to keep these at the same
         # major version
         - if: osx
-          then: libcxx ==${{ cxx_compiler_version }}.*
+          then: libcxx ${{ cxx_compiler_version }}.*
         - llvmlite
         - log4cxx ${{ log4cxx }}.*
         - lsst-documenteer-pipelines
