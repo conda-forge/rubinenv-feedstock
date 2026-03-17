@@ -203,9 +203,9 @@ outputs:
           - pin-it rubin-env-nosysroot | grep "python="
           # ensure binary compatibility; bump major version if not
           - if: linux
-          - then: '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
+            then: '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
           - if: osx
-          - then: '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
+            then: '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
 
   - package:
       name: rubin-env
@@ -223,9 +223,9 @@ outputs:
           - pin-it rubin-env | grep "python="
           # ensure binary compatibility; bump major version if not
           - if: linux
-          - then: '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
+            then: '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
           - if: osx
-          - then: '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
+            then: '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
 
   - package:
       name: rubin-env-rsp
@@ -423,9 +423,9 @@ outputs:
           - pin-it rubin-env-extras | grep "yarn="
           # ensure binary compatibility; bump major version if not
           - if: linux
-          - then: '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
+            then: '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
           - if: osx
-          - then: '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
+            then: '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
 
 about:
   homepage: https://github.com/conda-forge/rubinenv-feedstock
