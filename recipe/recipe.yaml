@@ -75,10 +75,10 @@ outputs:
         - pep8-naming
         - pip ==24
         - psutil
-        - pytest <9
-        - pytest-cov
+        - pytest <8.2
+        - pytest-cov <6
         - pytest-doctestplus
-        - pytest-flake8
+        - pytest-flake8 <1.2
         - pytest-openfiles
         - pytest-runner
         - pytest-session2file
