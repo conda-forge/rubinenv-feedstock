@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "4.0.5dev"
-  build_number: 2
+  build_number: 3
   linux_gxx_abi_version: 1014
   osx_gxx_abi_version: 1002
 
@@ -85,9 +85,6 @@ outputs:
         - pytest-subtests ==0.12.1
         - pytest-xdist ==3.5
         - scons
-        - setuptools ==69.5.1
-        - setuptools-scm ==8.0.4
-        - wheel ==0.43.0
 
         ###################################################
         # host-like and run-like
