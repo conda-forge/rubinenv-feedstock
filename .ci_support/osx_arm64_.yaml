@@ -17,7 +17,7 @@ cfitsio:
 channel_sources:
 - conda-forge
 channel_targets:
-- conda-forge rubin-env_dev
+- conda-forge main
 curl:
 - '8'
 cxx_compiler:
