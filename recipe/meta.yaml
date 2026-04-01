@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "10.1.0" %}
-{% set build_number = 2 %}
+{% set build_number = 3 %}
 
 package:
   name: {{ name }}
@@ -177,7 +177,7 @@ outputs:
         - patch >=2.7.6
         - pgcli >=4.1.0
         - photutils >=2.1.0
-        - piff >=1.5
+        - piff >=1.5,<1.6
         - prmon >=3.1.1  # [linux]
         - psycopg2 >=2.9.9,<3
         - pyarrow >=17.0.0,<18
