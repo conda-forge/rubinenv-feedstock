@@ -311,7 +311,6 @@ outputs:
         - jupyter >=1.1.1  # (*): allows users to create custom kernels
         - lsdb >=0.6.7  # RFC-1109
         - lsst-efd-client >=0.12.0  # (*): Used by T&S
-        - lsst-rsp >=0.12.0  # RFC-1158
         - mermaid-py >=0.8.0  # RFC-1067
         - mysqlclient >=2.2.7  # (*): useful for debugging RSP databases
         - nbval >=0.11.0  # (*): Pytest notebook fixtures, useful for dev
