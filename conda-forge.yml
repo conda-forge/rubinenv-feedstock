@@ -11,6 +11,8 @@ conda_forge_output_validation: true
 github:
   branch_name: main
   tooling_branch_name: main
+github_actions:
+  free_disk_space: true
 os_version:
   linux_64: alma9
 provider:
