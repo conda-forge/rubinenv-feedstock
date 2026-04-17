@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "13.0.0"
-  build_number: 0
+  build_number: 1
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -343,6 +343,7 @@ outputs:
         - rubin-nights >=0.8.1  # (*): SP-2824
         - rubin-scheduler >=3.20.1  # SP-2824
         - rubin-sim >=2.6.0  # SP-2824
+        - rubin.citsci >= 0.9.2  # RFC-1160
         - sbpy >=0.5.0  # DM-41723
         - schedview >=0.20.0  # SP-2370
         - snappy >=1.2.2  # DM-24304
