@@ -27,7 +27,7 @@ outputs:
         - apr
         - cfitsio
         - curl
-        - fftw
+        - fftw <=3.3.10
         - gsl
         - libaprutil
         - libblas
