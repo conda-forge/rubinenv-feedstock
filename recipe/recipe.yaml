@@ -296,6 +296,7 @@ outputs:
         - ${{ pin_subpackage("rubin-env", exact=True) }}
         # All are from sciplat-lab unless otherwise stated
         # (*) means "grandfathered"; will be followed by justification.
+        - anthropic >=0.94  # DM-49034
         - awkward >=2.8.10  # (*); for missing data handling, we think
         - awkward-pandas >=2023.8.0  # ditto
         - bokeh >=3.8.1  # (*): predates SE-530
