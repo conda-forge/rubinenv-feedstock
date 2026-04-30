@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
-  version: "13.0.0"
-  build_number: 1
+  version: "13.0.1"
+  build_number: 0
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -321,6 +321,9 @@ outputs:
         - ipykernel >=7.2.0  # (*): allows users to create custom kernels
         - jedi >=0.19.2  # (*): REPL autocompletion
         - jupyter >=1.1.1  # (*): allows users to create custom kernels
+        - jupyter-ai >=3.0.0  # DM-49034
+        - jupyter-ai-litellm  >=0.0.1  # DM-49034
+        - jupyter-ai-magic-commands >=0.0.2 # DM-49034
         - lsdb >=0.6.7  # RFC-1109
         - lsst-efd-client >=0.12.0  # (*): Used by T&S
         - mermaid-py >=0.8.0  # RFC-1067
