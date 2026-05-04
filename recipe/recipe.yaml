@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
-  version: "13.0.0"
-  build_number: 1
+  version: "13.1.0"
+  build_number: 0
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -318,7 +318,7 @@ outputs:
         - intake >=2.0.8  # lsdb?  (RFC 1109)
         - intake-parquet >=0.3.0  # ditto
         - ipympl >=0.10.0  # (*): needed for matplotlib widgets
-        - ipykernel >=7.2.0  # (*): allows users to create custom kernels
+        - ipykernel >=6,<7|>=8  # DM-54854
         - jedi >=0.19.2  # (*): REPL autocompletion
         - jupyter >=1.1.1  # (*): allows users to create custom kernels
         - lsdb >=0.6.7  # RFC-1109
