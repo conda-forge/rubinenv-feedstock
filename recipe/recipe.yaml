@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
-  version: "4.0.5"
-  build_number: 11
+  version: "4.0.6"
+  build_number: 0
   linux_gxx_abi_version: 1014
   osx_gxx_abi_version: 1002
 
