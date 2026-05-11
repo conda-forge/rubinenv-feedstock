@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "13.0.0"
-  build_number: 3
+  build_number: 4
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -34,6 +34,7 @@ outputs:
         - ${{ compiler('cxx') }}
         - ${{ compiler('fortran') }}
         - apr
+        - c-blosc2
         - cffi
         - cfitsio
         - curl
