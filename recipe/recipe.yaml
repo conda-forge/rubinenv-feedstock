@@ -34,7 +34,7 @@ outputs:
         - ${{ compiler('cxx') }}
         - ${{ compiler('fortran') }}
         - apr
-        - c-blosc2
+        - c-blosc2 >=2,<3
         - cffi
         - cfitsio
         - curl
