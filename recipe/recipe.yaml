@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "12.2.0"
-  build_number: 0
+  build_number: 1
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -220,7 +220,7 @@ outputs:
         - scipy >=1.16.3,<1.17
         - seaborn >=0.13.2
         - shapely >=2.1
-        - skyproj >=2.1.1
+        - skyproj >=2.1.1,<2.3
         - sorcha >=1.1.1
         - spherematch >=0.10.2
         - sphinxcontrib-doxylink >=1.13
