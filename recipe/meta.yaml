@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "10.1.0" %}
-{% set build_number = 4 %}
+{% set build_number = 5 %}
 
 package:
   name: {{ name }}
@@ -201,7 +201,7 @@ outputs:
         - scikit-learn >=1.6.1
         - scipy >=1.13.0,<1.14
         - seaborn >=0.13.2
-        - skyproj >=2.0.0
+        - skyproj >=2.0.0,<2.3
         - sorcha >=0.9.2
         - spherematch >=0.10.1
         - sqlalchemy >=2.0.23
