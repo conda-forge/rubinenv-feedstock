@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "4.0.6"
-  build_number: 1
+  build_number: 2
   linux_gxx_abi_version: 1014
   osx_gxx_abi_version: 1002
 
@@ -294,6 +294,7 @@ outputs:
         - numba
         - panel # shared
         - papermill
+        - paramiko <5
         - paramnb
         - partd
         - pep8 # shared
