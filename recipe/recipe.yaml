@@ -166,6 +166,7 @@ outputs:
         - numexpr =2
         - ${{ pin_compatible('numpy') }}
         - pandas <2
+        - paramiko <5
         - pgcli
         # Remove < after Spectractor fix: see DM-35580
         - photutils >=0.7,<1.5
@@ -294,7 +295,6 @@ outputs:
         - numba
         - panel # shared
         - papermill
-        - paramiko <5
         - paramnb
         - partd
         - pep8 # shared
