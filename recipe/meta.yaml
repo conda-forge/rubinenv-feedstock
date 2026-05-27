@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "10.1.0" %}
-{% set build_number = 5 %}
+{% set build_number = 6 %}
 
 package:
   name: {{ name }}
@@ -172,7 +172,7 @@ outputs:
         - packaging >=24.2
         - panda-client >=1.5.82
         - pandas >=2.2.3,<3
-        - paramiko >=3.4.0
+        - paramiko >=3.4.0,<5
         - parsl ==2024.12.23
         - patch >=2.7.6
         - pgcli >=4.1.0
