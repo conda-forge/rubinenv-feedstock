@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "4.0.6"
-  build_number: 1
+  build_number: 2
   linux_gxx_abi_version: 1014
   osx_gxx_abi_version: 1002
 
@@ -166,6 +166,7 @@ outputs:
         - numexpr =2
         - ${{ pin_compatible('numpy') }}
         - pandas <2
+        - paramiko <5
         - pgcli
         # Remove < after Spectractor fix: see DM-35580
         - photutils >=0.7,<1.5
