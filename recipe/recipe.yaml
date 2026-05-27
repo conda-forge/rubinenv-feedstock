@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "12.2.0"
-  build_number: 1
+  build_number: 2
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -186,7 +186,7 @@ outputs:
         - packaging >=25.0
         - panda-client >=1.5.92
         - pandas >=2.3.3,<3
-        - paramiko >=4.0.0
+        - paramiko >=4.0.0,<5
         - parsl ==2025.11.10
         - patch >=2.8
         - pgcli >=4.3.0
