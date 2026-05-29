@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "13.0.1"
-  build_number: 0
+  build_number: 1
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -299,6 +299,7 @@ outputs:
         # All are from sciplat-lab unless otherwise stated
         # (*) means "grandfathered"; will be followed by justification.
         - anthropic >=0.100.0  # DM-49034
+        - astrowidgets >=0.3.0  # DM-55083
         - awkward >=2.8.10  # (*); for missing data handling, we think
         - awkward-pandas >=2023.8.0  # ditto
         - bokeh >=3.8.1  # (*): predates SE-530
