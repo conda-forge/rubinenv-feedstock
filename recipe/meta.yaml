@@ -110,6 +110,7 @@ outputs:
 
         ###################################################
         # run-like
+        - aiohttp <3.14
         - alembic >=1.14.1
         - astropy-base >=7.0.1,<8
         - astroplan >=0.10.1
