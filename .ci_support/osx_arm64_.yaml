@@ -7,7 +7,7 @@ apr:
 c_compiler:
 - clang
 c_compiler_version:
-- '18'
+- '19'
 c_stdlib:
 - macosx_deployment_target
 c_stdlib_version:
@@ -25,13 +25,13 @@ curl:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '18'
+- '19'
 eigen:
 - '3.4'
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
-- '13'
+- '19'
 gsl:
 - '2.7'
 libaprutil:
@@ -43,7 +43,7 @@ libboost_python_devel:
 libcblas:
 - 3.9.* *netlib
 libcxx:
-- '18'
+- '19'
 liblapack:
 - 3.9.* *netlib
 liblapacke:
