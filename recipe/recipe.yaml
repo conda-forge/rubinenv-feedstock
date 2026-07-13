@@ -383,6 +383,7 @@ outputs:
         - fastparquet >=2024.11.0
         - ffmpeg >=7.1.1
         - gfal2-util >=1.9.0
+        - gh >=2
         - holoviews >=1.22.0
         - hvplot >=0.12.1
         - imagemagick >=7.1.2_3
