@@ -135,7 +135,7 @@ outputs:
         # run-like
         - aiohttp <3.14 # DM-55190
         - alembic >=1.17.2
-        - astropy-base >=7.1.1,<8
+        - astropy-base >=8.0.1, <9 # RFC-1190
         - astroplan >=0.10.1
         - astroquery ==0.4.9
         - autograd >=1.8.0
