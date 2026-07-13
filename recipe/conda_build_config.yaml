@@ -82,7 +82,7 @@ minuit2:
 ndarray:
   - '1'
 numpy:
-  - '2.4'
+  - '2.3'
 starlink_ast:
   - '9.3.1'
 wcslib:
