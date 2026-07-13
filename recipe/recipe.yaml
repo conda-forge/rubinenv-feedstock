@@ -113,6 +113,7 @@ outputs:
         - libboost-python-devel ${{ libboost_python_devel }}.*
         - if: not linux
           then: libcxx ${{ libcxx }}.*
+        - libgdal-core >=3.13.0 # DM-55071
         - libpq >=18,<19
         - libpq ${{ libpq }}.*
         - libxml2 ${{ libxml2 }}.*
@@ -203,7 +204,7 @@ outputs:
         - parsl ==2026.02.09
         - patch >=2.8
         - pgcli >=4.3.0
-        - photutils-base >=3
+        - photutils-base >=3 # DM-55071
         - piff >=1.6.0
         - pillow >=12.1.1
         - if: linux
