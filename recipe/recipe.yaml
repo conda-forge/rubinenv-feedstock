@@ -352,7 +352,7 @@ outputs:
         - rubin-scheduler >=3.20.1  # SP-2824
         - rubin-sim >=2.6.0  # SP-2824
         - rubin.citsci >= 0.9.2  # RFC-1160
-        # - sbpy >=0.5.0  # DM-41723
+        - sbpy >=0.5.0  # DM-41723
         - schedview >=0.20.0  # SP-2370
         - snappy >=1.2.2  # DM-24304
         - toolz >=1.1.0  # (*): handy library though actual use unknown
