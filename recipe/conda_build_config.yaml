@@ -53,8 +53,10 @@ python_impl:
 #      the `apr` package).
 apr:
   - '1'
+c_blosc2:
+  - '3.1'
 cffi:
-  - '1'
+  - '2'
 cfitsio:
   - 4.6.2
 eigen:
