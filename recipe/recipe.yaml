@@ -404,6 +404,7 @@ outputs:
         - pep8 >=1.7.1
         - postgresql >=18,<19
         - pre-commit >=4.3.0
+        - prek >=0.4.0 # DM-55411
         - pyct >=0.6.0
         - pydocstyle >=6.3.0
         - pyflakes >=3.4.0
