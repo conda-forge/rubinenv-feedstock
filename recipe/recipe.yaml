@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "13.1.0dev"
-  build_number: 0
+  build_number: 1
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -135,6 +135,7 @@ outputs:
         # run-like
         - aiohttp <3.14 # DM-55190
         - alembic >=1.17.2
+        - anyio >=4.14 # RFC-1191
         - astropy-base >=8.0.1, <9 # RFC-1190
         - astroplan >=0.10.1
         - astroquery ==0.4.9
@@ -226,6 +227,7 @@ outputs:
         - qp >=1.0.1
         - rclone >=1.71.2
         - requests >=2.32.5
+        - rich >=15.0 # RFC-1191
         - ruamel.yaml >=0.18 # DM-55411
         - rucio-clients >=38.5,<38.6
         - ruff ==0.14.5
