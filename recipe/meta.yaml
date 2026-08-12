@@ -1,6 +1,6 @@
 {% set name = "rubin-env" %}
 {% set version = "10.2.0" %}
-{% set build_number = 1 %}
+{% set build_number = 2 %}
 
 package:
   name: {{ name }}
@@ -81,7 +81,8 @@ outputs:
         - pytest-vcr >=1.0.2
         - pytest-xdist >=3.6.1
         - setuptools >=75.8.0
-        - scons >=4.8.1
+        # scons 4.11 breaks builds: https://github.com/SCons/scons/issues/4893
+        - scons >=4.8.1,<4.11
 
         ###################################################
         # host-like and run-like
