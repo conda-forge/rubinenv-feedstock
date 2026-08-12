@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "13.0.0"
-  build_number: 8
+  build_number: 9
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -96,7 +96,8 @@ outputs:
         - pytest-vcr >=1.0.2
         - pytest-xdist >=3.8.0
         - setuptools >=80.8.0
-        - scons >=4.9.1
+        # scons 4.11 breaks builds: https://github.com/SCons/scons/issues/4893
+        - scons >=4.9.1,<4.11
 
         ###################################################
         # host-like and run-like
