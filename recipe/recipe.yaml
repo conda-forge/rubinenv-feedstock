@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "4.0.6"
-  build_number: 3
+  build_number: 4
   linux_gxx_abi_version: 1014
   osx_gxx_abi_version: 1002
 
@@ -85,7 +85,8 @@ outputs:
         - pytest-session2file
         - pytest-subtests ==0.12.1
         - pytest-xdist ==3.5
-        - scons
+        # Scons 4.11 breaks builds: https://github.com/SCons/scons/issues/4893
+        - scons <4.11
         - setuptools <70
 
         ###################################################
