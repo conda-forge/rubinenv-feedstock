@@ -11,7 +11,7 @@ recipe:
 
 build:
   skip:
-    - if: win or (osx and x86_64) or not match(python, "3.13.*")
+    - if: win or (osx and x86_64) or not match(python, "3.13.*") or not match(python, "3.14.*")
       then: true
       else: false
   number: ${{ build_number }}
@@ -219,7 +219,7 @@ outputs:
         - pyfftw >=0.15.1
         - pyld >=2.0.4
         - pytables >=3.10.2
-        - python >=3.14,<3.15
+        - python >=3.13,<3.15
         - python-confluent-kafka >=2.12.2
         - pytorch >=2.7.1
         - pyyaml >=6.0.3
