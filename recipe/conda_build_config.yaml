@@ -36,6 +36,7 @@ c_stdlib_version:   # [linux]
 # pins for python
 python:
   # part of a zip_keys: python, python_impl, numpy, is_python_min
+  - 3.13.* *_cp313
   - 3.14.* *_cp314
 is_python_min:
   - false
