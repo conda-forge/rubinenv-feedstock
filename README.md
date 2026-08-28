@@ -13,12 +13,50 @@ This metapackage exists to define the Rubin Observatory common software
 environment, including version specifications where needed, while allowing
 users flexibility when installing additional packages into the same environment.
 
-
 Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>GitHub Actions</td>
+    <td>
+      <a href="https://github.com/conda-forge/rubinenv-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/rubinenv-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
+    </td>
+  </tr>
+    
+  <tr>
+    <td>Azure</td>
+    <td>
+      <details>
+        <summary>
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10671&branchName=main">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rubinenv-feedstock?branchName=main">
+          </a>
+        </summary>
+        <table>
+          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
+          <tbody><tr>
+              <td>osx_64_python3.13.____cp313</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10671&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rubinenv-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.13.____cp313" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.14.____cp314</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10671&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rubinenv-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.14.____cp314" alt="variant">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+    </td>
+  </tr>
 </table>
 
 Current release info
@@ -26,14 +64,19 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-rubin--env-green.svg)](https://anaconda.org/conda-forge/rubin-env) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rubin-env.svg)](https://anaconda.org/conda-forge/rubin-env) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rubin-env.svg)](https://anaconda.org/conda-forge/rubin-env) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rubin-env.svg)](https://anaconda.org/conda-forge/rubin-env) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-rubin--env--developer-green.svg)](https://anaconda.org/conda-forge/rubin-env-developer) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rubin-env-developer.svg)](https://anaconda.org/conda-forge/rubin-env-developer) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rubin-env-developer.svg)](https://anaconda.org/conda-forge/rubin-env-developer) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rubin-env-developer.svg)](https://anaconda.org/conda-forge/rubin-env-developer) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-rubin--env--extras-green.svg)](https://anaconda.org/conda-forge/rubin-env-extras) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rubin-env-extras.svg)](https://anaconda.org/conda-forge/rubin-env-extras) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rubin-env-extras.svg)](https://anaconda.org/conda-forge/rubin-env-extras) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rubin-env-extras.svg)](https://anaconda.org/conda-forge/rubin-env-extras) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-rubin--env--nosysroot-green.svg)](https://anaconda.org/conda-forge/rubin-env-nosysroot) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rubin-env-nosysroot.svg)](https://anaconda.org/conda-forge/rubin-env-nosysroot) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rubin-env-nosysroot.svg)](https://anaconda.org/conda-forge/rubin-env-nosysroot) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rubin-env-nosysroot.svg)](https://anaconda.org/conda-forge/rubin-env-nosysroot) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-rubin--env--rsp-green.svg)](https://anaconda.org/conda-forge/rubin-env-rsp) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rubin-env-rsp.svg)](https://anaconda.org/conda-forge/rubin-env-rsp) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rubin-env-rsp.svg)](https://anaconda.org/conda-forge/rubin-env-rsp) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rubin-env-rsp.svg)](https://anaconda.org/conda-forge/rubin-env-rsp) |
 
 Installing rubin-env
 ====================
 
-Installing `rubin-env` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `rubin-env` from the `conda-forge/label/rubin-env_dev` channel can be achieved by adding `conda-forge/label/rubin-env_dev` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels conda-forge/label/rubin-env_dev
 conda config --set channel_priority strict
 ```
 
@@ -44,7 +87,7 @@ How to use
 <summary>With conda</summary>
 
 ```
-conda install 
+conda install rubin-env rubin-env-developer rubin-env-extras rubin-env-nosysroot rubin-env-rsp
 ```
 
 </details>
@@ -53,7 +96,7 @@ conda install
 <summary>With mamba</summary>
 
 ```
-mamba install 
+mamba install rubin-env rubin-env-developer rubin-env-extras rubin-env-nosysroot rubin-env-rsp
 ```
 
 </details>
@@ -63,9 +106,9 @@ mamba install
 
 ```
 # for adding to your local project
-pixi add 
+pixi add rubin-env rubin-env-developer rubin-env-extras rubin-env-nosysroot rubin-env-rsp
 # for installing globally
-pixi global install 
+pixi global install rubin-env rubin-env-developer rubin-env-extras rubin-env-nosysroot rubin-env-rsp
 ```
 
 </details>
@@ -73,13 +116,13 @@ pixi global install
 Search package versions
 -----------------------
 
-It is possible to list all of the versions of `` available on your platform:
+It is possible to list all of the versions of `rubin-env` available on your platform:
 
 <details>
 <summary>With conda</summary>
 
 ```
-conda search  --channel conda-forge
+conda search rubin-env --channel conda-forge/label/rubin-env_dev
 ```
 
 </details>
@@ -88,7 +131,7 @@ conda search  --channel conda-forge
 <summary>With mamba</summary>
 
 ```
-mamba search  --channel conda-forge
+mamba search rubin-env --channel conda-forge/label/rubin-env_dev
 ```
 
 </details>
@@ -97,7 +140,7 @@ mamba search  --channel conda-forge
 <summary>With pixi</summary>
 
 ```
-pixi search  --channel conda-forge
+pixi search rubin-env --channel conda-forge/label/rubin-env_dev
 ```
 
 </details>
@@ -107,13 +150,13 @@ pixi search  --channel conda-forge
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search  --channel conda-forge
+mamba repoquery search rubin-env --channel conda-forge/label/rubin-env_dev
 
-# List packages depending on ``:
-mamba repoquery whoneeds  --channel conda-forge
+# List packages depending on `rubin-env`:
+mamba repoquery whoneeds rubin-env --channel conda-forge/label/rubin-env_dev
 
-# List dependencies of ``:
-mamba repoquery depends  --channel conda-forge
+# List dependencies of `rubin-env`:
+mamba repoquery depends rubin-env --channel conda-forge/label/rubin-env_dev
 ```
 
 </details>
