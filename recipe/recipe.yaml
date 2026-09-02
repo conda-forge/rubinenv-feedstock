@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "13.1.0"
-  build_number: 2
+  build_number: 3
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -11,7 +11,7 @@ recipe:
 
 build:
   skip:
-    - if: win or not match(python, "3.13.*")
+    - if: win or (osx and x86_64) or not match(python, "3.13.*")
       then: true
       else: false
   number: ${{ build_number }}
