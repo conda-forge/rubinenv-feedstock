@@ -267,10 +267,10 @@ outputs:
         # ensure the pinned python matches the build variant
         - if: match(python, "3.13.*")
           then:
-            - pin-it rubin-env | grep "python=3\.13"
+            - pin-it rubin-env-nosysroot | grep "python=3\.13"
         - if: match(python, "3.14.*")
           then:
-            - pin-it rubin-env | grep "python=3\.14"
+            - pin-it rubin-env-nosysroot | grep "python=3\.14"
         - echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1
         # ensure binary compatibility; bump major version if not
         - if: linux
@@ -327,6 +327,7 @@ outputs:
         - bqplot >=0.12.45  # (*): vis, unknown if used
         - ciso8601 >=2.3.3  # (*): datestamp conversion...seen in DM-33030
         - cloudpickle >=3.1.2  # (*): unknown if used
+        - conda-tree >=1.0.0 # DM-55938
         - dask-core >=2025.11.0  # required by lsdb (RFC 1109)
         - datashader >=0.18.2  # cf bokeh
         - fastparquet >=2024.11.0  # (*): used by dask
