@@ -15,6 +15,8 @@ build:
       then: true
       else: false
   number: ${{ build_number }}
+  variant:
+    down_prioritize_variant: ${{ 1 if match(python, "3.14.*") else 0 }}
 
 outputs:
   - package:
