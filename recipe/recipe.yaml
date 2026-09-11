@@ -264,6 +264,13 @@ outputs:
       - script:
         # grep pin-it output for python dependency
         - pin-it rubin-env-nosysroot | grep "python="
+        # ensure the pinned python matches the build variant
+        - if: match(python, "3.13.*")
+          then:
+            - pin-it rubin-env | grep "python=3\.13"
+        - if: match(python, "3.14.*")
+          then:
+            - pin-it rubin-env | grep "python=3\.14"
         - echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1
         # ensure binary compatibility; bump major version if not
         - if: linux
@@ -287,6 +294,12 @@ outputs:
       - script:
         # grep pin-it output for python dependency
         - pin-it rubin-env | grep "python="
+        - if: match(python, "3.13.*")
+          then:
+            - pin-it rubin-env | grep "python=3\.13"
+        - if: match(python, "3.14.*")
+          then:
+            - pin-it rubin-env | grep "python=3\.14"
         - echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1
         # ensure binary compatibility; bump major version if not
         - if: linux
