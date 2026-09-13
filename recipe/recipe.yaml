@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "14.0.0dev"
-  build_number: 1
+  build_number: 2
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -11,10 +11,12 @@ recipe:
 
 build:
   skip:
-    - if: win or not match(python, "3.14.*")
+    - if: win or (osx and x86_64) or (not (match(python, "3.13.*") or match(python, "3.14.*")))
       then: true
       else: false
   number: ${{ build_number }}
+  variant:
+    down_prioritize_variant: ${{ 1 if match(python, "3.14.*") else 0 }}
 
 outputs:
   - package:
@@ -150,7 +152,7 @@ outputs:
           then: cassandra-driver >=3.29.3
         - click >=8.3.1
         - coloredlogs >=15.0.1
-        # - colour-science >=0.4.6
+        - colour-science >=0.4.6
         - configparser >=7.2.0
         - danish >=1,<2
         - deepdiff >=8.6.1
@@ -218,7 +220,7 @@ outputs:
         - pyfftw >=0.15.1
         - pyld >=2.0.4
         - pytables >=3.10.2
-        - python >=3.14,<3.15
+        - python >=3.13,<3.15
         - python-confluent-kafka >=2.12.2
         - pytorch >=2.7.1
         - pyyaml >=6.0.3
@@ -236,7 +238,7 @@ outputs:
         - schwimmbad >=0.4.2
         - scikit-image >=0.25.2
         - scikit-learn >=1.7.2
-        - scipy >=1.16.3,<1.17
+        - scipy >=1.16.3 # DM-53792
         - seaborn >=0.13.2
         - shapely >=2.1
         - skyproj >=2.1.1
@@ -252,7 +254,7 @@ outputs:
         - torchvision >=0.24.0
         - tqdm >=4.67.1
         - treecorr >=5.1.2,<6
-        - treegp >=1.4.0
+        - treegp >=1.5.0 # DM-55875
         - urllib3 >=2.6.3
         - webdav4 >=0.10.0
         - ws4py >=0.5.1
@@ -262,6 +264,13 @@ outputs:
       - script:
         # grep pin-it output for python dependency
         - pin-it rubin-env-nosysroot | grep "python="
+        # ensure the pinned python matches the build variant
+        - if: match(python, "3.13.*")
+          then:
+            - pin-it rubin-env-nosysroot | grep "python=3\.13"
+        - if: match(python, "3.14.*")
+          then:
+            - pin-it rubin-env-nosysroot | grep "python=3\.14"
         - echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1
         # ensure binary compatibility; bump major version if not
         - if: linux
@@ -285,6 +294,12 @@ outputs:
       - script:
         # grep pin-it output for python dependency
         - pin-it rubin-env | grep "python="
+        - if: match(python, "3.13.*")
+          then:
+            - pin-it rubin-env | grep "python=3\.13"
+        - if: match(python, "3.14.*")
+          then:
+            - pin-it rubin-env | grep "python=3\.14"
         - echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1
         # ensure binary compatibility; bump major version if not
         - if: linux
@@ -312,6 +327,7 @@ outputs:
         - bqplot >=0.12.45  # (*): vis, unknown if used
         - ciso8601 >=2.3.3  # (*): datestamp conversion...seen in DM-33030
         - cloudpickle >=3.1.2  # (*): unknown if used
+        - conda-tree >=1.0.0 # DM-55938
         - dask-core >=2025.11.0  # required by lsdb (RFC 1109)
         - datashader >=0.18.2  # cf bokeh
         - fastparquet >=2024.11.0  # (*): used by dask
