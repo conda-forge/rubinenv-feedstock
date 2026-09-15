@@ -37,7 +37,7 @@ fftw:
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
-- '14'
+- '15'
 gsl:
 - '2.7'
 libaprutil:
@@ -49,7 +49,7 @@ libboost_python_devel:
 libcblas:
 - 3.9.* *netlib
 libcxx:
-- '20'
+- '21'
 liblapack:
 - 3.9.* *netlib
 liblapacke:
@@ -81,7 +81,7 @@ python:
 rust_compiler:
 - rust
 starlink_ast:
-- 9.3.1
+- 9.4.1
 target_platform:
 - osx-arm64
 wcslib:
