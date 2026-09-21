@@ -93,9 +93,9 @@ outputs:
         - pytest >=9.0.0,<10
         - pytest-cov >=6.3.0
         - pytest-doctestplus >=1.4.0
+        - pytest-recording >=0.12.0 # DM-56157
         - pytest-runner >=6.0.0
         - pytest-session2file >=0.1.11
-        - pytest-vcr >=1.0.2
         - pytest-xdist >=3.8.0
         - setuptools >=80.8.0
         # scons 4.11 breaks builds: https://github.com/SCons/scons/issues/4893
