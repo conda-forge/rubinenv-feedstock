@@ -75,7 +75,7 @@ python:
 rust_compiler:
 - rust
 starlink_ast:
-- 9.4.1
+- 9.5.0
 target_platform:
 - linux-aarch64
 wcslib:

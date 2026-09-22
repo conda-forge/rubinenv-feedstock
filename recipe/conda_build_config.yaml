@@ -89,7 +89,7 @@ ndarray:
 numpy:
   - '2.4'
 starlink_ast:
-  - '9.4.1'
+  - '9.5.0'
 wcslib:
   - '8'
 xpa:
