@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "14.0.0dev"
-  build_number: 5
+  build_number: 6
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -232,7 +232,7 @@ outputs:
         - requests >=2.32.5
         - rich >=15.0 # RFC-1191
         - ruamel.yaml >=0.18 # DM-55411
-        - rucio-clients >=38.5,<38.6
+        - rucio-clients >=41.3.0 # DM-56229
         - ruff ==0.14.5
         - s3fs >=2025.10.0
         - schwimmbad >=0.4.2
