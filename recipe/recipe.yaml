@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "14.0.0dev"
-  build_number: 6
+  build_number: 7
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -243,6 +243,7 @@ outputs:
         - shapely >=2.1
         - skyproj >=2.1.1
         - sorcha >=1.1.1
+        - spectractor >=3.2.1 # DM-56169
         - spherematch >=0.10.2
         - sphinxcontrib-doxylink >=1.13
         - sphinx-automodapi >=0.20.0
