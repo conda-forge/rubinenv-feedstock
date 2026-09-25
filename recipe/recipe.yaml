@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "12.4.0"
-  build_number: 1
+  build_number: 2
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -166,6 +166,7 @@ outputs:
         - healsparse >=1.11.1
         - hpgeom >=1.4.0
         - htcondor >=24.0,<24.1
+        - httpx2 >=2.13.1 # DM-56244
         - humanize >=4.14.0
         - idds-client >=2.4.1
         - idds-doma >=2.4.1
@@ -213,6 +214,7 @@ outputs:
         - qp >=1.0.1
         - rclone >=1.71.2
         - requests >=2.32.5
+        - rich >=15.0.0 # DM-56244
         - rucio-clients >=38.5,<38.6
         - ruff ==0.14.5
         - s3fs >=2025.10.0
