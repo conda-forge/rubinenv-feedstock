@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "13.1.0"
-  build_number: 4
+  build_number: 5
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -247,7 +247,7 @@ outputs:
         - sphinxcontrib-doxylink >=1.13
         - sphinx-automodapi >=0.20.0
         - sphinx-click >=6.2.0
-        - sqlalchemy >=2.0.44
+        - sqlalchemy >=2.0.44,<2.1 # DM-56242
         - sqlite >=3.51
         - starlink-pyast >=4.0,<5.0
         - threadpoolctl >=3.6.0
