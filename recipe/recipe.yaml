@@ -205,6 +205,8 @@ outputs:
         - packaging >=25.0
         - panda-client >=1.5.92
         - pandas >=2.3.3,<3
+        - if: linux
+          then: patchelf >=0.13 # RFC-1203
         - paramiko >=4.0.0,<5
         - parsl ==2026.02.09
         - patch >=2.8
