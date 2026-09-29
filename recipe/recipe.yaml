@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "14.0.0dev"
-  build_number: 6
+  build_number: 7
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -232,7 +232,7 @@ outputs:
         - requests >=2.32.5
         - rich >=15.0 # RFC-1191
         - ruamel.yaml >=0.18 # DM-55411
-        - rucio-clients >=41.3.0 # DM-56229
+        - rucio-clients >=41.3.0,<42 # DM-56229
         - ruff ==0.14.5
         - s3fs >=2025.10.0
         - schwimmbad >=0.4.2
@@ -247,7 +247,7 @@ outputs:
         - sphinxcontrib-doxylink >=1.13
         - sphinx-automodapi >=0.20.0
         - sphinx-click >=6.2.0
-        - sqlalchemy >=2.0.44
+        - sqlalchemy >=2.0.44,<2.1 # DM-56242
         - sqlite >=3.51
         - starlink-pyast >=4.2,<5.0
         - threadpoolctl >=3.6.0
