@@ -11,12 +11,10 @@ recipe:
 
 build:
   skip:
-    - if: win or (osx and x86_64) or (not (match(python, "3.13.*") or match(python, "3.14.*")))
+    - if: win or (osx and x86_64) or (not match(python, "3.13.*"))
       then: true
       else: false
   number: ${{ build_number }}
-  variant:
-    down_prioritize_variant: ${{ 1 if match(python, "3.14.*") else 0 }}
 
 outputs:
   - package:
@@ -271,9 +269,6 @@ outputs:
         - if: match(python, "3.13.*")
           then:
             - pin-it rubin-env-nosysroot | grep "python=3\.13"
-        - if: match(python, "3.14.*")
-          then:
-            - pin-it rubin-env-nosysroot | grep "python=3\.14"
         - echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1
         # ensure binary compatibility; bump major version if not
         - if: linux
@@ -300,9 +295,6 @@ outputs:
         - if: match(python, "3.13.*")
           then:
             - pin-it rubin-env | grep "python=3\.13"
-        - if: match(python, "3.14.*")
-          then:
-            - pin-it rubin-env | grep "python=3\.14"
         - echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1
         # ensure binary compatibility; bump major version if not
         - if: linux

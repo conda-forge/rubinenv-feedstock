@@ -37,12 +37,9 @@ c_stdlib_version:   # [linux]
 python:
   # part of a zip_keys: python, python_impl, is_python_min
   - 3.13.* *_cp313
-  # - 3.14.* *_cp314
 is_python_min:
   - false
-  - false
 python_impl:
-  - cpython
   - cpython
 
 #####################################
