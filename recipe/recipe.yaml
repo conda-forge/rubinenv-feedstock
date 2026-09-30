@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
-  version: "14.0.0dev"
-  build_number: 7
+  version: "14.0.0dev1"
+  build_number: 0
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -11,12 +11,10 @@ recipe:
 
 build:
   skip:
-    - if: win or (osx and x86_64) or (not (match(python, "3.13.*") or match(python, "3.14.*")))
+    - if: win or (osx and x86_64) or (not match(python, "3.13.*"))
       then: true
       else: false
   number: ${{ build_number }}
-  variant:
-    down_prioritize_variant: ${{ 1 if match(python, "3.14.*") else 0 }}
 
 outputs:
   - package:
@@ -251,6 +249,7 @@ outputs:
         - sphinx-click >=6.2.0
         - sqlalchemy >=2.0.44,<2.1 # DM-56242
         - sqlite >=3.51
+        - spectractor >=3.2.1
         - starlink-pyast >=4.2,<5.0
         - threadpoolctl >=3.6.0
         - torchvision >=0.24.0
@@ -270,9 +269,6 @@ outputs:
         - if: match(python, "3.13.*")
           then:
             - pin-it rubin-env-nosysroot | grep "python=3\.13"
-        - if: match(python, "3.14.*")
-          then:
-            - pin-it rubin-env-nosysroot | grep "python=3\.14"
         - echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1
         # ensure binary compatibility; bump major version if not
         - if: linux
@@ -299,9 +295,6 @@ outputs:
         - if: match(python, "3.13.*")
           then:
             - pin-it rubin-env | grep "python=3\.13"
-        - if: match(python, "3.14.*")
-          then:
-            - pin-it rubin-env | grep "python=3\.14"
         - echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1
         # ensure binary compatibility; bump major version if not
         - if: linux
