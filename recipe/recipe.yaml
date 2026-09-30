@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
-  version: "14.0.0dev"
-  build_number: 7
+  version: "14.0.0dev1"
+  build_number: 0
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -251,6 +251,7 @@ outputs:
         - sphinx-click >=6.2.0
         - sqlalchemy >=2.0.44,<2.1 # DM-56242
         - sqlite >=3.51
+        - spectractor >=3.2.1
         - starlink-pyast >=4.2,<5.0
         - threadpoolctl >=3.6.0
         - torchvision >=0.24.0
