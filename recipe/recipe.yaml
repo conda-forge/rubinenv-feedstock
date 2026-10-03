@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "13.1.0"
-  build_number: 5
+  build_number: 6
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -214,7 +214,7 @@ outputs:
           then: prmon >=3.1.1
         - psycopg2 >=2.9.10,<3
         - pyarrow >=20.0.0
-        - pybind11 >=3.0.2
+        - pybind11 >=3.0.2,<3.1
         - pydantic >=2.12.4,<3
         - pyfftw >=0.15.1
         - pyld >=2.0.4
