@@ -247,6 +247,7 @@ outputs:
         - shapely >=2.1
         - skyproj >=2.1.1
         - sorcha >=1.1.1
+        - spectractor >=3.2.1 # DM-56169
         - spherematch >=0.10.2
         - sphinxcontrib-doxylink >=1.13
         - sphinx-automodapi >=0.20.0
