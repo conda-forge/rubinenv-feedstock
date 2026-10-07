@@ -25,7 +25,7 @@ Current build status
       </a>
     </td>
   </tr>
-
+    
   <tr>
     <td>Azure</td>
     <td>
@@ -73,10 +73,10 @@ Current release info
 Installing rubin-env
 ====================
 
-Installing `rubin-env` from the `conda-forge/label/rubin-env_dev` channel can be achieved by adding `conda-forge/label/rubin-env_dev` to your channels with:
+Installing `rubin-env` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
-conda config --add channels conda-forge/label/rubin-env_dev
+conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
@@ -87,7 +87,7 @@ How to use
 <summary>With conda</summary>
 
 ```
-conda install
+conda install rubin-env rubin-env-developer rubin-env-extras rubin-env-nosysroot rubin-env-rsp
 ```
 
 </details>
@@ -96,7 +96,7 @@ conda install
 <summary>With mamba</summary>
 
 ```
-mamba install
+mamba install rubin-env rubin-env-developer rubin-env-extras rubin-env-nosysroot rubin-env-rsp
 ```
 
 </details>
@@ -235,3 +235,4 @@ Feedstock Maintainers
 * [@mwittgen](https://github.com/mwittgen/)
 * [@roceb](https://github.com/roceb/)
 * [@timj](https://github.com/timj/)
+
