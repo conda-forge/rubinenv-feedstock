@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
-  version: "14.0.1dev"
-  build_number: 1
+  version: "15.0.0dev"
+  build_number: 0
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -98,7 +98,8 @@ outputs:
         - pytest-session2file >=0.1.11
         - pytest-xdist >=3.8.0
         - setuptools >=80.8.0
-        - scons >=4.9.1
+        # scons 4.11 breaks builds: https://github.com/SCons/scons/issues/4893
+        - scons >=4.9.1,<4.11
 
         ###################################################
         # host-like and run-like
@@ -217,7 +218,7 @@ outputs:
           then: prmon >=3.3.0
         - psycopg2 >=2.9.10,<3
         - pyarrow >=24.0.0
-        - pybind11 >=3.0.2
+        - pybind11 >=3.0.2,<3.1
         - pydantic >=2.13.4,<3
         - pyfftw >=0.15.1
         - pyld >=3.0.0
@@ -230,6 +231,7 @@ outputs:
         - pz-rail-bpz >=2.2.0
         - pz-rail-sklearn >=2.0.0
         - qp >=1.1.1
+        - qt6-main >=6.11 # DM-56083
         - rclone >=1.75.1
         - requests >=2.34.0
         - rich >=15.0 # RFC-1191
