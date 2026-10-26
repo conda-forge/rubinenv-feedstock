@@ -214,7 +214,7 @@ outputs:
         - patch >=2.8
         - pgcli >=4.7.0
         - photutils-base >=3 # DM-55071
-        - piff >=1.6.0
+        - piff >=1.6.0,<1.7
         - pillow >=12.3.0
         - if: linux
           then: prmon >=3.3.0
