@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "14.0.0"
-  build_number: 2
+  build_number: 3
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -212,7 +212,7 @@ outputs:
         - patch >=2.8
         - pgcli >=4.7.0
         - photutils-base >=3 # DM-55071
-        - piff >=1.6.0
+        - piff >=1.6.0,<1.7
         - pillow >=12.3.0
         - if: linux
           then: prmon >=3.3.0
