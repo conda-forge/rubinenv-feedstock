@@ -1,3 +1,5 @@
+DOCKER_PLATFORM:
+- linux/amd64
 apr:
 - '1'
 c_blosc2:
