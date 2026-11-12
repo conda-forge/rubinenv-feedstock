@@ -119,6 +119,8 @@ outputs:
         - libgdal-core >=3.13.0 # DM-55071
         - libpq >=18,<19
         - libpq ${{ libpq }}.*
+        - if: linux
+          then: liburing ${{ liburing }}.*
         - libxml2 ${{ libxml2 }}.*
         - libxml2-devel ${{ libxml2_devel }}.*
         - llvmlite
