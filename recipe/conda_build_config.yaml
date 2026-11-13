@@ -76,6 +76,8 @@ libboost_python_devel:
 # to krb5 1.22 and zeromq, but that is a total guess.
 libpq:
   - '18.4'
+liburing:
+  - '2.14'
 libxml2:
   - '2.14'
 libxml2_devel:
