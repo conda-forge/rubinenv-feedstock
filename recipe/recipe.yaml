@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
-  version: "14.0.0"
-  build_number: 3
+  version: "14.1.0"
+  build_number: 0
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -88,11 +88,13 @@ outputs:
         - meson >=1.9.0
         - pep8-naming >=0.15.1
         - pip >=25.0.1
-        - pkg-config >=0.29.2
+        - pkgconf >=3.0.10 # RFC-1211
         - psutil >=7.0.0
         - pytest >=9.0.0,<10
         - pytest-cov >=6.3.0
         - pytest-doctestplus >=1.4.0
+        - pytest-json-report >=1.5.0 # DM-56710
+        - pytest-metadata >=3.1.1 # DM-56710
         - pytest-recording >=0.12.0 # DM-56157
         - pytest-runner >=6.0.0
         - pytest-session2file >=0.1.11
@@ -119,6 +121,8 @@ outputs:
         - libgdal-core >=3.13.0 # DM-55071
         - libpq >=18,<19
         - libpq ${{ libpq }}.*
+        - if: linux
+          then: liburing ${{ liburing }}.*
         - libxml2 ${{ libxml2 }}.*
         - libxml2-devel ${{ libxml2_devel }}.*
         - llvmlite
@@ -411,7 +415,7 @@ outputs:
         - gh >=2 # DM-55411
         - holoviews >=1.22.0
         - hvplot >=0.12.1
-        - imagemagick >=7.1.2_3
+        - graphicsmagick >=1.3.45  # replaces DM-57113 imagemagick
         - ipdb >=0.13.13
         - ipympl >=0.9.8
         - ipython >=9.7.0
@@ -437,6 +441,7 @@ outputs:
         - python-build >=1.3.0
         - python-gfal2 >=1.13.0
         - pyvo >=1.9.1  # RFC-1189
+        - rebound <=5.0.0 # DM-57062
         - ripgrep >=15.1.0
         - rubin-nights >=0.8.1
         - rubin-scheduler >=3.20.1
