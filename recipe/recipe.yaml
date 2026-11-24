@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "12.4.0"
-  build_number: 3
+  build_number: 4
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -178,7 +178,7 @@ outputs:
         - lsst-ts-xml >=24.2.1
         - matplotlib-base >=3.10.8
         - maturin >=1.10.1
-        - moto >=5.1.17
+        - moto >=5.1.17,<5.2.6
         - mpi4py >=4.1.1
         - nest-asyncio >=1.6.0
         - networkx ==3.5
