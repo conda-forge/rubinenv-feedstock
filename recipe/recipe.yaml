@@ -198,7 +198,7 @@ outputs:
         - lsst-ts-xml >=28.0.1
         - matplotlib-base >=3.10.8,<3.11 # DM-55256
         - maturin >=1.15.0
-        - moto >=5.2
+        - moto >=5.2,<5.2.6
         - mpi4py >=4.1.2
         - nest-asyncio >=1.6.0
         - networkx ==3.6
