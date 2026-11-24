@@ -1,8 +1,8 @@
 context:
   name: "rubin-env"
-  version: "14.1.0dev"
-  build_number: 3
-  linux_gxx_abi_version: 1019
+  version: "14.2.0dev"
+  build_number: 0
+  linux_gxx_abi_version: 1020
   osx_gxx_abi_version: 1002
 
 recipe:
@@ -148,6 +148,7 @@ outputs:
         - backoff >=2.2.1
         - batoid >=0.9.0
         - batoid-rubin >=0.7.0
+        - beautifulsoup4 >=4.15 # DM-56824
         - boto3 >=1.43.46
         - botocore >=1.43.46
         - bottleneck >=1.6.0
@@ -190,13 +191,14 @@ outputs:
         - iminuit >=2.33.0
         - ipykernel >=6,<7|>=8  # DM-54854
         - jax >=0.10.0
+        - jinja2 >=3.1.6 # DM-56824
         - lmfit >=1.3.4,<1.4
         - lsstdesc.coord >=1.3.1
         - lsst-documenteer-guide >=2.4
         - lsst-ts-xml >=28.0.1
         - matplotlib-base >=3.10.8,<3.11 # DM-55256
         - maturin >=1.15.0
-        - moto >=5.2
+        - moto >=5.2,<5.2.6
         - mpi4py >=4.1.2
         - nest-asyncio >=1.6.0
         - networkx ==3.6
