@@ -54,6 +54,8 @@ liblapacke:
 - 3.9.* *netlib
 libpq:
 - '18.4'
+liburing:
+- '2.14'
 libxml2:
 - '2.14'
 libxml2_devel:
