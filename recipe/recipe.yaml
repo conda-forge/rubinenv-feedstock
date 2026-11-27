@@ -1,7 +1,7 @@
 context:
   name: "rubin-env"
   version: "14.1.0"
-  build_number: 1
+  build_number: 2
   linux_gxx_abi_version: 1019
   osx_gxx_abi_version: 1002
 
@@ -272,22 +272,22 @@ outputs:
     tests:
       - script:
         # grep pin-it output for python dependency
-        - pin-it rubin-env-nosysroot | grep "python="
+          - pin-it rubin-env-nosysroot | grep "python="
         # ensure the pinned python matches the build variant
-        - if: match(python, "3.13.*")
-          then:
-            - pin-it rubin-env-nosysroot | grep "python=3\.13"
-        - if: match(python, "3.14.*")
-          then:
-            - pin-it rubin-env-nosysroot | grep "python=3\.14"
-        - echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1
+          - if: match(python, "3.13.*")
+            then:
+              - pin-it rubin-env-nosysroot | grep "python=3\.13"
+          - if: match(python, "3.14.*")
+            then:
+              - pin-it rubin-env-nosysroot | grep "python=3\.14"
+          - echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1
         # ensure binary compatibility; bump major version if not
-        - if: linux
-          then:
-            - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
-        - if: osx
-          then:
-            - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
+          - if: linux
+            then:
+              - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
+          - if: osx
+            then:
+              - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
 
   - package:
       name: rubin-env
@@ -302,21 +302,21 @@ outputs:
     tests:
       - script:
         # grep pin-it output for python dependency
-        - pin-it rubin-env | grep "python="
-        - if: match(python, "3.13.*")
-          then:
-            - pin-it rubin-env | grep "python=3\.13"
-        - if: match(python, "3.14.*")
-          then:
-            - pin-it rubin-env | grep "python=3\.14"
-        - echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1
+          - pin-it rubin-env | grep "python="
+          - if: match(python, "3.13.*")
+            then:
+              - pin-it rubin-env | grep "python=3\.13"
+          - if: match(python, "3.14.*")
+            then:
+              - pin-it rubin-env | grep "python=3\.14"
+          - echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1
         # ensure binary compatibility; bump major version if not
-        - if: linux
-          then:
-            - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
-        - if: osx
-          then:
-            - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
+          - if: linux
+            then:
+              - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ linux_gxx_abi_version }} ]'
+          - if: osx
+            then:
+              - '[ $(echo __GXX_ABI_VERSION | ${CXX} -E - | tail -1) == ${{ osx_gxx_abi_version }} ]'
 
   - package:
       name: rubin-env-rsp
@@ -390,7 +390,7 @@ outputs:
     tests:
       - script:
         # grep pin-it output for xarray dependency
-        - pin-it rubin-env-rsp | grep "xarray="
+          - pin-it rubin-env-rsp | grep "xarray="
 
   - package:
       name: rubin-env-developer
@@ -459,7 +459,7 @@ outputs:
     tests:
       - script:
         # grep pin-it output for black dependency
-        - pin-it rubin-env-developer | grep "black"
+          - pin-it rubin-env-developer | grep "black"
 
   - package:
       name: rubin-env-extras
@@ -476,7 +476,7 @@ outputs:
       - script:
         # grep pin-it output for rubin-env-developer dependency
         # Can't do rubin-sim due to lack of ARM
-        - pin-it rubin-env-extras | grep "rubin-env-developer"
+          - pin-it rubin-env-extras | grep "rubin-env-developer"
 
 about:
   homepage: https://github.com/conda-forge/rubinenv-feedstock
